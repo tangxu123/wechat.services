@@ -1,2 +1,3 @@
 com\ludateam\wechat\entity\User.class
+com\ludateam\wechat\filter\ControllFilter.class
 com\ludateam\wechat\api\UserService.class

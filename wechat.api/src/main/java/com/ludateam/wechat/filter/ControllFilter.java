@@ -1,4 +1,4 @@
-package com.ludateam.wechat.services;
+package com.ludateam.wechat.filter;
 /*
  * Copyright 2017 Luda Team.
  *
@@ -13,20 +13,15 @@ package com.ludateam.wechat.services;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * Created by Him on 2017/8/16.
+ * Created by Him on 2017/8/17.
  */
-
-import com.alibaba.dubbo.rpc.Invocation;
-import com.alibaba.dubbo.rpc.Invoker;
-import com.alibaba.dubbo.rpc.Result;
-import com.alibaba.dubbo.rpc.RpcException;
 
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.container.ContainerResponseFilter;
 import java.io.IOException;
 
-public class ControllFilter implements ContainerResponseFilter  {
+public class ControllFilter implements ContainerResponseFilter {
 
     public void filter(ContainerRequestContext containerRequestContext, ContainerResponseContext containerResponseContext) throws IOException {
         if (containerRequestContext.getMethod().equals("OPTIONS")) {
