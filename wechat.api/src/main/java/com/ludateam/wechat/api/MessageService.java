@@ -3,10 +3,12 @@ package com.ludateam.wechat.api;
 import com.ludateam.wechat.entity.User;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 
 /*
  * Copyright 2017 Luda Team.
@@ -30,5 +32,5 @@ import javax.ws.rs.Produces;
 public interface MessageService {
     @GET
     @Path("/sendTextMessage")
-    User sendTextMessage(String data);
+    String sendTextMessage(@Context HttpServletRequest request);
 }
