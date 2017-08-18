@@ -1,1 +1,8 @@
+com\ludateam\wechat\services\MessageServiceImpl.class
+com\ludateam\wechat\kit\HashKit.class
+com\ludateam\wechat\kit\HttpKit.class
+com\ludateam\wechat\kit\HttpKit$TrustAnyHostnameVerifier.class
+com\ludateam\wechat\kit\StrKit.class
+com\ludateam\wechat\kit\HttpKit$TrustAnyTrustManager.class
+com\ludateam\wechat\kit\HttpKit$1.class
 com\ludateam\wechat\services\UserServiceImpl.class

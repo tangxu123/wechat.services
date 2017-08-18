@@ -18,6 +18,8 @@
         <dubbo:method name="getUserByPhone" retries="2" timeout="5000"></dubbo:method>
         <dubbo:method name="getUserByName" actives="10"></dubbo:method>
     </dubbo:reference>
-
+    <dubbo:reference id="messageService" interface="com.ludateam.wechat.api.MessageService">
+        <dubbo:method name="sendTextMessage" />
+    </dubbo:reference>
 
 </beans>

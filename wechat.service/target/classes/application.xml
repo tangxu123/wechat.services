@@ -29,11 +29,11 @@
     <!-- threads该服务线程池大小 -->
     <!-- accepts限制服务器端接受的连接不能超过10个 -->
     <!-- 随机token令牌，使用UUID生成 ，防止消费者绕过注册中心访问提供者-->
-    <dubbo:provider timeout="5000" threadpool="fixed" threads="100" accepts="1000"/>
+    <dubbo:provider timeout="50000" threadpool="fixed" threads="100" accepts="1000"/>
 
     <!-- 暴露服务接口 一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心-->
     <!--Provider上尽量多配置Consumer端的属性，让Provider实现者一开始就思考Provider服务特点、服务质量的问题-->
     <dubbo:service interface="com.ludateam.wechat.api.UserService" ref="userService"/>
 
-
+    <dubbo:service interface="com.ludateam.wechat.api.MessageService" ref="messageService"/>
 </beans>

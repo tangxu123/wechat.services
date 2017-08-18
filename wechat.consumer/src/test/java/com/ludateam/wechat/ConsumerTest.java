@@ -3,6 +3,7 @@ package com.ludateam.wechat;
 import com.alibaba.dubbo.rpc.RpcContext;
 import com.alibaba.fastjson.JSONObject;
 
+import com.ludateam.wechat.api.MessageService;
 import com.ludateam.wechat.api.UserService;
 import com.ludateam.wechat.entity.User;
 import org.junit.Test;
@@ -25,10 +26,13 @@ public class ConsumerTest {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private MessageService messageService;
+
     @Test
     public void test() {
         try {
-
+            messageService.sendTextMessage("test");
             User user = userService.getUserByPhone("1233523452");
             log.info(JSONObject.toJSONString(user));
         } catch (Exception e) {
