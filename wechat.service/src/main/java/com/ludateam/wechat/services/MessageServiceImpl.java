@@ -16,12 +16,9 @@ package com.ludateam.wechat.services;
  * Created by Him on 2017/8/17.
  */
 
-import com.alibaba.fastjson.JSONObject;
-import com.ludateam.wechat.api.MessageService;
-import com.ludateam.wechat.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.ws.rs.GET;
+
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -37,7 +34,7 @@ import java.util.HashMap;
 @Service("messageService")
 @Path("message")
 @Produces({"application/json; charset=UTF-8", "text/xml; charset=UTF-8"})
-public class MessageServiceImpl implements MessageService {
+public class MessageServiceImpl implements com.ludateam.wechat.api.MessageService {
 
     private static Logger logger = Logger.getLogger(MessageServiceImpl.class);
 
@@ -47,7 +44,6 @@ public class MessageServiceImpl implements MessageService {
 
         String send_param = HttpKit.readData(request);
         logger.info(send_param);
-
 
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
