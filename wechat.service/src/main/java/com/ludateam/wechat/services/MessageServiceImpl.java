@@ -25,6 +25,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 
 import com.ludateam.wechat.kit.HttpKit;
+import com.ludateam.wechat.utils.PropertyUtil;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
@@ -43,12 +44,15 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
     public String sendTextMessage(@Context HttpServletRequest request) {
 
         String send_param = HttpKit.readData(request);
-        logger.info(send_param);
+
 
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
 
-        String result = HttpKit.post("http://127.0.0.1:8899/wechat/qyapi/sendTextMessage", send_param, headers);
+        String weburl = PropertyUtil.getProperty("web.url") + "/wechat/qyapi/sendTextMessage";
+        logger.info("post " + send_param + " to " + weburl);
+
+        String result = HttpKit.post(weburl, send_param, headers);
         return result;
     }
 }
