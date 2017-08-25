@@ -1,4 +1,15 @@
 package com.ludateam.wechat.services;
+
+import com.ludateam.wechat.kit.HttpKit;
+import com.ludateam.wechat.utils.PropertyUtil;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import java.util.HashMap;
+
 /*
  * Copyright 2017 Luda Team.
  *
@@ -13,45 +24,24 @@ package com.ludateam.wechat.services;
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- * Created by Him on 2017/8/17.
+ * Created by Him on 2017/8/25.
  */
-
-
-import javax.servlet.http.HttpServletRequest;
-
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-
-import com.ludateam.wechat.kit.HttpKit;
-import com.ludateam.wechat.utils.PropertyUtil;
-import org.apache.log4j.Logger;
-import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
-
-
-@Service("messageService")
-@Path("message")
+@Service("ludaService")
 @Produces({"application/json; charset=UTF-8", "text/xml; charset=UTF-8"})
-public class MessageServiceImpl implements com.ludateam.wechat.api.MessageService   {
-
-    private static Logger logger = Logger.getLogger(MessageServiceImpl.class);
+@Path("service")
+public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
+    private static Logger logger = Logger.getLogger(CallServiceImpl.class);
 
     @POST
-    @Path("/sendTextMessage/")
-    public String sendTextMessage(@Context HttpServletRequest request) {
-
+    @Path("/callService")
+    public String callService(@QueryParam("subUrl") String subUrl, @Context HttpServletRequest request) {
         String send_param = HttpKit.readData(request);
-
-
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
 
-        String weburl = PropertyUtil.getProperty("web.url") + "/wechat/qyapi/sendTextMessage";
-        logger.info("post " + send_param + " to " + weburl);
 
+        String weburl = PropertyUtil.getProperty("web.url") + subUrl;
+        logger.info("post " + send_param + " to " + weburl);
         String result = HttpKit.post(weburl, send_param, headers);
         return result;
     }

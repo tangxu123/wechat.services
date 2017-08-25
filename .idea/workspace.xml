@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2cbd9dc2-4436-488f-97d3-2a7564c3e71a" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat.service/target/lib/javassist-3.18.1-GA.jar" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/CallService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat.api/target/classes/com/ludateam/wechat/api/UserService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/UserServiceImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/UserServiceImpl.class" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/target/api-1.0.0.jar" afterPath="$PROJECT_DIR$/wechat.api/target/api-1.0.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/lib/api-1.0.0.jar" afterPath="$PROJECT_DIR$/wechat.service/target/lib/api-1.0.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/wechat.service-1.0.0.jar" afterPath="$PROJECT_DIR$/wechat.service/target/wechat.service-1.0.0.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/MessageService.java" afterPath="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/MessageService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/wechat.api.iml" afterPath="$PROJECT_DIR$/wechat.api/wechat.api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.consumer/wechat.consumer.iml" afterPath="$PROJECT_DIR$/wechat.consumer/wechat.consumer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/resources/application.xml" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/application.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/resources/conf.properties" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/conf.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/META-INF/spring/application.xml" afterPath="$PROJECT_DIR$/wechat.service/target/classes/META-INF/spring/application.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/application.xml" afterPath="$PROJECT_DIR$/wechat.service/target/classes/application.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/wechat.service.iml" afterPath="$PROJECT_DIR$/wechat.service/wechat.service.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/Api/target/" />
@@ -43,21 +50,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat.service/src/main/resources/application.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+            <state relative-caret-position="420">
+              <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JavassistCompiler.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.8.4/dubbo-2.8.4-sources.jar!/com/alibaba/dubbo/common/compiler/support/JavassistCompiler.java">
+      <file leaf-file-name="conf.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/resources/conf.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+            <state relative-caret-position="100">
+              <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -66,8 +73,8 @@
       <file leaf-file-name="MessageService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/MessageService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+            <state relative-caret-position="434">
+              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -75,53 +82,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wechat.service/pom.xml">
+      <file leaf-file-name="CallService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/CallService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/parent/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="511">
-              <caret line="62" column="45" lean-forward="false" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Temp/360zip$Temp/360$1/MANIFEST.MF">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="68" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/UserServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="64" />
+            <state relative-caret-position="441">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProviderTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat.service/src/test/java/com/ludateam/wechat/ProviderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CallServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="302">
+              <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1481#1497#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -130,23 +120,11 @@
       <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="36" column="75" lean-forward="false" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
+            <state relative-caret-position="303">
+              <caret line="51" column="63" lean-forward="false" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1515#1531#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HttpKit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="60" column="67" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1532#1548#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,6 +135,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -201,8 +180,6 @@
         <option value="$PROJECT_DIR$/wechat.consumer/pom.xml" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/ControllFilter.java" />
         <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/entity/User.java" />
-        <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java" />
-        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/test/java/com/ludateam/wechat/ProviderTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/filter/ControllFilter.java" />
@@ -216,9 +193,16 @@
         <option value="$PROJECT_DIR$/wechat.consumer/src/test/java/com/ludateam/wechat/ConsumerTest.java" />
         <option value="$PROJECT_DIR$/wechat.consumer/src/main/resources/application.xml" />
         <option value="$PROJECT_DIR$/parent/pom.xml" />
-        <option value="$PROJECT_DIR$/wechat.service/src/main/resources/application.xml" />
-        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java" />
         <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/MessageService.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/utils/PropertyUtil.java" />
+        <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/resources/conf.properties" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/BaseService.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/resources/application.xml" />
+        <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/CallService.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -283,11 +267,6 @@
             <path>
               <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
               <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="parent" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
@@ -385,31 +364,60 @@
               <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: io.netty:netty:3.7.0.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: io.netty:netty:3.7.0.Final" type="70bed36:NamedLibraryElementNode" />
-              <item name="netty-3.7.0.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
+              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="wechat" type="462c0819:PsiDirectoryNode" />
+              <item name="ProviderTest" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -837,52 +845,57 @@
       <workItem from="1502937386471" duration="1540000" />
       <workItem from="1502939021677" duration="12306000" />
       <workItem from="1503021703718" duration="5749000" />
-      <workItem from="1503039275286" duration="6410000" />
+      <workItem from="1503039275286" duration="7295000" />
+      <workItem from="1503281643471" duration="1301000" />
+      <workItem from="1503283414134" duration="4925000" />
+      <workItem from="1503367911469" duration="2515000" />
+      <workItem from="1503452455743" duration="12969000" />
+      <workItem from="1503627111332" duration="8684000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 13h 59m 36s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 00m 43s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 03m 31s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 08m 51s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 12m 30s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 16m 34s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 19m 35s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ConsumerTest_test_(1) - 2017.08.17 at 14h 22m 07s.xml">
-      <configuration name="ConsumerTest.test (1)" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProviderTest_test_(1) - 2017.08.18 at 10h 33m 59s.xml">
+    <history-entry file="ProviderTest_test_(1) - 2017.08.21 at 13h 27m 53s.xml">
       <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ProviderTest_test_(1) - 2017.08.18 at 13h 34m 33s.xml">
+    <history-entry file="ProviderTest_test_(1) - 2017.08.21 at 13h 28m 15s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 14h 26m 39s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 14h 31m 10s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 14h 34m 00s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 14h 37m 50s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 14h 41m 05s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 14h 56m 26s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 15h 22m 17s.xml">
+      <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ProviderTest_test_(1) - 2017.08.25 at 15h 28m 26s.xml">
       <configuration name="ProviderTest.test (1)" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33754000" />
+    <option name="totallyTimeSpent" value="65033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38665134" sideWeight="0.41320294" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4443207" sideWeight="0.3219616" order="14" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52895325" sideWeight="0.3304904" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32293987" sideWeight="0.3976546" order="14" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1641791" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -892,18 +905,19 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4443207" sideWeight="0.67803836" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45657015" sideWeight="0.6695096" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37639198" sideWeight="0.62473345" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5634744" sideWeight="0.49755502" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32293987" sideWeight="0.6023454" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4968017" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25266525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18017058" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -915,7 +929,6 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37639198" sideWeight="0.7036247" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1013,7 +1026,7 @@
           <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="14" />
+      <option name="time" value="18" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1026,31 +1039,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wechat.consumer/src/main/resources/application.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="22" column="8" lean-forward="true" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Provider/src/main/resources/log4j.properties" />
-    <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/yingjun/dubbox/api/UserService.java" />
-    <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/yingjun/dubbox/entity/User.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.8.4/dubbo-2.8.4-sources.jar!/com/alibaba/dubbo/common/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="290" column="75" lean-forward="false" selection-start-line="290" selection-start-column="70" selection-end-line="290" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.consumer/src/test/java/com/yingjun/dubbox/ConsumerTest.java" />
-    <entry file="file://$PROJECT_DIR$/Provider/src/main/java/com/yingjun/dubbox/services/UserServiceImpl.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/com/alibaba/dubbo/2.8.4/dubbo-2.8.4.jar!/META-INF/dubbo.xsd">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="273" column="16" lean-forward="false" selection-start-line="273" selection-start-column="16" selection-end-line="273" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,14 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/test/java/com/ludateam/wechat/ProviderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,7 +1144,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1700">
           <caret line="99" column="1" lean-forward="false" selection-start-line="99" selection-start-column="1" selection-end-line="99" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1169,7 +1151,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="21" column="47" lean-forward="false" selection-start-line="21" selection-start-column="47" selection-end-line="21" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1187,7 +1168,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="50" column="13" lean-forward="false" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1195,7 +1175,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1203,7 +1182,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="30" column="87" lean-forward="false" selection-start-line="30" selection-start-column="87" selection-end-line="30" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1211,17 +1189,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="6" column="68" lean-forward="false" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="60" column="67" lean-forward="false" selection-start-line="60" selection-start-column="4" selection-end-line="60" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1229,75 +1196,115 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/360zip$Temp/360$1/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/360zip$Temp/360$1/pom.xml" />
     <entry file="file://$PROJECT_DIR$/wechat.service/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
+        <state relative-caret-position="380">
           <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/360zip$Temp/360$1/MANIFEST.MF">
+    <entry file="file://$USER_HOME$/AppData/Local/Temp/360zip$Temp/360$1/MANIFEST.MF" />
+    <entry file="jar://$MAVEN_REPOSITORY$/log4j/log4j/1.2.17/log4j-1.2.17.jar!/org/apache/log4j/Category.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="68" lean-forward="false" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="68" />
-          <folding />
+        <state relative-caret-position="309">
+          <caret line="255" column="40" lean-forward="true" selection-start-line="255" selection-start-column="40" selection-end-line="255" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parent/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
+        <state relative-caret-position="1240">
           <caret line="62" column="45" lean-forward="false" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java">
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="469">
+          <caret line="267" column="36" lean-forward="true" selection-start-line="267" selection-start-column="36" selection-end-line="267" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/utils/PropertyUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="29" column="30" lean-forward="false" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/utils/PostRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="17" column="26" lean-forward="true" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/resources/conf.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/test/java/com/ludateam/wechat/ProviderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="16" lean-forward="false" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="40" column="7" lean-forward="false" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="64" lean-forward="false" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="381">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="36" column="75" lean-forward="false" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
+        <state relative-caret-position="303">
+          <caret line="51" column="63" lean-forward="false" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="92" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1515#1531#0" expanded="true" />
+            <element signature="e#1532#1548#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/MessageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+        <state relative-caret-position="434">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1306,9 +1313,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/resources/application.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="420">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/CallService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1481#1497#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1329,7 +1357,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited>Spring</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1364,12 +1392,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>DubboxDemo-master</last-edited>
+          <last-edited>parent</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1389,6 +1416,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

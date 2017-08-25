@@ -33,7 +33,9 @@
 
     <!-- 暴露服务接口 一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心-->
     <!--Provider上尽量多配置Consumer端的属性，让Provider实现者一开始就思考Provider服务特点、服务质量的问题-->
-    <dubbo:service interface="com.ludateam.wechat.api.UserService" ref="userService"/>
+
 
     <dubbo:service interface="com.ludateam.wechat.api.MessageService" ref="messageService"/>
+
+    <dubbo:service interface="com.ludateam.wechat.api.CallService" ref="ludaService"/>
 </beans>

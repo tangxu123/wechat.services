@@ -9,12 +9,12 @@
 
     <!-- 扫描Service-->
     <context:component-scan base-package="com.ludateam.wechat.services"/>
-
+    <context:property-placeholder location="classpath:conf.properties" />
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="wechat.services" owner="ludateam"/>
 
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry protocol="zookeeper" address="zookeeper://172.16.5.201:2181"/>
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}"/>
 
     <!-- 这个采用推荐的dubbo协议(tcp传输协议)（底层通过netty实现）（默认采用Hessian序列化方式）在20990端口暴露服务 -->
     <!--<dubbo:protocol name="dubbo" port="20990"  />-->
@@ -33,7 +33,9 @@
 
     <!-- 暴露服务接口 一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心-->
     <!--Provider上尽量多配置Consumer端的属性，让Provider实现者一开始就思考Provider服务特点、服务质量的问题-->
-    <dubbo:service interface="com.ludateam.wechat.api.UserService" ref="userService"/>
+
 
     <dubbo:service interface="com.ludateam.wechat.api.MessageService" ref="messageService"/>
+
+    <dubbo:service interface="com.ludateam.wechat.api.CallService" ref="ludaService"/>
 </beans>
