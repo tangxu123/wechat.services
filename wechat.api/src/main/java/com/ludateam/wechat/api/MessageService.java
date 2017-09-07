@@ -27,7 +27,28 @@ import javax.ws.rs.core.Context;
 @Path("message")
 @Produces({"application/json; charset=UTF-8", "text/xml; charset=UTF-8"})
 public interface MessageService {
-    @POST
-    @Path("/sendTextMessage")
-    String sendTextMessage(@Context HttpServletRequest request);
+	
+	/**
+	 * 发送文本消息
+	 * 
+	 * @param request
+	 *            请求消息
+	 * 
+	 * @return 发送结果
+	 */
+	@POST
+	@Path("/sendTextMessage")
+	String sendTextMessage(@Context HttpServletRequest request);
+
+	/**
+	 * 接受消息（文本消息、图片消息等）
+	 * 
+	 * @param request
+	 *            请求内容
+	 * 
+	 * @return 存储结果
+	 */
+	@POST
+	@Path("/receiveMessage")
+	String receiveMessage(@QueryParam("msgJson") String msgJson);
 }

@@ -5,11 +5,31 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	   http://code.alibabatech.com/schema/dubbo
-	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	   default-autowire="byName" default-lazy-init="false">
 
+    <!-- 采用注释的方式配置bean -->
+    <context:annotation-config/>
+    
     <!-- 扫描Service-->
     <context:component-scan base-package="com.ludateam.wechat.services"/>
-    <context:property-placeholder location="classpath:conf.properties" />
+    
+        <!-- 读入配置属性文件  -->
+    <bean id="propertyResources" class="java.util.ArrayList">
+        <constructor-arg>
+            <list>
+                <value>classpath:conf.properties</value>
+                <value>classpath:jdbc.properties</value>
+            </list>
+        </constructor-arg>
+    </bean>
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations" ref="propertyResources"/>
+    </bean>
+    
+    <import resource="classpath:data-source.xml"/>
+    
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="wechat.services" owner="ludateam"/>
 

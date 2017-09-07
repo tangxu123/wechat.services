@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ludateam.wechat.dao.SearchDao">
+    <insert id="saveReseiceMsg" parameterType="Map">
+		<![CDATA[
+			INSERT INTO wechat_receive_message
+			  (msg_id,
+			   to_user_name,
+			   from_user_name,
+			   create_time,
+			   msg_type,
+			   content,
+			   pic_url,
+			   media_id,
+			   agent_id)
+			VALUES
+			  (
+			  	#{msgId},
+			  	#{toUserName},
+			  	#{fromUserName},
+			  	TO_DATE(#{createTime},'yyyy-MM-dd HH24:mi:ss'),
+			  	#{msgType},
+			  	#{content, jdbcType=VARCHAR},
+			  	#{picUrl, jdbcType=VARCHAR},
+			  	#{mediaId, jdbcType=VARCHAR},
+			  	#{agentId}
+			  )
+        ]]>
+    </insert>
+</mapper>
