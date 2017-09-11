@@ -28,7 +28,7 @@ import javax.ws.rs.core.Context;
 public interface CallService {
     @POST
     @Path("/callService")
-    String callService(@QueryParam("subUrl") String subUrl, @Context HttpServletRequest request);
+    String callService(@QueryParam("subUrl") String subUrl, @QueryParam("target") String target, @Context HttpServletRequest request);
 }
 
 
