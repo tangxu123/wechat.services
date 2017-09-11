@@ -1,13 +1,19 @@
 package com.ludateam.wechat.services;
 
 import com.ludateam.wechat.kit.HttpKit;
+import com.ludateam.wechat.utils.DesUtils;
 import com.ludateam.wechat.utils.PropertyUtil;
+import org.apache.commons.codec.binary.Hex;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
 
 /*
@@ -34,15 +40,28 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 
     @POST
     @Path("/callService")
-    public String callService(@QueryParam("subUrl") String subUrl, @Context HttpServletRequest request) {
+    public String callService(@QueryParam("subUrl") String subUrl,  @QueryParam("target") String target, @Context HttpServletRequest request) {
         String send_param = HttpKit.readData(request);
-        HashMap<String, String> headers = new HashMap<String, String>();
+        HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-type", "application/json");
 
+        logger.info("get target: " + target );
 
-        String weburl = PropertyUtil.getProperty("web.url") + subUrl;
+        if (target ==null){
+            return "{\"errcode\":9999,\"errmsg\":\"target is null\"}";
+        }
+
+        String weburl = PropertyUtil.getProperty(target) + subUrl;
         logger.info("post " + send_param + " to " + weburl);
         String result = HttpKit.post(weburl, send_param, headers);
         return result;
+    }
+    public static void main(String args[]){
+        try {
+            DesUtils des = new DesUtils("!@#asd123");//自定义密钥
+            System.out.println("解密后的字符：" + des.decrypt("10f17868b4efe944"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
