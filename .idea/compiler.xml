@@ -15,11 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Api" target="1.5" />
-      <module name="Consumer" target="1.5" />
       <module name="parent" target="1.5" />
-      <module name="Parent" target="1.5" />
-      <module name="Provider" target="1.5" />
       <module name="wechat.api" target="1.5" />
       <module name="wechat.consumer" target="1.5" />
       <module name="wechat.service" target="1.5" />

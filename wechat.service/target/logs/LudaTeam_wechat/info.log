@@ -1,0 +1,1892 @@
+2017-10-10 13:01:39.047 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:01:39.642 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:01:39.644 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:01:39.865 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:01:39.873 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:01:42.016 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:01:42.549 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:01:42.554 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:01:42.557 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:01:43.086 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:01:43.579 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:06:07.128 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:06:07.232 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:06:07.234 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:06:07.240 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:06:07.245 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:06:07.284 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:06:07.307 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:06:07.308 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:06:07.310 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:06:07.413 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:06:07.427 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:08:01.136 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:08:01.222 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:08:01.222 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:08:01.224 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:08:01.225 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:08:01.258 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:08:01.279 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:08:01.279 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:08:01.280 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:08:01.349 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:08:01.364 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:08:04.477 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:08:04.565 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:08:04.567 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:08:04.573 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:08:04.577 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:08:04.636 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:08:04.660 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:08:04.662 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:08:04.663 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:08:04.761 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:08:04.778 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:09:42.854 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:09:42.948 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:09:42.950 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:09:42.956 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:09:42.960 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:09:42.995 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:09:43.016 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:09:43.018 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:09:43.019 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:09:43.121 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:09:43.136 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:16:42.748 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:16:42.844 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:16:42.845 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:16:42.851 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:16:42.855 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:16:42.891 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:16:42.912 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:16:42.913 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:16:42.915 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:16:43.022 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:16:43.036 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:17:00.782 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:17:00.879 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:17:00.880 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:17:00.886 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:17:00.891 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:17:00.930 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:17:00.951 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:17:00.954 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:17:00.958 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:17:01.063 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:17:01.081 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:24:28.049 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:24:28.141 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:24:28.143 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:24:28.148 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:24:28.152 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:24:28.195 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:24:28.215 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:24:28.217 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:24:28.219 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:24:28.311 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:24:28.327 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:24:50.321 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置>
+2017-10-10 13:24:50.412 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin>
+2017-10-10 13:24:50.414 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性>
+2017-10-10 13:24:50.419 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小>
+2017-10-10 13:24:50.424 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制>
+2017-10-10 13:24:50.462 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件>
+2017-10-10 13:24:50.481 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断>
+2017-10-10 13:24:50.482 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql>
+2017-10-10 13:24:50.484 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册>
+2017-10-10 13:24:50.576 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件>
+2017-10-10 13:24:50.590 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件>
+2017-10-10 13:24:55.129 [] [] [] INFO [main] <Run.java [128] - <clinit>> <ServicePlugin Service注解实例化加载>
+2017-10-10 13:24:55.293 [] [] [] INFO [main] <Run.java [131] - <clinit>> <I18NPlugin 国际化键值对加载>
+2017-10-10 13:24:55.303 [] [] [] INFO [main] <Run.java [135] - <clinit>> <EhCachePlugin EhCache缓存>
+2017-10-10 13:24:58.457 [] [] [] INFO [main] <Run.java [148] - <clinit>> <configPlugin SqlXmlPlugin 解析并缓存 xml sql>
+2017-10-10 13:24:59.234 [] [] [] INFO [main] <Run.java [151] - <clinit>> <configPlugin ParamInitPlugin 缓存参数>
+2017-10-10 13:24:59.241 [] [] [] INFO [main] <ParamInitPlugin.java [79] - start> <缓存参数初始化 start ...>
+2017-10-10 13:24:59.247 [] [] [] INFO [main] <ParamInitPlugin.java [113] - platform_cacheUser> <缓存加载：User start>
+2017-10-10 13:24:59.958 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_user  
+ >
+2017-10-10 13:24:59.996 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ >
+2017-10-10 13:25:00.005 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_user 
+    order by
+        ids asc limit ? offset ?  
+ >
+2017-10-10 13:25:00.043 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ >
+2017-10-10 13:25:00.053 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_user` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:00.063 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 03a44ba0aa4e4905bea726d4da976ba5 
+ >
+2017-10-10 13:25:00.068 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ug.groupids 
+    from
+        pt_usergroup ug 
+    where
+        ug.userids = ?  
+ >
+2017-10-10 13:25:00.088 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 03a44ba0aa4e4905bea726d4da976ba5 
+ >
+2017-10-10 13:25:00.121 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_user` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:00.131 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ef15e94a52584743b2b9bf604fccd0cc 
+ >
+2017-10-10 13:25:00.151 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ug.groupids 
+    from
+        pt_usergroup ug 
+    where
+        ug.userids = ?  
+ >
+2017-10-10 13:25:00.168 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ef15e94a52584743b2b9bf604fccd0cc 
+ >
+2017-10-10 13:25:00.188 [] [] [] INFO [main] <ParamInitPlugin.java [139] - platform_cacheUser> <缓存加载：User end>
+2017-10-10 13:25:00.196 [] [] [] INFO [main] <ParamInitPlugin.java [147] - platform_cacheGroupOperator> <缓存加载：Group Operator start>
+2017-10-10 13:25:00.224 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_group  
+ >
+2017-10-10 13:25:00.230 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ >
+2017-10-10 13:25:00.235 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_group 
+    order by
+        ids asc limit ? offset ?  
+ >
+2017-10-10 13:25:00.251 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ >
+2017-10-10 13:25:00.268 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_roleoperator ro 
+            on ro.operatorids = o.ids 
+    left join
+        pt_grouprole gr 
+            on gr.roleids = ro.roleids 
+    where
+        gr.groupids = ?  
+ >
+2017-10-10 13:25:00.325 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0028 
+ >
+2017-10-10 13:25:00.347 [] [] [] INFO [main] <ParamInitPlugin.java [173] - platform_cacheGroupOperator> <缓存加载：Group Operator end>
+2017-10-10 13:25:00.352 [] [] [] INFO [main] <ParamInitPlugin.java [181] - platform_cacheStationOperator> <缓存加载：Station Operator start>
+2017-10-10 13:25:00.382 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_station  
+ >
+2017-10-10 13:25:00.385 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ >
+2017-10-10 13:25:00.396 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_station 
+    order by
+        ids asc limit ? offset ?  
+ >
+2017-10-10 13:25:00.409 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ >
+2017-10-10 13:25:00.423 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.438 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:00.451 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.465 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0021 
+ >
+2017-10-10 13:25:00.479 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.494 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0022 
+ >
+2017-10-10 13:25:00.506 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.521 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0023 
+ >
+2017-10-10 13:25:00.535 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.550 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0024 
+ >
+2017-10-10 13:25:00.564 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.578 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0025 
+ >
+2017-10-10 13:25:00.591 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.605 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0026 
+ >
+2017-10-10 13:25:00.625 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.640 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0027 
+ >
+2017-10-10 13:25:00.660 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ >
+2017-10-10 13:25:00.691 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0028 
+ >
+2017-10-10 13:25:00.712 [] [] [] INFO [main] <ParamInitPlugin.java [207] - platform_cacheStationOperator> <缓存加载：Station Operator end>
+2017-10-10 13:25:00.741 [] [] [] INFO [main] <ParamInitPlugin.java [215] - platform_cacheOperator> <缓存加载：Operator start>
+2017-10-10 13:25:00.771 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_operator  
+ >
+2017-10-10 13:25:00.773 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ >
+2017-10-10 13:25:00.779 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_operator 
+    order by
+        ids asc limit ? offset ?  
+ >
+2017-10-10 13:25:00.791 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ >
+2017-10-10 13:25:00.875 [] [] [] INFO [main] <ParamInitPlugin.java [246] - platform_cacheOperator> <缓存加载：Operator end>
+2017-10-10 13:25:00.888 [] [] [] INFO [main] <ParamInitPlugin.java [254] - platform_cacheDict> <缓存加载：Dict start>
+2017-10-10 13:25:00.898 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ids 
+    from
+        pt_dict  
+ >
+2017-10-10 13:25:00.905 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ >
+2017-10-10 13:25:00.922 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:00.932 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ >
+2017-10-10 13:25:00.953 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.008 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ >
+2017-10-10 13:25:01.013 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.024 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:01.043 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.075 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:01.090 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.112 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ >
+2017-10-10 13:25:01.133 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.155 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ >
+2017-10-10 13:25:01.174 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.198 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ >
+2017-10-10 13:25:01.227 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.248 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ >
+2017-10-10 13:25:01.267 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.282 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 18a137a0b92944ba857b5dec39b4fa69 
+ >
+2017-10-10 13:25:01.305 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.328 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 18a137a0b92944ba857b5dec39b4fa69 
+ >
+2017-10-10 13:25:01.347 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.371 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ >
+2017-10-10 13:25:01.386 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.397 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ >
+2017-10-10 13:25:01.410 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.420 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 3082e48992104e3ca8c2f542bbcfbe63 
+ >
+2017-10-10 13:25:01.439 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.455 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 3082e48992104e3ca8c2f542bbcfbe63 
+ >
+2017-10-10 13:25:01.480 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.502 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ >
+2017-10-10 13:25:01.525 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.546 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ >
+2017-10-10 13:25:01.592 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.596 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ >
+2017-10-10 13:25:01.619 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.642 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ >
+2017-10-10 13:25:01.663 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.685 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:01.713 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.731 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:01.746 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.761 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 325acbd77f5b43a894ec4ef53ba20914 
+ >
+2017-10-10 13:25:01.790 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.810 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 325acbd77f5b43a894ec4ef53ba20914 
+ >
+2017-10-10 13:25:01.824 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.841 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ >
+2017-10-10 13:25:01.859 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.870 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ >
+2017-10-10 13:25:01.884 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.895 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 405dc683656a4b328de5d5a19d1662d3 
+ >
+2017-10-10 13:25:01.914 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.929 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 405dc683656a4b328de5d5a19d1662d3 
+ >
+2017-10-10 13:25:01.942 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:01.954 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ >
+2017-10-10 13:25:01.975 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:01.999 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ >
+2017-10-10 13:25:02.019 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.037 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ >
+2017-10-10 13:25:02.058 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.071 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ >
+2017-10-10 13:25:02.090 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.104 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:02.124 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.135 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:02.149 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.159 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ >
+2017-10-10 13:25:02.176 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.188 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ >
+2017-10-10 13:25:02.203 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.215 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ >
+2017-10-10 13:25:02.236 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.250 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ >
+2017-10-10 13:25:02.264 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.278 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ >
+2017-10-10 13:25:02.297 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.307 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ >
+2017-10-10 13:25:02.319 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.331 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:02.349 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.360 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:02.372 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.382 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ >
+2017-10-10 13:25:02.400 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.412 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ >
+2017-10-10 13:25:02.437 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.445 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:02.472 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.486 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:02.499 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.509 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:02.530 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.542 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:02.554 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.565 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:02.581 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.592 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:02.605 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.615 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:02.632 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.643 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:02.655 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.665 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ >
+2017-10-10 13:25:02.682 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.693 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ >
+2017-10-10 13:25:02.707 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.719 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ >
+2017-10-10 13:25:02.742 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.761 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ >
+2017-10-10 13:25:02.775 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.786 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a929cbf789a74107a74aec88c0bcc8fe 
+ >
+2017-10-10 13:25:02.804 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.815 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a929cbf789a74107a74aec88c0bcc8fe 
+ >
+2017-10-10 13:25:02.828 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.840 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ >
+2017-10-10 13:25:02.860 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.872 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ >
+2017-10-10 13:25:02.886 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.896 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: bf1bf96a123447c58b7f181d3e4e6099 
+ >
+2017-10-10 13:25:02.913 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.926 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: bf1bf96a123447c58b7f181d3e4e6099 
+ >
+2017-10-10 13:25:02.938 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:02.954 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ >
+2017-10-10 13:25:02.969 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:02.980 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ >
+2017-10-10 13:25:02.995 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.008 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ddbe84891d8b4632ac0dc2bd36f7f323 
+ >
+2017-10-10 13:25:03.028 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.042 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ddbe84891d8b4632ac0dc2bd36f7f323 
+ >
+2017-10-10 13:25:03.055 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.069 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ >
+2017-10-10 13:25:03.090 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.108 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ >
+2017-10-10 13:25:03.122 [] [] [] INFO [main] <ParamInitPlugin.java [261] - platform_cacheDict> <缓存加载：Dict end, size = 17>
+2017-10-10 13:25:03.147 [] [] [] INFO [main] <ParamInitPlugin.java [270] - platform_cacheParam> <缓存加载：Param start>
+2017-10-10 13:25:03.157 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ids 
+    from
+        pt_param  
+ >
+2017-10-10 13:25:03.163 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ >
+2017-10-10 13:25:03.171 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.180 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ >
+2017-10-10 13:25:03.193 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.209 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ >
+2017-10-10 13:25:03.224 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.237 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.256 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.271 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.281 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.292 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ >
+2017-10-10 13:25:03.306 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.319 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ >
+2017-10-10 13:25:03.332 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.343 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.361 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.371 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.385 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.395 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ >
+2017-10-10 13:25:03.413 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.426 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ >
+2017-10-10 13:25:03.441 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.450 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.471 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.487 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.498 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.509 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.522 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.534 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ >
+2017-10-10 13:25:03.548 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.559 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:03.579 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.595 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:03.609 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ >
+2017-10-10 13:25:03.621 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:03.642 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ >
+2017-10-10 13:25:03.653 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ >
+2017-10-10 13:25:03.666 [] [] [] INFO [main] <ParamInitPlugin.java [277] - platform_cacheParam> <缓存加载：Param end, size = 5>
+2017-10-10 13:25:03.689 [] [] [] INFO [main] <ParamInitPlugin.java [99] - start> <缓存参数初始化 end ...>
+2017-10-10 13:25:03.697 [] [] [] INFO [main] <Run.java [154] - <clinit>> <configPlugin FileRenamePlugin 配置文件上传命名策略插件>
+2017-10-10 13:25:03.713 [] [] [] INFO [main] <Run.java [157] - <clinit>> <configPlugin QuartzPlugin 配置Quartz插件>
+2017-10-10 13:25:03.917 [] [] [] INFO [main] <? [?] - ?> <using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter>
+2017-10-10 13:25:04.050 [] [] [] INFO [main] <Main.java [58] - main> < [DUBBO] Use container type([spring]) to run dubbo serivce., dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:09.281 [] [] [] INFO [main] <ServiceBean.java [108] - onApplicationEvent> < [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.MessageService, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:09.455 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:09.456 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:09.485 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.MessageService url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613109294, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:10.475 [] [] [] INFO [main] <AbstractServer.java [70] - <init>> < [DUBBO] Start NettyServer bind /0.0.0.0:20990, export /169.254.148.248:20990, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:10.566 [] [] [] INFO [main] <AbstractRegistry.java [232] - loadProperties> < [DUBBO] Load registry store file C:\Users\lenovo\.dubbo\dubbo-registry-127.0.0.1.cache, data: {com.ludateam.wechat.api.UserService=empty://169.254.148.248/com.ludateam.wechat.api.UserService?application=wechat.consumer&category=configurators&dubbo=2.8.4&getUserByName.actives=10&getUserByPhone.retries=2&getUserByPhone.timeout=5000&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=49632&protocol=dubbo&revision=1.0.0&side=consumer&timestamp=1504764633949 empty://169.254.148.248/com.ludateam.wechat.api.UserService?application=wechat.consumer&category=routers&dubbo=2.8.4&getUserByName.actives=10&getUserByPhone.retries=2&getUserByPhone.timeout=5000&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=49632&protocol=dubbo&revision=1.0.0&side=consumer&timestamp=1504764633949 empty://169.254.148.248/com.ludateam.wechat.api.UserService?application=wechat.consumer&category=providers&dubbo=2.8.4&getUserByName.actives=10&getUserByPhone.retries=2&getUserByPhone.timeout=5000&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=49632&protocol=dubbo&revision=1.0.0&side=consumer&timestamp=1504764633949, com.alibaba.dubbo.demo.user.facade.AnotherUserRestService=empty://169.254.148.248/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?application=demo-consumer&category=configurators&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787171722 empty://169.254.148.248/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?application=demo-consumer&category=routers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787171722 empty://169.254.148.248/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?application=demo-consumer&category=providers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787171722, annotationConfig/net.aimeizi.student.StudentRestService=empty://169.254.148.248:20880/net.aimeizi.student.StudentRestService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&group=annotationConfig&interface=net.aimeizi.student.StudentRestService&iothreads=10&methods=registerStudent,getStudent&optimizer=net.aimeizi.SerializationOptimizerImpl&organization=dubbo&owner=aimeizi&pid=38176&serialization=kryo&server=netty&side=provider&threads=500&timestamp=1502851536396&validation=true, net.aimeizi.student.StudentRestService=empty://169.254.148.248:8000/services/net.aimeizi.student.StudentRestService?accepts=500&anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&extension=com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter,net.aimeizi.exception.ValidationExceptionMapper&generic=false&interface=net.aimeizi.student.StudentRestService&methods=registerStudent,getStudent&organization=dubbo&owner=aimeizi&pid=38176&server=tomcat&side=provider&threads=500&timestamp=1502851539792&validation=true, com.ludateam.wechat.api.MessageService=empty://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=13192&serialization=kryo&server=tomcat&side=provider&timestamp=1505099515364, com.ludateam.wechat.api.CallService=empty://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=13192&serialization=kryo&server=tomcat&side=provider&timestamp=1505099520226, com.alibaba.dubbo.monitor.MonitorService=empty://169.254.56.102:7070/com.alibaba.dubbo.monitor.MonitorService?anyhost=true&application=simple-monitor&category=configurators&check=false&delay=-1&dubbo=2.0.0&generic=false&interface=com.alibaba.dubbo.monitor.MonitorService&methods=lookup,collect&pid=27800&side=provider&timestamp=1461831883967, */com.alibaba.dubbo.demo.bid.BidService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.bid.BidService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.bid.BidService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.bid.BidService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.bid.BidService&version=*, com.alibaba.dubbo.demo.user.facade.UserRestService=empty://169.254.148.248:8888/services/com.alibaba.dubbo.demo.user.facade.UserRestService?accepts=500&anyhost=true&application=demo-provider&category=configurators&check=false&dubbo=2.0.0&extension=com.alibaba.dubbo.demo.extension.TraceInterceptor,                     com.alibaba.dubbo.demo.extension.TraceFilter,                     com.alibaba.dubbo.demo.extension.ClientTraceFilter,                     com.alibaba.dubbo.demo.extension.DynamicTraceBinding,                     com.alibaba.dubbo.demo.extension.CustomExceptionMapper,                     com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter&generic=false&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=12408&server=tomcat&side=provider&threads=500&timestamp=1502787141475&validation=true, net.aimeizi.order.OrderService$Iface=empty://169.254.148.248:33201/net.aimeizi.order.OrderService$Iface?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&interface=net.aimeizi.order.OrderService$Iface&methods=ping,getOrder&organization=dubbo&owner=aimeizi&pid=38176&service.filter=serviceFilter&side=provider&timeout=10000&timestamp=1502851538967, */com.alibaba.dubbo.monitor.MonitorService:*=empty://169.254.56.102/com.alibaba.dubbo.monitor.MonitorService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.monitor.MonitorService&version=* dubbo://169.254.56.102:7070/com.alibaba.dubbo.monitor.MonitorService?anyhost=true&application=simple-monitor&delay=-1&dubbo=2.0.0&generic=false&interface=com.alibaba.dubbo.monitor.MonitorService&methods=lookup,collect&pid=27800&side=provider&timestamp=1461831883967, com.alibaba.dubbo.demo.bid.BidService=empty://169.254.148.248/com.alibaba.dubbo.demo.bid.BidService?application=demo-consumer&category=configurators&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.bid.BidService&methods=throwNPE,bid&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787169666 empty://169.254.148.248/com.alibaba.dubbo.demo.bid.BidService?application=demo-consumer&category=routers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.bid.BidService&methods=throwNPE,bid&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787169666 empty://169.254.148.248/com.alibaba.dubbo.demo.bid.BidService?application=demo-consumer&category=providers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.bid.BidService&methods=throwNPE,bid&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787169666, annotationConfig/com.alibaba.dubbo.demo.user.facade.UserRestService=empty://169.254.148.248:20880/com.alibaba.dubbo.demo.user.facade.UserRestService?anyhost=true&application=demo-provider&category=configurators&check=false&dubbo=2.0.0&generic=false&group=annotationConfig&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&methods=getUser,registerUser&optimizer=com.alibaba.dubbo.demo.SerializationOptimizerImpl&organization=dubbox&owner=programmer&pid=12408&serialization=kryo&side=provider&timestamp=1502787139393&validation=true, net.aimeizi.user.UserService=empty://169.254.148.248:20880/net.aimeizi.user.UserService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&interface=net.aimeizi.user.UserService&iothreads=10&methods=getUserById,updatePassword,ping,registerUser,deleteUserById&optimizer=net.aimeizi.SerializationOptimizerImpl&organization=dubbo&owner=aimeizi&pid=38176&serialization=kryo&server=netty&service.filter=serviceFilter&side=provider&threads=500&timeout=10000&timestamp=1502851538055, xmlConfig/com.alibaba.dubbo.demo.user.UserService=empty://169.254.148.248:20880/com.alibaba.dubbo.demo.user.UserService?anyhost=true&application=demo-provider&category=configurators&check=false&dubbo=2.0.0&generic=false&group=xmlConfig&interface=com.alibaba.dubbo.demo.user.UserService&methods=getUser,registerUser&optimizer=com.alibaba.dubbo.demo.SerializationOptimizerImpl&organization=dubbox&owner=programmer&pid=12408&serialization=kryo&side=provider&timestamp=1502787140960, net.aimeizi.student.AnotherStudentRestService=empty://169.254.148.248:8000/services/net.aimeizi.student.AnotherStudentRestService?accepts=500&anyhost=true&application=dubbo-provider&category=configurators&check=false&connections=100&dubbo=2.8.4&extension=com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter,net.aimeizi.exception.ValidationExceptionMapper&generic=false&interface=net.aimeizi.student.AnotherStudentRestService&methods=registerStudent,getStudent&organization=dubbo&owner=aimeizi&pid=38176&server=tomcat&side=provider&threads=500&timeout=2000&timestamp=1502851540247&validation=true, */com.alibaba.dubbo.demo.user.facade.AnotherUserRestService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&version=*, com.yingjun.dubbox.api.UserService=empty://169.254.148.248:9009/com.yingjun.dubbox.api.UserService?anyhost=true&application=provider&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=5000&dubbo=2.8.4&extension=com.yingjun.dubbox.services.ControllFilter&generic=false&interface=com.yingjun.dubbox.api.UserService&methods=getUserByName,getUserByPhone&owner=yingjun&pid=9444&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1502937435746, */com.alibaba.dubbo.demo.user.facade.UserRestService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.UserRestService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.UserRestService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&version=*, net.aimeizi.person.PersonService=empty://169.254.148.248:40001/net.aimeizi.person.PersonService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&interface=net.aimeizi.person.PersonService&methods=ping,getPersonList&organization=dubbo&owner=aimeizi&pid=38176&service.filter=serviceFilter&side=provider&timeout=10000&timestamp=1502851537384, xmlConfig/net.aimeizi.student.StudentService=empty://169.254.148.248:20880/net.aimeizi.student.StudentService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&group=xmlConfig&interface=net.aimeizi.student.StudentService&iothreads=10&methods=registerStudent,getStudent&optimizer=net.aimeizi.SerializationOptimizerImpl&organization=dubbo&owner=aimeizi&pid=38176&serialization=kryo&server=netty&side=provider&threads=500&timestamp=1502851539409, */com.alibaba.dubbo.demo.user.UserService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.user.UserService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.UserService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.user.UserService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.UserService&version=*, net.aimeizi.user.UserRestService=empty://169.254.148.248:8000/services/net.aimeizi.user.UserRestService?accepts=500&anyhost=true&application=dubbo-provider&category=configurators&check=false&connections=100&dubbo=2.8.4&extension=com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter,net.aimeizi.exception.ValidationExceptionMapper&generic=false&interface=net.aimeizi.user.UserRestService&methods=getUserById,updatePassword,post,ping,get,registerUser,deleteUserById&organization=dubbo&owner=aimeizi&pid=38176&server=tomcat&service.filter=serviceFilter&side=provider&threads=500&timeout=10000&timestamp=1502851538560&validation=true}, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:10.879 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: dubbo://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:11.315 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:11.821 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, urls: [empty://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308], dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:12.174 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:12.179 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to url rest://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:12.181 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.MessageService url rest://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613109294, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:16.487 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: rest://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:16.789 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.024 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, urls: [empty://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173], dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.026 [] [] [] INFO [main] <ServiceBean.java [108] - onApplicationEvent> < [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.CallService, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.057 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.058 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.060 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.CallService url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613117039, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.066 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: dubbo://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.321 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.664 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, urls: [empty://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043], dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.669 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.670 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to url rest://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.671 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.CallService url rest://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613117039, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.688 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: rest://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:17.996 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:18.187 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, urls: [empty://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667], dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:18.209 [] [] [] INFO [main] <Main.java [81] - main> < [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.8.4, current host: 127.0.0.1>
+2017-10-10 13:25:24.310 [] [] [] INFO [http-nio-9009-exec-1] <PropertyUtil.java [37] - loadProps> <开始加载properties文件内容.......>
+2017-10-10 13:25:24.320 [] [] [] INFO [http-nio-9009-exec-1] <PropertyUtil.java [57] - loadProps> <加载properties文件内容完成...........>
+2017-10-10 13:25:24.329 [] [] [] INFO [http-nio-9009-exec-1] <PropertyUtil.java [58] - loadProps> <properties文件内容：{dubbo.registry.address=zookeeper://127.0.0.1:2181, xh.wbh=http://172.16.1.51/qywx, xh.nbh=http://172.16.1.50/qywx }>
+2017-10-10 13:25:24.345 [] [] [] INFO [http-nio-9009-exec-1] <MessageServiceImpl.java [59] - sendTextMessage> <post {
+} to null/wechat/qyapi/sendTextMessage>
+2017-10-10 13:25:24.380 [] [] [] ERROR [http-nio-9009-exec-1] <ExceptionFilter.java [87] - invoke> < [DUBBO] Got unchecked and undeclared exception which called by 127.0.0.1. service: com.ludateam.wechat.api.MessageService, method: sendTextMessage, exception: java.lang.RuntimeException: java.net.MalformedURLException: no protocol: null/wechat/qyapi/sendTextMessage, dubbo version: 2.8.4, current host: 127.0.0.1>
+java.lang.RuntimeException: java.net.MalformedURLException: no protocol: null/wechat/qyapi/sendTextMessage
+	at com.ludateam.wechat.kit.HttpKit.post(HttpKit.java:182)
+	at com.ludateam.wechat.kit.HttpKit.post(HttpKit.java:195)
+	at com.ludateam.wechat.services.MessageServiceImpl.sendTextMessage(MessageServiceImpl.java:61)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ContextFilter.invoke(ContextFilter.java:70)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.GenericFilter.invoke(GenericFilter.java:132)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ClassLoaderFilter.invoke(ClassLoaderFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.EchoFilter.invoke(EchoFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.sendTextMessage(proxy0.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:288)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:242)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:229)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at com.alibaba.dubbo.rpc.protocol.rest.DubboHttpServer$RestHandler.handle(DubboHttpServer.java:86)
+	at com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet.service(DispatcherServlet.java:64)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:534)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1081)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.MalformedURLException: no protocol: null/wechat/qyapi/sendTextMessage
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at com.ludateam.wechat.kit.HttpKit.getHttpConnection(HttpKit.java:116)
+	at com.ludateam.wechat.kit.HttpKit.post(HttpKit.java:172)
+	... 59 more

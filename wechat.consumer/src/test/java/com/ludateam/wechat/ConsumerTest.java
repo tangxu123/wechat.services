@@ -4,7 +4,7 @@ import com.alibaba.dubbo.rpc.RpcContext;
 import com.alibaba.fastjson.JSONObject;
 
 import com.ludateam.wechat.api.MessageService;
-import com.ludateam.wechat.api.UserService;
+
 import com.ludateam.wechat.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -23,18 +23,18 @@ public class ConsumerTest {
 
     private final Logger log = LoggerFactory.getLogger(ConsumerTest.class);
 
-    @Autowired
-    private UserService userService;
+    //@Autowired
+    //private UserService userService;
 
-    @Autowired
-    private MessageService messageService;
+    //@Autowired
+   // private MessageService messageService;
 
     @Test
     public void test() {
         try {
-            messageService.sendTextMessage("test");
-            User user = userService.getUserByPhone("1233523452");
-            log.info(JSONObject.toJSONString(user));
+            //messageService.sendTextMessage("test");
+            //User user = userService.getUserByPhone("1233523452");
+           //l//og.info(JSONObject.toJSONString(user));
         } catch (Exception e) {
             log.error(e.getMessage());
         }

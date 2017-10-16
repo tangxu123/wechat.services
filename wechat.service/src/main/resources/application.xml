@@ -58,4 +58,5 @@
     <dubbo:service interface="com.ludateam.wechat.api.MessageService" ref="messageService"/>
 
     <dubbo:service interface="com.ludateam.wechat.api.CallService" ref="ludaService"/>
+    <dubbo:service interface="com.ludateam.wechat.api.WechatPayService" ref="wechatPayService"/>
 </beans>

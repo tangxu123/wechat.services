@@ -42,7 +42,7 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
     @Path("/callService")
     public String callService(@QueryParam("subUrl") String subUrl,  @QueryParam("target") String target, @Context HttpServletRequest request) {
         String send_param = HttpKit.readData(request);
-        HashMap<String, String> headers = new HashMap<>();
+        HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
 
         logger.info("get target: " + target );

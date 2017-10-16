@@ -179,10 +179,10 @@
         <!--spring end -->
 		<dependency>
 		    <groupId>com.oracle</groupId>
-		    <artifactId>ojdbc5</artifactId>
-		    <version>5.0</version>
-		    <scope>test</scope>
-		</dependency>
+            <artifactId>ojdbc14</artifactId>
+            <version>10.2.0.5.0</version>
+
+        </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
@@ -213,5 +213,15 @@
 		    <artifactId>commons-pool</artifactId>
 		    <version>1.6</version>
 		</dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.0.26</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>sqljdbc4</artifactId>
+            <version>4.0</version>
+        </dependency>
     </dependencies>
 </project>

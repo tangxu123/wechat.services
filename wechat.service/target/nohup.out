@@ -1,0 +1,245 @@
+2017-08-18 16:56:58,606 INFO[?:?]- using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2017-08-18 16:56:58,676 INFO[com.alibaba.dubbo.container.Main:58]-  [DUBBO] Use container type([spring]) to run dubbo serivce., dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:56:58,895 INFO[org.springframework.context.support.AbstractApplicationContext:573]- Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cef4e59: startup date [Fri Aug 18 16:56:58 CST 2017]; root of context hierarchy
+2017-08-18 16:56:58,994 INFO[org.springframework.beans.factory.xml.XmlBeanDefinitionReader:317]- Loading XML bean definitions from URL [jar:file:/usr/local/wechatservice/wechat.service-1.0.0.jar!/META-INF/spring/application.xml]
+2017-08-18 16:57:00,252 INFO[com.alibaba.dubbo.config.spring.ServiceBean:108]-  [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.UserService, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,473 INFO[com.alibaba.dubbo.config.ServiceConfig:518]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,475 INFO[com.alibaba.dubbo.config.ServiceConfig:474]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to url dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,475 INFO[com.alibaba.dubbo.config.ServiceConfig:485]-  [DUBBO] Register dubbo service com.ludateam.wechat.api.UserService url dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284 to registry registry://172.16.5.201:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=3395&registry=zookeeper&timestamp=1503046620260, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,796 INFO[com.alibaba.dubbo.remoting.transport.AbstractServer:70]-  [DUBBO] Start NettyServer bind /0.0.0.0:20990, export /172.16.5.202:20990, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,828 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:232]-  [DUBBO] Load registry store file /root/.dubbo/dubbo-registry-172.16.5.201.cache, data: {com.ludateam.wechat.api.UserService=empty://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3357&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046464900}, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,855 INFO[org.I0Itec.zkclient.ZkEventThread:64]- Starting ZkClient event thread.
+2017-08-18 16:57:00,869 INFO[org.apache.zookeeper.Environment:100]- Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-08-18 16:57:00,869 INFO[org.apache.zookeeper.Environment:100]- Client environment:host.name=localhost
+2017-08-18 16:57:00,869 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.version=1.8.0_144
+2017-08-18 16:57:00,870 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.vendor=Oracle Corporation
+2017-08-18 16:57:00,870 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.home=/usr/java/jdk1.8.0_144/jre
+2017-08-18 16:57:00,870 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.class.path=wechat.service-1.0.0.jar
+2017-08-18 16:57:00,876 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.library.path=/usr/local/lib:/usr/lib/oracle/11.2/client64/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.io.tmpdir=/tmp
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.compiler=<NA>
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:os.name=Linux
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:os.arch=amd64
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:os.version=3.10.0-514.26.2.el7.x86_64
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:user.name=root
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:user.home=/root
+2017-08-18 16:57:00,877 INFO[org.apache.zookeeper.Environment:100]- Client environment:user.dir=/usr/local/wechatservice
+2017-08-18 16:57:00,878 INFO[org.apache.zookeeper.ZooKeeper:438]- Initiating client connection, connectString=172.16.5.201:2181 sessionTimeout=60000 watcher=org.I0Itec.zkclient.ZkClient@6f43c82
+2017-08-18 16:57:00,906 INFO[org.I0Itec.zkclient.ZkClient:935]- Waiting for keeper state SyncConnected
+2017-08-18 16:57:00,908 INFO[org.apache.zookeeper.ClientCnxn$SendThread:975]- Opening socket connection to server 172.16.5.201/172.16.5.201:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-08-18 16:57:00,945 INFO[org.apache.zookeeper.ClientCnxn$SendThread:852]- Socket connection established to 172.16.5.201/172.16.5.201:2181, initiating session
+2017-08-18 16:57:00,952 INFO[org.apache.zookeeper.ClientCnxn$SendThread:1235]- Session establishment complete on server 172.16.5.201/172.16.5.201:2181, sessionid = 0x15df42bc4610014, negotiated timeout = 40000
+2017-08-18 16:57:00,956 INFO[org.I0Itec.zkclient.ZkClient:712]- zookeeper state changed (SyncConnected)
+2017-08-18 16:57:00,957 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:302]-  [DUBBO] Register: dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:00,986 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:325]-  [DUBBO] Subscribe: provider://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:01,008 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:422]-  [DUBBO] Notify urls for subscribe url provider://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, urls: [empty://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284], dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:01,092 INFO[com.alibaba.dubbo.config.ServiceConfig:518]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:01,092 INFO[com.alibaba.dubbo.config.ServiceConfig:474]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to url rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:57:01,092 INFO[com.alibaba.dubbo.config.ServiceConfig:485]-  [DUBBO] Register dubbo service com.ludateam.wechat.api.UserService url rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091 to registry registry://172.16.5.201:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=3395&registry=zookeeper&timestamp=1503046620260, dubbo version: 2.8.4, current host: 127.0.0.1
+Aug 18, 2017 4:57:01 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-9009"]
+Aug 18, 2017 4:57:01 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Aug 18, 2017 4:57:01 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Tomcat
+Aug 18, 2017 4:57:01 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/8.0.11
+Aug 18, 2017 4:58:00 PM org.apache.catalina.util.SessionIdGenerator createSecureRandom
+INFO: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [58,541] milliseconds.
+Aug 18, 2017 4:58:00 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-9009"]
+2017-08-18 16:58:00,675 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:302]-  [DUBBO] Register: rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,701 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:325]-  [DUBBO] Subscribe: provider://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,720 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:422]-  [DUBBO] Notify urls for subscribe url provider://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, urls: [empty://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091], dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,721 INFO[com.alibaba.dubbo.config.spring.ServiceBean:108]-  [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.MessageService, dubbo version: 2.8.4, current host: 127.0.0.1
+java.lang.RuntimeException: [source error] sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl
+	at com.alibaba.dubbo.common.bytecode.ClassGenerator.toClass(ClassGenerator.java:354)
+	at com.alibaba.dubbo.common.bytecode.ClassGenerator.toClass(ClassGenerator.java:293)
+	at com.alibaba.dubbo.common.bytecode.Wrapper.makeWrapper(Wrapper.java:346)
+	at com.alibaba.dubbo.common.bytecode.Wrapper.getWrapper(Wrapper.java:89)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory.getInvoker(JavassistProxyFactory.java:40)
+	at com.alibaba.dubbo.rpc.proxy.wrapper.StubProxyFactoryWrapper.getInvoker(StubProxyFactoryWrapper.java:104)
+	at com.alibaba.dubbo.rpc.ProxyFactory$Adpative.getInvoker(ProxyFactory$Adpative.java)
+	at com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:516)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:469)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:285)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:246)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:145)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:110)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:163)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:136)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:380)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:850)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+Caused by: javassist.CannotCompileException: [source error] sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl
+	at javassist.CtNewMethod.make(CtNewMethod.java:79)
+	at javassist.CtNewMethod.make(CtNewMethod.java:45)
+	at com.alibaba.dubbo.common.bytecode.ClassGenerator.toClass(ClassGenerator.java:322)
+	... 22 more
+Caused by: compile error: sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl
+	at javassist.compiler.TypeChecker.atMethodCallCore(TypeChecker.java:723)
+	at javassist.compiler.TypeChecker.atCallExpr(TypeChecker.java:688)
+	at javassist.compiler.JvstTypeChecker.atCallExpr(JvstTypeChecker.java:157)
+	at javassist.compiler.ast.CallExpr.accept(CallExpr.java:46)
+	at javassist.compiler.JvstTypeChecker.atCastToWrapper(JvstTypeChecker.java:126)
+	at javassist.compiler.JvstTypeChecker.atCastExpr(JvstTypeChecker.java:98)
+	at javassist.compiler.ast.CastExpr.accept(CastExpr.java:55)
+	at javassist.compiler.CodeGen.doTypeCheck(CodeGen.java:242)
+	at javassist.compiler.CodeGen.compileExpr(CodeGen.java:229)
+	at javassist.compiler.CodeGen.atReturnStmnt2(CodeGen.java:598)
+	at javassist.compiler.JvstCodeGen.atReturnStmnt(JvstCodeGen.java:425)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:363)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:351)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atIfStmnt(CodeGen.java:391)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:355)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:351)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.MemberCodeGen.atTryStmnt(MemberCodeGen.java:204)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:367)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:351)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atMethodBody(CodeGen.java:292)
+	at javassist.compiler.CodeGen.atMethodDecl(CodeGen.java:274)
+	at javassist.compiler.ast.MethodDecl.accept(MethodDecl.java:44)
+	at javassist.compiler.Javac.compileMethod(Javac.java:169)
+	at javassist.compiler.Javac.compile(Javac.java:95)
+	at javassist.CtNewMethod.make(CtNewMethod.java:74)
+	... 24 more
+2017-08-18 16:58:00,911 ERROR[com.alibaba.dubbo.container.Main:86]-  [DUBBO] [source error] sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl, dubbo version: 2.8.4, current host: 127.0.0.1
+java.lang.RuntimeException: [source error] sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl
+	at com.alibaba.dubbo.common.bytecode.ClassGenerator.toClass(ClassGenerator.java:354)
+	at com.alibaba.dubbo.common.bytecode.ClassGenerator.toClass(ClassGenerator.java:293)
+	at com.alibaba.dubbo.common.bytecode.Wrapper.makeWrapper(Wrapper.java:346)
+	at com.alibaba.dubbo.common.bytecode.Wrapper.getWrapper(Wrapper.java:89)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory.getInvoker(JavassistProxyFactory.java:40)
+	at com.alibaba.dubbo.rpc.proxy.wrapper.StubProxyFactoryWrapper.getInvoker(StubProxyFactoryWrapper.java:104)
+	at com.alibaba.dubbo.rpc.ProxyFactory$Adpative.getInvoker(ProxyFactory$Adpative.java)
+	at com.alibaba.dubbo.config.ServiceConfig.exportLocal(ServiceConfig.java:516)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrlsFor1Protocol(ServiceConfig.java:469)
+	at com.alibaba.dubbo.config.ServiceConfig.doExportUrls(ServiceConfig.java:285)
+	at com.alibaba.dubbo.config.ServiceConfig.doExport(ServiceConfig.java:246)
+	at com.alibaba.dubbo.config.ServiceConfig.export(ServiceConfig.java:145)
+	at com.alibaba.dubbo.config.spring.ServiceBean.onApplicationEvent(ServiceBean.java:110)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:163)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:136)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:380)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:334)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:850)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:540)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.alibaba.dubbo.container.spring.SpringContainer.start(SpringContainer.java:50)
+	at com.alibaba.dubbo.container.Main.main(Main.java:80)
+Caused by: javassist.CannotCompileException: [source error] sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl
+	at javassist.CtNewMethod.make(CtNewMethod.java:79)
+	at javassist.CtNewMethod.make(CtNewMethod.java:45)
+	at com.alibaba.dubbo.common.bytecode.ClassGenerator.toClass(ClassGenerator.java:322)
+	... 22 more
+Caused by: compile error: sendTextMessage(java.lang.String) not found in com.ludateam.wechat.services.MessageServiceImpl
+	at javassist.compiler.TypeChecker.atMethodCallCore(TypeChecker.java:723)
+	at javassist.compiler.TypeChecker.atCallExpr(TypeChecker.java:688)
+	at javassist.compiler.JvstTypeChecker.atCallExpr(JvstTypeChecker.java:157)
+	at javassist.compiler.ast.CallExpr.accept(CallExpr.java:46)
+	at javassist.compiler.JvstTypeChecker.atCastToWrapper(JvstTypeChecker.java:126)
+	at javassist.compiler.JvstTypeChecker.atCastExpr(JvstTypeChecker.java:98)
+	at javassist.compiler.ast.CastExpr.accept(CastExpr.java:55)
+	at javassist.compiler.CodeGen.doTypeCheck(CodeGen.java:242)
+	at javassist.compiler.CodeGen.compileExpr(CodeGen.java:229)
+	at javassist.compiler.CodeGen.atReturnStmnt2(CodeGen.java:598)
+	at javassist.compiler.JvstCodeGen.atReturnStmnt(JvstCodeGen.java:425)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:363)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:351)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atIfStmnt(CodeGen.java:391)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:355)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:351)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.MemberCodeGen.atTryStmnt(MemberCodeGen.java:204)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:367)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atStmnt(CodeGen.java:351)
+	at javassist.compiler.ast.Stmnt.accept(Stmnt.java:50)
+	at javassist.compiler.CodeGen.atMethodBody(CodeGen.java:292)
+	at javassist.compiler.CodeGen.atMethodDecl(CodeGen.java:274)
+	at javassist.compiler.ast.MethodDecl.accept(MethodDecl.java:44)
+	at javassist.compiler.Javac.compileMethod(Javac.java:169)
+	at javassist.compiler.Javac.compile(Javac.java:95)
+	at javassist.CtNewMethod.make(CtNewMethod.java:74)
+	... 24 more
+2017-08-18 16:58:00,923 INFO[com.alibaba.dubbo.config.AbstractConfig$1:450]-  [DUBBO] Run shutdown hook now., dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,926 INFO[com.alibaba.dubbo.registry.support.AbstractRegistryFactory:63]-  [DUBBO] Close all registries [zookeeper://172.16.5.201:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&interface=com.alibaba.dubbo.registry.RegistryService&owner=ludateam&pid=3395&timestamp=1503046620260], dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,926 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:485]-  [DUBBO] Destroy registry:zookeeper://172.16.5.201:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&interface=com.alibaba.dubbo.registry.RegistryService&owner=ludateam&pid=3395&timestamp=1503046620260, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,926 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:312]-  [DUBBO] Unregister: dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,957 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:494]-  [DUBBO] Destroy unregister url dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,957 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:312]-  [DUBBO] Unregister: rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,995 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:494]-  [DUBBO] Destroy unregister url rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,995 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:343]-  [DUBBO] Unsubscribe: provider://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,997 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:510]-  [DUBBO] Destroy unsubscribe url provider://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,997 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:343]-  [DUBBO] Unsubscribe: provider://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,998 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:510]-  [DUBBO] Destroy unsubscribe url provider://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:00,998 INFO[org.I0Itec.zkclient.ZkEventThread:82]- Terminate ZkClient event thread.
+2017-08-18 16:58:01,068 INFO[org.apache.zookeeper.ClientCnxn$EventThread:512]- EventThread shut down
+2017-08-18 16:58:01,069 INFO[org.apache.zookeeper.ZooKeeper:684]- Session: 0x15df42bc4610014 closed
+2017-08-18 16:58:01,070 INFO[com.alibaba.dubbo.rpc.protocol.dubbo.DubboProtocol:439]-  [DUBBO] Close dubbo server: /172.16.5.202:20990, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:01,073 INFO[com.alibaba.dubbo.remoting.transport.AbstractServer:147]-  [DUBBO] Close NettyServer bind /0.0.0.0:20990, export /172.16.5.202:20990, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:01,086 INFO[com.alibaba.dubbo.rpc.protocol.AbstractProtocol:76]-  [DUBBO] Unexport service: dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046620284, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:01,088 INFO[com.alibaba.dubbo.rpc.protocol.AbstractProtocol:76]-  [DUBBO] Unexport service: injvm://127.0.0.1/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:01,095 INFO[com.alibaba.dubbo.rpc.protocol.rest.RestProtocol:205]-  [DUBBO] Closing the rest server at 172.16.5.202:9009, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:58:01,121 INFO[com.alibaba.dubbo.rpc.protocol.rest.RestProtocol:215]-  [DUBBO] Closing rest clients, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:10,679 INFO[?:?]- using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+2017-08-18 16:59:10,749 INFO[com.alibaba.dubbo.container.Main:58]-  [DUBBO] Use container type([spring]) to run dubbo serivce., dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:10,958 INFO[org.springframework.context.support.AbstractApplicationContext:573]- Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7cef4e59: startup date [Fri Aug 18 16:59:10 CST 2017]; root of context hierarchy
+2017-08-18 16:59:11,028 INFO[org.springframework.beans.factory.xml.XmlBeanDefinitionReader:317]- Loading XML bean definitions from URL [jar:file:/usr/local/wechatservice/wechat.service-1.0.0.jar!/META-INF/spring/application.xml]
+2017-08-18 16:59:12,336 INFO[com.alibaba.dubbo.config.spring.ServiceBean:108]-  [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.UserService, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:12,630 INFO[com.alibaba.dubbo.config.ServiceConfig:518]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:12,631 INFO[com.alibaba.dubbo.config.ServiceConfig:474]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to url dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046752394, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:12,632 INFO[com.alibaba.dubbo.config.ServiceConfig:485]-  [DUBBO] Register dubbo service com.ludateam.wechat.api.UserService url dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046752394 to registry registry://172.16.5.201:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=3424&registry=zookeeper&timestamp=1503046752357, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:12,965 INFO[com.alibaba.dubbo.remoting.transport.AbstractServer:70]-  [DUBBO] Start NettyServer bind /0.0.0.0:20990, export /172.16.5.202:20990, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,013 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:232]-  [DUBBO] Load registry store file /root/.dubbo/dubbo-registry-172.16.5.201.cache, data: {com.ludateam.wechat.api.UserService=empty://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3395&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046621091}, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,054 INFO[org.I0Itec.zkclient.ZkEventThread:64]- Starting ZkClient event thread.
+2017-08-18 16:59:13,086 INFO[org.apache.zookeeper.Environment:100]- Client environment:zookeeper.version=3.4.6-1569965, built on 02/20/2014 09:09 GMT
+2017-08-18 16:59:13,086 INFO[org.apache.zookeeper.Environment:100]- Client environment:host.name=localhost
+2017-08-18 16:59:13,094 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.version=1.8.0_144
+2017-08-18 16:59:13,098 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.vendor=Oracle Corporation
+2017-08-18 16:59:13,098 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.home=/usr/java/jdk1.8.0_144/jre
+2017-08-18 16:59:13,099 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.class.path=wechat.service-1.0.0.jar
+2017-08-18 16:59:13,108 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.library.path=/usr/local/lib:/usr/lib/oracle/11.2/client64/lib:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2017-08-18 16:59:13,109 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.io.tmpdir=/tmp
+2017-08-18 16:59:13,110 INFO[org.apache.zookeeper.Environment:100]- Client environment:java.compiler=<NA>
+2017-08-18 16:59:13,116 INFO[org.apache.zookeeper.Environment:100]- Client environment:os.name=Linux
+2017-08-18 16:59:13,117 INFO[org.apache.zookeeper.Environment:100]- Client environment:os.arch=amd64
+2017-08-18 16:59:13,117 INFO[org.apache.zookeeper.Environment:100]- Client environment:os.version=3.10.0-514.26.2.el7.x86_64
+2017-08-18 16:59:13,118 INFO[org.apache.zookeeper.Environment:100]- Client environment:user.name=root
+2017-08-18 16:59:13,119 INFO[org.apache.zookeeper.Environment:100]- Client environment:user.home=/root
+2017-08-18 16:59:13,120 INFO[org.apache.zookeeper.Environment:100]- Client environment:user.dir=/usr/local/wechatservice
+2017-08-18 16:59:13,122 INFO[org.apache.zookeeper.ZooKeeper:438]- Initiating client connection, connectString=172.16.5.201:2181 sessionTimeout=60000 watcher=org.I0Itec.zkclient.ZkClient@58e1d9d
+2017-08-18 16:59:13,170 INFO[org.I0Itec.zkclient.ZkClient:935]- Waiting for keeper state SyncConnected
+2017-08-18 16:59:13,172 INFO[org.apache.zookeeper.ClientCnxn$SendThread:975]- Opening socket connection to server 172.16.5.201/172.16.5.201:2181. Will not attempt to authenticate using SASL (unknown error)
+2017-08-18 16:59:13,231 INFO[org.apache.zookeeper.ClientCnxn$SendThread:852]- Socket connection established to 172.16.5.201/172.16.5.201:2181, initiating session
+2017-08-18 16:59:13,246 INFO[org.apache.zookeeper.ClientCnxn$SendThread:1235]- Session establishment complete on server 172.16.5.201/172.16.5.201:2181, sessionid = 0x15df42bc4610015, negotiated timeout = 40000
+2017-08-18 16:59:13,258 INFO[org.I0Itec.zkclient.ZkClient:712]- zookeeper state changed (SyncConnected)
+2017-08-18 16:59:13,263 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:302]-  [DUBBO] Register: dubbo://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046752394, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,331 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:325]-  [DUBBO] Subscribe: provider://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046752394, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,352 INFO[com.alibaba.dubbo.registry.support.AbstractRegistry:422]-  [DUBBO] Notify urls for subscribe url provider://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046752394, urls: [empty://172.16.5.202:20990/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&side=provider&timestamp=1503046752394], dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,454 INFO[com.alibaba.dubbo.config.ServiceConfig:518]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,455 INFO[com.alibaba.dubbo.config.ServiceConfig:474]-  [DUBBO] Export dubbo service com.ludateam.wechat.api.UserService to url rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046753453, dubbo version: 2.8.4, current host: 127.0.0.1
+2017-08-18 16:59:13,455 INFO[com.alibaba.dubbo.config.ServiceConfig:485]-  [DUBBO] Register dubbo service com.ludateam.wechat.api.UserService url rest://172.16.5.202:9009/com.ludateam.wechat.api.UserService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=3424&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1503046753453 to registry registry://172.16.5.201:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=3424&registry=zookeeper&timestamp=1503046752357, dubbo version: 2.8.4, current host: 127.0.0.1
+Aug 18, 2017 4:59:14 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-9009"]
+Aug 18, 2017 4:59:14 PM org.apache.tomcat.util.net.NioSelectorPool getSharedSelector
+INFO: Using a shared selector for servlet write/read
+Aug 18, 2017 4:59:14 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Tomcat
+Aug 18, 2017 4:59:14 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/8.0.11

@@ -1,0 +1,2435 @@
+2017-10-10 13:01:39.047 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:01:39.383 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:01:39.634 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:01:39.642 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:01:39.644 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:01:39.865 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:01:39.873 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:01:42.016 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:01:42.549 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:01:42.554 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:01:42.557 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:01:43.034 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:01:43.037 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:01:43.039 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:01:43.042 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:01:43.047 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:01:43.053 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:01:43.060 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:01:43.063 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:01:43.066 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:01:43.067 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:01:43.069 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:01:43.070 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:01:43.072 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:01:43.074 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:01:43.076 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:01:43.078 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:01:43.082 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:01:43.083 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:01:43.085 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:01:43.086 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:01:43.579 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:06:07.128 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:06:07.215 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:06:07.225 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:06:07.232 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:06:07.234 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:06:07.240 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:06:07.245 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:06:07.284 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:06:07.307 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:06:07.308 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:06:07.310 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:06:07.379 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:06:07.380 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:06:07.382 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:06:07.383 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:06:07.385 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:06:07.388 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:06:07.390 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:06:07.392 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:06:07.394 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:06:07.396 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:06:07.398 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:06:07.399 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:06:07.401 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:06:07.403 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:06:07.404 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:06:07.407 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:06:07.408 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:06:07.410 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:06:07.411 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:06:07.413 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:06:07.427 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:08:01.136 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:08:01.213 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:08:01.217 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:08:01.222 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:08:01.222 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:08:01.224 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:08:01.225 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:08:01.258 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:08:01.279 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:08:01.279 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:08:01.280 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:08:01.338 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:08:01.339 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:08:01.339 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:08:01.340 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:08:01.340 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:08:01.341 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:08:01.342 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:08:01.342 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:08:01.342 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:08:01.343 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:08:01.343 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:08:01.343 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:08:01.344 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:08:01.344 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:08:01.345 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:08:01.346 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:08:01.347 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:08:01.347 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:08:01.348 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:08:01.349 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:08:01.364 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:08:04.477 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:08:04.553 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:08:04.559 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:08:04.565 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:08:04.567 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:08:04.573 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:08:04.577 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:08:04.636 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:08:04.660 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:08:04.662 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:08:04.663 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:08:04.728 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:08:04.730 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:08:04.732 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:08:04.733 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:08:04.734 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:08:04.737 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:08:04.739 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:08:04.741 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:08:04.742 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:08:04.744 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:08:04.746 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:08:04.747 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:08:04.749 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:08:04.750 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:08:04.752 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:08:04.754 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:08:04.756 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:08:04.758 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:08:04.759 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:08:04.761 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:08:04.778 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:09:42.854 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:09:42.936 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:09:42.942 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:09:42.948 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:09:42.950 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:09:42.956 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:09:42.960 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:09:42.995 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:09:43.016 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:09:43.018 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:09:43.019 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:09:43.089 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:09:43.091 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:09:43.093 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:09:43.094 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:09:43.096 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:09:43.098 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:09:43.099 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:09:43.101 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:09:43.102 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:09:43.104 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:09:43.106 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:09:43.108 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:09:43.110 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:09:43.111 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:09:43.113 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:09:43.115 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:09:43.117 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:09:43.118 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:09:43.120 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:09:43.121 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:09:43.136 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:16:42.748 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:16:42.833 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:16:42.838 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:16:42.844 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:16:42.845 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:16:42.851 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:16:42.855 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:16:42.891 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:16:42.912 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:16:42.913 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:16:42.915 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:16:42.992 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:16:42.993 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:16:42.995 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:16:42.996 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:16:42.997 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:16:43.000 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:16:43.002 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:16:43.003 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:16:43.005 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:16:43.006 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:16:43.008 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:16:43.010 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:16:43.011 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:16:43.013 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:16:43.014 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:16:43.016 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:16:43.018 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:16:43.019 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:16:43.021 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:16:43.022 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:16:43.036 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:17:00.782 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:17:00.868 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:17:00.873 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:17:00.879 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:17:00.880 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:17:00.886 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:17:00.891 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:17:00.930 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:17:00.951 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:17:00.954 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:17:00.958 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:17:01.027 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:17:01.028 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:17:01.030 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:17:01.032 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:17:01.033 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:17:01.037 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:17:01.039 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:17:01.041 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:17:01.043 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:17:01.045 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:17:01.046 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:17:01.048 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:17:01.049 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:17:01.051 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:17:01.052 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:17:01.054 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:17:01.057 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:17:01.058 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:17:01.062 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:17:01.063 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:17:01.081 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:24:28.049 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:24:28.128 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:24:28.134 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:24:28.141 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:24:28.143 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:24:28.148 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:24:28.152 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:24:28.195 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:24:28.215 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:24:28.217 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:24:28.219 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:24:28.281 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:24:28.283 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:24:28.284 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:24:28.285 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:24:28.286 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:24:28.290 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:24:28.292 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:24:28.293 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:24:28.295 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:24:28.296 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:24:28.297 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:24:28.298 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:24:28.300 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:24:28.301 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:24:28.303 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:24:28.305 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:24:28.307 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:24:28.308 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:24:28.310 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:24:28.311 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:24:28.327 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:24:50.321 [] [] [] INFO [main] <Run.java [55] - <clinit>> <configConstant 视图Beetl设置> 
+2017-10-10 13:24:50.400 [] [] [] DEBUG [main] <ToolBeetl.java [45] - regiseter> <注册全局web视图模板解析> 
+2017-10-10 13:24:50.405 [] [] [] DEBUG [main] <ToolBeetl.java [62] - regiseter> <注册全局BeetlKit模板解析> 
+2017-10-10 13:24:50.412 [] [] [] INFO [main] <Run.java [60] - <clinit>> <注册paltform ActiveRecordPlugin> 
+2017-10-10 13:24:50.414 [] [] [] INFO [main] <Run.java [67] - <clinit>> <configPlugin 配置Druid数据库连接池连接属性> 
+2017-10-10 13:24:50.419 [] [] [] INFO [main] <Run.java [70] - <clinit>> <configPlugin 配置Druid数据库连接池大小> 
+2017-10-10 13:24:50.424 [] [] [] INFO [main] <Run.java [73] - <clinit>> <configPlugin 配置Druid数据库连接池过滤器配制> 
+2017-10-10 13:24:50.462 [] [] [] INFO [main] <Run.java [82] - <clinit>> <configPlugin 配置ActiveRecordPlugin插件> 
+2017-10-10 13:24:50.481 [] [] [] INFO [main] <Run.java [94] - <clinit>> <configPlugin 数据库类型判断> 
+2017-10-10 13:24:50.482 [] [] [] INFO [main] <Run.java [100] - <clinit>> <configPlugin 使用数据库类型是 mysql> 
+2017-10-10 13:24:50.484 [] [] [] INFO [main] <Run.java [118] - <clinit>> <configPlugin 表自动扫描注册> 
+2017-10-10 13:24:50.546 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.stationoperator.StationOperator, tableName = pt_stationoperator, pkName: ids> 
+2017-10-10 13:24:50.547 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.module.Module, tableName = pt_module, pkName: ids> 
+2017-10-10 13:24:50.549 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.roleoperator.RoleOperator, tableName = pt_roleoperator, pkName: ids> 
+2017-10-10 13:24:50.550 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dept.Department, tableName = pt_department, pkName: ids> 
+2017-10-10 13:24:50.553 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.group.Group, tableName = pt_group, pkName: ids> 
+2017-10-10 13:24:50.556 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.resources.Resources, tableName = pt_resources, pkName: ids> 
+2017-10-10 13:24:50.558 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.systems.Systems, tableName = pt_systems, pkName: ids> 
+2017-10-10 13:24:50.559 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.operator.Operator, tableName = pt_operator, pkName: ids> 
+2017-10-10 13:24:50.561 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.station.Station, tableName = pt_station, pkName: ids> 
+2017-10-10 13:24:50.562 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.upload.Upload, tableName = pt_upload, pkName: ids> 
+2017-10-10 13:24:50.564 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.UserInfo, tableName = pt_userinfo, pkName: ids> 
+2017-10-10 13:24:50.565 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.usergroup.UserGroup, tableName = pt_usergroup, pkName: ids> 
+2017-10-10 13:24:50.566 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.user.User, tableName = pt_user, pkName: ids> 
+2017-10-10 13:24:50.568 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.menu.Menu, tableName = pt_menu, pkName: ids> 
+2017-10-10 13:24:50.569 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.grouprole.GroupRole, tableName = pt_grouprole, pkName: ids> 
+2017-10-10 13:24:50.571 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.param.Param, tableName = pt_param, pkName: ids> 
+2017-10-10 13:24:50.572 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.role.Role, tableName = pt_role, pkName: ids> 
+2017-10-10 13:24:50.574 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.syslog.Syslog, tableName = pt_syslog, pkName: ids> 
+2017-10-10 13:24:50.575 [] [] [] DEBUG [main] <ModelScan.java [54] - scan> <Model注册： model = class com.platform.mvc.dict.Dict, tableName = pt_dict, pkName: ids> 
+2017-10-10 13:24:50.576 [] [] [] INFO [main] <Run.java [121] - <clinit>> <configPlugin 添加druidPlugin插件> 
+2017-10-10 13:24:50.590 [] [] [] INFO [main] <Run.java [124] - <clinit>> <configPlugin 注册ActiveRecordPlugin插件> 
+2017-10-10 13:24:55.129 [] [] [] INFO [main] <Run.java [128] - <clinit>> <ServicePlugin Service注解实例化加载> 
+2017-10-10 13:24:55.135 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = loginService, class = com.platform.mvc.login.LoginService> 
+2017-10-10 13:24:55.136 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = sysLogService, class = com.platform.mvc.syslog.SysLogService> 
+2017-10-10 13:24:55.137 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = dictService, class = com.platform.mvc.dict.DictService> 
+2017-10-10 13:24:55.138 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = paramService, class = com.platform.mvc.param.ParamService> 
+2017-10-10 13:24:55.139 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = groupRoleService, class = com.platform.mvc.grouprole.GroupRoleService> 
+2017-10-10 13:24:55.139 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = moduleService, class = com.platform.mvc.module.ModuleService> 
+2017-10-10 13:24:55.140 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = systemsService, class = com.platform.mvc.systems.SystemsService> 
+2017-10-10 13:24:55.142 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = departmentService, class = com.platform.mvc.dept.DepartmentService> 
+2017-10-10 13:24:55.155 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = menuService, class = com.platform.mvc.menu.MenuService> 
+2017-10-10 13:24:55.164 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = uploadService, class = com.platform.mvc.upload.UploadService> 
+2017-10-10 13:24:55.170 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = groupService, class = com.platform.mvc.group.GroupService> 
+2017-10-10 13:24:55.181 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = userGroupService, class = com.platform.mvc.usergroup.UserGroupService> 
+2017-10-10 13:24:55.188 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = imageService, class = com.platform.mvc.image.ImageService> 
+2017-10-10 13:24:55.196 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = indexService, class = com.platform.mvc.index.IndexService> 
+2017-10-10 13:24:55.203 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = roleService, class = com.platform.mvc.role.RoleService> 
+2017-10-10 13:24:55.209 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = baseService, class = com.platform.mvc.base.BaseService> 
+2017-10-10 13:24:55.226 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = operatorService, class = com.platform.mvc.operator.OperatorService> 
+2017-10-10 13:24:55.244 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = roleOperatorService, class = com.platform.mvc.roleoperator.RoleOperatorService> 
+2017-10-10 13:24:55.252 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = userService, class = com.platform.mvc.user.UserService> 
+2017-10-10 13:24:55.269 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = stationService, class = com.platform.mvc.station.StationService> 
+2017-10-10 13:24:55.277 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = resourcesService, class = com.platform.mvc.resources.ResourcesService> 
+2017-10-10 13:24:55.282 [] [] [] DEBUG [main] <ServicePlugin.java [76] - start> <Service注册： name = stationOperatorService, class = com.platform.mvc.stationoperator.StationOperatorService> 
+2017-10-10 13:24:55.293 [] [] [] INFO [main] <Run.java [131] - <clinit>> <I18NPlugin 国际化键值对加载> 
+2017-10-10 13:24:55.303 [] [] [] INFO [main] <Run.java [135] - <clinit>> <EhCachePlugin EhCache缓存> 
+2017-10-10 13:24:58.457 [] [] [] INFO [main] <Run.java [148] - <clinit>> <configPlugin SqlXmlPlugin 解析并缓存 xml sql> 
+2017-10-10 13:24:58.633 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.baseModel.select, sql content =  select ${column} from ${table} where ${condition} = ? > 
+2017-10-10 13:24:58.637 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.baseModel.update, sql content =  update ${table} set ${column} = ? where ${condition} = ? > 
+2017-10-10 13:24:58.641 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.baseModel.delete, sql content =  delete from ${table} where ${column} = ? > 
+2017-10-10 13:24:58.645 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.baseModel.deleteIn, sql content =  delete from ${table} where ids in( ${sqlIn} ) > 
+2017-10-10 13:24:58.649 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.baseModel.deleteOr, sql content =  delete from ${table} where ${sqlOr} > 
+2017-10-10 13:24:58.653 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.baseModel.splitPageSelect, sql content =  select * > 
+2017-10-10 13:24:58.662 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.db2.getTableComments, sql content =  select lower(t.name) name, lower(t.remarks) remarks from SYSIBM.SYSTABLES t where creator = ? and name = upper(?) > 
+2017-10-10 13:24:58.664 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.db2.getColumnComments, sql content =  select lower(t.colname) colname, lower(t.typename) typename, t.length, t.remarks from syscat.columns t where tabschema = ? and tabname = upper(?) > 
+2017-10-10 13:24:58.672 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.mysql.getDatabase, sql content =  show databases > 
+2017-10-10 13:24:58.676 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.mysql.getTables, sql content =  select * from tables where table_schema = ? and table_name = ? > 
+2017-10-10 13:24:58.679 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.mysql.getColumns, sql content =  select * from columns where table_schema = ? and table_name = ? > 
+2017-10-10 13:24:58.690 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.oracle.getTableComments, sql content =  select * from all_tab_comments where owner = upper(?) and table_name = upper(?) > 
+2017-10-10 13:24:58.693 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.oracle.getColumnComments, sql content =  select t1.* , (select t2.comments from all_col_comments t2 where t2.COLUMN_NAME = t1.COLUMN_NAME and owner = upper(?) and table_name=upper(?)) as comments from user_tab_columns t1 where t1.table_name=upper(?) > 
+2017-10-10 13:24:58.698 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.postgresql.getDatabase, sql content =  select datname from pg_database > 
+2017-10-10 13:24:58.701 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.postgresql.getTables, sql content =  select tablename from pg_tables where tablename not like 'pg%' and tablename not like 'sql_%' order by tablename asc > 
+2017-10-10 13:24:58.704 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.postgresql.getColumns, sql content =  select column_name, data_type, character_maximum_length from information_schema.columns where table_name = ? > 
+2017-10-10 13:24:58.713 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.postgresql.getColumnsInfo, sql content =  select tbl.tablename, des.objsubid, des.description, (select att.attname from pg_attribute att where c.oid = att.attrelid and des.objsubid = att.attnum) attname from pg_tables as tbl inner join pg_class c ON tbl.tablename = c.relname left join pg_description as des ON c.oid = des.objoid where tbl.schemaname != 'pg_catalog' AND tbl.schemaname != 'information_schema' and tbl.tablename = ? order by des.objsubid asc > 
+2017-10-10 13:24:58.716 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.postgresql.treeSql, sql content =  WITH RECURSIVE ptTree AS ( SELECT * FROM pt_station WHERE (parentstationids is null or parentstationids = '') union ALL SELECT pt_station.* FROM pt_station, ptTree WHERE pt_station.parentstationids = ptTree.ids ) SELECT * FROM ptTree > 
+2017-10-10 13:24:58.723 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.sqlserver.getTables, sql content =  select a.name, b.value from sysobjects a left join sys.extended_properties b on a.id=b.major_id and b.minor_id=0 where xtype='U' and a.name = ? > 
+2017-10-10 13:24:58.726 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.base, sql key = platform.sqlserver.getColumns, sql content =  select a.name, b.name type, a.length, isnull(g.[value],'') remarks from syscolumns a left join systypes b on a.xusertype=b.xusertype inner join sysobjects d on a.id=d.id and d.xtype='U' and d.name <> 'dtproperties' left join sys.extended_properties g on a.id=G.major_id and a.colid = g.minor_id where d.name = ? order by a.id, a.colorder > 
+2017-10-10 13:24:58.731 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dept, sql key = platform.department.rootNode, sql content =  select ids, names, isparent, images from pt_department where parentDepartmentIds is null order by orderIds asc > 
+2017-10-10 13:24:58.733 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dept, sql key = platform.department.childNode, sql content =  select ids, names, isparent, images from pt_department where parentDepartmentIds = ? order by orderIds asc > 
+2017-10-10 13:24:58.736 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dept, sql key = platform.department.childCount, sql content =  select count(*) as counts from pt_department where parentdepartmentids = ? > 
+2017-10-10 13:24:58.741 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dept, sql key = platform.department.userCount, sql content =  select count(*) as counts from pt_user where departmentids = ? > 
+2017-10-10 13:24:58.751 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.all, sql content =  select ids from pt_dict > 
+2017-10-10 13:24:58.752 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.treeTableNodeRoot, sql content =  select * from pt_dict where parentids is null order by orderIds asc > 
+2017-10-10 13:24:58.756 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.treeTableChildNode, sql content =  select * from pt_dict where parentids=? order by orderIds asc > 
+2017-10-10 13:24:58.759 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.treeNodeRoot, sql content =  select ids, names, isparent, images, status from pt_dict where parentIds is null order by orderIds asc > 
+2017-10-10 13:24:58.765 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.treeChildNode, sql content =  select ids, names, isparent, images, status from pt_dict where parentIds = ? order by orderids asc > 
+2017-10-10 13:24:58.771 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.idAndI18n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_dict where ids = ? > 
+2017-10-10 13:24:58.778 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.numbers, sql content =  select * from pt_dict where numbers = ? > 
+2017-10-10 13:24:58.781 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.numbersAndI18n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_dict where numbers = ? > 
+2017-10-10 13:24:58.786 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.child, sql content =  select * from pt_dict where parentids = ? and status = '1' order by orderids asc > 
+2017-10-10 13:24:58.789 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.childAndI8n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_dict where parentids = ? and status = '1' order by orderids asc > 
+2017-10-10 13:24:58.794 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.parent, sql content =  select * from pt_dict where ids = ? > 
+2017-10-10 13:24:58.798 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.parentAndI18n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_dict where ids = ? > 
+2017-10-10 13:24:58.802 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.dict, sql key = platform.dict.childCount, sql content =  select count(*) as counts from pt_dict where parentids = ? > 
+2017-10-10 13:24:58.809 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.group, sql key = platform.group.paging, sql content =  <% if(db_type == "mysql" || db_type == "postgresql"){ %> select * from pt_group order by ids asc limit ? offset ? <% } else if(db_type == "oracle"){ %> select * from ( select a.*, rownum rn from (select * from pt_group) a where rownum <= ? ) where rn >= ? <% } else if(db_type == "sqlserver"){ %> select top {0, number, #.#} * from pt_group where ids not in ( select top {1, number, #.#} ids from pt_group ) <% } else if(db_type == "db2"){ %> select * from ( select b.*, rownumber() over() as rn from ( select * from pt_group ) as b ) as a where a.rn < ? and a.rn >= ? <% } %> > 
+2017-10-10 13:24:58.811 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.group, sql key = platform.group.splitPageFrom, sql content =  from pt_group where 1=1 <% if(!isEmpty(names)){ %> and names like #'%$names$%'# <% } %> <% if(!isEmpty(numbers)){ %> and numbers like #'%$numbers$%'# <% } %> > 
+2017-10-10 13:24:58.814 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.group, sql key = platform.group.getUserByGroup, sql content =  select userIds from pt_usergroup where groupIds = ? > 
+2017-10-10 13:24:58.821 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.grouprole, sql key = platform.groupRole.findByGroupAndRoleIds, sql content =  select gr.*, r.ids rid, r.names rname,g.ids gid, g.names gname from pt_grouprole gr left join pt_group g on g.ids = gr.groupids left join pt_role r on r.ids = gr.roleids where gr.roleids = ? and gr.groupids = ? > 
+2017-10-10 13:24:58.823 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.grouprole, sql key = platform.groupRole.findByRoleIds, sql content =  select gr.*, r.ids rid, r.names rname,g.ids gid, g.names gname from pt_grouprole gr left join pt_group g on g.ids = gr.groupids left join pt_role r on r.ids = gr.roleids where gr.roleids = ? > 
+2017-10-10 13:24:58.826 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.grouprole, sql key = platform.groupRole.findByGroupIds, sql content =  select gr.*, r.ids rid, r.names rname,g.ids gid, g.names gname from pt_grouprole gr left join pt_group g on g.ids = gr.groupids left join pt_role r on r.ids = gr.roleids where gr.groupids = ? > 
+2017-10-10 13:24:58.830 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.grouprole, sql key = platform.groupRole.findByNotRoleIds, sql content =  select gr.*, r.ids rid, r.names rname,g.ids gid, g.names gname from pt_grouprole gr left join pt_group g on g.ids = gr.groupids left join pt_role r on r.ids = gr.roleids where gr.roleids != ? > 
+2017-10-10 13:24:58.834 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.grouprole, sql key = platform.groupRole.findByNotGroupIds, sql content =  select r.* from pt_role r where r.ids not in ( select gr.roleids from pt_grouprole gr where gr.groupids = ? ) > 
+2017-10-10 13:24:58.838 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.grouprole, sql key = platform.groupRole.findOperatorByGroupIds, sql content =  select o.ids, o.url from pt_operator o left join pt_roleoperator ro on ro.operatorids = o.ids left join pt_grouprole gr on gr.roleids = ro.roleids where gr.groupids = ? > 
+2017-10-10 13:24:58.848 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.splitPageSelect, sql content =  select a.* > 
+2017-10-10 13:24:58.852 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.splitPageFrom, sql content =  from ( select s.ids sids, s.names sname, s.orderids sorder, m.ids mids, m.names mname, m.orderids morder from pt_operator o left join pt_module m on m.ids = o.moduleids left join pt_systems s on s.ids = m.systemsids where 1=1 <% if(!isEmpty(oname)){ %> and o.names like #'%$oname$%'# <% } %> <% if(!isEmpty(ourl)){ %> and o.url like #'%$ourl$%'# <% } %> <% if(!isEmpty(sname)){ %> and s.names like #'%$sname$%'# <% } %> <% if(!isEmpty(mname)){ %> and m.names like #'%$mname$%'# <% } %> group by s.ids , s.names , s.orderids , m.ids , m.names , m.orderids ) a > 
+2017-10-10 13:24:58.854 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.findByModuleAndRoleIds, sql content =  select o.ids, o.names, o.url, ( select m.ids from pt_menu m where m.ids = ? and m.operatorids = o.ids ) mids from pt_operator o where o.moduleids = ? > 
+2017-10-10 13:24:58.859 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.findByIds, sql content =  select ids, ${names}, isparent, images from pt_menu where ids = ? > 
+2017-10-10 13:24:58.863 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.root, sql content =  select ids, ${names}, isparent, images from pt_menu where parentMenuIds is null and systemsIds = ? > 
+2017-10-10 13:24:58.866 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.child, sql content =  select ids, ${names}, isparent, images from pt_menu where parentMenuIds = ? order by orderIds asc > 
+2017-10-10 13:24:58.870 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.childCount, sql content =  select count(*) as counts from pt_menu where parentmenuids = ? > 
+2017-10-10 13:24:58.878 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.rootId, sql content =  select ids from pt_menu where parentmenuids is null and systemsIds = ? > 
+2017-10-10 13:24:58.882 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.operator, sql content =  select m.${names}, o.url from pt_menu m left join pt_operator o on m.operatorids=o.ids where parentmenuids = ? and ( m.operatorids in ( select ro.operatorids from pt_roleoperator ro left join pt_grouprole gr on gr.roleids = ro.roleids left join pt_usergroup ug on ug.groupids = gr.groupids where ug.userids = ? ) or m.operatorids in ( select so.operatorids from pt_stationoperator so left join pt_station s on s.ids = so.stationids left join pt_user u on u.stationids = s.ids where u.ids = ? ) ) order by orderids asc > 
+2017-10-10 13:24:58.886 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.menu, sql key = platform.menu.deleteBySystemsId, sql content =  delete from pt_menu where systemsids = ? > 
+2017-10-10 13:24:58.893 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.module, sql key = platform.module.rootBySystemIds, sql content =  select ids, names, isparent, images from pt_module where parentModuleIds is null and systemsIds = ? order by orderIds asc > 
+2017-10-10 13:24:58.894 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.module, sql key = platform.module.root, sql content =  select pm.ids, (select ps.names from pt_systems ps where ps.ids = pm.systemsIds) as names, pm.isParent, pm.images from pt_module pm where pm.parentModuleIds is null order by pm.orderIds asc > 
+2017-10-10 13:24:58.898 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.module, sql key = platform.module.child, sql content =  select ids, names, isparent, images from pt_module where parentModuleIds = ? order by orderIds asc > 
+2017-10-10 13:24:58.902 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.module, sql key = platform.module.childCount, sql content =  select count(*) as counts from pt_module where parentmoduleids = ? > 
+2017-10-10 13:24:58.906 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.module, sql key = platform.module.deleteBySystemsId, sql content =  delete from pt_module where systemsids = ? > 
+2017-10-10 13:24:58.914 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.paging, sql content =  <% if(db_type == "mysql" || db_type == "postgresql"){ %> select * from pt_operator order by ids asc limit ? offset ? <% } else if(db_type == "oracle"){ %> select * from ( select a.*, rownum rn from (select * from pt_operator) a where rownum <= ? ) where rn >= ? <% } else if(db_type == "sqlserver"){ %> select top {0, number, #.#} * from pt_operator where ids not in ( select top {1, number, #.#} ids from pt_operator ) <% } else if(db_type == "db2"){ %> select * from ( select b.*, rownumber() over() as rn from ( select * from pt_operator ) as b ) as a where a.rn < ? and a.rn >= ? <% } %> > 
+2017-10-10 13:24:58.915 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.rootModule, sql content =  select pm.ids as ids, (select ps.names from pt_systems ps where ps.ids = pm.systemsIds) as names, pm.isParent, pm.images from pt_module pm where pm.parentModuleIds is null order by pm.orderIds asc > 
+2017-10-10 13:24:58.919 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.childModule, sql content =  select ids, names, isParent , images from pt_module where parentModuleIds = ? order by orderIds asc > 
+2017-10-10 13:24:58.923 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.byModuleIds, sql content =  select ids, names from pt_operator where privilegess = '1' and moduleIds = ? order by url asc > 
+2017-10-10 13:24:58.927 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.url, sql content =  select * from pt_operator where url = ? > 
+2017-10-10 13:24:58.930 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.splitPageSelect, sql content =  select o.ids, o.names, o.url, o.rowFilter, o.splitPage, o.formToken, o.privilegess, o.csrf, o.referer, o.method, o.enctype, o.syslog, m.names as modulenames, s.names as systemsnames > 
+2017-10-10 13:24:58.934 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.splitPageFrom, sql content =  from pt_operator o left join pt_module m on o.moduleids = m.ids left join pt_systems s on s.ids = m.systemsids where 1=1 <% if(!isEmpty(sids)){ %> and s.ids = #'$sids$'# <% } %> <% if(!isEmpty(sname)){ %> and s.names like #'%$sname$%'# <% } %> <% if(!isEmpty(mids)){ %> and m.ids = #'$mids$'# <% } %> <% if(!isEmpty(mname)){ %> and m.names like #'%$mname$%'# <% } %> <% if(!isEmpty(names)){ %> and o.names like #'%$names$%'# <% } %> <% if(!isEmpty(url)){ %> and o.url like #'%$url$%'# <% } %> <% if(!isEmpty(splitPage)){ %> and o.splitPage = #'$splitPage$'# <% } %> <% if(!isEmpty(formToken)){ %> and o.formToken = #'$formToken$'# <% } %> <% if(!isEmpty(privilegess)){ %> and o.privilegess = #'$privilegess$'# <% } %> <% if(!isEmpty(csrf)){ %> and o.csrf = #'$csrf$'# <% } %> <% if(!isEmpty(referer)){ %> and o.referer = #'$referer$'# <% } %> <% if(!isEmpty(method)){ %> and o.method = #'$method$'# <% } %> > 
+2017-10-10 13:24:58.939 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.operator, sql key = platform.operator.getRoleoperatorByOperatorids, sql content =  select * from pt_roleoperator where operatorids = ? > 
+2017-10-10 13:24:58.945 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.all, sql content =  select ids from pt_param > 
+2017-10-10 13:24:58.948 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.treeTableNodeRoot, sql content =  select * from pt_param where parentids is null order by orderIds asc > 
+2017-10-10 13:24:58.950 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.treeTableChildNode, sql content =  select * from pt_param where parentids=? order by orderIds asc > 
+2017-10-10 13:24:58.954 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.treeNodeRoot, sql content =  select ids, names, isparent, images, status from pt_param where parentIds is null order by orderIds asc > 
+2017-10-10 13:24:58.960 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.treeChildNode, sql content =  select ids, names, isparent, images, status from pt_param where parentIds = ? order by orderids asc > 
+2017-10-10 13:24:58.965 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.idAndI18n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_param where ids = ? > 
+2017-10-10 13:24:58.968 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.numbers, sql content =  select * from pt_param where numbers = ? > 
+2017-10-10 13:24:58.972 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.numbersAndI18n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_param where numbers = ? > 
+2017-10-10 13:24:58.975 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.child, sql content =  select * from pt_param where parentids = ? and status = '1' order by orderids asc > 
+2017-10-10 13:24:58.979 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.childAndI8n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_param where parentids = ? and status = '1' order by orderids asc > 
+2017-10-10 13:24:58.984 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.parent, sql content =  select * from pt_param where ids = ? > 
+2017-10-10 13:24:58.989 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.parentAndI18n, sql content =  select ids, numbers, parentids, val${i18nColumnSuffix} as val from pt_param where ids = ? > 
+2017-10-10 13:24:59.005 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.param, sql key = platform.param.childCount, sql content =  select count(*) as counts from pt_param where parentids = ? > 
+2017-10-10 13:24:59.010 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.resources, sql key = platform.resources.pv, sql content =  <% if(db_type == "mysql"){ %> select date_format(startdate,'%Y-%m-%d') adates, count(*) acounts from pt_syslog where startdate>=? and startdate<=? group by adates order by adates asc <% } else if(db_type == "postgresql"){ %> select to_char(startdate, 'yyyy-MM-DD') adates, count(*) acounts from pt_syslog where startdate>=? and startdate<=? group by adates order by adates asc <% } else if(db_type == "oracle"){ %> select to_char(startdate,'YYYY-MM-DD') adates, count(*) acounts from pt_syslog where startdate>=? and startdate<=? group by to_char(startdate,'YYYY-MM-DD') order by adates asc <% } else if(db_type == "sqlserver"){ %> select CONVERT(varchar(100), startdate, 23) adates, count(*) acounts from pt_syslog where startdate>=? and startdate<=? group by CONVERT(varchar(100), startdate, 23) order by adates asc <% } else if(db_type == "db2"){ %> select to_char(startdate,'YYYY-MM-DD') adates, count(*) acounts from pt_syslog where startdate>=? and startdate<=? group by to_char(startdate,'YYYY-MM-DD') order by adates asc <% } %> > 
+2017-10-10 13:24:59.012 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.resources, sql key = platform.resources.24hour, sql content =  select * from pt_resources where hostname=? and createdate>=? and createdate<=? order by createdate asc > 
+2017-10-10 13:24:59.020 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.role, sql key = platform.role.noCheckedFilter, sql content =  select ids, names from pt_role where ids not in ( ${fitler} ) order by names asc > 
+2017-10-10 13:24:59.021 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.role, sql key = platform.role.checkedFilter, sql content =  select ids, names from pt_role where ids in ( ${fitler} ) order by names asc > 
+2017-10-10 13:24:59.023 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.role, sql key = platform.role.noChecked, sql content =  select ids, names from pt_role order by names asc > 
+2017-10-10 13:24:59.027 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.role, sql key = platform.role.splitPageFrom, sql content =  from pt_role where 1=1 <% if(!isEmpty(names)){ %> and names like #'%$names$%'# <% } %> <% if(!isEmpty(numbers)){ %> and numbers like #'%$numbers$%'# <% } %> > 
+2017-10-10 13:24:59.031 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.role, sql key = platform.role.getGrouproleByRoleids, sql content =  select * from pt_grouprole where roleids = ? > 
+2017-10-10 13:24:59.035 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.role, sql key = platform.role.getRoleoperatorByRoleids, sql content =  select * from pt_roleoperator where roleids = ? > 
+2017-10-10 13:24:59.042 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.splitPageSelect, sql content =  select a.* > 
+2017-10-10 13:24:59.045 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.splitPageFrom, sql content =  from ( select s.ids sids, s.names sname, s.orderids sorder, m.ids mids, m.names mname, m.orderids morder, pm.ids pmids, pm.names pmname, pm.orderids pmorder from pt_operator o left join pt_module m on m.ids = o.moduleids left join pt_module pm on pm.ids = m.parentmoduleids left join pt_systems s on s.ids = m.systemsids where 1=1 <% if(!isEmpty(oname)){ %> and o.names like #'%$oname$%'# <% } %> <% if(!isEmpty(ourl)){ %> and o.url like #'%$ourl$%'# <% } %> <% if(!isEmpty(sname)){ %> and s.names like #'%$sname$%'# <% } %> <% if(!isEmpty(mname)){ %> and m.names like #'%$mname$%'# <% } %> group by s.ids , s.names , s.orderids , m.ids , m.names , m.orderids , pm.ids, pm.names, pm.orderids <% if(db_type == "mysql" || db_type == "postgresql"){ %> order by s.orderids asc, pm.names asc, m.names asc <% } else if(db_type == "oracle"){ %> order by s.orderids asc, pm.names asc, m.names asc <% } else if(db_type == "sqlserver"){ %> <% } else if(db_type == "db2"){ %> order by s.orderids asc, pm.names asc, m.names asc <% } %> ) a > 
+2017-10-10 13:24:59.048 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.findByUserIds, sql content =  select ro.operatorids from pt_roleoperator ro left join pt_grouprole gr on gr.roleids = ro.roleids left join pt_usergroup ug on ug.groupids = gr.groupids where ug.userids = ? > 
+2017-10-10 13:24:59.051 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.findByGroupIds, sql content =  select ro.operatorids from pt_roleoperator ro left join pt_grouprole gr on gr.roleids = ro.roleids where gr.groupids = ? > 
+2017-10-10 13:24:59.055 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.findByModuleAndRoleIds, sql content =  select o.ids, o.names, o.url, ( select ids from pt_roleoperator ro where ro.roleids = ? and ro.operatorids = o.ids ) roids from pt_operator o where o.moduleids = ? > 
+2017-10-10 13:24:59.060 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.hasUrlByOperatorAndUserIds, sql content =  select count(*) from pt_roleoperator ro left join pt_grouprole gr on gr.roleids = ro.roleids left join pt_usergroup ug on ug.groupids = gr.groupids where ro.operatorids = ? and ug.userids = ? > 
+2017-10-10 13:24:59.063 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.delByRoleAndOperatorIds, sql content =  delete from pt_roleoperator ro where ro.roleids = ? and ro.operatorids = ? > 
+2017-10-10 13:24:59.069 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.roleoperator, sql key = platform.roleOperator.getGroupByRole, sql content =  select groupids from pt_grouprole where roleids = ? > 
+2017-10-10 13:24:59.079 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.station, sql key = platform.station.paging, sql content =  <% if(db_type == "mysql" || db_type == "postgresql"){ %> select * from pt_station order by ids asc limit ? offset ? <% } else if(db_type == "oracle"){ %> select * from ( select a.*, rownum rn from (select * from pt_station) a where rownum <= ? ) where rn >= ? <% } else if(db_type == "sqlserver"){ %> select top {0, number, #.#} * from pt_station where ids not in ( select top {1, number, #.#} ids from pt_station ) <% } else if(db_type == "db2"){ %> select * from ( select b.*, rownumber() over() as rn from ( select * from pt_station ) as b ) as a where a.rn < ? and a.rn >= ? <% } %> > 
+2017-10-10 13:24:59.080 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.station, sql key = platform.station.root, sql content =  select ids, names, isparent, images from pt_station where parentStationIds is null order by orderIds asc > 
+2017-10-10 13:24:59.085 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.station, sql key = platform.station.child, sql content =  select ids, names, isparent, images from pt_station where parentStationIds = ? order by orderIds asc > 
+2017-10-10 13:24:59.089 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.station, sql key = platform.station.childCount, sql content =  select count(*) as counts from pt_station where parentstationids = ? > 
+2017-10-10 13:24:59.097 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.stationoperator, sql key = platform.stationOperator.splitPageSelect, sql content =  select a.* > 
+2017-10-10 13:24:59.098 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.stationoperator, sql key = platform.stationOperator.splitPageFrom, sql content =  from ( select s.ids sids, s.names sname, s.orderids sorder, m.ids mids, m.names mname, m.orderids morder, pm.ids pmids, pm.names pmname, pm.orderids pmorder from pt_operator o left join pt_module m on m.ids = o.moduleids left join pt_module pm on pm.ids = m.parentmoduleids left join pt_systems s on s.ids = m.systemsids where 1=1 <% if(!isEmpty(oname)){ %> and o.names like #'%$oname$%'# <% } %> <% if(!isEmpty(ourl)){ %> and o.url like #'%$ourl$%'# <% } %> <% if(!isEmpty(sname)){ %> and s.names like #'%$sname$%'# <% } %> <% if(!isEmpty(mname)){ %> and m.names like #'%$mname$%'# <% } %> group by s.ids , s.names , s.orderids , m.ids , m.names , m.orderids , pm.ids, pm.names, pm.orderids <% if(db_type == "mysql" || db_type == "postgresql"){ %> order by s.orderids asc, pm.names asc, m.names asc <% } else if(db_type == "oracle"){ %> order by s.orderids asc, pm.names asc, m.names asc <% } else if(db_type == "sqlserver"){ %> <% } else if(db_type == "db2"){ %> order by s.orderids asc, pm.names asc, m.names asc <% } %> ) a > 
+2017-10-10 13:24:59.099 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.stationoperator, sql key = platform.stationOperator.findByUserIds, sql content =  select so.operatorids from pt_stationoperator so left join pt_station s on s.ids = so.stationids left join pt_user u on u.stationids = s.ids where us.userids = ? > 
+2017-10-10 13:24:59.104 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.stationoperator, sql key = platform.stationOperator.findByStationIds, sql content =  select o.ids, o.names, o.url, ( select ids from pt_stationoperator so where so.stationids = ? and so.operatorids = o.ids ) soids from pt_operator o where o.moduleids = ? > 
+2017-10-10 13:24:59.112 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.stationoperator, sql key = platform.stationOperator.hasUrlByOperatorAndUserIds, sql content =  select count(*) from pt_stationoperator so left join pt_station s on s.ids = so.stationids left join pt_user u on u.stationids = s.ids where so.operatorids = ? and u.ids = ? > 
+2017-10-10 13:24:59.116 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.stationoperator, sql key = platform.stationOperator.findOperatorByStationIds, sql content =  select o.ids, o.url from pt_operator o left join pt_stationoperator so on so.operatorids = o.ids where so.stationids = ? > 
+2017-10-10 13:24:59.122 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.syslog, sql key = platform.sysLog.view, sql content =  select s.*, o.names onames, o.url ourl, u.username from pt_syslog s left join pt_user u on s.userids = u.ids left join pt_operator o on s.operatorids = o.ids where s.ids = ? > 
+2017-10-10 13:24:59.124 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.syslog, sql key = platform.sysLog.splitPageSelect, sql content =  select sy.names synames, m.names mnames, o.names onames, o.url ourl, u.username, s.* > 
+2017-10-10 13:24:59.128 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.syslog, sql key = platform.sysLog.splitPageFrom, sql content =  from pt_syslog s left join pt_user u on s.userids = u.ids left join pt_operator o on s.operatorids = o.ids left join pt_module m on o.moduleids = m.ids left join pt_systems sy on m.systemsids = sy.ids where 1=1 <% if(!isEmpty(url)){ %> and o.url like #'%$url$%'# <% } %> <% if(!isEmpty(names)){ %> and o.names like #'%$names$%'# <% } %> <% if(!isEmpty(username)){ %> and u.username like #'%$username$%'# <% } %> <% if(!isEmpty(ips)){ %> and s.ips like #'%$ips$%'# <% } %> <% if(!isEmpty(status)){ %> and s.status = #'$status$'# <% } %> <% if(!isEmpty(startdate_start)){ %> <% if(db_type == "mysql"){ %> and s.startdate >= str_to_date(#'$startdate_start$'#, '%Y-%m-%d %H:%i:%s') <% } else if(db_type == "postgresql"){ %> and s.startdate >= to_timestamp(#'$startdate_start$'#, 'YYYY-MM-DD HH24:MI:SS') <% } else if(db_type == "oracle"){ %> and s.startdate >= to_timestamp(#'$startdate_start$'#, 'yyyy-mm-dd hh24:mi:ss') <% } else if(db_type == "sqlserver"){ %> and s.startdate >= CONVERT(datetime, #'$startdate_start$'#, 120) <% } else if(db_type == "db2"){ %> and s.startdate >= to_date(#'$startdate_start$'#, 'yyyy-mm-dd hh24:mi:ss') <% }%> <% } %> <% if(!isEmpty(startdate_end)){ %> <% if(db_type == "mysql"){ %> and s.startdate <= str_to_date(#'$startdate_end$'#, '%Y-%m-%d %H:%i:%s') <% } else if(db_type == "postgresql"){ %> and s.startdate <= to_timestamp(#'$startdate_end$'#, 'YYYY-MM-DD HH24:MI:SS') <% } else if(db_type == "oracle"){ %> and s.startdate <= to_timestamp(#'$startdate_end$'#, 'yyyy-mm-dd hh24:mi:ss') <% } else if(db_type == "sqlserver"){ %> and s.startdate <= CONVERT(datetime, #'$startdate_end$'#, 120) <% } else if(db_type == "db2"){ %> and s.startdate <= to_date(#'$startdate_end$'#, 'yyyy-mm-dd hh24:mi:ss') <% }%> <% } %> > 
+2017-10-10 13:24:59.133 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.syslog, sql key = platform.sysLog.clear, sql content =  delete from pt_syslog where startdate < ? > 
+2017-10-10 13:24:59.136 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.syslog, sql key = platform.sysLog.deleteBySystemsId, sql content =  delete from pt_syslog where operatorids in ( select o.ids from pt_operator o left join pt_module m on o.moduleids = m.ids left join pt_systems sy on m.systemsids = sy.ids where systemsids = ? ) > 
+2017-10-10 13:24:59.148 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.systems, sql key = platform.systems.all, sql content =  select ids, names from pt_systems order by orderids asc > 
+2017-10-10 13:24:59.152 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.systems, sql key = platform.systems.splitPageFrom, sql content =  from pt_systems where 1=1 <% if(!isEmpty(names)){ %> and names like #'%$names$%'# <% } %> > 
+2017-10-10 13:24:59.158 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.test, sql key = platform.test.autoComplete, sql content =  select url from pt_operator where url like #'$url$%'# limit #$size$# offset 0 > 
+2017-10-10 13:24:59.164 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.upload, sql key = platform.upload.splitPageFrom, sql content =  from pt_upload where 1=1 <% if(!isEmpty(filename)){ %> and filename like #'%$filename$%'# <% } %> <% if(!isEmpty(contenttype)){ %> and contenttype like #'%$contenttype$%'# <% } %> <% if(!isEmpty(originalfilename)){ %> and originalfilename like #'%$originalfilename$%'# <% } %> <% if(!isEmpty(path)){ %> and path = #$path$# <% } %> > 
+2017-10-10 13:24:59.165 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.upload, sql key = platform.upload.md5, sql content =  select count(ids) from pt_upload where md5 = ? > 
+2017-10-10 13:24:59.172 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.paging, sql content =  <% if(db_type == "mysql" || db_type == "postgresql"){ %> select * from pt_user order by ids asc limit ? offset ? <% } else if(db_type == "oracle"){ %> select * from ( select a.*, rownum rn from (select * from pt_user) a where rownum < ? ) where rn >= ? <% } else if(db_type == "sqlserver"){ %> select top {0, number, #.#} * from pt_user where ids not in ( select top {1, number, #.#} ids from pt_user ) <% } else if(db_type == "db2"){ %> select * from ( select b.*, rownumber() over() as rn from ( select * from pt_user ) as b ) as a where a.rn < ? and a.rn >= ? <% } %> > 
+2017-10-10 13:24:59.174 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.treeUserNode, sql content =  select ids, userName as names from pt_user where departmentIds = ? order by userName asc > 
+2017-10-10 13:24:59.178 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.column, sql content =  select * from pt_user where ${column} = ? > 
+2017-10-10 13:24:59.181 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.stop, sql content =  update pt_user set stopDate = ?, errorCount = ? where ids = ? > 
+2017-10-10 13:24:59.185 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.start, sql content =  update pt_user set stopdate = null, errorcount = 0 where ids = ? > 
+2017-10-10 13:24:59.189 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.splitPageSelect, sql content =  select u.ids, u.username, u.names, u.email, u.mobile, ui.birthday, d.names as deptnames > 
+2017-10-10 13:24:59.194 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.user.splitPageFrom, sql content =  from pt_user u left join pt_userinfo ui on u.ids = ui.ids left join pt_department d on u.departmentids = d.ids where 1=1 <% if(!isEmpty(userClass)){ %> and u.userClass = #'$userClass$'# <% } %> <% if(!isEmpty(userName)){ %> and u.userName like #'%$userName$%'# <% } %> <% if(!isEmpty(names)){ %> and u.names like #'%$names$%'# <% } %> <% if(!isEmpty(email)){ %> and u.email like #'%$email$%'# <% } %> <% if(!isEmpty(mobile)){ %> and u.mobile like #'%$mobile$%'# <% } %> <% if(!isEmpty(idCard)){ %> and u.idCard like #'%$idCard$%'# <% } %> <% if(!isEmpty(sex)){ %> and ui.sex like #'%$sex$%'# <% } %> <% if(!isEmpty(telephone)){ %> and ui.telephone like #'%$telephone$%'# <% } %> <% if(!isEmpty(qq)){ %> and ui.qq like #'%$qq$%'# <% } %> <% if(!isEmpty(birthday)){ %> <% if(db_type == "mysql"){ %> and ui.birthday = #'$birthday$'# <% } else if(db_type == "postgresql"){ %> and ui.birthday = to_date(#'$birthday$'#, 'YYYY-mm-dd') <% } else if(db_type == "oracle"){ %> and ui.birthday = to_date(#'$birthday$'#, 'YYYY-mm-dd') <% } else if(db_type == "sqlserver"){ %> and ui.birthday = #'$birthday$'# <% } else if(db_type == "db2"){ %> and ui.birthday = #'$birthday$'# <% }%> <% } %> > 
+2017-10-10 13:24:59.202 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.user, sql key = platform.userInfo.paging, sql content =  <% if(db_type == "mysql" || db_type == "postgresql"){ %> select * from pt_userinfo order by ids asc limit ? offset ? <% } else if(db_type == "oracle"){ %> select * from ( select a.*, rownum rn from (select * from pt_userinfo) a where rownum <= ? ) where rn >= ? <% } else if(db_type == "sqlserver"){ %> select top {0, number, #.#} * from pt_userinfo where ids not in ( select top {1, number, #.#} ids from pt_userinfo ) <% } else if(db_type == "db2"){ %> select * from ( select b.*, rownumber() over() as rn from ( select * from pt_userinfo ) as b ) as a where a.rn < ? and a.rn >= ? <% } %> > 
+2017-10-10 13:24:59.210 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.usergroup, sql key = platform.userGroup.findByUserAndGroupIds, sql content =  select ug.*, u.username, g.ids gid, g.names gname from pt_usergroup ug left join pt_group g on g.ids = ug.groupids left join pt_user u on u.ids = ug.userids where ug.userids = ? and ug.groupids = ? > 
+2017-10-10 13:24:59.213 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.usergroup, sql key = platform.userGroup.findGroupIdsByUserIds, sql content =  select ug.groupids from pt_usergroup ug where ug.userids = ? > 
+2017-10-10 13:24:59.218 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.usergroup, sql key = platform.userGroup.findByUserIds, sql content =  select ug.*, u.username, g.ids gid, g.names gname from pt_usergroup ug left join pt_group g on g.ids = ug.groupids left join pt_user u on u.ids = ug.userids where ug.userids = ? > 
+2017-10-10 13:24:59.221 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.usergroup, sql key = platform.userGroup.findByGroupIds, sql content =  select ug.*, u.username, g.ids gid, g.names gname from pt_usergroup ug left join pt_group g on g.ids = ug.groupids left join pt_user u on u.ids = ug.userids where ug.groupids = ? > 
+2017-10-10 13:24:59.227 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.usergroup, sql key = platform.userGroup.findByNotUserIds, sql content =  select g.* from pt_group g where g.ids not in ( select ug.groupids from pt_usergroup ug where ug.userids = ? ) > 
+2017-10-10 13:24:59.229 [] [] [] DEBUG [main] <SqlXmlPlugin.java [323] - parseDoc> <sql加载, sql file = com.platform.mvc.usergroup, sql key = platform.userGroup.findByNotGroupIds, sql content =  select ug.*, u.username, g.ids gid, g.names gname from pt_usergroup ug left join pt_group g on g.ids = ug.groupids left join pt_user u on u.ids = ug.userids where ug.groupids != ? > 
+2017-10-10 13:24:59.234 [] [] [] INFO [main] <Run.java [151] - <clinit>> <configPlugin ParamInitPlugin 缓存参数> 
+2017-10-10 13:24:59.241 [] [] [] INFO [main] <ParamInitPlugin.java [79] - start> <缓存参数初始化 start ...> 
+2017-10-10 13:24:59.247 [] [] [] INFO [main] <ParamInitPlugin.java [113] - platform_cacheUser> <缓存加载：User start> 
+2017-10-10 13:24:59.414 [] [] [] DEBUG [main] <ToolSqlXml.java [97] - getSqlMy> <beetl解析sql> 
+2017-10-10 13:24:59.958 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_user  
+ > 
+2017-10-10 13:24:59.996 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ > 
+2017-10-10 13:25:00.005 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_user 
+    order by
+        ids asc limit ? offset ?  
+ > 
+2017-10-10 13:25:00.043 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ > 
+2017-10-10 13:25:00.053 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_user` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:00.063 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 03a44ba0aa4e4905bea726d4da976ba5 
+ > 
+2017-10-10 13:25:00.068 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ug.groupids 
+    from
+        pt_usergroup ug 
+    where
+        ug.userids = ?  
+ > 
+2017-10-10 13:25:00.088 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 03a44ba0aa4e4905bea726d4da976ba5 
+ > 
+2017-10-10 13:25:00.121 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_user` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:00.131 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ef15e94a52584743b2b9bf604fccd0cc 
+ > 
+2017-10-10 13:25:00.151 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ug.groupids 
+    from
+        pt_usergroup ug 
+    where
+        ug.userids = ?  
+ > 
+2017-10-10 13:25:00.168 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ef15e94a52584743b2b9bf604fccd0cc 
+ > 
+2017-10-10 13:25:00.188 [] [] [] INFO [main] <ParamInitPlugin.java [139] - platform_cacheUser> <缓存加载：User end> 
+2017-10-10 13:25:00.196 [] [] [] INFO [main] <ParamInitPlugin.java [147] - platform_cacheGroupOperator> <缓存加载：Group Operator start> 
+2017-10-10 13:25:00.212 [] [] [] DEBUG [main] <ToolSqlXml.java [97] - getSqlMy> <beetl解析sql> 
+2017-10-10 13:25:00.224 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_group  
+ > 
+2017-10-10 13:25:00.230 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ > 
+2017-10-10 13:25:00.235 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_group 
+    order by
+        ids asc limit ? offset ?  
+ > 
+2017-10-10 13:25:00.251 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ > 
+2017-10-10 13:25:00.268 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_roleoperator ro 
+            on ro.operatorids = o.ids 
+    left join
+        pt_grouprole gr 
+            on gr.roleids = ro.roleids 
+    where
+        gr.groupids = ?  
+ > 
+2017-10-10 13:25:00.325 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0028 
+ > 
+2017-10-10 13:25:00.347 [] [] [] INFO [main] <ParamInitPlugin.java [173] - platform_cacheGroupOperator> <缓存加载：Group Operator end> 
+2017-10-10 13:25:00.352 [] [] [] INFO [main] <ParamInitPlugin.java [181] - platform_cacheStationOperator> <缓存加载：Station Operator start> 
+2017-10-10 13:25:00.372 [] [] [] DEBUG [main] <ToolSqlXml.java [97] - getSqlMy> <beetl解析sql> 
+2017-10-10 13:25:00.382 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_station  
+ > 
+2017-10-10 13:25:00.385 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ > 
+2017-10-10 13:25:00.396 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_station 
+    order by
+        ids asc limit ? offset ?  
+ > 
+2017-10-10 13:25:00.409 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ > 
+2017-10-10 13:25:00.423 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.438 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:00.451 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.465 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0021 
+ > 
+2017-10-10 13:25:00.479 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.494 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0022 
+ > 
+2017-10-10 13:25:00.506 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.521 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0023 
+ > 
+2017-10-10 13:25:00.535 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.550 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0024 
+ > 
+2017-10-10 13:25:00.564 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.578 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0025 
+ > 
+2017-10-10 13:25:00.591 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.605 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0026 
+ > 
+2017-10-10 13:25:00.625 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.640 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0027 
+ > 
+2017-10-10 13:25:00.660 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        o.ids,
+        o.url 
+    from
+        pt_operator o 
+    left join
+        pt_stationoperator so 
+            on so.operatorids = o.ids 
+    where
+        so.stationids = ?  
+ > 
+2017-10-10 13:25:00.691 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0028 
+ > 
+2017-10-10 13:25:00.712 [] [] [] INFO [main] <ParamInitPlugin.java [207] - platform_cacheStationOperator> <缓存加载：Station Operator end> 
+2017-10-10 13:25:00.741 [] [] [] INFO [main] <ParamInitPlugin.java [215] - platform_cacheOperator> <缓存加载：Operator start> 
+2017-10-10 13:25:00.751 [] [] [] DEBUG [main] <ToolSqlXml.java [97] - getSqlMy> <beetl解析sql> 
+2017-10-10 13:25:00.771 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        count(*)  
+    from
+        pt_operator  
+ > 
+2017-10-10 13:25:00.773 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ > 
+2017-10-10 13:25:00.779 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_operator 
+    order by
+        ids asc limit ? offset ?  
+ > 
+2017-10-10 13:25:00.791 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 2 
+ param index: 1   param type: Integer   param value: 10000 
+ param index: 2   param type: Long   param value: 0 
+ > 
+2017-10-10 13:25:00.875 [] [] [] INFO [main] <ParamInitPlugin.java [246] - platform_cacheOperator> <缓存加载：Operator end> 
+2017-10-10 13:25:00.888 [] [] [] INFO [main] <ParamInitPlugin.java [254] - platform_cacheDict> <缓存加载：Dict start> 
+2017-10-10 13:25:00.898 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ids 
+    from
+        pt_dict  
+ > 
+2017-10-10 13:25:00.905 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ > 
+2017-10-10 13:25:00.922 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:00.932 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ > 
+2017-10-10 13:25:00.953 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.008 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ > 
+2017-10-10 13:25:01.013 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.024 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:01.043 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.075 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:01.090 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.112 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ > 
+2017-10-10 13:25:01.133 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.155 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ > 
+2017-10-10 13:25:01.174 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.198 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ > 
+2017-10-10 13:25:01.227 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.248 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ > 
+2017-10-10 13:25:01.267 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.282 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 18a137a0b92944ba857b5dec39b4fa69 
+ > 
+2017-10-10 13:25:01.305 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.328 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 18a137a0b92944ba857b5dec39b4fa69 
+ > 
+2017-10-10 13:25:01.347 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.371 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ > 
+2017-10-10 13:25:01.386 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.397 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ > 
+2017-10-10 13:25:01.410 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.420 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 3082e48992104e3ca8c2f542bbcfbe63 
+ > 
+2017-10-10 13:25:01.439 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.455 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 3082e48992104e3ca8c2f542bbcfbe63 
+ > 
+2017-10-10 13:25:01.480 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.502 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ > 
+2017-10-10 13:25:01.525 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.546 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ > 
+2017-10-10 13:25:01.592 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.596 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ > 
+2017-10-10 13:25:01.619 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.642 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ > 
+2017-10-10 13:25:01.663 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.685 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:01.713 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.731 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:01.746 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.761 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 325acbd77f5b43a894ec4ef53ba20914 
+ > 
+2017-10-10 13:25:01.790 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.810 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 325acbd77f5b43a894ec4ef53ba20914 
+ > 
+2017-10-10 13:25:01.824 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.841 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ > 
+2017-10-10 13:25:01.859 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.870 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ > 
+2017-10-10 13:25:01.884 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.895 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 405dc683656a4b328de5d5a19d1662d3 
+ > 
+2017-10-10 13:25:01.914 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.929 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 405dc683656a4b328de5d5a19d1662d3 
+ > 
+2017-10-10 13:25:01.942 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:01.954 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ > 
+2017-10-10 13:25:01.975 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:01.999 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ > 
+2017-10-10 13:25:02.019 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.037 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ > 
+2017-10-10 13:25:02.058 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.071 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ > 
+2017-10-10 13:25:02.090 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.104 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:02.124 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.135 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:02.149 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.159 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ > 
+2017-10-10 13:25:02.176 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.188 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ > 
+2017-10-10 13:25:02.203 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.215 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ > 
+2017-10-10 13:25:02.236 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.250 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ > 
+2017-10-10 13:25:02.264 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.278 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ > 
+2017-10-10 13:25:02.297 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.307 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ > 
+2017-10-10 13:25:02.319 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.331 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:02.349 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.360 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:02.372 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.382 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ > 
+2017-10-10 13:25:02.400 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.412 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ > 
+2017-10-10 13:25:02.437 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.445 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:02.472 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.486 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:02.499 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.509 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:02.530 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.542 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:02.554 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.565 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:02.581 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.592 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:02.605 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.615 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:02.632 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.643 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:02.655 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.665 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ > 
+2017-10-10 13:25:02.682 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.693 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a1f14efbb8cb4e44a30bd32194d0f24b 
+ > 
+2017-10-10 13:25:02.707 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.719 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ > 
+2017-10-10 13:25:02.742 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.761 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 31b6516f36d44fc280b82affc270c479 
+ > 
+2017-10-10 13:25:02.775 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.786 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a929cbf789a74107a74aec88c0bcc8fe 
+ > 
+2017-10-10 13:25:02.804 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.815 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: a929cbf789a74107a74aec88c0bcc8fe 
+ > 
+2017-10-10 13:25:02.828 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.840 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ > 
+2017-10-10 13:25:02.860 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.872 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 10c3fc9a884a4cfc91f47e197913fd50 
+ > 
+2017-10-10 13:25:02.886 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.896 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: bf1bf96a123447c58b7f181d3e4e6099 
+ > 
+2017-10-10 13:25:02.913 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.926 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: bf1bf96a123447c58b7f181d3e4e6099 
+ > 
+2017-10-10 13:25:02.938 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:02.954 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ > 
+2017-10-10 13:25:02.969 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:02.980 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 56e8bdbc8d77460da17e473ee30906b0 
+ > 
+2017-10-10 13:25:02.995 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.008 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ddbe84891d8b4632ac0dc2bd36f7f323 
+ > 
+2017-10-10 13:25:03.028 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.042 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: ddbe84891d8b4632ac0dc2bd36f7f323 
+ > 
+2017-10-10 13:25:03.055 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_dict` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.069 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ > 
+2017-10-10 13:25:03.090 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_dict 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.108 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 64659405a79a4ecb9f116ae84ec55902 
+ > 
+2017-10-10 13:25:03.122 [] [] [] INFO [main] <ParamInitPlugin.java [261] - platform_cacheDict> <缓存加载：Dict end, size = 17> 
+2017-10-10 13:25:03.147 [] [] [] INFO [main] <ParamInitPlugin.java [270] - platform_cacheParam> <缓存加载：Param start> 
+2017-10-10 13:25:03.157 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        ids 
+    from
+        pt_param  
+ > 
+2017-10-10 13:25:03.163 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param:  empty  
+ > 
+2017-10-10 13:25:03.171 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.180 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ > 
+2017-10-10 13:25:03.193 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.209 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 0c78f87750a745bbb59005a6ca0f744a 
+ > 
+2017-10-10 13:25:03.224 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.237 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.256 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.271 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.281 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.292 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ > 
+2017-10-10 13:25:03.306 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.319 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 7381008292054bccba20224bc33774d7 
+ > 
+2017-10-10 13:25:03.332 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.343 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.361 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.371 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.385 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.395 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ > 
+2017-10-10 13:25:03.413 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.426 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8094c60d7a594b36bb0187cbce9c4188 
+ > 
+2017-10-10 13:25:03.441 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.450 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.471 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.487 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.498 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.509 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.522 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.534 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 83f4b0ee56904cbeb5f91696ad804c29 
+ > 
+2017-10-10 13:25:03.548 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.559 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:03.579 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.595 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:03.609 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        `pt_param` 
+    where
+        `ids` = ? 
+ > 
+2017-10-10 13:25:03.621 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:03.642 [] [] [] INFO [main] <SqlReporter.java [59] - invoke> <
+ Sql: 
+ 
+    select
+        * 
+    from
+        pt_param 
+    where
+        parentids = ? 
+        and status = '1' 
+    order by
+        orderids asc  
+ > 
+2017-10-10 13:25:03.653 [] [] [] INFO [main] <Dialect.java [139] - fillStatement> <
+ Sql param: 1 
+ param index: 1   param type: String   param value: 8a40c0353fa828a6013fa898d4ac0020 
+ > 
+2017-10-10 13:25:03.666 [] [] [] INFO [main] <ParamInitPlugin.java [277] - platform_cacheParam> <缓存加载：Param end, size = 5> 
+2017-10-10 13:25:03.689 [] [] [] INFO [main] <ParamInitPlugin.java [99] - start> <缓存参数初始化 end ...> 
+2017-10-10 13:25:03.697 [] [] [] INFO [main] <Run.java [154] - <clinit>> <configPlugin FileRenamePlugin 配置文件上传命名策略插件> 
+2017-10-10 13:25:03.713 [] [] [] INFO [main] <Run.java [157] - <clinit>> <configPlugin QuartzPlugin 配置Quartz插件> 
+2017-10-10 13:25:03.917 [] [] [] INFO [main] <? [?] - ?> <using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter> 
+2017-10-10 13:25:04.050 [] [] [] INFO [main] <Main.java [58] - main> < [DUBBO] Use container type([spring]) to run dubbo serivce., dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:08.704 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.rpc;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class Protocol$Adpative implements com.alibaba.dubbo.rpc.Protocol {
+public void destroy() {throw new UnsupportedOperationException("method public abstract void com.alibaba.dubbo.rpc.Protocol.destroy() of interface com.alibaba.dubbo.rpc.Protocol is not adaptive method!");
+}
+public int getDefaultPort() {throw new UnsupportedOperationException("method public abstract int com.alibaba.dubbo.rpc.Protocol.getDefaultPort() of interface com.alibaba.dubbo.rpc.Protocol is not adaptive method!");
+}
+public com.alibaba.dubbo.rpc.Exporter export(com.alibaba.dubbo.rpc.Invoker arg0) throws com.alibaba.dubbo.rpc.Invoker {
+if (arg0 == null) throw new IllegalArgumentException("com.alibaba.dubbo.rpc.Invoker argument == null");
+if (arg0.getUrl() == null) throw new IllegalArgumentException("com.alibaba.dubbo.rpc.Invoker argument getUrl() == null");com.alibaba.dubbo.common.URL url = arg0.getUrl();
+String extName = ( url.getProtocol() == null ? "dubbo" : url.getProtocol() );
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.Protocol) name from url(" + url.toString() + ") use keys([protocol])");
+com.alibaba.dubbo.rpc.Protocol extension = (com.alibaba.dubbo.rpc.Protocol)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.Protocol.class).getExtension(extName);
+return extension.export(arg0);
+}
+public com.alibaba.dubbo.rpc.Invoker refer(java.lang.Class arg0, com.alibaba.dubbo.common.URL arg1) throws java.lang.Class {
+if (arg1 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg1;
+String extName = ( url.getProtocol() == null ? "dubbo" : url.getProtocol() );
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.Protocol) name from url(" + url.toString() + ") use keys([protocol])");
+com.alibaba.dubbo.rpc.Protocol extension = (com.alibaba.dubbo.rpc.Protocol)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.Protocol.class).getExtension(extName);
+return extension.refer(arg0, arg1);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.098 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.rpc;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class ProxyFactory$Adpative implements com.alibaba.dubbo.rpc.ProxyFactory {
+public com.alibaba.dubbo.rpc.Invoker getInvoker(java.lang.Object arg0, java.lang.Class arg1, com.alibaba.dubbo.common.URL arg2) throws java.lang.Object {
+if (arg2 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg2;
+String extName = url.getParameter("proxy", "javassist");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.ProxyFactory) name from url(" + url.toString() + ") use keys([proxy])");
+com.alibaba.dubbo.rpc.ProxyFactory extension = (com.alibaba.dubbo.rpc.ProxyFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.ProxyFactory.class).getExtension(extName);
+return extension.getInvoker(arg0, arg1, arg2);
+}
+public java.lang.Object getProxy(com.alibaba.dubbo.rpc.Invoker arg0) throws com.alibaba.dubbo.rpc.Invoker {
+if (arg0 == null) throw new IllegalArgumentException("com.alibaba.dubbo.rpc.Invoker argument == null");
+if (arg0.getUrl() == null) throw new IllegalArgumentException("com.alibaba.dubbo.rpc.Invoker argument getUrl() == null");com.alibaba.dubbo.common.URL url = arg0.getUrl();
+String extName = url.getParameter("proxy", "javassist");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.ProxyFactory) name from url(" + url.toString() + ") use keys([proxy])");
+com.alibaba.dubbo.rpc.ProxyFactory extension = (com.alibaba.dubbo.rpc.ProxyFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.ProxyFactory.class).getExtension(extName);
+return extension.getProxy(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.281 [] [] [] INFO [main] <ServiceBean.java [108] - onApplicationEvent> < [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.MessageService, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.377 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.cache;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class CacheFactory$Adpative implements com.alibaba.dubbo.cache.CacheFactory {
+public com.alibaba.dubbo.cache.Cache getCache(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("cache", "lru");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.cache.CacheFactory) name from url(" + url.toString() + ") use keys([cache])");
+com.alibaba.dubbo.cache.CacheFactory extension = (com.alibaba.dubbo.cache.CacheFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.cache.CacheFactory.class).getExtension(extName);
+return extension.getCache(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.406 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.monitor;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class MonitorFactory$Adpative implements com.alibaba.dubbo.monitor.MonitorFactory {
+public com.alibaba.dubbo.monitor.Monitor getMonitor(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = ( url.getProtocol() == null ? "dubbo" : url.getProtocol() );
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.monitor.MonitorFactory) name from url(" + url.toString() + ") use keys([protocol])");
+com.alibaba.dubbo.monitor.MonitorFactory extension = (com.alibaba.dubbo.monitor.MonitorFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.monitor.MonitorFactory.class).getExtension(extName);
+return extension.getMonitor(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.433 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.validation;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class Validation$Adpative implements com.alibaba.dubbo.validation.Validation {
+public com.alibaba.dubbo.validation.Validator getValidator(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("validation", "jvalidation");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.validation.Validation) name from url(" + url.toString() + ") use keys([validation])");
+com.alibaba.dubbo.validation.Validation extension = (com.alibaba.dubbo.validation.Validation)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.validation.Validation.class).getExtension(extName);
+return extension.getValidator(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.455 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.456 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.485 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.MessageService url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613109294, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.607 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.rpc.cluster;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class Cluster$Adpative implements com.alibaba.dubbo.rpc.cluster.Cluster {
+public com.alibaba.dubbo.rpc.Invoker join(com.alibaba.dubbo.rpc.cluster.Directory arg0) throws com.alibaba.dubbo.rpc.cluster.Directory {
+if (arg0 == null) throw new IllegalArgumentException("com.alibaba.dubbo.rpc.cluster.Directory argument == null");
+if (arg0.getUrl() == null) throw new IllegalArgumentException("com.alibaba.dubbo.rpc.cluster.Directory argument getUrl() == null");com.alibaba.dubbo.common.URL url = arg0.getUrl();
+String extName = url.getParameter("cluster", "failover");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.cluster.Cluster) name from url(" + url.toString() + ") use keys([cluster])");
+com.alibaba.dubbo.rpc.cluster.Cluster extension = (com.alibaba.dubbo.rpc.cluster.Cluster)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.cluster.Cluster.class).getExtension(extName);
+return extension.join(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.663 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.registry;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class RegistryFactory$Adpative implements com.alibaba.dubbo.registry.RegistryFactory {
+public com.alibaba.dubbo.registry.Registry getRegistry(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = ( url.getProtocol() == null ? "dubbo" : url.getProtocol() );
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.registry.RegistryFactory) name from url(" + url.toString() + ") use keys([protocol])");
+com.alibaba.dubbo.registry.RegistryFactory extension = (com.alibaba.dubbo.registry.RegistryFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.registry.RegistryFactory.class).getExtension(extName);
+return extension.getRegistry(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.704 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.remoting;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class Transporter$Adpative implements com.alibaba.dubbo.remoting.Transporter {
+public com.alibaba.dubbo.remoting.Client connect(com.alibaba.dubbo.common.URL arg0, com.alibaba.dubbo.remoting.ChannelHandler arg1) throws com.alibaba.dubbo.common.URL {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("client", url.getParameter("transporter", "netty"));
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.remoting.Transporter) name from url(" + url.toString() + ") use keys([client, transporter])");
+com.alibaba.dubbo.remoting.Transporter extension = (com.alibaba.dubbo.remoting.Transporter)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.remoting.Transporter.class).getExtension(extName);
+return extension.connect(arg0, arg1);
+}
+public com.alibaba.dubbo.remoting.Server bind(com.alibaba.dubbo.common.URL arg0, com.alibaba.dubbo.remoting.ChannelHandler arg1) throws com.alibaba.dubbo.common.URL {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("server", url.getParameter("transporter", "netty"));
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.remoting.Transporter) name from url(" + url.toString() + ") use keys([server, transporter])");
+com.alibaba.dubbo.remoting.Transporter extension = (com.alibaba.dubbo.remoting.Transporter)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.remoting.Transporter.class).getExtension(extName);
+return extension.bind(arg0, arg1);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.754 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.remoting;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class Dispatcher$Adpative implements com.alibaba.dubbo.remoting.Dispatcher {
+public com.alibaba.dubbo.remoting.ChannelHandler dispatch(com.alibaba.dubbo.remoting.ChannelHandler arg0, com.alibaba.dubbo.common.URL arg1) {
+if (arg1 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg1;
+String extName = url.getParameter("dispatcher", url.getParameter("dispather", url.getParameter("channel.handler", "all")));
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.remoting.Dispatcher) name from url(" + url.toString() + ") use keys([dispatcher, dispather, channel.handler])");
+com.alibaba.dubbo.remoting.Dispatcher extension = (com.alibaba.dubbo.remoting.Dispatcher)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.remoting.Dispatcher.class).getExtension(extName);
+return extension.dispatch(arg0, arg1);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:09.786 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.common.threadpool;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class ThreadPool$Adpative implements com.alibaba.dubbo.common.threadpool.ThreadPool {
+public java.util.concurrent.Executor getExecutor(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("threadpool", "fixed");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.common.threadpool.ThreadPool) name from url(" + url.toString() + ") use keys([threadpool])");
+com.alibaba.dubbo.common.threadpool.ThreadPool extension = (com.alibaba.dubbo.common.threadpool.ThreadPool)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.common.threadpool.ThreadPool.class).getExtension(extName);
+return extension.getExecutor(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:10.475 [] [] [] INFO [main] <AbstractServer.java [70] - <init>> < [DUBBO] Start NettyServer bind /0.0.0.0:20990, export /169.254.148.248:20990, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:10.496 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.remoting.zookeeper;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class ZookeeperTransporter$Adpative implements com.alibaba.dubbo.remoting.zookeeper.ZookeeperTransporter {
+public com.alibaba.dubbo.remoting.zookeeper.ZookeeperClient connect(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("client", url.getParameter("transporter", "zkclient"));
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.remoting.zookeeper.ZookeeperTransporter) name from url(" + url.toString() + ") use keys([client, transporter])");
+com.alibaba.dubbo.remoting.zookeeper.ZookeeperTransporter extension = (com.alibaba.dubbo.remoting.zookeeper.ZookeeperTransporter)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.remoting.zookeeper.ZookeeperTransporter.class).getExtension(extName);
+return extension.connect(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:10.566 [] [] [] INFO [main] <AbstractRegistry.java [232] - loadProperties> < [DUBBO] Load registry store file C:\Users\lenovo\.dubbo\dubbo-registry-127.0.0.1.cache, data: {com.ludateam.wechat.api.UserService=empty://169.254.148.248/com.ludateam.wechat.api.UserService?application=wechat.consumer&category=configurators&dubbo=2.8.4&getUserByName.actives=10&getUserByPhone.retries=2&getUserByPhone.timeout=5000&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=49632&protocol=dubbo&revision=1.0.0&side=consumer&timestamp=1504764633949 empty://169.254.148.248/com.ludateam.wechat.api.UserService?application=wechat.consumer&category=routers&dubbo=2.8.4&getUserByName.actives=10&getUserByPhone.retries=2&getUserByPhone.timeout=5000&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=49632&protocol=dubbo&revision=1.0.0&side=consumer&timestamp=1504764633949 empty://169.254.148.248/com.ludateam.wechat.api.UserService?application=wechat.consumer&category=providers&dubbo=2.8.4&getUserByName.actives=10&getUserByPhone.retries=2&getUserByPhone.timeout=5000&interface=com.ludateam.wechat.api.UserService&methods=getUserByName,getUserByPhone&owner=ludateam&pid=49632&protocol=dubbo&revision=1.0.0&side=consumer&timestamp=1504764633949, com.alibaba.dubbo.demo.user.facade.AnotherUserRestService=empty://169.254.148.248/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?application=demo-consumer&category=configurators&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787171722 empty://169.254.148.248/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?application=demo-consumer&category=routers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787171722 empty://169.254.148.248/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?application=demo-consumer&category=providers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787171722, annotationConfig/net.aimeizi.student.StudentRestService=empty://169.254.148.248:20880/net.aimeizi.student.StudentRestService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&group=annotationConfig&interface=net.aimeizi.student.StudentRestService&iothreads=10&methods=registerStudent,getStudent&optimizer=net.aimeizi.SerializationOptimizerImpl&organization=dubbo&owner=aimeizi&pid=38176&serialization=kryo&server=netty&side=provider&threads=500&timestamp=1502851536396&validation=true, net.aimeizi.student.StudentRestService=empty://169.254.148.248:8000/services/net.aimeizi.student.StudentRestService?accepts=500&anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&extension=com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter,net.aimeizi.exception.ValidationExceptionMapper&generic=false&interface=net.aimeizi.student.StudentRestService&methods=registerStudent,getStudent&organization=dubbo&owner=aimeizi&pid=38176&server=tomcat&side=provider&threads=500&timestamp=1502851539792&validation=true, com.ludateam.wechat.api.MessageService=empty://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=13192&serialization=kryo&server=tomcat&side=provider&timestamp=1505099515364, com.ludateam.wechat.api.CallService=empty://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=13192&serialization=kryo&server=tomcat&side=provider&timestamp=1505099520226, com.alibaba.dubbo.monitor.MonitorService=empty://169.254.56.102:7070/com.alibaba.dubbo.monitor.MonitorService?anyhost=true&application=simple-monitor&category=configurators&check=false&delay=-1&dubbo=2.0.0&generic=false&interface=com.alibaba.dubbo.monitor.MonitorService&methods=lookup,collect&pid=27800&side=provider&timestamp=1461831883967, */com.alibaba.dubbo.demo.bid.BidService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.bid.BidService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.bid.BidService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.bid.BidService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.bid.BidService&version=*, com.alibaba.dubbo.demo.user.facade.UserRestService=empty://169.254.148.248:8888/services/com.alibaba.dubbo.demo.user.facade.UserRestService?accepts=500&anyhost=true&application=demo-provider&category=configurators&check=false&dubbo=2.0.0&extension=com.alibaba.dubbo.demo.extension.TraceInterceptor,                     com.alibaba.dubbo.demo.extension.TraceFilter,                     com.alibaba.dubbo.demo.extension.ClientTraceFilter,                     com.alibaba.dubbo.demo.extension.DynamicTraceBinding,                     com.alibaba.dubbo.demo.extension.CustomExceptionMapper,                     com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter&generic=false&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&methods=getUser,registerUser&organization=dubbox&owner=programmer&pid=12408&server=tomcat&side=provider&threads=500&timestamp=1502787141475&validation=true, net.aimeizi.order.OrderService$Iface=empty://169.254.148.248:33201/net.aimeizi.order.OrderService$Iface?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&interface=net.aimeizi.order.OrderService$Iface&methods=ping,getOrder&organization=dubbo&owner=aimeizi&pid=38176&service.filter=serviceFilter&side=provider&timeout=10000&timestamp=1502851538967, */com.alibaba.dubbo.monitor.MonitorService:*=empty://169.254.56.102/com.alibaba.dubbo.monitor.MonitorService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.monitor.MonitorService&version=* dubbo://169.254.56.102:7070/com.alibaba.dubbo.monitor.MonitorService?anyhost=true&application=simple-monitor&delay=-1&dubbo=2.0.0&generic=false&interface=com.alibaba.dubbo.monitor.MonitorService&methods=lookup,collect&pid=27800&side=provider&timestamp=1461831883967, com.alibaba.dubbo.demo.bid.BidService=empty://169.254.148.248/com.alibaba.dubbo.demo.bid.BidService?application=demo-consumer&category=configurators&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.bid.BidService&methods=throwNPE,bid&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787169666 empty://169.254.148.248/com.alibaba.dubbo.demo.bid.BidService?application=demo-consumer&category=routers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.bid.BidService&methods=throwNPE,bid&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787169666 empty://169.254.148.248/com.alibaba.dubbo.demo.bid.BidService?application=demo-consumer&category=providers&dubbo=2.0.0&interface=com.alibaba.dubbo.demo.bid.BidService&methods=throwNPE,bid&organization=dubbox&owner=programmer&pid=22084&side=consumer&timestamp=1502787169666, annotationConfig/com.alibaba.dubbo.demo.user.facade.UserRestService=empty://169.254.148.248:20880/com.alibaba.dubbo.demo.user.facade.UserRestService?anyhost=true&application=demo-provider&category=configurators&check=false&dubbo=2.0.0&generic=false&group=annotationConfig&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&methods=getUser,registerUser&optimizer=com.alibaba.dubbo.demo.SerializationOptimizerImpl&organization=dubbox&owner=programmer&pid=12408&serialization=kryo&side=provider&timestamp=1502787139393&validation=true, net.aimeizi.user.UserService=empty://169.254.148.248:20880/net.aimeizi.user.UserService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&interface=net.aimeizi.user.UserService&iothreads=10&methods=getUserById,updatePassword,ping,registerUser,deleteUserById&optimizer=net.aimeizi.SerializationOptimizerImpl&organization=dubbo&owner=aimeizi&pid=38176&serialization=kryo&server=netty&service.filter=serviceFilter&side=provider&threads=500&timeout=10000&timestamp=1502851538055, xmlConfig/com.alibaba.dubbo.demo.user.UserService=empty://169.254.148.248:20880/com.alibaba.dubbo.demo.user.UserService?anyhost=true&application=demo-provider&category=configurators&check=false&dubbo=2.0.0&generic=false&group=xmlConfig&interface=com.alibaba.dubbo.demo.user.UserService&methods=getUser,registerUser&optimizer=com.alibaba.dubbo.demo.SerializationOptimizerImpl&organization=dubbox&owner=programmer&pid=12408&serialization=kryo&side=provider&timestamp=1502787140960, net.aimeizi.student.AnotherStudentRestService=empty://169.254.148.248:8000/services/net.aimeizi.student.AnotherStudentRestService?accepts=500&anyhost=true&application=dubbo-provider&category=configurators&check=false&connections=100&dubbo=2.8.4&extension=com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter,net.aimeizi.exception.ValidationExceptionMapper&generic=false&interface=net.aimeizi.student.AnotherStudentRestService&methods=registerStudent,getStudent&organization=dubbo&owner=aimeizi&pid=38176&server=tomcat&side=provider&threads=500&timeout=2000&timestamp=1502851540247&validation=true, */com.alibaba.dubbo.demo.user.facade.AnotherUserRestService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.AnotherUserRestService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.AnotherUserRestService&version=*, com.yingjun.dubbox.api.UserService=empty://169.254.148.248:9009/com.yingjun.dubbox.api.UserService?anyhost=true&application=provider&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=5000&dubbo=2.8.4&extension=com.yingjun.dubbox.services.ControllFilter&generic=false&interface=com.yingjun.dubbox.api.UserService&methods=getUserByName,getUserByPhone&owner=yingjun&pid=9444&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1502937435746, */com.alibaba.dubbo.demo.user.facade.UserRestService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.UserRestService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.user.facade.UserRestService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.facade.UserRestService&version=*, net.aimeizi.person.PersonService=empty://169.254.148.248:40001/net.aimeizi.person.PersonService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&interface=net.aimeizi.person.PersonService&methods=ping,getPersonList&organization=dubbo&owner=aimeizi&pid=38176&service.filter=serviceFilter&side=provider&timeout=10000&timestamp=1502851537384, xmlConfig/net.aimeizi.student.StudentService=empty://169.254.148.248:20880/net.aimeizi.student.StudentService?anyhost=true&application=dubbo-provider&category=configurators&check=false&dubbo=2.8.4&generic=false&group=xmlConfig&interface=net.aimeizi.student.StudentService&iothreads=10&methods=registerStudent,getStudent&optimizer=net.aimeizi.SerializationOptimizerImpl&organization=dubbo&owner=aimeizi&pid=38176&serialization=kryo&server=netty&side=provider&threads=500&timestamp=1502851539409, */com.alibaba.dubbo.demo.user.UserService:*=empty://169.254.56.102/com.alibaba.dubbo.demo.user.UserService?category=consumers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.UserService&version=* empty://169.254.56.102/com.alibaba.dubbo.demo.user.UserService?category=providers&check=false&classifier=*&group=*&interface=com.alibaba.dubbo.demo.user.UserService&version=*, net.aimeizi.user.UserRestService=empty://169.254.148.248:8000/services/net.aimeizi.user.UserRestService?accepts=500&anyhost=true&application=dubbo-provider&category=configurators&check=false&connections=100&dubbo=2.8.4&extension=com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter,net.aimeizi.exception.ValidationExceptionMapper&generic=false&interface=net.aimeizi.user.UserRestService&methods=getUserById,updatePassword,post,ping,get,registerUser,deleteUserById&organization=dubbo&owner=aimeizi&pid=38176&server=tomcat&service.filter=serviceFilter&side=provider&threads=500&timeout=10000&timestamp=1502851538560&validation=true}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:10.879 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: dubbo://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:11.315 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:11.821 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308, urls: [empty://169.254.148.248:20990/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613109308], dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:11.963 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.rpc.cluster;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class RouterFactory$Adpative implements com.alibaba.dubbo.rpc.cluster.RouterFactory {
+public com.alibaba.dubbo.rpc.cluster.Router getRouter(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getProtocol();
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.cluster.RouterFactory) name from url(" + url.toString() + ") use keys([protocol])");
+com.alibaba.dubbo.rpc.cluster.RouterFactory extension = (com.alibaba.dubbo.rpc.cluster.RouterFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.cluster.RouterFactory.class).getExtension(extName);
+return extension.getRouter(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:11.975 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.rpc.cluster;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class ConfiguratorFactory$Adpative implements com.alibaba.dubbo.rpc.cluster.ConfiguratorFactory {
+public com.alibaba.dubbo.rpc.cluster.Configurator getConfigurator(com.alibaba.dubbo.common.URL arg0) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getProtocol();
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.rpc.cluster.ConfiguratorFactory) name from url(" + url.toString() + ") use keys([protocol])");
+com.alibaba.dubbo.rpc.cluster.ConfiguratorFactory extension = (com.alibaba.dubbo.rpc.cluster.ConfiguratorFactory)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.rpc.cluster.ConfiguratorFactory.class).getExtension(extName);
+return extension.getConfigurator(arg0);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:12.157 [] [] [] DEBUG [main] <ExtensionLoader.java [943] - createAdaptiveExtensionClassCode> < [DUBBO] package com.alibaba.dubbo.remoting.http;
+import com.alibaba.dubbo.common.extension.ExtensionLoader;
+public class HttpBinder$Adpative implements com.alibaba.dubbo.remoting.http.HttpBinder {
+public com.alibaba.dubbo.remoting.http.HttpServer bind(com.alibaba.dubbo.common.URL arg0, com.alibaba.dubbo.remoting.http.HttpHandler arg1) {
+if (arg0 == null) throw new IllegalArgumentException("url == null");
+com.alibaba.dubbo.common.URL url = arg0;
+String extName = url.getParameter("server", "jetty");
+if(extName == null) throw new IllegalStateException("Fail to get extension(com.alibaba.dubbo.remoting.http.HttpBinder) name from url(" + url.toString() + ") use keys([server])");
+com.alibaba.dubbo.remoting.http.HttpBinder extension = (com.alibaba.dubbo.remoting.http.HttpBinder)ExtensionLoader.getExtensionLoader(com.alibaba.dubbo.remoting.http.HttpBinder.class).getExtension(extName);
+return extension.bind(arg0, arg1);
+}
+}, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:12.174 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:12.179 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.MessageService to url rest://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:12.181 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.MessageService url rest://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613109294, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:16.487 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: rest://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:16.789 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.024 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173, urls: [empty://169.254.148.248:9009/com.ludateam.wechat.api.MessageService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.MessageService&methods=receiveMessage,sendTextMessage&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613112173], dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.026 [] [] [] INFO [main] <ServiceBean.java [108] - onApplicationEvent> < [DUBBO] The service ready on spring started. service: com.ludateam.wechat.api.CallService, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.057 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.058 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.060 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.CallService url dubbo://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613117039, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.066 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: dubbo://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.321 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.664 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043, urls: [empty://169.254.148.248:20990/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&side=provider&timestamp=1507613117043], dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.669 [] [] [] INFO [main] <ServiceConfig.java [518] - exportLocal> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to local registry, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.670 [] [] [] INFO [main] <ServiceConfig.java [474] - doExportUrlsFor1Protocol> < [DUBBO] Export dubbo service com.ludateam.wechat.api.CallService to url rest://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.671 [] [] [] INFO [main] <ServiceConfig.java [485] - doExportUrlsFor1Protocol> < [DUBBO] Register dubbo service com.ludateam.wechat.api.CallService url rest://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667 to registry registry://127.0.0.1:2181/com.alibaba.dubbo.registry.RegistryService?application=wechat.services&dubbo=2.8.4&owner=ludateam&pid=29240&registry=zookeeper&timestamp=1507613117039, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.688 [] [] [] INFO [main] <AbstractRegistry.java [302] - register> < [DUBBO] Register: rest://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:17.996 [] [] [] INFO [main] <AbstractRegistry.java [325] - subscribe> < [DUBBO] Subscribe: provider://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:18.187 [] [] [] INFO [main] <AbstractRegistry.java [422] - notify> < [DUBBO] Notify urls for subscribe url provider://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667, urls: [empty://169.254.148.248:9009/com.ludateam.wechat.api.CallService?anyhost=true&application=wechat.services&category=configurators&check=false&default.accepts=1000&default.threadpool=fixed&default.threads=100&default.timeout=50000&dubbo=2.8.4&extension=com.ludateam.wechat.filter.ControllFilter&generic=false&interface=com.ludateam.wechat.api.CallService&methods=callService&owner=ludateam&pid=29240&revision=1.0.0&serialization=kryo&server=tomcat&side=provider&timestamp=1507613117667], dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:18.209 [] [] [] INFO [main] <Main.java [81] - main> < [DUBBO] Dubbo SpringContainer started!, dubbo version: 2.8.4, current host: 127.0.0.1> 
+2017-10-10 13:25:24.310 [] [] [] INFO [http-nio-9009-exec-1] <PropertyUtil.java [37] - loadProps> <开始加载properties文件内容.......> 
+2017-10-10 13:25:24.320 [] [] [] INFO [http-nio-9009-exec-1] <PropertyUtil.java [57] - loadProps> <加载properties文件内容完成...........> 
+2017-10-10 13:25:24.329 [] [] [] INFO [http-nio-9009-exec-1] <PropertyUtil.java [58] - loadProps> <properties文件内容：{dubbo.registry.address=zookeeper://127.0.0.1:2181, xh.wbh=http://172.16.1.51/qywx, xh.nbh=http://172.16.1.50/qywx }> 
+2017-10-10 13:25:24.345 [] [] [] INFO [http-nio-9009-exec-1] <MessageServiceImpl.java [59] - sendTextMessage> <post {
+} to null/wechat/qyapi/sendTextMessage> 
+2017-10-10 13:25:24.380 [] [] [] ERROR [http-nio-9009-exec-1] <ExceptionFilter.java [87] - invoke> < [DUBBO] Got unchecked and undeclared exception which called by 127.0.0.1. service: com.ludateam.wechat.api.MessageService, method: sendTextMessage, exception: java.lang.RuntimeException: java.net.MalformedURLException: no protocol: null/wechat/qyapi/sendTextMessage, dubbo version: 2.8.4, current host: 127.0.0.1> 
+java.lang.RuntimeException: java.net.MalformedURLException: no protocol: null/wechat/qyapi/sendTextMessage
+	at com.ludateam.wechat.kit.HttpKit.post(HttpKit.java:182)
+	at com.ludateam.wechat.kit.HttpKit.post(HttpKit.java:195)
+	at com.ludateam.wechat.services.MessageServiceImpl.sendTextMessage(MessageServiceImpl.java:61)
+	at com.alibaba.dubbo.common.bytecode.Wrapper1.invokeMethod(Wrapper1.java)
+	at com.alibaba.dubbo.rpc.proxy.javassist.JavassistProxyFactory$1.doInvoke(JavassistProxyFactory.java:46)
+	at com.alibaba.dubbo.rpc.proxy.AbstractProxyInvoker.invoke(AbstractProxyInvoker.java:72)
+	at com.alibaba.dubbo.rpc.protocol.InvokerWrapper.invoke(InvokerWrapper.java:53)
+	at com.alibaba.dubbo.rpc.filter.ExceptionFilter.invoke(ExceptionFilter.java:64)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.monitor.support.MonitorFilter.invoke(MonitorFilter.java:75)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.TimeoutFilter.invoke(TimeoutFilter.java:42)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.protocol.dubbo.filter.TraceFilter.invoke(TraceFilter.java:78)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ContextFilter.invoke(ContextFilter.java:70)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.GenericFilter.invoke(GenericFilter.java:132)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.ClassLoaderFilter.invoke(ClassLoaderFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.filter.EchoFilter.invoke(EchoFilter.java:38)
+	at com.alibaba.dubbo.rpc.protocol.ProtocolFilterWrapper$1.invoke(ProtocolFilterWrapper.java:91)
+	at com.alibaba.dubbo.rpc.proxy.InvokerInvocationHandler.invoke(InvokerInvocationHandler.java:52)
+	at com.alibaba.dubbo.common.bytecode.proxy0.sendTextMessage(proxy0.java)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:137)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:288)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:242)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:229)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:356)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:179)
+	at org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:220)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:56)
+	at org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at com.alibaba.dubbo.rpc.protocol.rest.DubboHttpServer$RestHandler.handle(DubboHttpServer.java:86)
+	at com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet.service(DispatcherServlet.java:64)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:291)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:106)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:142)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:88)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:534)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1081)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:658)
+	at org.apache.coyote.http11.Http11NioProtocol$Http11ConnectionHandler.process(Http11NioProtocol.java:222)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1566)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.run(NioEndpoint.java:1523)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.MalformedURLException: no protocol: null/wechat/qyapi/sendTextMessage
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at java.net.URL.<init>(Unknown Source)
+	at com.ludateam.wechat.kit.HttpKit.getHttpConnection(HttpKit.java:116)
+	at com.ludateam.wechat.kit.HttpKit.post(HttpKit.java:172)
+	... 59 more

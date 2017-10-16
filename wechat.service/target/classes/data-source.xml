@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	       http://www.springframework.org/schema/beans/spring-beans.xsd
+	       http://www.springframework.org/schema/tx
+	       http://www.springframework.org/schema/tx/spring-tx.xsd
+	       http://www.springframework.org/schema/aop
+	       http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="qywxDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url"  value="${db1.jdbc_url}"/>
+        <property name="username" value="${db1.jdbc_username}"/>
+        <property name="password" value="${db1.jdbc_password}"/>
+        <property name="dbType" value="sqlserver"></property>
+        <property name="filters" value="stat,log4j"/>
+        <property name="maxActive" value="20"/>
+        <property name="initialSize" value="1"/>
+        <property name="maxWait" value="60000"/>
+        <property name="minIdle" value="1"/>
+        <property name="timeBetweenEvictionRunsMillis" value="3000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="validationQuery" value="SELECT 'x' "/>
+        <property name="testWhileIdle" value="true"/>
+        <property name="testOnBorrow" value="false"/>
+        <property name="testOnReturn" value="false"/>
+        <property name="poolPreparedStatements" value="true"/>
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20"/>
+        <!-- <property name="proxyFilters">
+             <list>
+                 <ref bean="stat-filter"/>
+                 <ref bean="log-filter" />
+                 <ref bean="wall-filter"/>
+             </list>
+         </property>-->
+
+    </bean>
+    <bean id="multipleDataSource" class="com.ludateam.wechat.dao.MultipleDataSource">
+        <property name="defaultTargetDataSource" ref="qywxDataSource"/>
+        <property name="targetDataSources">
+            <map>
+                <entry key="qywxDataSource" value-ref="qywxDataSource"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    	<property name="mapperLocations" value="classpath:com/ludateam/wechat/dao/map/*.xml" />
+        <property name="dataSource" ref="multipleDataSource"/>
+    </bean> 
+    <!-- mybatis.spring自动映射 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.ludateam.wechat.dao"/>
+    </bean>
+</beans>
