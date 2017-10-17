@@ -29,12 +29,15 @@ public class IocInterceptor implements Interceptor {
         Field[] fields = inv.getMethod().getDeclaringClass().getDeclaredFields();
         for (Field field : fields) {
             Object bean = null;
-            if (field.isAnnotationPresent(Inject.BY_NAME.class))
+            if (field.isAnnotationPresent(Inject.BY_NAME.class)) {
                 bean = ctx.getBean(field.getName());
-            else if (field.isAnnotationPresent(Inject.BY_TYPE.class))
+            }
+            else if (field.isAnnotationPresent(Inject.BY_TYPE.class)) {
                 bean = ctx.getBean(field.getType());
-            else
-                continue ;
+            }
+            else {
+                continue;
+            }
 
             try {
                 if (bean != null) {

@@ -21,7 +21,7 @@ import com.jfinal.plugin.IPlugin;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
-public class SpringPlugin  implements IPlugin {
+public class SpringPlugin implements IPlugin {
     private String[] configurations;
     private ApplicationContext ctx;
 
@@ -35,12 +35,13 @@ public class SpringPlugin  implements IPlugin {
 
     @Override
     public boolean start() {
-        if (ctx != null)
+        if (ctx != null) {
             IocInterceptor.ctx = ctx;
-        else if (configurations != null)
+        } else if (configurations != null) {
             IocInterceptor.ctx = new FileSystemXmlApplicationContext(configurations);
-        else
+        } else {
             IocInterceptor.ctx = new FileSystemXmlApplicationContext(PathKit.getWebRootPath() + "/WEB-INF/applicationContext.xml");
+        }
         return true;
 
     }

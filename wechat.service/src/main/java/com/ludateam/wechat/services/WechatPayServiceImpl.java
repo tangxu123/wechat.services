@@ -28,6 +28,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
     private SearchDao searchDao;
 
 
+    @Override
     @POST
     @Path("/account/{username}")
     public String getAccountByUserName(@PathParam("username") String username) {
@@ -36,12 +37,14 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/account")
     public int updateAccountLastLogin(@QueryParam("id") int id) {
         return searchDao.updateAccountLastLogin(id);
     }
 
+    @Override
     @POST
     @Path("/account/zsd/{username}")
     public String getZsd(@PathParam("username") String username) {
@@ -54,6 +57,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/skorder/{jksbh}")
     public String findSKorder(@PathParam("jksbh") String jksbh) {
@@ -66,6 +70,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/skorder")
     public String findSKorderByOrderId(@QueryParam("orderid") String orderid) {
@@ -78,6 +83,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/skorder/result")
     public String findSKorderByOrderIdAndResult(@QueryParam("orderid") String orderid) {
@@ -90,6 +96,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/skorder/add")
     public int addSkOrder(@Context HttpServletRequest request) {
@@ -106,6 +113,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return 1;
     }
 
+    @Override
     @POST
     @Path("/query")
     public String querySql(@Context HttpServletRequest request) {
@@ -122,6 +130,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return JSON.toJSONString(list);
     }
 
+    @Override
     @POST
     @Path("/skorder/fail")
     public String findSKorderByOrderIdfail(@QueryParam("orderid") String orderid) {
@@ -134,6 +143,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/skorder/update")
     public int updateSKOrderZf(@Context HttpServletRequest request) {
@@ -142,6 +152,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return searchDao.updateSKOrderZf(sqlmap);
     }
 
+    @Override
     @POST
     @Path("/skorder/findbycon")
     public String findSKorderByCon(@Context HttpServletRequest request) {
@@ -156,6 +167,7 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         return jsonstring;
     }
 
+    @Override
     @POST
     @Path("/skdetails/add")
     public int insertSKDetails(@Context HttpServletRequest request) {

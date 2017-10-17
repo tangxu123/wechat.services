@@ -38,6 +38,8 @@ import java.util.HashMap;
 public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
     private static Logger logger = Logger.getLogger(CallServiceImpl.class);
 
+
+    @Override
     @POST
     @Path("/callService")
     public String callService(@QueryParam("subUrl") String subUrl,  @QueryParam("target") String target, @Context HttpServletRequest request) {

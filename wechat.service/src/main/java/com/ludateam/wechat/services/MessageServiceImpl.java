@@ -47,6 +47,7 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
     @Autowired
     private SearchDao searchDao;
     
+    @Override
     @POST
     @Path("/sendTextMessage")
     public String sendTextMessage(@Context HttpServletRequest request) {
@@ -62,7 +63,8 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
         return result;
     }
 
-	@POST
+	@Override
+    @POST
 	@Path("/receiveMessage")
 	public String receiveMessage(@QueryParam("msgJson") String msgJson) {
 		logger.info("post receive message：" + msgJson);

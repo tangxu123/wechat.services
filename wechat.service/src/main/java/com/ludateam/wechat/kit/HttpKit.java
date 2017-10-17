@@ -67,6 +67,7 @@ public class HttpKit {
      * https 域名校验
      */
     private class TrustAnyHostnameVerifier implements HostnameVerifier {
+        @Override
         public boolean verify(String hostname, SSLSession session) {
             return true;
         }
@@ -76,13 +77,16 @@ public class HttpKit {
      * https 证书管理
      */
     private class TrustAnyTrustManager implements X509TrustManager {
+        @Override
         public X509Certificate[] getAcceptedIssuers() {
             return null;
         }
 
+        @Override
         public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         }
 
+        @Override
         public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {
         }
     }
@@ -130,9 +134,11 @@ public class HttpKit {
         conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
         conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36");
 
-        if (headers != null && !headers.isEmpty())
-            for (Entry<String, String> entry : headers.entrySet())
+        if (headers != null && !headers.isEmpty()) {
+            for (Entry<String, String> entry : headers.entrySet()) {
                 conn.setRequestProperty(entry.getKey(), entry.getValue());
+            }
+        }
 
         return conn;
     }
@@ -227,8 +233,9 @@ public class HttpKit {
      * Build queryString of the url
      */
     private static String buildUrlWithQueryString(String url, Map<String, String> queryParas) {
-        if (queryParas == null || queryParas.isEmpty())
+        if (queryParas == null || queryParas.isEmpty()) {
             return url;
+        }
 
         StringBuilder sb = new StringBuilder(url);
         boolean isFirst;
@@ -240,17 +247,21 @@ public class HttpKit {
         }
 
         for (Entry<String, String> entry : queryParas.entrySet()) {
-            if (isFirst) isFirst = false;
-            else sb.append("&");
+            if (isFirst) {
+                isFirst = false;
+            } else {
+                sb.append("&");
+            }
 
             String key = entry.getKey();
             String value = entry.getValue();
-            if (StrKit.notBlank(value))
+            if (StrKit.notBlank(value)) {
                 try {
                     value = URLEncoder.encode(value, CHARSET);
                 } catch (UnsupportedEncodingException e) {
                     throw new RuntimeException(e);
                 }
+            }
             sb.append(key).append("=").append(value);
         }
         return sb.toString();
@@ -272,12 +283,13 @@ public class HttpKit {
         } catch (IOException e) {
             throw new RuntimeException(e);
         } finally {
-            if (br != null)
+            if (br != null) {
                 try {
                     br.close();
                 } catch (IOException e) {
                     logger.error(e.getMessage(), e);
                 }
+            }
         }
     }
 

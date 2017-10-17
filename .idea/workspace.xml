@@ -1,826 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="GROUP_BY_SEVERITY" value="true" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2cbd9dc2-4436-488f-97d3-2a7564c3e71a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/target/classes/com/ludateam/wechat/api/CallService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/target/classes/com/ludateam/wechat/api/MessageService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/target/classes/com/ludateam/wechat/api/WebService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/target/classes/com/ludateam/wechat/api/WechatPayService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/target/classes/com/ludateam/wechat/filter/ControllFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Before.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Callback.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Clear.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Duang.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Enhancer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Interceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/InterceptorManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/InterceptorStack.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/Invocation.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/InvocationWrapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/aop/PrototypeInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/captcha/Captcha.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/captcha/CaptchaCache$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/captcha/CaptchaCache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/captcha/CaptchaManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/captcha/CaptchaRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/captcha/ICaptchaCache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/Constants.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/Handlers.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/Interceptors.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/JFinalConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/Plugins.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/Routes$Route.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/config/Routes.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/Action.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionException$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionKey.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionMapping.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionReporter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionReporter$SystemOutWriter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ActionReporter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/Config$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/Config.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/Const.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/Controller.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/ForwardActionRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/Injector.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/JFinal.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/JFinalFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/core/TypeConverter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/handler/ContextPathHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/handler/FakeStaticHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/handler/RoutesHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/handler/ServerNameRedirect301Handler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/handler/UrlSkipHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/GET.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/JFinalSession.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/LogInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/NoUrlPara.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/NotAction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/POST.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/Restful$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/Restful.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/interceptor/SessionInViewInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/kit/DateKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/kit/ElResolverListener.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/kit/SessionIdKit$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/kit/SessionIdKit$FieldHolder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/kit/SessionIdKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/render/CaptchaRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/ext/render/StaticHtmlRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/handler/Handler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/handler/HandlerFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/i18n/I18n.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/i18n/I18nInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/i18n/Res.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/FastJson.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/FastJsonFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/IJsonFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/JFinalJson.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/JFinalJsonFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/Jackson.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/JacksonFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/Json.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/JsonManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/MixedJsonFactory$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/MixedJsonFactory$MixedJson.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/MixedJsonFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/FileKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/HandlerKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/HashKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/HttpKit$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/HttpKit$TrustAnyHostnameVerifier.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/HttpKit$TrustAnyTrustManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/HttpKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/JMap.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/JavaKeyword.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/JsonKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/LogKit$Holder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/LogKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/PathKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/Prop.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/PropKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/Ret.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/kit/StrKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/ILogFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/JdkLog.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/JdkLogFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/Log.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/Log4jLog.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/Log4jLogFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/log/LogManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/IPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/ActiveRecordException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/ActiveRecordPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/CPI.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/CaseInsensitiveContainerFactory$CaseInsensitiveMap.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/CaseInsensitiveContainerFactory$CaseInsensitiveSet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/CaseInsensitiveContainerFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Config.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/DaoContainerFactory$DaoMap.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/DaoContainerFactory$DaoSet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/DaoContainerFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Db.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/DbKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/DbPro.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/FormatProcessDDL.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/FormatProcessDML.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/IAtom.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/IBean.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/ICallback.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/IContainerFactory$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/IContainerFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/IDataSourceProvider.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/JavaType$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/JavaType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Model.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/ModelBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/ModelRecordElResolver.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/NestedTransactionHelpException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/NullDataSource.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/OneConnectionPerThread.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/OrderedFieldContainerFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Page.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Record.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/RecordBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/SqlPara.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/SqlReporter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Sqls.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/Table.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/TableBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/TableMapping.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/cache/EhCache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/cache/ICache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/AnsiSqlDialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/Dialect$Holder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/Dialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/MysqlDialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/OracleDialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/PostgreSqlDialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/SqlServerDialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/dialect/Sqlite3Dialect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/BaseModelGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/ColumnMeta.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/DataDictionaryGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/Generator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/MappingKitGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/MetaBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/ModelGenerator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/TableMeta.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/TypeMapping$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/generator/TypeMapping.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/sql/NameSpaceDirective.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/sql/ParaDirective.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/sql/SqlDirective.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/sql/SqlKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/Transaction.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/Tx.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByActionKeyRegex$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByActionKeyRegex.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByActionKeys$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByActionKeys.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByMethodRegex$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByMethodRegex.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByMethods$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxByMethods.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxReadCommitted.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxReadUncommitted.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxRepeatableRead.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/activerecord/tx/TxSerializable.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/auth/AccessTokenBuilder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/auth/ISession.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/auth/SessionKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/c3p0/C3p0Plugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/cron4j/Cron4jPlugin$TaskInfo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/cron4j/Cron4jPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/cron4j/ITask.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/druid/DruidPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/druid/DruidStatViewHandler$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/druid/DruidStatViewHandler$JFinalStatViewServlet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/druid/DruidStatViewHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/druid/IDruidStatViewAuth.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/CacheInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/CacheKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/CacheName.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/EhCachePlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/EvictInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/IDataLoader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/RenderInfo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/ehcache/RenderType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/Cache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/ICallback.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/IKeyNamingPolicy$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/IKeyNamingPolicy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/Redis.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/RedisInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/RedisPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/serializer/FstSerializer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/serializer/ISerializer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/redis/serializer/JdkSerializer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/Inject$BY_NAME.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/Inject$BY_TYPE.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/Inject.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/IocInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/SpringPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/ContentType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/ErrorRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/FileRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/FreeMarkerRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/HtmlRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/IRenderFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/JavascriptRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/JsonRender$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/JsonRender$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/JsonRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/JspRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/NullRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/QrCodeRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/Redirect301Render.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RedirectRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/Render.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderFactory$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderFactory$FreeMarkerRenderFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderFactory$JspRenderFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderFactory$MainRenderFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderFactory$VelocityRenderFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/RenderManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/TemplateRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/TextRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/VelocityRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/ViewType.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/render/XmlRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/IServer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/JFinalClassLoader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/JettyServer$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/JettyServer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/JettyServerForIDEA.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/Scanner$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/Scanner.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/ServerFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/TimeSize.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/Directive.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/Engine.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/EngineConfig$SharedFunctionFile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/EngineConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/Env$TemplateFile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/Env.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/FastStringWriter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/FileStringSource.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/IOutputDirectiveFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/IStringSource.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/MemoryStringSource.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/OutputDirectiveFactory.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/Template.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/TemplateException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ExprLexer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ExprParser$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ExprParser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/NumTok$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/NumTok.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/Sym.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/Tok.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Arith$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Arith.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Array.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Assign.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Compare$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Compare.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Const$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Const.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Expr.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/ExprList.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Field.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/FieldKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/ForCtrl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Id.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/IncDec$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/IncDec.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Index.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Logic$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Logic.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Map.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Method.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/MethodInfo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/MethodKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/NullSafe.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/RangeArray$RangeList.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/RangeArray.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/SharedMethod.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/SharedMethodKit$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/SharedMethodKit$SharedMethodInfo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/SharedMethodKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/StaticField.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/StaticMethod.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Ternary.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Unary$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/expr/ast/Unary.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/ext/directive/Date.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/ext/directive/Escape.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/ext/directive/Now.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/ext/directive/Random.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/ext/directive/Str.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/ext/sharedmethod/Json.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/CharTable.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Ctrl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Lexer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Location.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ParaToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ParseException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Parser$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Parser.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Scope.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Symbol$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Symbol.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/TextToken.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/Token.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/ArrayIterator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Break.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Call.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Continue.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Define.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Else.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/ElseIf.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/For.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/ForEntry.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/ForIteratorStatus.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/ForLoopStatus.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/If.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Include.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/MapIterator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/NullIterator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Output.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Return.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Set.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/SetGlobal.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/SetLocal.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/SingleObjectIterator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Stat.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/StatList.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/template/stat/ast/Text.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/token/ITokenCache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/token/Token.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/token/TokenManager$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/token/TokenManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/upload/MultipartRequest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/upload/OreillyCos.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/upload/UploadFile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/validate/ValidateException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/validate/Validator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/Run.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/dao/MultipleDataSource.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/dao/SearchDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/ApiConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/ApiConfigKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HashKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$TrustAnyHostnameVerifier.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$TrustAnyTrustManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/StrKit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/CallServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/MessageServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/WechatPayServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/utils/DesUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/utils/PropertyUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/annotation/Controller.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/annotation/Service.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/annotation/Table.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/format/DateFormat.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/func/AuthUrl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/func/EscapeHtml.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/func/I18nFormat.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/func/OrderBy.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/func/UnEscapeHtml.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/GifCaptcha.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/JpegCaptcha.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyCaptchaRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyJsonRender$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyJsonRender$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyJsonRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyXmlRender$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyXmlRender$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/MyXmlRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/PngCaptcha.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/TempFileRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/Captcha.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/Encoder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/GifDecoder$GifFrame.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/GifDecoder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/GifEncoder.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/Quant.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/Randoms.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/render/image/Streams.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/tag/DictTag.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/beetl/tag/ParamTag.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/callback/DateClearCallback.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/ConfigCore.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/EscapeXSSHttpServletRequestWrapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/FormTokenByEhcache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/FormTokenByRedis.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/JFinalConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/ModelScan.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/RoutesScan.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/Run.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/config/XSSMutipartRequest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantAuth.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantCache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantI18n.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantInit.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantLogin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantRender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantSplitPage.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/constant/ConstantWebContext.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/dto/DataBase.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/dto/Redis.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/dto/RenderBean.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/dto/SplitPage.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/dto/ZtreeNode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/handler/GlobalHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/interceptor/AuthInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/interceptor/ParamPkgInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/interceptor/XSSInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/BaseController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/BaseModel.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/BaseService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/BaseValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dept/Department.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dept/DepartmentController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dept/DepartmentService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dept/DepartmentValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dict/Dict.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dict/DictController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dict/DictService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dict/DictValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/group/Group.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/group/GroupController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/group/GroupService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/group/GroupValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/grouprole/GroupRole.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/grouprole/GroupRoleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/grouprole/GroupRoleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/grouprole/GroupRoleValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/image/AuthImgController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/image/ImageController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/image/ImageService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/index/IndexController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/index/IndexService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/jsonp/JsonpController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/login/LoginController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/login/LoginService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/login/LoginValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/menu/Menu.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/menu/MenuController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/menu/MenuService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/menu/MenuValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/module/Module.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/module/ModuleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/module/ModuleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/module/ModuleValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/operator/Operator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/operator/OperatorController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/operator/OperatorService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/operator/OperatorValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/param/Param.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/param/ParamController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/param/ParamService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/param/ParamValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/resources/Resources.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/resources/ResourcesController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/resources/ResourcesService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/resources/ResourcesValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/role/Role.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/role/RoleController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/role/RoleService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/role/RoleValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/roleoperator/RoleOperator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/roleoperator/RoleOperatorController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/roleoperator/RoleOperatorService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/roleoperator/RoleOperatorValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/station/Station.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/station/StationController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/station/StationService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/station/StationValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/stationoperator/StationOperator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/stationoperator/StationOperatorController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/stationoperator/StationOperatorService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/stationoperator/StationOperatorValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/syslog/SysLogController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/syslog/SysLogService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/syslog/Syslog.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/syslog/SyslogValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/systems/Systems.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/systems/SystemsController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/systems/SystemsService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/systems/SystemsValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/test/TestController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/ueditor/UeditorController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/upload/Upload.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/upload/UploadController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/upload/UploadService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/User.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/UserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/UserInfo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/UserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/UserValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/usergroup/UserGroup.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/usergroup/UserGroupController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/usergroup/UserGroupService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/usergroup/UserGroupValidator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/FileRenamePlugin$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/FileRenamePlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/I18NPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/ParamInitPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/QuartzPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/ServicePlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/SqlXmlPlugin$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/plugin/SqlXmlPlugin.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/servlet/Log4j$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/servlet/Log4j.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/servlet/Log4jAppender.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/servlet/Log4jAsyncWriter$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/servlet/Log4jAsyncWriter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/thread/ThreadSysLog$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/thread/ThreadSysLog.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/thread/VerifyDate.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/thread/job/DataClearJob.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/thread/job/DbBackupJob.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/thread/job/ResourcesJob.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/MailAuthenticator.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/MatrixToImageWriterEx.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/MatrixToLogoImageConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/MyClassLoader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/SendMail.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/StringTemplateLoader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolBarCode.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolBeetl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolCache.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolClassLoader.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolClassSearch$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolClassSearch.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolComment.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolDataBase.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolDateTime.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolDirFile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolFormatJson.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolFormatSql$FormatProcessDDL.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolFormatSql$FormatProcessDML.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolFormatSql.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolFormatXml.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolFreeMarker.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolHtml.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolHttp$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolHttp$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolHttp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolImagePressText.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolImageResize$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolImageResize.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolImageTailor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolMail.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolNet.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolOS.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolPinYin4J.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolPoi.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolRandoms.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolRedis.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolScript.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolSerialize.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolSqlXml.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolString.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolTypeConverter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolVelocity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolWeb.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolXml$1$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolXml$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolXml$2$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolXml$2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/ToolXml.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/BaseHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/ColumnDto.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/DB2Handler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/MySQLHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/OracleHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/PostgreSQLHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/handler/SqlServerHandler.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolAES.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolCertificate.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolCertificate2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolDES.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolDESede.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolDH.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolDSA.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolECDSA.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolElGamal.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolHTTPS.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolHTTPS2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolIDEA.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolPBE.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolPbkdf2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/ToolRSA.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolHmacRipeMD.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolMAC.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolMAC_BCP.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolMD.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolMD2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolMD4.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolMD5.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolRipeMD.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolSHA1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolSHA2.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/security/md/ToolSHA2_Codec.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/antlr4-annotations-4.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/antlr4-runtime-4.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/bcprov-ext-jdk15on-1.54.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/bcprov-jdk15on-1.54.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/beetl-2.7.11.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/c3p0-0.9.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/cglib-nodep-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/com.baidu.ueditor-1.1.2-offical.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-collections-3.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-compress-1.11.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-dbcp-1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-exec-1.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-fileupload-1.3.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-lang-2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-lang3-3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-logging-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-net-3.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/commons-pool2-2.4.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/core-3.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/cos-26Dec2008.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/cron4j-2.2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/curvesapi-1.03.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/dom4j-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/druid-1.0.26.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/ehcache-2.10.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/freemarker-2.3.22.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/fst-2.45.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/httpclient-4.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/httpcore-4.4.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jackson-annotations-2.4.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jackson-core-2.4.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jackson-databind-2.4.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javase-3.2.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javassist-3.18.2-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javassist-3.20.0-GA.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.activation-1.1.0.v201105071233.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.annotation-1.1.0.v201108011116.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.el-2.2.6.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.el-api-2.2.5.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.mail-api-1.5.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.mail.glassfish-1.4.1.v201005082020.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.security.auth.message-1.0.0.v201108011116.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.servlet-3.0.0.v201112011016.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/javax.servlet.jsp-api-2.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jcommander-1.48.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jconsole-1.8.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jedis-2.9.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jetty-all-server-8.1.8.v20121106.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jfinal-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jfinal-weixin-1.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/json-20160212.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/jsoup-1.9.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/mybatis-3.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/mybatis-spring-1.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/mysql-connector-java-5.1.38.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/ojdbc14-10.2.0.5.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/org.abego.treelayout.core-1.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/pinyin4j-2.5.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/poi-3.14.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/poi-ooxml-3.14.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/poi-ooxml-schemas-3.14.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/quartz-2.2.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/spring-jdbc-4.2.0.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/sqljdbc4-4.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/stax-api-1.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/tools-1.8.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/velocity-1.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/xml-apis-1.0.b2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/xmlbeans-2.6.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/xmlpull-1.1.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/xpp3_min-1.1.4c.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/lib/xstream-1.4.9.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_26.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_microsoft_sqlserver_sqljdbc4_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_oracle_ojdbc14_10_2_0_5_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_dbcp_commons_dbcp_1_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_0_RELEASE.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/LudaTeam_wechat/debug.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/LudaTeam_wechat/error.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/logs/LudaTeam_wechat/info.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/WechatPayService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/Inject.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/IocInterceptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/SpringPlugin.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/dao/map/wechatpay_sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/beetl.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/ehcache.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/init.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/message_en_US.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/message_ja.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/message_zh_CN.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/message_zh_HK.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/message_zh_TW.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/quartz.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/spring/application.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/JFinalUIB对JFinal源码修改说明.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/beetl.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/json/json_date.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/server/Run_Configurations.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/dao/map/wechat_sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/dao/map/wechatpay_sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/baseModel.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/db2.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/mysql.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/oracle.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/postgresql.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/base/sqlserver.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dept/department.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/dict/dict.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/group/group.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/grouprole/groupRole.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/menu/menu.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/module/module.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/operator/operator.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/param/param.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/resources/resources.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/role/role.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/roleoperator/roleOperator.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/station/station.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/stationoperator/stationOperator.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/syslog/sysLog.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/systems/systems.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/test/test.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/upload/upload.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/User.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/user.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/user/userInfo.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/mvc/usergroup/userGroup.sql.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/html/add.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/html/form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/html/list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/html/update.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/html/view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/controller.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/dto.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/i18n.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/model.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/service.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/sql.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/platform/tools/code/tpl/java/validator.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/conf.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/data-source.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/ehcache.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/init.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/jdbc.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/message_en_US.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/message_ja.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/message_zh_CN.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/message_zh_HK.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/message_zh_TW.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/quartz.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/classes/spring/application.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/dServer.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/logs/LudaTeam_wechat/debug.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/logs/LudaTeam_wechat/error.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/logs/LudaTeam_wechat/info.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wechat.service/target/nohup.out" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_2_1.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/target/api-1.0.0.jar" afterPath="$PROJECT_DIR$/wechat.api/target/api-1.0.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.consumer/target/test-classes/com/ludateam/wechat/ConsumerTest.class" afterPath="$PROJECT_DIR$/wechat.consumer/target/test-classes/com/ludateam/wechat/ConsumerTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/lib/api-1.0.0.jar" afterPath="$PROJECT_DIR$/wechat.service/target/lib/api-1.0.0.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/IocInterceptor.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/IocInterceptor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/SpringPlugin.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/jfinal/plugin/spring/SpringPlugin.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$TrustAnyHostnameVerifier.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$TrustAnyHostnameVerifier.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$TrustAnyTrustManager.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit$TrustAnyTrustManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/kit/HttpKit.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/CallServiceImpl.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/CallServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/MessageServiceImpl.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/MessageServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/WechatPayServiceImpl.class" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/services/WechatPayServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/wechat.service-1.0.0.jar" afterPath="$PROJECT_DIR$/wechat.service/target/wechat.service-1.0.0.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parent/parent.iml" afterPath="$PROJECT_DIR$/parent/parent.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parent/pom.xml" afterPath="$PROJECT_DIR$/parent/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/wechat.api/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.api/wechat.api.iml" afterPath="$PROJECT_DIR$/wechat.api/wechat.api.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.consumer/src/test/java/com/ludateam/wechat/ConsumerTest.java" afterPath="$PROJECT_DIR$/wechat.consumer/src/test/java/com/ludateam/wechat/ConsumerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.consumer/wechat.consumer.iml" afterPath="$PROJECT_DIR$/wechat.consumer/wechat.consumer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/pom.xml" afterPath="$PROJECT_DIR$/wechat.service/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/dao/SearchDao.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/dao/SearchDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/IocInterceptor.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/IocInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/SpringPlugin.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/SpringPlugin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/resources/application.xml" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/application.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/resources/data-source.xml" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/data-source.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/wechat.service/src/main/resources/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/META-INF/spring/application.xml" afterPath="$PROJECT_DIR$/wechat.service/target/classes/META-INF/spring/application.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/application.xml" afterPath="$PROJECT_DIR$/wechat.service/target/classes/application.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/wechat.service/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java" afterPath="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/dao/map/wechatpay_sql.xml" afterPath="$PROJECT_DIR$/wechat.service/target/classes/com/ludateam/wechat/dao/map/wechatpay_sql.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/data-source.xml" afterPath="$PROJECT_DIR$/wechat.service/target/classes/data-source.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/classes/jdbc.properties" afterPath="$PROJECT_DIR$/wechat.service/target/classes/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/wechat.service/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wechat.service/wechat.service.iml" afterPath="$PROJECT_DIR$/wechat.service/wechat.service.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/Api/target/" />
     <ignored path="$PROJECT_DIR$/Parent/target/" />
@@ -847,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MessageServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="73" column="1" lean-forward="false" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
+            <state relative-caret-position="360">
+              <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -870,8 +76,38 @@
       <file leaf-file-name="WechatPayService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/WechatPayService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="163">
+              <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HttpKit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IocInterceptor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/IocInterceptor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpringPlugin.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/SpringPlugin.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="20">
+              <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -897,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CallServiceImpl.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CallServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+            <state relative-caret-position="-230">
+              <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -982,7 +218,6 @@
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/JdkLogFactory.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/StrKit.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HashKit.java" />
-        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java" />
         <option value="$PROJECT_DIR$/wechat.consumer/src/main/resources/application.xml" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/utils/PropertyUtil.java" />
         <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/UserService.java" />
@@ -995,7 +230,6 @@
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/utils/DesUtils.java" />
         <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/CallService.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/resources/conf.properties" />
-        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java" />
         <option value="$PROJECT_DIR$/wechat.consumer/src/test/java/com/ludateam/wechat/ConsumerTest.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/Run.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayService.java" />
@@ -1007,6 +241,10 @@
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/dao/SearchDao.java" />
         <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java" />
         <option value="$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/WechatPayService.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/IocInterceptor.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/SpringPlugin.java" />
+        <option value="$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -1036,11 +274,11 @@
     <option name="skipTests" value="true" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1057,8 +295,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -1071,66 +307,6 @@
             <path>
               <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
               <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="parent" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat.api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wechat.services" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wechat.services" type="462c0819:PsiDirectoryNode" />
               <item name="wechat.service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1182,20 +358,22 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="wechat" type="462c0819:PsiDirectoryNode" />
-              <item name="kit" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -1782,6 +960,8 @@
       <workItem from="1506653840580" duration="538000" />
       <workItem from="1506662443436" duration="6688000" />
       <workItem from="1507610850129" duration="28695000" />
+      <workItem from="1508208314228" duration="113000" />
+      <workItem from="1508208487327" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="增加 target 参数">
       <created>1505098906893</created>
@@ -1847,54 +1027,21 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135394000" />
+    <option name="totallyTimeSpent" value="137577000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54565704" sideWeight="0.35607675" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3964365" sideWeight="0.35341153" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.123667374" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36636972" sideWeight="0.6439232" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.56570154" sideWeight="0.6567164" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4968017" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24840085" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52895325" sideWeight="0.3304904" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3964365" sideWeight="0.35341153" order="14" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14158577" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.141258" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Tail" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6726058" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928804" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1902,23 +1049,30 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6451613" sideWeight="0.6465885" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294621" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32718894" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37557605" sideWeight="0.62473345" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328341" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37527838" sideWeight="0.6401919" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37557605" sideWeight="0.6401919" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.4968017" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47572815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18923241" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37557605" sideWeight="0.62473345" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32681242" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1961,6 +1115,9 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -2017,19 +1174,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java</url>
-          <line>96</line>
+          <line>103</line>
           <properties />
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java</url>
-          <line>147</line>
+          <line>158</line>
           <properties />
           <option name="timeStamp" value="38" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/WechatPayServiceImpl.java</url>
-          <line>161</line>
+          <line>173</line>
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
@@ -2047,8 +1204,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/LogKit.java" />
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/ILogFactory.java" />
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/Log.java" />
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/JdkLogFactory.java" />
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HashKit.java">
@@ -2085,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2128,7 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="1291" column="6" lean-forward="false" selection-start-line="1291" selection-start-column="6" selection-end-line="1291" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2136,7 +1289,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="29" column="47" lean-forward="false" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2178,7 +1330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="981">
           <caret line="60" column="70" lean-forward="false" selection-start-line="60" selection-start-column="54" selection-end-line="60" selection-end-column="70" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2213,34 +1364,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="270" column="21" lean-forward="true" selection-start-line="270" selection-start-column="21" selection-end-line="270" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="53" column="51" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/dao/MultipleDataSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="73" column="1" lean-forward="false" selection-start-line="73" selection-start-column="1" selection-end-line="73" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2276,30 +1403,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="90" lean-forward="false" selection-start-line="17" selection-start-column="90" selection-end-line="17" selection-end-column="90" />
-          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/ApiConfigKit.java" />
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/Run.java" />
     <entry file="file://$PROJECT_DIR$/wechat.api/src/main/java/com/ludateam/wechat/api/WechatPayService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="163">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/ApiConfigKit.java">
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/IocInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="80">
+          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/Run.java">
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/jfinal/plugin/spring/SpringPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="55" column="21" lean-forward="false" selection-start-line="55" selection-start-column="21" selection-end-line="55" selection-end-column="21" />
+        <state relative-caret-position="20">
+          <caret line="41" column="10" lean-forward="false" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/kit/HttpKit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/MessageServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="50" column="9" lean-forward="true" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wechat.service/src/main/java/com/ludateam/wechat/services/CallServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-230">
+          <caret line="33" column="3" lean-forward="true" selection-start-line="33" selection-start-column="3" selection-end-line="33" selection-end-column="3" />
           <folding />
         </state>
       </provider>
@@ -2356,11 +1508,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>wechat-service</last-edited>
+          <last-edited>wechat.service</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

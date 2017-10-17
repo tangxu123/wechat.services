@@ -3,31 +3,20 @@
 <mapper namespace="com.ludateam.wechat.dao.SearchDao">
     <select id="getAccountByUserName" parameterType="String" resultType="Map">
 		<![CDATA[
-
-
-
-
-
-            SELECT  [Id]
-      ,[AccountUserName]
-      ,[AccountPassword]
-      ,[AccountJoinTime]
-      , CONVERT (VARCHAR(20),[AccountLastLogin],120) AS [AccountLastLogin]
-      ,[IsStop]
-      ,[AgentId]
-      ,[AgentMemo]
-      ,[AccountEmail]
-      ,[AccountMobile]
-      ,[Username]
-      ,[zsdm]
-      ,[SFDM]
-      ,[Isadmin] FROM  Account WHERE AccountUserName = #{AccountUserName}
-
-
-
-
-
-        ]]>
+      SELECT  Id
+      ,AccountUserName
+      ,AccountPassword
+      ,AccountJoinTime
+      , ACCOUNTLASTLOGIN
+      ,IsStop
+      ,AgentId
+      ,AgentMemo
+      ,AccountEmail
+      ,AccountMobile
+      ,Username
+      ,zsdm
+      ,SFDM
+      ,Isadmin FROM  Account WHERE AccountUserName = #{AccountUserName} ]]>
     </select>
     <update id="updateAccountLastLogin" parameterType="Int">
         UPDATE Account SET AccountLastLogin = GETDATE() WHERE  ID = #{id}
@@ -171,37 +160,39 @@
         <![CDATA[
 
 
+
           SELECT  * FROM (${value}) obj
+
 
 
         ]]>
     </select>
     <select id="findSKorderByOrderIdfail" parameterType="String" resultType="Map">
-        SELECT [Id]
-        ,[OrderId]
-        ,[Jksbh]
-        ,[skje]
-        ,[Jkmx]
-        ,[Jkxm]
-        ,[Mac]
-        ,[ip]
-        ,[Zsdm]
-        ,[Paysj]
-        ,[Lrsj]
-        ,[PayId]
-        ,[Payresult]
-        ,[PayMx]
-        ,[Zfbz]
-        ,[mchid]
-        ,[Zfsj]
-        ,[Paylx]
-        ,[jy]
-        ,[Lrr]
-        ,[Zfry]
-        ,[jd]
-        ,[qrsj]
-        ,[qrr]
-        FROM  [SKorder] WHERE OrderId = #{orderid} AND  Payresult!='success'
+        SELECT Id
+        ,OrderId
+        ,Jksbh
+        ,skje
+        ,Jkmx
+        ,Jkxm
+        ,Mac
+        ,ip
+        ,Zsdm
+        ,Paysj
+        ,Lrsj
+        ,PayId
+        ,Payresult
+        ,PayMx
+        ,Zfbz
+        ,mchid
+        ,Zfsj
+        ,Paylx
+        ,jy
+        ,Lrr
+        ,Zfry
+        ,jd
+        ,qrsj
+        ,qrr
+        FROM  SKorder WHERE OrderId = #{orderid} AND  (Payresult is null or Payresult != 'success')
     </select>
     <update id="updateSKOrderZf" parameterType="Map">
         UPDATE SKorder SET Zfsj =  #{zfsj}  ,  Zfry = #{zfry} ,  Zfbz = #{zfbz} WHERE  OrderId = #{orderid}
@@ -231,7 +222,7 @@
         ,[jd]
         ,[qrsj]
         ,[qrr]
-        FROM  [SKorder]
+        FROM [SKorder]
         <where>
             <if test="orderid!=null">
                 and orderid = #{orderid}
@@ -241,7 +232,7 @@
             </if>
         </where>
     </select>
-    <insert id="insertSKDetails"  parameterType="Map">
+    <insert id="insertSKDetails" parameterType="Map">
         INSERT INTO SKdetail
         ([appid]
         ,[mch_id]
