@@ -19,13 +19,159 @@
       ,Isadmin FROM  Account WHERE AccountUserName = #{AccountUserName} ]]>
     </select>
     <update id="updateAccountLastLogin" parameterType="Int">
+<<<<<<< HEAD
+        UPDATE Account SET AccountLastLogin = SYSDATE WHERE  ID = #{id}
+=======
         UPDATE Account SET AccountLastLogin = GETDATE() WHERE  ID = #{id}
+>>>>>>> 9a1d21635760d9d5277f015f028700809adcc418
     </update>
     <select id="getZsd" parameterType="String" resultType="Map">
         select * from Account a ,Zsdm b where a.zsdm=b.zsdm and a.AccountUserName=#{accountUserName} and b.yxbz='Y'
     </select>
 
     <select id="findSKorder" parameterType="String" resultType="Map">
+<<<<<<< HEAD
+               SELECT Id,
+               OrderId,
+               Jksbh,
+               skje,
+               Jkmx,
+               Jkxm,
+               Mac,
+               ip,
+               Zsdm,
+               Paysj,
+               Lrsj,
+               PayId,
+               Payresult,
+               PayMx,
+               Zfbz,
+               mchid,
+               Zfsj,
+               Paylx,
+               jy,
+               Lrr,
+               Zfry,
+               jd,
+               qrsj,
+               qrr
+          FROM SKorder
+         WHERE Jksbh = #{jksbh}
+           and Zfbz = '1'
+           and rownum = 1
+
+    </select>
+    <select id="findSKorderByOrderId" parameterType="String" resultType="Map">
+                   SELECT Id,
+                   OrderId,
+                   Jksbh,
+                   skje,
+                   Jkmx,
+                   Jkxm,
+                   Mac,
+                   ip,
+                   Zsdm,
+                   Paysj,
+                   Lrsj,
+                   PayId,
+                   Payresult,
+                   PayMx,
+                   Zfbz,
+                   mchid,
+                   Zfsj,
+                   Paylx,
+                   jy,
+                   Lrr,
+                   Zfry,
+                   jd,
+                   qrsj,
+                   qrr
+              FROM SKorder
+             WHERE OrderId = #{orderid}
+
+    </select>
+    <select id="findSKorderByOrderIdAndResult" parameterType="String" resultType="Map">
+               SELECT Id,
+               OrderId,
+               Jksbh,
+               skje,
+               Jkmx,
+               Jkxm,
+               Mac,
+               ip,
+               Zsdm,
+               Paysj,
+               Lrsj,
+               PayId,
+               Payresult,
+               PayMx,
+               Zfbz,
+               mchid,
+               Zfsj,
+               Paylx,
+               jy,
+               Lrr,
+               Zfry,
+               jd,
+               qrsj,
+               qrr
+          FROM SKorder
+         WHERE OrderId = #{orderid}
+           AND Payresult = 'success'
+
+    </select>
+    <insert id="addskorder" parameterType="Map">
+       INSERT INTO SKorder
+                      (id,
+                      OrderId,
+                       Jksbh,
+                       skje,
+                       Jkmx,
+                       Jkxm,
+                       Mac,
+                       ip,
+                       Zsdm,
+                       Paysj,
+                       Lrsj,
+                       PayId,
+                       Payresult,
+                       PayMx,
+                       Zfbz,
+                       mchid,
+                       Zfsj,
+                       Paylx,
+                       jy,
+                       Lrr,
+                       Zfry,
+                       jd,
+                       qrsj,
+                       qrr)
+                    VALUES
+                      (skorder_sequence.nextval,
+                      #{OrderId,jdbcType=VARCHAR},
+                       #{Jksbh,jdbcType=VARCHAR},
+                       #{skje,jdbcType=VARCHAR},
+                       #{Jkmx,jdbcType=VARCHAR},
+                       #{Jkxm,jdbcType=VARCHAR},
+                       #{Mac,jdbcType=VARCHAR},
+                       #{ip,jdbcType=VARCHAR},
+                       #{Zsdm,jdbcType=VARCHAR},
+                       #{Paysj,jdbcType=VARCHAR},
+                       #{Lrsj,jdbcType=VARCHAR},
+                       #{PayId,jdbcType=VARCHAR},
+                       #{Payresult,jdbcType=VARCHAR},
+                       #{PayMx,jdbcType=VARCHAR},
+                       #{Zfbz,jdbcType=VARCHAR},
+                       #{mchid,jdbcType=VARCHAR},
+                       #{Zfsj,jdbcType=VARCHAR},
+                       #{Paylx,jdbcType=VARCHAR},
+                       #{jy,jdbcType=VARCHAR},
+                       #{Lrr,jdbcType=VARCHAR},
+                       #{Zfry,jdbcType=VARCHAR},
+                       #{jd,jdbcType=VARCHAR},
+                       #{qrsj,jdbcType=VARCHAR},
+                       #{qrr,jdbcType=VARCHAR})
+=======
         SELECT TOP 1 [Id]
       ,[OrderId]
       ,[Jksbh]
@@ -155,6 +301,7 @@
         ,#{jd}
         ,#{qrsj}
         ,#{qrr})
+>>>>>>> 9a1d21635760d9d5277f015f028700809adcc418
     </insert>
     <select id="querySQL" parameterType="String" resultType="java.util.LinkedHashMap">
         <![CDATA[
@@ -198,6 +345,34 @@
         UPDATE SKorder SET Zfsj =  #{zfsj}  ,  Zfry = #{zfry} ,  Zfbz = #{zfbz} WHERE  OrderId = #{orderid}
     </update>
     <select id="findSKorderByCon" parameterType="Map" resultType="Map">
+<<<<<<< HEAD
+        SELECT  Id
+        ,OrderId
+        ,Jksbh
+        ,skje
+        ,Jkmx
+        ,Jkxm
+        ,Mac
+        ,ip
+        ,Zsdm
+        ,Paysj
+        ,Lrsj
+        ,PayId
+        ,Payresult
+        ,PayMx
+        ,Zfbz
+        ,mchid
+        ,Zfsj
+        ,Paylx
+        ,jy
+        ,Lrr
+        ,Zfry
+        ,jd
+        ,qrsj
+        ,qrr
+        FROM SKorder
+
+=======
         SELECT TOP 1 [Id]
         ,[OrderId]
         ,[Jksbh]
@@ -223,6 +398,7 @@
         ,[qrsj]
         ,[qrr]
         FROM [SKorder]
+>>>>>>> 9a1d21635760d9d5277f015f028700809adcc418
         <where>
             <if test="orderid!=null">
                 and orderid = #{orderid}
@@ -231,6 +407,10 @@
                 and Zfbz = #{zfbz}
             </if>
         </where>
+<<<<<<< HEAD
+        and rownum = 1
+=======
+>>>>>>> 9a1d21635760d9d5277f015f028700809adcc418
     </select>
     <insert id="insertSKDetails" parameterType="Map">
         INSERT INTO SKdetail
