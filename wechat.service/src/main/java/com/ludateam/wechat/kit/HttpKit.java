@@ -95,8 +95,8 @@ public class HttpKit {
     private static final String POST = "POST";
     private static String CHARSET = "UTF-8";
 
-    private static final SSLSocketFactory sslSocketFactory = initSSLSocketFactory();
-    private static final TrustAnyHostnameVerifier trustAnyHostnameVerifier = new HttpKit().new TrustAnyHostnameVerifier();
+    private static final SSLSocketFactory SSLSOCKETFACTORY = initSSLSocketFactory();
+    private static final TrustAnyHostnameVerifier TRUSTANYHOSTNAMEVERIFIER = new HttpKit().new TrustAnyHostnameVerifier();
 
     private static SSLSocketFactory initSSLSocketFactory() {
         try {
@@ -120,8 +120,8 @@ public class HttpKit {
         URL _url = new URL(url);
         HttpURLConnection conn = (HttpURLConnection) _url.openConnection();
         if (conn instanceof HttpsURLConnection) {
-            ((HttpsURLConnection) conn).setSSLSocketFactory(sslSocketFactory);
-            ((HttpsURLConnection) conn).setHostnameVerifier(trustAnyHostnameVerifier);
+            ((HttpsURLConnection) conn).setSSLSocketFactory(SSLSOCKETFACTORY);
+            ((HttpsURLConnection) conn).setHostnameVerifier(TRUSTANYHOSTNAMEVERIFIER);
         }
 
         conn.setRequestMethod(method);

@@ -19,7 +19,7 @@ package com.ludateam.wechat.kit;
 import java.security.MessageDigest;
 
 public class HashKit {
-    private static final java.security.SecureRandom random = new java.security.SecureRandom();
+    private static final java.security.SecureRandom RANDOM = new java.security.SecureRandom();
     private static final char[] HEX_DIGITS = "0123456789abcdef".toCharArray();
     private static final char[] CHAR_ARRAY = "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".toCharArray();
 
@@ -73,7 +73,7 @@ public class HashKit {
     public static String generateSalt(int saltLength) {
         StringBuilder salt = new StringBuilder();
         for (int i=0; i<saltLength; i++) {
-            salt.append(CHAR_ARRAY[random.nextInt(CHAR_ARRAY.length)]);
+            salt.append(CHAR_ARRAY[RANDOM.nextInt(CHAR_ARRAY.length)]);
         }
         return salt.toString();
     }
