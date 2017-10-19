@@ -1,13 +1,10 @@
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\utils\PropertyUtil.java
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\jfinal\plugin\spring\Inject.java
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\kit\HttpKit.java
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\kit\HashKit.java
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\services\WechatPayServiceImpl.java
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\jfinal\plugin\spring\SpringPlugin.java
 E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\dao\SearchDao.java
 E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\kit\StrKit.java
-E:\XUHUI\wechat.services\wechat.service\src\main\java\com\jfinal\plugin\spring\IocInterceptor.java
+E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\utils\PropertyUtil.java
 E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\services\CallServiceImpl.java
+E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\kit\HttpKit.java
+E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\kit\HashKit.java
 E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\services\MessageServiceImpl.java
 E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\utils\DesUtils.java
 E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\dao\MultipleDataSource.java
+E:\XUHUI\wechat.services\wechat.service\src\main\java\com\ludateam\wechat\services\WechatPayServiceImpl.java
