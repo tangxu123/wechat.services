@@ -3,7 +3,7 @@
 <mapper namespace="com.ludateam.wechat.dao.SearchDao">
     <insert id="saveReseiceMsg" parameterType="Map">
 		<![CDATA[
-			INSERT INTO wechat_receive_message
+			INSERT INTO db_wx.wechat_receive_message
 			  (msg_id,
 			   to_user_name,
 			   from_user_name,
@@ -27,4 +27,28 @@
 			  )
         ]]>
     </insert>
+	<select id="getTaskList" resultType="Map">
+		<![CDATA[
+			SELECT tmp.rwid AS "rwid", tmp.dxnr AS "dxnr"
+			  FROM (SELECT t.rwid, t.dxnr FROM db_zgfz.t_fsrw t WHERE t.fszt is null ORDER BY t.cjsj desc) tmp
+			 WHERE ROWNUM BETWEEN 1 AND 3
+        ]]>
+    </select>
+	<select id="getSendListByTaskid" parameterType="Decimal" resultType="Map">
+		<![CDATA[
+			SELECT t.sjhm AS "sjhm", t.wxzhid AS "wxzhid", t.jhzt AS "jhzt"
+			FROM db_zgfz.t_fsmd t WHERE t.rwid = #{rwid}
+        ]]>
+    </select>
+   	<update id="updateWechatInfo" parameterType="Map">
+   		<![CDATA[
+			UPDATE db_zgfz.t_fsmd t SET t.wxzhid = #{wxzhid, jdbcType=VARCHAR} , t.jhzt = #{jhzt, jdbcType=VARCHAR}
+			WHERE t.rwid = #{rwid} AND t.sjhm = #{sjhm}
+        ]]>
+    </update>
+   	<update id="updateTaskStatus" parameterType="Map">
+   		<![CDATA[
+   			UPDATE db_zgfz.t_fsrw t SET t.fszt =#{fszt, jdbcType=VARCHAR} , t.sbyy=#{sbyy, jdbcType=VARCHAR} WHERE t.rwid=#{rwid}
+        ]]>
+    </update>
 </mapper>
