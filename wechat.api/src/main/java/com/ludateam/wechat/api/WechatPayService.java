@@ -60,4 +60,8 @@ public interface WechatPayService {
     @POST
     @Path("/skdetails/add")
     public int insertSKDetails(@Context HttpServletRequest request);
+  
+    @POST
+    @Path("/update")
+	int updateSQL(HttpServletRequest request);
 }

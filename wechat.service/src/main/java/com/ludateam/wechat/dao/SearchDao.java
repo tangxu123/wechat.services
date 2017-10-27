@@ -10,7 +10,7 @@ public interface SearchDao {
 	 * 保存企业微信接收的消息
 	 */
 	int saveReseiceMsg(Map msgMap);
-	
+
 	/**
 	 * 取得发送任务列表
 	 */
@@ -25,34 +25,35 @@ public interface SearchDao {
 	 * 更新发送名单表的微信账号信息
 	 */
 	int updateWechatInfo(Map paramMap);
-	
+
 	/**
 	 * 更新任务发送状态
 	 */
 	int updateTaskStatus(Map paramMap);
-	
-    
-    Map getAccountByUserName(String accountUserName);
 
-    int updateAccountLastLogin(int id);
+	Map getAccountByUserName(String accountUserName);
 
-    Map getZsd(String accountUserName);
+	int updateAccountLastLogin(int id);
 
-    Map findSKorder(String jksbh);
+	Map getZsd(String accountUserName);
 
-    Map findSKorderByOrderId(String orderid);
+	Map findSKorder(String jksbh);
 
-    Map findSKorderByOrderIdAndResult(String orderid);
+	Map findSKorderByOrderId(String orderid);
 
-    Map findSKorderByOrderIdfail(String orderid);
+	Map findSKorderByOrderIdAndResult(String orderid);
 
-    int addskorder(Map skorderMap);
+	Map findSKorderByOrderIdfail(String orderid);
 
-    List<LinkedHashMap<String, Object>> querySQL(String sqlContent);
+	int addskorder(Map skorderMap);
 
-    int updateSKOrderZf(Map paramMap);
+	List<LinkedHashMap<String, Object>> querySQL(String sqlContent);
 
-    Map findSKorderByCon(Map paramMap);
+	int updateSKOrderZf(Map paramMap);
 
-    int insertSKDetails(Map paramMap);
+	Map findSKorderByCon(Map paramMap);
+
+	int insertSKDetails(Map paramMap);
+
+	int updateSQL(Map paramMap);
 }

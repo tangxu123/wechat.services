@@ -151,7 +151,15 @@ public class WechatPayServiceImpl implements com.ludateam.wechat.api.WechatPaySe
         Map sqlmap = (Map) JSON.parse(send_param);
         return searchDao.updateSKOrderZf(sqlmap);
     }
-
+    
+    @Override
+    @POST
+    @Path("/update")
+    public int updateSQL(@Context HttpServletRequest request) {
+        String send_param = HttpKit.readData(request);
+        Map sqlmap = (Map) JSON.parse(send_param);
+        return searchDao.updateSQL(sqlmap);
+    }
     @Override
     @POST
     @Path("/skorder/findbycon")
