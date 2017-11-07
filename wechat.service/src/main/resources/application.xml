@@ -9,16 +9,18 @@
 	   http://code.alibabatech.com/schema/dubbo/dubbo.xsd
 	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	   http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.2.xsd"
-	   default-autowire="byName" default-lazy-init="false">
+       default-autowire="byName" default-lazy-init="false">
 
     <!-- 采用注释的方式配置bean -->
     <context:annotation-config/>
-    
+
+
     <!-- 扫描Service-->
+    <context:component-scan base-package="com.ludateam.wechat.amqp"/>
     <context:component-scan base-package="com.ludateam.wechat.services"/>
-    
-    <task:annotation-driven />
-    
+
+    <task:annotation-driven/>
+
     <!-- 读入配置属性文件  -->
     <bean id="propertyResources" class="java.util.ArrayList">
         <constructor-arg>
@@ -31,9 +33,10 @@
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations" ref="propertyResources"/>
     </bean>
-    
+
     <import resource="classpath:data-source.xml"/>
-    
+    <import resource="classpath:spring-amqp.xml"/>
+
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="wechat.services" owner="ludateam"/>
 
@@ -57,7 +60,6 @@
 
     <!-- 暴露服务接口 一个服务可以用多个协议暴露，一个服务也可以注册到多个注册中心-->
     <!--Provider上尽量多配置Consumer端的属性，让Provider实现者一开始就思考Provider服务特点、服务质量的问题-->
-
 
     <dubbo:service interface="com.ludateam.wechat.api.MessageService" ref="messageService"/>
     <dubbo:service interface="com.ludateam.wechat.api.CallService" ref="ludaService"/>
