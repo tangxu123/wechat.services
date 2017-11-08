@@ -15,19 +15,23 @@ package com.ludateam.wechat.amqp;/*
  * Created by Him on 2017/11/2.
  */
 
+import com.ludateam.wechat.services.MessageServiceImpl;
 import com.rabbitmq.client.Channel;
+import org.apache.log4j.Logger;
 import org.springframework.amqp.core.Message;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
+
 /**
  * @author Him
  */
 @Component
 public class LudaMessageHandler implements ChannelAwareMessageListener {
-
+    private static Logger logger = Logger.getLogger(LudaMessageHandler.class);
 
     @RabbitListener(queues = "myQueue")
     @Override
@@ -35,6 +39,25 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
         System.out.println("myQueue1:" + message);
         System.out.println("myQueue1:" + new String(message.getBody()));
 
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        //channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+    }
+
+    //正常消费掉后通知mq服务器移除此条mq
+    private void basicACK(Message message, Channel channel) {
+        try {
+            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+        } catch (Exception e) {
+            logger.error("通知服务器移除mq时异常，异常信息：" + e);
+        }
+    }
+
+    //处理异常，mq重回队列
+    private void basicNACK(Message message, Channel channel) {
+        try {
+            channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
+        } catch (IOException e) {
+            logger.error("mq重新进入服务器时出现异常，异常信息：" + e);
+        }
+
     }
 }
