@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/Provider" charset="UTF-8" />
+    <file url="file://D:/works/Openresty_For_Windows_1.9.9.1001_64Bit/x64/nginx/lua/hello.lua" charset="GBK" />
     <file url="file://$PROJECT_DIR$/parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wechat.api" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/wechat.consumer" charset="UTF-8" />
