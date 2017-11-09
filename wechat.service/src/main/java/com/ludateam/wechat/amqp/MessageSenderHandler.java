@@ -51,6 +51,7 @@ public class MessageSenderHandler {
 		String sendParam = "{\"status\":\"3\",\"msgId\":\"\",\"rwid\",\""
 				+ mqJsonDto.getRwid() + "\",\"sjh\":\"" + mqJsonDto.getSjhm()
 				+ "\"}";
+		logger.info("sms--message--add--queue--param----" + sendParam);
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
         String weburl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToSms";
@@ -73,6 +74,7 @@ public class MessageSenderHandler {
 		MqJsonDto mqJsonDto = JSON.parseObject(message, MqJsonDto.class);
 		String sendParam = "{\"rwid\",\"" + mqJsonDto.getRwid()
 				+ "\",\"wxzh\":\"" + mqJsonDto.getWxzh() + "\"}";
+		logger.info("wechat--message--add--queue--param----" + sendParam);
 		HashMap<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-type", "application/json");
 		String weburl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendWechatToMq";
