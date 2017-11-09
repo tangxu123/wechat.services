@@ -38,36 +38,35 @@ public class SmsStatusMessageHandler implements ChannelAwareMessageListener {
     @RabbitListener(queues = "Q_SMS_STATUS")
     public void onMessage(Message message, Channel channel) throws Exception {
         String jsonData = new String(message.getBody());
-        jsonData = StringEscapeUtils.unescapeJava(jsonData);
-        jsonData = jsonData.substring(1,jsonData.length()-1);
-        SmsStatus smsStatus =  JSON.parseObject(jsonData, SmsStatus.class, Feature.AllowSingleQuotes);
-        System.out.println("======================= " + smsStatus.getMobile());
+        logger.info("======================= get original  json string from mq : " + jsonData);
+        SmsStatus smsStatus = new SmsStatus();
+        try {
+            jsonData = StringEscapeUtils.unescapeJava(jsonData);
+            jsonData = jsonData.substring(1, jsonData.length() - 1);
+            smsStatus = JSON.parseObject(jsonData, SmsStatus.class, Feature.AllowSingleQuotes);
+        } catch (Exception ex) {
+            logger.error("conver json to object error : ", ex);
+        }
+
+        logger.info("======================= get smsStatus  : " + smsStatus.getMobile());
 
         Map<String, String> param = new HashMap<String, String>();
-        //param.put("msg", jsonData);
+
         //status ,msgId,rwid,sjh
-        if ("DELIVRD".equals(smsStatus.getErrorCode())){
-            param.put("status","1");
-        }else{
-            param.put("status","2");
+        if ("DELIVRD".equals(smsStatus.getErrorCode())) {
+            param.put("status", "1");
+        } else {
+            param.put("status", "2");
         }
-        param.put("rwid","");
-        param.put("sjh",smsStatus.getMobile());
-        param.put("msgId",smsStatus.getMsgGroup());
+        param.put("rwid", "");
+        param.put("sjh", smsStatus.getMobile());
+        param.put("msgId", smsStatus.getMsgGroup());
 
         try {
             HttpKit.get("http://172.16.200.253:8888/sendMsgToSms", param);
         } catch (Exception ex) {
             logger.error("call sms status url error : ", ex);
         }
-        channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-    }
-
-    public static void main(String[] args) {
-        String jsonData = "{\"errorCode\":\"DELIVRD\",\"mobile\":\"18616864830\",\"msgGroup\":\"1108135621001000841597\",\"receiveDate\":\"20171108135600\",\"reportStatus\":\"CM:0000\"}";
-        System.out.println(jsonData);
-        SmsStatus smsStatus = JSON.parseObject(jsonData, SmsStatus.class);
-
-        System.out.println(smsStatus.getMsgGroup());
+        //channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
 }

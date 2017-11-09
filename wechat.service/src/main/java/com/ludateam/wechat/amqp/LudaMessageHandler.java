@@ -29,11 +29,11 @@ import java.io.IOException;
 /**
  * @author Him
  */
-@Component
+
 public class LudaMessageHandler implements ChannelAwareMessageListener {
     private static Logger logger = Logger.getLogger(LudaMessageHandler.class);
 
-    @RabbitListener(queues = "myQueue")
+
     @Override
     public void onMessage(Message message, Channel channel) throws Exception {
         System.out.println("myQueue1:" + message);
