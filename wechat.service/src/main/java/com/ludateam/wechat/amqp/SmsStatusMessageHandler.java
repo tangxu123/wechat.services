@@ -17,6 +17,7 @@ package com.ludateam.wechat.amqp;/*
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.Feature;
+import com.ludateam.wechat.entity.SmsRequestParam;
 import com.ludateam.wechat.entity.SmsStatus;
 import com.ludateam.wechat.kit.HttpKit;
 import com.rabbitmq.client.Channel;
@@ -50,20 +51,26 @@ public class SmsStatusMessageHandler implements ChannelAwareMessageListener {
 
         logger.info("======================= get smsStatus  : " + smsStatus.getMobile());
 
-        Map<String, String> param = new HashMap<String, String>();
+        //Map<String, String> param = new HashMap<String, String>();
+
+        SmsRequestParam smsRequestParam = new SmsRequestParam();
 
         //status ,msgId,rwid,sjh
         if ("DELIVRD".equals(smsStatus.getErrorCode())) {
-            param.put("status", "1");
+            smsRequestParam.setStatus("1");
         } else {
-            param.put("status", "2");
+            smsRequestParam.setStatus("2");
         }
-        param.put("rwid", "");
-        param.put("sjh", smsStatus.getMobile());
-        param.put("msgId", smsStatus.getMsgGroup());
+        smsRequestParam.setRwid("");
+        smsRequestParam.setSjh(smsStatus.getMobile());
+        smsRequestParam.setMsgId(smsStatus.getMsgGroup());
 
         try {
-            HttpKit.get("http://172.16.200.253:8888/sendMsgToSms", param);
+
+            String requestJson = JSON.toJSONString(smsRequestParam);
+
+            logger.info("======================= get requestJson  : " + requestJson);
+            HttpKit.post("http://172.16.200.253:8888/sendMsgToSms", requestJson);
         } catch (Exception ex) {
             logger.error("call sms status url error : ", ex);
         }
