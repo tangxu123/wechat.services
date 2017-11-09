@@ -3,15 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rabbit="http://www.springframework.org/schema/rabbit"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd">
 
-    <rabbit:annotation-driven />
+    <rabbit:annotation-driven/>
 
     <bean id="rabbitListenerContainerFactory"
-          class="org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory"  >
+          class="org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory">
         <property name="connectionFactory" ref="connectionFactory"/>
         <property name="concurrentConsumers" value="3"/>
         <property name="maxConcurrentConsumers" value="10"/>
-        <property name="acknowledgeMode"  value="MANUAL" ></property>
+
     </bean>
 
-    <rabbit:connection-factory id="connectionFactory"  username="luda" password="luda"></rabbit:connection-factory>
+    <rabbit:connection-factory id="connectionFactory" host="172.16.2.52" port="5672" username="xh" password="xh"></rabbit:connection-factory>
 </beans>
