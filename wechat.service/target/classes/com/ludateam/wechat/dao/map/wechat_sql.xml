@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ludateam.wechat.dao.SearchDao">
+	<resultMap id="taxOfficerList" type="com.ludateam.wechat.entity.TaxOfficerEntity">
+		<result column="XM" property="name"/>
+        <result column="SJHM" property="userid"/>
+        <result column="WXH" property="wxid"/>
+        <result column="SJHM" property="mobile"/>
+        <result column="DZYJDZ" property="email"/>
+        <result column="SZBM" property="department"/>
+        <result column="BSYLX" property="position"/>
+    </resultMap>
+	<resultMap id="taskList" type="com.ludateam.wechat.entity.TaskEntity">
+        <result column="RWID" property="rwid"/>
+        <result column="SJHM" property="sjhm"/>
+        <result column="DXNR" property="dxnr"/>
+        <result column="WXZHID" property="wxzhid"/>
+    </resultMap>
     <insert id="saveReseiceMsg" parameterType="Map">
 		<![CDATA[
 			INSERT INTO db_wx.wechat_receive_message
@@ -27,28 +42,87 @@
 			  )
         ]]>
     </insert>
-	<select id="getTaskList" resultType="Map">
+	<select id="getTaskList" resultMap="taskList" parameterType="com.ludateam.wechat.entity.TaskEntity">
 		<![CDATA[
-			SELECT tmp.rwid AS "rwid", tmp.dxnr AS "dxnr"
-			  FROM (SELECT t.rwid, t.dxnr FROM db_zgfz.t_fsrw t WHERE t.fszt is null ORDER BY t.cjsj desc) tmp
-			 WHERE ROWNUM BETWEEN 1 AND 3
+			SELECT distinct v.rwid, v.sjhm, v.dxnr, v.wxzhid FROM db_zgfz.v_dx_fs_md v
+			WHERE v.fsfs = #{fsfs}
+		]]>
+		<if test="tmid == 0">
+			AND v.tmid = #{tmid}
+		</if>
+		<if test="tmid != 0">
+			AND v.tmid > 0
+		</if>
+		<![CDATA[
+			ORDER BY v.rwid
+		]]>
+    </select>
+    <select id="getRealNameTaxOfficerList" resultMap="taxOfficerList">
+		<![CDATA[
+			SELECT t.xm, t.sjhm, t.wxh, t.dzyjdz, '7' AS szbm,TO_CHAR(t.bsylx) bsylx
+			  FROM (SELECT TRIM(sm.xm) xm,
+			               sm.sjhm,
+			               sm.wxh,
+			               sm.dzyjdz,
+			               WMSYS.WM_CONCAT(sq.bsylx) bsylx
+			          FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+			         WHERE sq.smid = sm.smid
+			           AND sq.sfty = 'N'
+			           AND sm.sfzsfsm = 'Y'
+			           AND sm.sjhsfsm = 'Y'
+			         GROUP BY sm.xm, sm.sjhm, sm.wxh, sm.dzyjdz) t
         ]]>
     </select>
-	<select id="getSendListByTaskid" parameterType="Decimal" resultType="Map">
+    
+    <update id="updateRealNameRelation">
+   		<![CDATA[
+			MERGE INTO db_wx.t_wxqy_dzb t
+			USING (SELECT sm.xm, sm.sfzjhm, sm.sjhm, sq.djxh, sq.bsylx
+			         	FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+			          WHERE sq.smid = sm.smid
+			              AND sq.sfty = 'N'
+			              AND sm.sfzsfsm = 'Y'
+			              AND sm.sjhsfsm = 'Y') tmp
+			ON (	t.sfzjhm = tmp.sfzjhm 
+				AND t.xm = tmp.xm 
+				AND t.sjhm = tmp.sjhm
+				AND t.djxh = tmp.djxh 
+				AND t.bsylx = tmp.bsylx 
+				AND t.wxzhid = tmp.sjhm )
+			WHEN NOT MATCHED THEN
+			  INSERT (sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz)
+			  VALUES (tmp.sfzjhm, tmp.xm, tmp.sjhm, tmp.djxh, tmp.bsylx, tmp.sjhm, 'Y')
+        ]]>
+    </update>
+	<insert id="saveSyncUserJob" parameterType="com.ludateam.wechat.dto.SyncUserJobDto">
 		<![CDATA[
-			SELECT t.sjhm AS "sjhm", t.wxzhid AS "wxzhid", t.jhzt AS "jhzt"
-			FROM db_zgfz.t_fsmd t WHERE t.rwid = #{rwid}
+			INSERT INTO db_wx.t_batch_async_job (JOBID, ERRCODE, ERRMSG, ZXSL, ZXSJ)
+			VALUES(#{jobid, jdbcType=VARCHAR},#{errcode, jdbcType=VARCHAR},#{errmsg, jdbcType=VARCHAR},#{zxsl}, sysdate)
+        ]]>
+    </insert>
+	<insert id="saveSyncUserJobResult" parameterType="com.ludateam.wechat.dto.SyncUserJobResultDto">
+		<![CDATA[
+			INSERT INTO db_wx.t_batch_async_job_result (JOBID, ERRCODE, ERRMSG, STATUS, TYPE, TOTAL, PERCENTAGE)
+			VALUES(#{jobid, jdbcType=VARCHAR},
+						#{errcode, jdbcType=VARCHAR},
+						#{errmsg, jdbcType=VARCHAR},
+						#{status, jdbcType=VARCHAR},
+						#{type, jdbcType=VARCHAR},
+						#{total, jdbcType=VARCHAR},
+						#{percentage, jdbcType=VARCHAR})
+        ]]>
+    </insert>
+	<select id="getJobidList" resultType="String">
+		<![CDATA[
+			SELECT jobid
+			  FROM db_wx.t_batch_async_job t1
+			 WHERE EXISTS (
+			 		SELECT 1
+			          FROM db_wx.t_batch_async_job_result t2
+			        WHERE t1.jobid = t2.jobid
+			            AND t2.status = 3
+			       HAVING COUNT(1) = 0
+			  )
         ]]>
     </select>
-   	<update id="updateWechatInfo" parameterType="Map">
-   		<![CDATA[
-			UPDATE db_zgfz.t_fsmd t SET t.wxzhid = #{wxzhid, jdbcType=VARCHAR} , t.jhzt = #{jhzt, jdbcType=VARCHAR}
-			WHERE t.rwid = #{rwid} AND t.sjhm = #{sjhm}
-        ]]>
-    </update>
-   	<update id="updateTaskStatus" parameterType="Map">
-   		<![CDATA[
-   			UPDATE db_zgfz.t_fsrw t SET t.fszt =#{fszt, jdbcType=VARCHAR} , t.sbyy=#{sbyy, jdbcType=VARCHAR} WHERE t.rwid=#{rwid}
-        ]]>
-    </update>
 </mapper>

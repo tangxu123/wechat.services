@@ -1,11 +1,16 @@
 package com.ludateam.wechat.dao;
 
-import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.ludateam.wechat.dto.SyncUserJobDto;
+import com.ludateam.wechat.dto.SyncUserJobResultDto;
+import com.ludateam.wechat.entity.TaskEntity;
+import com.ludateam.wechat.entity.TaxOfficerEntity;
+
 public interface SearchDao {
+
 	/**
 	 * 保存企业微信接收的消息
 	 */
@@ -14,22 +19,32 @@ public interface SearchDao {
 	/**
 	 * 取得发送任务列表
 	 */
-	List<Map<String, Object>> getTaskList();
+	List<TaskEntity> getTaskList(TaskEntity entity);
 
 	/**
-	 * 通过任务id取得对应发送名单
+	 * 取得实名办税员列表
 	 */
-	List<Map<String, Object>> getSendListByTaskid(BigDecimal rwid);
+	List<TaxOfficerEntity> getRealNameTaxOfficerList();
 
 	/**
-	 * 更新发送名单表的微信账号信息
+	 * 更新企业办税员实名对照关系
 	 */
-	int updateWechatInfo(Map paramMap);
+	int updateRealNameRelation();
 
 	/**
-	 * 更新任务发送状态
+	 * 保存同步用户任务信息
 	 */
-	int updateTaskStatus(Map paramMap);
+	int saveSyncUserJob(SyncUserJobDto jobDto);
+
+	/**
+	 * 保存同步用户任务的结果信息
+	 */
+	int saveSyncUserJobResult(SyncUserJobResultDto jobResultDto);
+
+	/**
+	 * 取得jobid列表
+	 */
+	List<String> getJobidList();
 
 	Map getAccountByUserName(String accountUserName);
 

@@ -1,196 +1,236 @@
 package com.ludateam.wechat.services;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import org.springframework.util.CollectionUtils;
 
-import com.alibaba.fastjson.JSON;
+import com.ludateam.wechat.amqp.MessageSenderHandler;
 import com.ludateam.wechat.dao.SearchDao;
-import com.ludateam.wechat.dto.ResultDto;
-import com.ludateam.wechat.dto.UserListDto;
-import com.ludateam.wechat.entity.UserEntity;
-import com.ludateam.wechat.kit.HttpKit;
-import com.ludateam.wechat.kit.StrKit;
-import com.ludateam.wechat.utils.PropertyUtil;
+import com.ludateam.wechat.dto.TaskListDto;
+import com.ludateam.wechat.entity.TaskEntity;
+import com.ludateam.wechat.kit.SpringBeanKit;
 
 @Component
 public class TimedSendingTask {
 
-	/** 已激活 */
-	private static final String STATUS_ACTIVE = "1";
-	/** 已禁用 */
-	private static final String STATUS_DISABLED = "2";
-	/** 未激活 */
-	private static final String STATUS_INACTIVE = "4";
-	/** 发送状态：发送成功 */
-	private static final String SEND_STATUS_SUCCESS = "0";
-	/** 发送状态：发送失败 */
-	private static final String SEND_STATUS_FAILURE = "1";
+	/** 发送方式：短信 */
+	private static final String SEND_METHOD_SMS = "1";
+	/** 发送方式：微信 */
+	private static final String SEND_METHOD_WECHAT = "2";
+	
 	
 	private static Logger logger = Logger.getLogger(TimedSendingTask.class);
 
 	@Autowired
 	private SearchDao searchDao;
 
-	@Scheduled(cron = "0 0/2 * * * ?")
-	public void execute() {
+	@Scheduled(cron = "0/3 * * * * ?")
+	public void executeSmsMultiple() {
 
-		String requestHost = PropertyUtil.getProperty("web.url");
-		String weburl = requestHost + "/wechat/user/list";
-		logger.info("post URL:" + weburl);
+		TaskEntity entity = new TaskEntity();
+		entity.setTmid(BigDecimal.ZERO);
+		entity.setFsfs(SEND_METHOD_SMS);
+		List<TaskEntity> taskList = searchDao.getTaskList(entity);
 
-		HashMap<String, String> headers = new HashMap<String, String>();
-		headers.put("Content-type", "application/json");
+		if (taskList == null || taskList.size() == 0) {
+			logger.info("暂无数据-----发送方式=sms-----条目id=0");
+			return;
+		}
+		
+		addTaskToQueue(taskList, SEND_METHOD_SMS);
+	}
+	
+	@Scheduled(cron = "0/3 * * * * ?")
+	public void executeWechatMultiple() {
 
-		// 获取的部门id 1:徐汇专管员号 3:上海中软
-		String sendParam = "{\"department_id\":\"3\",\"fetch_child\":\"1\",\"status\":\"1\"}";
-		String result = HttpKit.post(weburl, sendParam, headers);
-		UserListDto userDto = JSON.parseObject(result, UserListDto.class);
-		if (userDto == null) {
-			logger.error("解析部门成员详情结果发生错误");
+		TaskEntity entity = new TaskEntity();
+		entity.setTmid(BigDecimal.ZERO);
+		entity.setFsfs(SEND_METHOD_WECHAT);
+		List<TaskEntity> taskList = searchDao.getTaskList(entity);
+
+		if (taskList == null || taskList.size() == 0) {
+			logger.info("暂无数据-----发送方式=wechat-----条目id=0");
 			return;
 		}
 
-		if (!"0".equals(userDto.getErrcode())) {
-			logger.error("获取部门成员详情失败，错误代码：" + userDto.getErrcode() + " 错误原因：" + userDto.getErrmsg());
+		addTaskToQueue(taskList, SEND_METHOD_WECHAT);
+	}
+	
+	@Scheduled(cron = "0/3 * * * * ?")
+	public void executeSmsSingle() {
+
+		TaskEntity entity = new TaskEntity();
+		entity.setTmid(BigDecimal.ONE);
+		entity.setFsfs(SEND_METHOD_SMS);
+		List<TaskEntity> taskList = searchDao.getTaskList(entity);
+
+		if (taskList == null || taskList.size() == 0) {
+			logger.info("暂无数据-----发送方式=sms-----条目id>0");
+			return;
+		}
+		
+		for (int i = 0; i < taskList.size(); i++) {
+			TaskEntity entityObj = taskList.get(i);
+			String mqJson = makeMqJson(entityObj.getRwid(),
+					entityObj.getSjhm(), entityObj.getDxnr(), SEND_METHOD_SMS);
+			putQueue(mqJson, SEND_METHOD_SMS);
+		}
+	}
+	
+	@Scheduled(cron = "0/3 * * * * ?")
+	public void executeWechatSingle() {
+
+		TaskEntity entity = new TaskEntity();
+		entity.setTmid(BigDecimal.ONE);
+		entity.setFsfs(SEND_METHOD_WECHAT);
+		List<TaskEntity> taskList = searchDao.getTaskList(entity);
+
+		if (taskList == null || taskList.size() == 0) {
+			logger.info("暂无数据-----发送方式=wechat-----条目id>0");
 			return;
 		}
 
-		if (!CollectionUtils.isEmpty(userDto.getUserlist())) {
-			List<UserEntity> userList = userDto.getUserlist();
-			HashMap<String, String> map = new HashMap<String, String>();
-			for (UserEntity user : userList) {
-				if (StrKit.notBlank(user.getMobile())) {
-					map.put(user.getMobile(), user.getUserid());
-				}
-				logger.info("name:" + user.getName() + "||userid:" + user.getUserid());
-			}
+		for (int i = 0; i < taskList.size(); i++) {
+			TaskEntity entityObj = taskList.get(i);
+			String mqJson = makeMqJson(entityObj.getRwid(),
+					entityObj.getSjhm(), entityObj.getDxnr(),
+					SEND_METHOD_WECHAT);
+			putQueue(mqJson, SEND_METHOD_WECHAT);
+		}
+	}
+	
+	/**
+	 * 根据任务id分隔任务列表
+	 * 
+	 * @param taskList
+	 *            任务列表
+	 * 
+	 * @return 任务列表
+	 */
+	private List<TaskListDto> splitTaskListByTaskid(List<TaskEntity> taskList) {
 
-			List<Map<String, Object>> taskList = searchDao.getTaskList();
-			if (CollectionUtils.isEmpty(taskList)) {
-				logger.error("任务列表为空");
-				return;
+		BigDecimal rwidIndex = taskList.get(0).getRwid();
+		List<TaskEntity> subTaskList = new ArrayList<TaskEntity>();
+		List<TaskListDto> taskDtoList = new ArrayList<TaskListDto>();
+		for (int i = 0; i < taskList.size(); i++) {
+			TaskEntity entityObj = taskList.get(i);
+			if (rwidIndex.compareTo(entityObj.getRwid()) == 0) {
+				subTaskList.add(entityObj);
+			} else {
+				TaskListDto dto = new TaskListDto();
+				dto.setRwid(rwidIndex);
+				dto.setTaskList(subTaskList);
+				taskDtoList.add(dto);
+
+				// 重置任务id（任务id变化了）
+				rwidIndex = entityObj.getRwid();
+				// 重置任务子列表（任务id变化了）
+				subTaskList = new ArrayList<TaskEntity>();
+				subTaskList.add(entityObj);
 			}
-			for (int i = 0; i < taskList.size(); i++) {
-				Map<String, Object> taskMap = taskList.get(i);
-				logger.info(taskMap);
-				BigDecimal rwid = (BigDecimal) taskMap.get("rwid");
-				String dxnr = (String) taskMap.get("dxnr");
-				boolean allUserSendSuccess = true;
-				List<Map<String, Object>> sendList = searchDao.getSendListByTaskid(rwid);
-				for (int j = 0; j < sendList.size(); j++) {
-					Map<String, Object> userMap = sendList.get(j);
-					logger.info(userMap);
-					String sjhm = (String)userMap.get("sjhm");
-					String wxzhid = (String)userMap.get("wxzhid");
-					//String jhzt = (String)userMap.get("jhzt");
-					
-					if(StrKit.notBlank(wxzhid)){
-						logger.info("此用户已经发送过消息了");
-					}else{
-						if (map.containsKey(sjhm)) {
-							wxzhid = map.get(sjhm);
-							if (sendTextMessage(requestHost, wxzhid, dxnr, headers)) {
-								updateWechatInfo(wxzhid, STATUS_ACTIVE, rwid, sjhm);
-								logger.info("发送成功");
-							}else{
-								allUserSendSuccess = false;
-								logger.error("发送失败");
-							}
-						}else{
-							// 该手机号码暂未激活企业微信
-							allUserSendSuccess = false;
-							updateWechatInfo(wxzhid, STATUS_INACTIVE, rwid, sjhm);
-						}
+		}
+
+		TaskListDto dto = new TaskListDto();
+		dto.setRwid(rwidIndex);
+		dto.setTaskList(subTaskList);
+		taskDtoList.add(dto);
+
+		return taskDtoList;
+	}
+
+	/**
+	 * 将任务添加到相应的队列中
+	 * 
+	 * @param rwid
+	 *            任务id
+	 * @param fsdx
+	 *            发送对象
+	 * @param dxnr
+	 *            短信内容
+	 * @param sendMethod
+	 *            发送方式
+	 * 
+	 * @return 消息队列json
+	 */
+	private String makeMqJson(BigDecimal rwid, String fsdx, String dxnr,
+			String sendMethod) {
+		String mqjson = "";
+		if (SEND_METHOD_SMS.equals(sendMethod)) {
+			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx
+					+ "\",\"dxnr\":\"" + dxnr + "\"}";
+		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
+			mqjson = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + fsdx
+					+ "\",\"dxnr\":\"" + dxnr + "\"}";
+		}
+		return mqjson;
+	}
+	
+	/**
+	 * 将任务添加到相应的队列中
+	 * 
+	 * @param rwid
+	 *            任务列表
+	 * @param sendMethod
+	 *            发送方式
+	 * 
+	 * @return 无
+	 */
+	private void addTaskToQueue(List<TaskEntity> taskList, String sendMethod) {
+		
+		logger.info("发送方式：" + sendMethod + "-----条目id=0----" + taskList.size());
+		List<TaskListDto> taskDtoList = splitTaskListByTaskid(taskList);
+		logger.info("根据任务id分隔任务列表大小----" + taskDtoList.size());
+		
+		for (TaskListDto taskDto : taskDtoList) {
+			BigDecimal rwid = taskDto.getRwid();
+			List<TaskEntity> subTaskList = taskDto.getTaskList();
+			logger.info("任务id----" + rwid + "----任务列表大小----" + subTaskList.size());
+			
+			int count = subTaskList.size() % 1000 == 0 ? subTaskList.size() / 1000 : subTaskList.size() / 1000 + 1;
+			for (int m = 1; m <= count; m++) {
+				String fsdx = "";
+				String dxnr = "";
+				for (int n = (m - 1) * 1000; n < subTaskList.size() && n < m * 1000; n++) {
+					dxnr = subTaskList.get(n).getDxnr();
+					if (SEND_METHOD_SMS.equals(sendMethod)) {
+						fsdx += subTaskList.get(n).getSjhm() + ",";
+					} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
+						fsdx += subTaskList.get(n).getWxzhid() + ",";
 					}
 				}
-				
-				if (allUserSendSuccess) {
-					updateTaskStatus(SEND_STATUS_SUCCESS, "success", rwid);
-					logger.info("All user send success");
-				} else {
-					updateTaskStatus(SEND_STATUS_FAILURE, "Include inactive users", rwid);
-					logger.info("Include inactive users");
-				}
+				fsdx = fsdx.substring(0, fsdx.length() - 1);
+				String mqJson = makeMqJson(rwid, fsdx, dxnr, sendMethod);
+				logger.info("添加第" + m + "组1000条消息到队列开始");
+				logger.info(mqJson);
+				putQueue(mqJson, sendMethod);
+				logger.info("添加第" + m + "组1000条消息到队列结束");
 			}
-		}else{
-			logger.error("部门成员列表为空");
 		}
 	}
 	
 	/**
-	 * 更新微信账号信息
+	 * 将单条的任务添加到相应的队列中
 	 * 
-	 * @param wxzhid
-	 *            微信账号id
-	 * @param jhzt
-	 *            集合状态
-	 * @param rwid
-	 *            任务id
-	 * @param sjhm
-	 *            手机号码
+	 * @param mqJson
+	 *            任务列表
+	 * @param sendMethod
+	 *            发送方式
 	 * 
 	 * @return 无
 	 */
-	private void updateWechatInfo(String wxzhid, String jhzt, BigDecimal rwid,
-			String sjhm) {
-		Map paramMap = new HashMap();
-		paramMap.put("wxzhid", wxzhid);
-		paramMap.put("jhzt", jhzt);
-		paramMap.put("rwid", rwid);
-		paramMap.put("sjhm", sjhm);
-		searchDao.updateWechatInfo(paramMap);
+	private void putQueue(String mqJson, String sendMethod) {
+		MessageSenderHandler messageSender = (MessageSenderHandler) SpringBeanKit
+				.getBean("messageSenderHandler");
+		if (SEND_METHOD_SMS.equals(sendMethod)) {
+			messageSender.sendSmsMessage(mqJson);
+		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
+			messageSender.sendWechatMessage(mqJson);
+		}
 	}
 	
-	/**
-	 * 更新任务发送状态
-	 * 
-	 * @param fszt
-	 *            发送状态
-	 * @param sbyy
-	 *            失败原因
-	 * @param rwid
-	 *            任务id
-	 * 
-	 * @return 无
-	 */
-	private void updateTaskStatus(String fszt, String sbyy, BigDecimal rwid) {
-		Map paramMap = new HashMap();
-		paramMap.put("fszt", fszt);
-		paramMap.put("sbyy", sbyy);
-		paramMap.put("rwid", rwid);
-		searchDao.updateTaskStatus(paramMap);
-	}
-	
-	/**
-	 * 发送文本信息
-	 * 
-	 * @param requestHost
-	 *            请求服务器
-	 * @param userid
-	 *            用户id
-	 * @param content
-	 *            信息内容
-	 * @param headers
-	 *            请求报文头部
-	 * 
-	 * @return 发送结果
-	 */
-	private boolean sendTextMessage(String requestHost, String userid,
-			String content, HashMap<String, String> headers) {
-		String weburl = requestHost + "/wechat/qyapi/sendTextMessage";
-		String sendParam = "{\"touser\" : \"" + userid + "\",\"toparty\" : \"\",\"totag\" : \"\","
-				+ "\"msgtype\" : \"text\",\"agentid\" : 4,\"text\" : {\"content\" : \"" + content + "\"},\"safe\":0}";
-		System.out.println(sendParam);
-		String resultJson = HttpKit.post(weburl, sendParam, headers);
-		ResultDto userDto = JSON.parseObject(resultJson, ResultDto.class);
-		return "0".equals(userDto.getErrcode());
-	}
 }
