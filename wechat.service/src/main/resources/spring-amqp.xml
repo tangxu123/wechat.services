@@ -10,8 +10,22 @@
         <property name="connectionFactory" ref="connectionFactory"/>
         <property name="concurrentConsumers" value="3"/>
         <property name="maxConcurrentConsumers" value="10"/>
-
     </bean>
 
     <rabbit:connection-factory id="connectionFactory" host="172.16.2.52" port="5672" username="xh" password="xh"></rabbit:connection-factory>
+    
+    <!--定义queue-->
+    <rabbit:queue id="q_weixin" name="Q_WEIXIN" durable="true" auto-delete="false" exclusive="false"/>
+    <rabbit:queue id="q_sms" name="Q_SMS" durable="true" auto-delete="false" exclusive="false"/>
+    
+    <!-- 定义direct exchange，绑定 queue -->
+    <rabbit:direct-exchange name="MSG_SEND_EX" durable="true" auto-delete="false">
+        <rabbit:bindings>
+            <rabbit:binding queue="q_weixin" key="FSFS=2"></rabbit:binding>
+            <rabbit:binding queue="q_sms" key="FSFS=1"></rabbit:binding>
+        </rabbit:bindings>
+    </rabbit:direct-exchange>
+    
+    <!--定义rabbit template用于数据的接收和发送-->
+    <rabbit:template id="xhAmqpTemplate" connection-factory="connectionFactory" exchange="MSG_SEND_EX"/>
 </beans>
