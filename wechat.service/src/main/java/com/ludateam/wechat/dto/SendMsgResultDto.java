@@ -3,11 +3,11 @@ package com.ludateam.wechat.dto;
 public class SendMsgResultDto extends ResultDto {
 
 	/** 失败的成员ID列表 */
-	private String invaliduser;
+	private String invaliduser = "";
 	/** 失败的部门ID列表 */
-	private String invalidparty;
+	private String invalidparty = "";
 	/** 失败的标签ID列表 */
-	private String invalidtag;
+	private String invalidtag = "";
 
 	public String getInvaliduser() {
 		return invaliduser;

@@ -48,9 +48,9 @@ public class MessageSenderHandler {
 		amqpTemplate.convertAndSend("MSG_SEND_EX", "FSFS=1", message);
 		
 		MqJsonDto mqJsonDto = JSON.parseObject(message, MqJsonDto.class);
-		String sendParam = "{\"status\":\"3\",\"msgId\":\"\",\"rwid\",\""
-				+ mqJsonDto.getRwid() + "\",\"sjh\":\"" + mqJsonDto.getSjhm()
-				+ "\"}";
+		String sjhm = "'"+mqJsonDto.getSjhm().replace(",", "','")+"'";
+		String sendParam = "{\"status\":\"3\",\"msgId\":\"\",\"rwid\":\""
+				+ mqJsonDto.getRwid() + "\",\"sjh\":\"" + sjhm + "\"}";
 		logger.info("sms--message--add--queue--param----" + sendParam);
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
@@ -72,8 +72,9 @@ public class MessageSenderHandler {
 		amqpTemplate.convertAndSend("MSG_SEND_EX", "FSFS=2", message);
 
 		MqJsonDto mqJsonDto = JSON.parseObject(message, MqJsonDto.class);
-		String sendParam = "{\"rwid\",\"" + mqJsonDto.getRwid()
-				+ "\",\"wxzh\":\"" + mqJsonDto.getWxzh() + "\"}";
+		String wxzh = "'" + mqJsonDto.getWxzh().replace(",", "','") + "'";
+		String sendParam = "{\"rwid\":\"" + mqJsonDto.getRwid()
+				+ "\",\"wxzh\":\"" + wxzh + "\"}";
 		logger.info("wechat--message--add--queue--param----" + sendParam);
 		HashMap<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-type", "application/json");

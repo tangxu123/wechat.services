@@ -62,7 +62,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		String msgGroup = (String) resultMap.get("msgGroup");
 		String rwid = (String) resultMap.get("rwId");
 		String sjhm = (String) resultMap.get("sjhm");
-		
+		sjhm = "'" + sjhm.replace(",", "','") + "'";
 		if (msgGroup == null || "".equals(msgGroup)) {
 			status = "5";
 		} else {
@@ -70,7 +70,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		}
 		
 		sendParam = "{\"status\":\"" + status + "\",\"msgId\":\"" + msgGroup
-				+ "\",\"rwid\",\"" + rwid + "\",\"sjh\":\"" + sjhm + "\"}";
+				+ "\",\"rwid\":\"" + rwid + "\",\"sjh\":\"" + sjhm + "\"}";
 		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToSms";
 		result = HttpKit.post(nmhurl, sendParam, headers);
 		logger.info("sms--message--send--result----callback---" + result);
@@ -93,11 +93,18 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
 		String weburl = PropertyUtil.getProperty("web.url") + "/wechat/qyapi/sendTextMessage";
-		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToSms";
+		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToWeChat";
 		
 		SendMsgResultDto resultDto = sendTextMessage(weburl, wxzh, content, headers);
 		String uswxzh = resultDto.getInvaliduser();
-		String sendParam = "{\"rwid\":\""+rwid+"\",\"wxzh\":\""+wxzh+"\",\"uswxzh\",\""+uswxzh+"\"}";
+		if (uswxzh != null && !"".equals(uswxzh)) {
+			uswxzh = "'" + uswxzh.replace(",", "','") + "'";
+		}
+
+		wxzh = "'" + wxzh.replace(",", "','") + "'";
+
+		String sendParam = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + wxzh
+				+ "\",\"uswxzh\":\"" + uswxzh + "\"}";
 		String result = HttpKit.post(nmhurl, sendParam, headers);
 		logger.info("sms--message--send--result--callback--" + result);
 		
