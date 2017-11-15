@@ -3,9 +3,9 @@ package com.ludateam.wechat.dto;
 public class ResultDto {
 	
 	/** 返回码 */
-	private String errcode;
+	private String errcode = "";
 	/** 对返回码的文本描述内容 */
-	private String errmsg;
+	private String errmsg = "";
 
 	/**
 	 * 取得返回码的值

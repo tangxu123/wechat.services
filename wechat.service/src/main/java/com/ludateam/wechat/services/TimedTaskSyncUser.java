@@ -63,7 +63,7 @@ public class TimedTaskSyncUser {
 	 * 取得异步任务的执行结果（23:30:00 开始--23:30:50 每隔5秒监听一次）
 	 * 
 	 * */
-	@Scheduled(cron = "0-50/5 30 23 * * ?")
+	@Scheduled(cron = "0-59/5 30-31 23 * * ?")
 	public void executeJobResult() {
 		
 		List<String> jobidList = searchDao.getJobidList();

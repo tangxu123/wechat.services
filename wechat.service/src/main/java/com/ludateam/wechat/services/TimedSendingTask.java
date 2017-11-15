@@ -29,7 +29,7 @@ public class TimedSendingTask {
 	@Autowired
 	private SearchDao searchDao;
 
-	@Scheduled(cron = "0/3 * * * * ?")
+	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeSmsMultiple() {
 
 		TaskEntity entity = new TaskEntity();
@@ -45,7 +45,7 @@ public class TimedSendingTask {
 		addTaskToQueue(taskList, SEND_METHOD_SMS);
 	}
 	
-	@Scheduled(cron = "0/3 * * * * ?")
+	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeWechatMultiple() {
 
 		TaskEntity entity = new TaskEntity();
@@ -61,7 +61,7 @@ public class TimedSendingTask {
 		addTaskToQueue(taskList, SEND_METHOD_WECHAT);
 	}
 	
-	@Scheduled(cron = "0/3 * * * * ?")
+	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeSmsSingle() {
 
 		TaskEntity entity = new TaskEntity();
@@ -82,7 +82,7 @@ public class TimedSendingTask {
 		}
 	}
 	
-	@Scheduled(cron = "0/3 * * * * ?")
+	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeWechatSingle() {
 
 		TaskEntity entity = new TaskEntity();

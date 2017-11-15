@@ -76,7 +76,7 @@
     
     <update id="updateRealNameRelation">
    		<![CDATA[
-			MERGE INTO db_wx.t_wxqy_dzb t
+			MERGE INTO db_zgfz.t_wxqy_dzb t
 			USING (SELECT sm.xm, sm.sfzjhm, sm.sjhm, sq.djxh, sq.bsylx
 			         	FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
 			          WHERE sq.smid = sm.smid

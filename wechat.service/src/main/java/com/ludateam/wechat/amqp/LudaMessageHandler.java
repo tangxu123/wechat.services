@@ -15,7 +15,6 @@ package com.ludateam.wechat.amqp;/*
  * Created by Him on 2017/11/2.
  */
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +22,7 @@ import org.apache.log4j.Logger;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
+import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
 import com.ludateam.wechat.dto.MqJsonDto;
@@ -34,7 +34,7 @@ import com.rabbitmq.client.Channel;
 /**
  * @author Him
  */
-
+@Component
 public class LudaMessageHandler implements ChannelAwareMessageListener {
     private static Logger logger = Logger.getLogger(LudaMessageHandler.class);
 
@@ -43,28 +43,9 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
     public void onMessage(Message message, Channel channel) throws Exception {
         System.out.println("myQueue1:" + message);
         System.out.println("myQueue1:" + new String(message.getBody()));
-
         //channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
     }
 
-    //正常消费掉后通知mq服务器移除此条mq
-    private void basicACK(Message message, Channel channel) {
-        try {
-            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
-        } catch (Exception e) {
-            logger.error("通知服务器移除mq时异常，异常信息：" + e);
-        }
-    }
-
-    //处理异常，mq重回队列
-    private void basicNACK(Message message, Channel channel) {
-        try {
-            channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
-        } catch (IOException e) {
-            logger.error("mq重新进入服务器时出现异常，异常信息：" + e);
-        }
-
-    }
     
 	@RabbitListener(queues = "Q_SMS")
 	public void onSmsMessage(Message message, Channel channel) throws Exception {
@@ -81,7 +62,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		String msgGroup = (String) resultMap.get("msgGroup");
 		String rwid = (String) resultMap.get("rwId");
 		String sjhm = (String) resultMap.get("sjhm");
-		
+		sjhm = "'" + sjhm.replace(",", "','") + "'";
 		if (msgGroup == null || "".equals(msgGroup)) {
 			status = "5";
 		} else {
@@ -89,7 +70,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		}
 		
 		sendParam = "{\"status\":\"" + status + "\",\"msgId\":\"" + msgGroup
-				+ "\",\"rwid\",\"" + rwid + "\",\"sjh\":\"" + sjhm + "\"}";
+				+ "\",\"rwid\":\"" + rwid + "\",\"sjh\":\"" + sjhm + "\"}";
 		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToSms";
 		result = HttpKit.post(nmhurl, sendParam, headers);
 		logger.info("sms--message--send--result----callback---" + result);
@@ -111,12 +92,19 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		 
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
-		String weburl = PropertyUtil.getProperty("web.url");
-		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url");
+		String weburl = PropertyUtil.getProperty("web.url") + "/wechat/qyapi/sendTextMessage";
+		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToWeChat";
 		
 		SendMsgResultDto resultDto = sendTextMessage(weburl, wxzh, content, headers);
 		String uswxzh = resultDto.getInvaliduser();
-		String sendParam = "{\"rwid\":\""+rwid+"\",\"wxzh\":\""+wxzh+"\",\"uswxzh\",\""+uswxzh+"\"}";
+		if (uswxzh != null && !"".equals(uswxzh)) {
+			uswxzh = "'" + uswxzh.replace(",", "','") + "'";
+		}
+
+		wxzh = "'" + wxzh.replace(",", "','") + "'";
+
+		String sendParam = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + wxzh
+				+ "\",\"uswxzh\":\"" + uswxzh + "\"}";
 		String result = HttpKit.post(nmhurl, sendParam, headers);
 		logger.info("sms--message--send--result--callback--" + result);
 		
@@ -127,7 +115,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 	/**
 	 * 发送文本信息
 	 * 
-	 * @param requestHost
+	 * @param weburl
 	 *            请求服务器
 	 * @param userid
 	 *            用户id
@@ -138,9 +126,8 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 	 * 
 	 * @return 发送结果
 	 */
-	private SendMsgResultDto sendTextMessage(String requestHost, String userid,
+	private SendMsgResultDto sendTextMessage(String weburl, String userid,
 			String content, HashMap<String, String> headers) {
-		String weburl = requestHost + "/wechat/qyapi/sendTextMessage";
 		String sendParam = "{\"touser\" : \""
 				+ userid.replace(",", "|")
 				+ "\",\"toparty\" : \"\",\"totag\" : \"\","
