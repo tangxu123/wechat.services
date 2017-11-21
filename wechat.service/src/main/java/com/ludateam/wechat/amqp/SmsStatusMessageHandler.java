@@ -31,6 +31,9 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author Him
+ */
 @Component
 public class SmsStatusMessageHandler implements ChannelAwareMessageListener {
     private static Logger logger = Logger.getLogger(SmsStatusMessageHandler.class);
@@ -54,9 +57,9 @@ public class SmsStatusMessageHandler implements ChannelAwareMessageListener {
         //Map<String, String> param = new HashMap<String, String>();
 
         SmsRequestParam smsRequestParam = new SmsRequestParam();
-
+        String delivrd = "DELIVRD";
         //status ,msgId,rwid,sjh
-        if ("DELIVRD".equals(smsStatus.getErrorCode())) {
+        if (delivrd.equals(smsStatus.getErrorCode())) {
             smsRequestParam.setStatus("1");
         } else {
             smsRequestParam.setStatus("2");
