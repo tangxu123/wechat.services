@@ -16,6 +16,23 @@
         <result column="DXNR" property="dxnr"/>
         <result column="WXZHID" property="wxzhid"/>
     </resultMap>
+	<resultMap id="tzsList" type="com.ludateam.wechat.entity.SssxTzsEntity">
+        <result column="SQSJ" property="sqsj"/>
+        <result column="WSH" property="wsh"/>
+        <result column="DJXH" property="djxh"/>
+        <result column="NSRMC" property="nsrmc"/>
+        <result column="SHXYDM" property="shxydm"/>
+        <result column="SSSX_MC" property="sssxMc"/>
+        <result column="SLRY_DM" property="slryDm"/>
+        <result column="ZGSWSKFJ_DM" property="zgswskfjDm"/>
+        <result column="WXZHID" property="wxzhid"/>
+        <result column="SJHM" property="sjhm"/>
+    </resultMap>
+	<resultMap id="wsbList" type="com.ludateam.wechat.entity.SssxTzsEntity">
+        <result column="DJXH" property="djxh"/>
+        <result column="ZGSWSKFJ_DM" property="zgswskfjDm"/>
+        <result column="ZSXMMCS" property="zsxmmcs"/>
+    </resultMap>
     <insert id="saveReseiceMsg" parameterType="Map">
 		<![CDATA[
 			INSERT INTO db_wx.wechat_receive_message
@@ -73,25 +90,49 @@
 			         GROUP BY sm.xm, sm.sjhm, sm.wxh, sm.dzyjdz) t
         ]]>
     </select>
-    
-    <update id="updateRealNameRelation">
+    <update id="updateEnableRelation">
    		<![CDATA[
-			MERGE INTO db_zgfz.t_wxqy_dzb t
-			USING (SELECT sm.xm, sm.sfzjhm, sm.sjhm, sq.djxh, sq.bsylx
-			         	FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
-			          WHERE sq.smid = sm.smid
-			              AND sq.sfty = 'N'
-			              AND sm.sfzsfsm = 'Y'
-			              AND sm.sjhsfsm = 'Y') tmp
-			ON (	t.sfzjhm = tmp.sfzjhm 
-				AND t.xm = tmp.xm 
-				AND t.sjhm = tmp.sjhm
-				AND t.djxh = tmp.djxh 
-				AND t.bsylx = tmp.bsylx 
-				AND t.wxzhid = tmp.sjhm )
-			WHEN NOT MATCHED THEN
-			  INSERT (sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz)
-			  VALUES (tmp.sfzjhm, tmp.xm, tmp.sjhm, tmp.djxh, tmp.bsylx, tmp.sjhm, 'Y')
+	        MERGE INTO db_zgfz.t_wxqy_dzb t
+	        USING (SELECT trim(sm.xm) xm, trim(sm.sfzjhm) sfzjhm, sm.sjhm, sq.djxh, sq.bsylx
+	                   FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+		                WHERE sq.smid = sm.smid
+		                    AND sq.sfty = 'N'
+		                    AND sm.sfzsfsm = 'Y'
+		                    AND sm.sjhsfsm = 'Y') tmp
+		      ON (  t.sfzjhm = tmp.sfzjhm
+		        AND t.xm = tmp.xm
+		        AND t.sjhm = tmp.sjhm
+		        AND t.djxh = tmp.djxh
+		        AND t.bsylx = tmp.bsylx
+		        AND t.wxzhid = tmp.sjhm)
+		      WHEN NOT MATCHED THEN
+			  	INSERT (id, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj)
+		        VALUES (db_zgfz.sq_wxqy_dzb_id.nextval, tmp.sfzjhm, tmp.xm, tmp.sjhm, tmp.djxh, tmp.bsylx, tmp.sjhm, 'Y', sysdate, sysdate)
+        ]]>
+    </update>
+	<update id="updateDisableRelation">
+   		<![CDATA[
+			UPDATE db_zgfz.t_wxqy_dzb t
+			   	  SET t.yxbz = 'N', t.xgsj = sysdate
+			 WHERE EXISTS (SELECT 1 FROM (
+			 		SELECT trim(sm.xm) xm,
+			                    trim(sm.sfzjhm) sfzjhm,
+			                    sm.sjhm,
+			                    sq.djxh,
+			                    sq.bsylx
+			          FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+                 	WHERE sq.smid = sm.smid
+                        AND sq.sfty = 'Y'
+                   		AND sm.sfzsfsm = 'Y'
+                   		AND sm.sjhsfsm = 'Y' ) tmp
+			       WHERE t.sfzjhm = tmp.sfzjhm
+			           AND t.xm = tmp.xm
+			           AND t.sjhm = tmp.sjhm
+			           AND t.djxh = tmp.djxh
+			           AND t.bsylx = tmp.bsylx
+			           AND t.wxzhid = tmp.sjhm
+			           AND t.yxbz = 'Y'
+			        )
         ]]>
     </update>
 	<insert id="saveSyncUserJob" parameterType="com.ludateam.wechat.dto.SyncUserJobDto">
@@ -102,14 +143,15 @@
     </insert>
 	<insert id="saveSyncUserJobResult" parameterType="com.ludateam.wechat.dto.SyncUserJobResultDto">
 		<![CDATA[
-			INSERT INTO db_wx.t_batch_async_job_result (JOBID, ERRCODE, ERRMSG, STATUS, TYPE, TOTAL, PERCENTAGE)
+			INSERT INTO db_wx.t_batch_async_job_result (JOBID, ERRCODE, ERRMSG, STATUS, TYPE, TOTAL, PERCENTAGE, EXECUTE_TIME)
 			VALUES(#{jobid, jdbcType=VARCHAR},
 						#{errcode, jdbcType=VARCHAR},
 						#{errmsg, jdbcType=VARCHAR},
 						#{status, jdbcType=VARCHAR},
 						#{type, jdbcType=VARCHAR},
 						#{total, jdbcType=VARCHAR},
-						#{percentage, jdbcType=VARCHAR})
+						#{percentage, jdbcType=VARCHAR},
+						sysdate )
         ]]>
     </insert>
 	<select id="getJobidList" resultType="String">
@@ -124,5 +166,77 @@
 			       HAVING COUNT(1) = 0
 			  )
         ]]>
+    </select>
+	<select id="getTzsList" resultMap="tzsList">
+		<![CDATA[
+			 SELECT '20' || SUBSTR(t.wsh, 5, 2) || '年' || SUBSTR(t.wsh, 7, 2) || '月' || SUBSTR(t.wsh, 9, 2) || '日' sqsj,
+			        t.wsh,
+			        TO_CHAR(t.djxh) djxh,
+			        n.nsrmc,
+			        NVL2(n.shxydm, n.shxydm, n.nsrsbh) shxydm,
+			        n.zgswskfj_dm,
+              		t.slry_dm,
+			        t.sssx_mc,
+              		(SELECT TO_CHAR(WMSYS.WM_CONCAT(d.wxzhid))  FROM db_zgfz.t_wxqy_dzb d WHERE d.djxh = t.djxh) wxzhid,
+              		(SELECT TO_CHAR(WMSYS.WM_CONCAT(d.sjhm))  FROM db_zgfz.t_wxqy_dzb d WHERE d.djxh = t.djxh) sjhm
+			   FROM hxwt.t_sx_zftzs t, hx_dj.dj_nsrxx n
+			 WHERE t.djxh = n.djxh
+			    AND t.status = '0'
+		]]>
+    </select>
+	<insert id="saveFsrw" parameterType="com.ludateam.wechat.entity.FsrwEntity">
+		<selectKey resultType="java.math.BigDecimal" order="BEFORE" keyProperty="rwid">
+			<![CDATA[
+				SELECT db_zgfz.sq_fsrw.nextval AS "rwid" FROM dual
+			]]>
+		</selectKey>
+		<![CDATA[
+				INSERT INTO db_zgfz.t_fsrw (rwid,cjsj,swjgbzdm,shsx,tmid,dxnr,lk,fsdx,fssj,yxq,nwbz,rydm,fsfs)
+				VALUES(#{rwid},
+							sysdate,
+							#{sbdm, jdbcType=VARCHAR},
+							#{shsx, jdbcType=VARCHAR},
+							#{tmid, jdbcType=INTEGER},
+							#{dxnr, jdbcType=VARCHAR},
+							#{lk, jdbcType=VARCHAR},
+							#{fsdx, jdbcType=VARCHAR},
+							sysdate,
+							#{yxq, jdbcType=INTEGER},
+							#{nwbz, jdbcType=VARCHAR},
+							#{rydm, jdbcType=VARCHAR},
+							#{fsfs, jdbcType=VARCHAR}
+					)
+		]]>
+	</insert>
+	<insert id="saveFsmd" parameterType="com.ludateam.wechat.entity.FsmdEntity">
+		<![CDATA[
+			INSERT INTO db_zgfz.t_fsmd (rwid,fsr,fssx,sjhm,dxnr,wxzhid)
+			VALUES(#{rwid, jdbcType=DECIMAL},
+						#{fsr, jdbcType=VARCHAR},
+						#{fssx, jdbcType=VARCHAR},
+						#{sjhm, jdbcType=VARCHAR},
+						#{dxnr, jdbcType=VARCHAR},
+						#{wxzhid, jdbcType=VARCHAR}
+					)
+		]]>
+	</insert>
+	<update id="updateTzsStatus" parameterType="String">
+		<![CDATA[
+			UPDATE hxwt.t_sx_zftzs t SET t.status = '1' WHERE t.wsh = #{wsh}
+        ]]>
+    </update>
+	<select id="getWsbList" resultMap="wsbList">
+		<![CDATA[
+		   SELECT tmp.djxh,
+		       		  tmp.zgswskfj_dm,
+		       		  TO_CHAR(WMSYS.WM_CONCAT(tmp.zsxmmc)) zsxmmcs
+		  	 FROM (SELECT t.djxh,
+		               			   t.zgswskfj_dm,
+		               			   (select z.zsxmmc from hx_dm_qg.dm_gy_zsxm z where z.zsxm_dm = t.zsxm_dm) zsxmmc
+		          		 FROM DB_ZGFZ.T_ZG_YSBTJ t
+		               WHERE tjny = 201710
+		           		   AND wsbbz = 'Y' ) tmp
+		GROUP BY tmp.djxh, tmp.zgswskfj_dm
+		]]>
     </select>
 </mapper>

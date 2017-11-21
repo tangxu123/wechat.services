@@ -52,15 +52,17 @@ public class TimedTaskSyncUser {
 
 		SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
 		if ("0".equals(jobDto.getErrcode())) {
-			int count = searchDao.updateRealNameRelation();
-			logger.info("updateRealNameRelation count:" + count);
+			int count = searchDao.updateEnableRelation();
+			logger.info("updateEnableRelation count:" + count);
+			count = searchDao.updateDisableRelation();
+			logger.info("updateDisableRelation count:" + count);
 		}
 		jobDto.setZxsl(resultList.size());
 		searchDao.saveSyncUserJob(jobDto);
 	}
 	
 	/**
-	 * 取得异步任务的执行结果（23:30:00 开始--23:30:50 每隔5秒监听一次）
+	 * 取得异步任务的执行结果（23:30:00 开始--23:31:59 每隔5秒监听一次）
 	 * 
 	 * */
 	@Scheduled(cron = "0-59/5 30-31 23 * * ?")

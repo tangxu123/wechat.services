@@ -12,8 +12,12 @@ import org.springframework.stereotype.Component;
 import com.ludateam.wechat.amqp.MessageSenderHandler;
 import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.TaskListDto;
+import com.ludateam.wechat.entity.FsmdEntity;
+import com.ludateam.wechat.entity.FsrwEntity;
+import com.ludateam.wechat.entity.SssxTzsEntity;
 import com.ludateam.wechat.entity.TaskEntity;
 import com.ludateam.wechat.kit.SpringBeanKit;
+import com.ludateam.wechat.kit.StrKit;
 
 @Component
 public class TimedSendingTask {
@@ -29,6 +33,10 @@ public class TimedSendingTask {
 	@Autowired
 	private SearchDao searchDao;
 
+	/**
+	 * 发送短信任务（多手机号码合并成一条）
+	 * 
+	 */
 	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeSmsMultiple() {
 
@@ -45,6 +53,10 @@ public class TimedSendingTask {
 		addTaskToQueue(taskList, SEND_METHOD_SMS);
 	}
 	
+	/**
+	 * 发送微信消息任务（多微信张合并成一条）
+	 * 
+	 */
 	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeWechatMultiple() {
 
@@ -61,6 +73,10 @@ public class TimedSendingTask {
 		addTaskToQueue(taskList, SEND_METHOD_WECHAT);
 	}
 	
+	/**
+	 * 发送短信任务（单条）
+	 * 
+	 */
 	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeSmsSingle() {
 
@@ -74,14 +90,20 @@ public class TimedSendingTask {
 			return;
 		}
 		
+		MessageSenderHandler messageSender = (MessageSenderHandler) SpringBeanKit
+				.getBean("messageSenderHandler");
 		for (int i = 0; i < taskList.size(); i++) {
 			TaskEntity entityObj = taskList.get(i);
 			String mqJson = makeMqJson(entityObj.getRwid(),
 					entityObj.getSjhm(), entityObj.getDxnr(), SEND_METHOD_SMS);
-			putQueue(mqJson, SEND_METHOD_SMS);
+			messageSender.sendSmsMessage(mqJson);
 		}
 	}
 	
+	/**
+	 * 发送微信消息任务（单条）
+	 * 
+	 */
 	@Scheduled(cron = "0 0/1 * * * ?")
 	public void executeWechatSingle() {
 
@@ -94,14 +116,80 @@ public class TimedSendingTask {
 			logger.info("暂无数据-----发送方式=wechat-----条目id>0");
 			return;
 		}
-
+		
+		MessageSenderHandler messageSender = (MessageSenderHandler) SpringBeanKit
+				.getBean("messageSenderHandler");
 		for (int i = 0; i < taskList.size(); i++) {
 			TaskEntity entityObj = taskList.get(i);
 			String mqJson = makeMqJson(entityObj.getRwid(),
 					entityObj.getSjhm(), entityObj.getDxnr(),
 					SEND_METHOD_WECHAT);
-			putQueue(mqJson, SEND_METHOD_WECHAT);
+			messageSender.sendWechatMessage(mqJson);
 		}
+	}
+	
+	/**
+	 * 事项通知书制件完成
+	 * 
+	 */
+	@Scheduled(cron = "0 30 13 * * ?")
+	public void executeSxtzs() {
+
+		List<SssxTzsEntity> tzsList = searchDao.getTzsList();
+		if (tzsList == null || tzsList.size() == 0) {
+			logger.info("暂无制件完成的工作流通知书");
+			return;
+		}
+
+		for (int i = 0; i < tzsList.size(); i++) {
+			SssxTzsEntity tzsEntity = tzsList.get(i);
+			String wxzhid = tzsEntity.getWxzhid();
+			if (StrKit.isBlank(wxzhid)) {
+				continue;
+			} else {
+				String content = tzsEntity.getNsrmc() + ":（纳税人识别号："
+						+ tzsEntity.getShxydm() + "）\n你单位于"
+						+ tzsEntity.getSqsj() + "申请办理的" + tzsEntity.getSssxMc()
+						+ "事项（文书号：" + tzsEntity.getWsh() + "），结果通知书已经制发完成。";
+
+				FsrwEntity fsrwEntity = new FsrwEntity();
+				fsrwEntity.setDxnr(content);
+				fsrwEntity.setFsdx("0");
+				fsrwEntity.setFsfs(SEND_METHOD_WECHAT);
+				fsrwEntity.setLk("【徐汇税务局】");
+				fsrwEntity.setNwbz("0");
+				fsrwEntity.setRydm(tzsEntity.getSlryDm());
+				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
+				fsrwEntity.setShsx("0");
+				fsrwEntity.setTmid(99);
+				fsrwEntity.setYxq(0);
+				searchDao.saveFsrw(fsrwEntity);
+
+				BigDecimal rwid = fsrwEntity.getRwid();
+				String djxh = tzsEntity.getDjxh();
+				List<String> wxzhidList = removeDuplicateWxzhid(wxzhid);
+				for (int j = 0; j < wxzhidList.size(); j++) {
+					FsmdEntity fsmdEntity = new FsmdEntity();
+					fsmdEntity.setRwid(rwid);
+					fsmdEntity.setDxnr(content);
+					fsmdEntity.setFsr(djxh);
+					fsmdEntity.setFssx("0");
+					fsmdEntity.setSjhm(wxzhidList.get(j));
+					fsmdEntity.setWxzhid(wxzhidList.get(j));
+					searchDao.saveFsmd(fsmdEntity);
+				}
+				searchDao.updateTzsStatus(tzsEntity.getWsh());
+			}
+		}
+	}
+
+	/**
+	 * 催报催缴消息
+	 * 
+	 */
+	//@Scheduled(cron = "0 0/1 * * * ?")
+	public void executeCbcj() {
+
 	}
 	
 	/**
@@ -162,10 +250,10 @@ public class TimedSendingTask {
 		String mqjson = "";
 		if (SEND_METHOD_SMS.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx
-					+ "\",\"dxnr\":\"" + dxnr + "\"}";
+					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"") + "\"}";
 		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + fsdx
-					+ "\",\"dxnr\":\"" + dxnr + "\"}";
+					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"") + "\"}";
 		}
 		return mqjson;
 	}
@@ -206,7 +294,6 @@ public class TimedSendingTask {
 				fsdx = fsdx.substring(0, fsdx.length() - 1);
 				String mqJson = makeMqJson(rwid, fsdx, dxnr, sendMethod);
 				logger.info("添加第" + m + "组1000条消息到队列开始");
-				logger.info(mqJson);
 				putQueue(mqJson, sendMethod);
 				logger.info("添加第" + m + "组1000条消息到队列结束");
 			}
@@ -231,6 +318,24 @@ public class TimedSendingTask {
 		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
 			messageSender.sendWechatMessage(mqJson);
 		}
+	}
+	
+	/**
+	 * 去除重复的微信账号id（场景：同一家企业法人、财务、办税员为同一人，避免同一人收到三条同意的消息）
+	 * 
+	 * @param wxzhid
+	 *            微信账号id
+	 * 
+	 * @return 不重复的微信账号id
+	 */
+	private List<String> removeDuplicateWxzhid(String wxzhid) {
+		String[] wxzhidArray = wxzhid.split(",");
+		List<String> arrList = new ArrayList<String>();
+		for (int i = 0; i < wxzhidArray.length; i++) {
+			if (!arrList.contains(wxzhidArray[i]))
+				arrList.add(wxzhidArray[i]);
+		}
+		return arrList;
 	}
 	
 }
