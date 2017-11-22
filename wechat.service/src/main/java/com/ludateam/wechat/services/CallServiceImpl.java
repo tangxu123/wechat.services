@@ -3,6 +3,7 @@ package com.ludateam.wechat.services;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.DesUtils;
 import com.ludateam.wechat.utils.PropertyUtil;
+
 import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.log4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -66,4 +68,14 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
             e.printStackTrace();
         }
     }
+	@Override
+	public String getBindingList(String userid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String setDefaultCompany(String userid, String djxh) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

@@ -74,13 +74,16 @@ public interface SearchDao {
 	 */
 	int updateTzsStatus(String wsh);
 
-	
 	/**
-	 * 取得发送任务列表
+	 * 取得未申报信息列表
 	 */
 	List<SssxTzsEntity> getWsbList();
-	
-	
+
+	/**
+	 * 取得徐汇税务人员列表
+	 */
+	List<TaxOfficerEntity> getXhSwryList();
+
 	Map getAccountByUserName(String accountUserName);
 
 	int updateAccountLastLogin(int id);

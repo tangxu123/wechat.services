@@ -3,12 +3,12 @@
 <mapper namespace="com.ludateam.wechat.dao.SearchDao">
 	<resultMap id="taxOfficerList" type="com.ludateam.wechat.entity.TaxOfficerEntity">
 		<result column="XM" property="name"/>
-        <result column="SJHM" property="userid"/>
+        <result column="YHID" property="userid"/>
         <result column="WXH" property="wxid"/>
         <result column="SJHM" property="mobile"/>
         <result column="DZYJDZ" property="email"/>
-        <result column="SZBM" property="department"/>
-        <result column="BSYLX" property="position"/>
+        <result column="BMID" property="department"/>
+        <result column="ZW" property="position"/>
     </resultMap>
 	<resultMap id="taskList" type="com.ludateam.wechat.entity.TaskEntity">
         <result column="RWID" property="rwid"/>
@@ -31,7 +31,7 @@
 	<resultMap id="wsbList" type="com.ludateam.wechat.entity.SssxTzsEntity">
         <result column="DJXH" property="djxh"/>
         <result column="ZGSWSKFJ_DM" property="zgswskfjDm"/>
-        <result column="ZSXMMCS" property="zsxmmcs"/>
+        <result column="ZSXMMCS" property="sssxMc"/>
     </resultMap>
     <insert id="saveReseiceMsg" parameterType="Map">
 		<![CDATA[
@@ -76,7 +76,7 @@
     </select>
     <select id="getRealNameTaxOfficerList" resultMap="taxOfficerList">
 		<![CDATA[
-			SELECT t.xm, t.sjhm, t.wxh, t.dzyjdz, '7' AS szbm,TO_CHAR(t.bsylx) bsylx
+			SELECT t.xm, t.sjhm, t.wxh, t.sjhm yhid, t.dzyjdz, '7' AS bmid,TO_CHAR(t.bsylx) zw
 			  FROM (SELECT TRIM(sm.xm) xm,
 			               sm.sjhm,
 			               sm.wxh,
@@ -238,5 +238,21 @@
 		           		   AND wsbbz = 'Y' ) tmp
 		GROUP BY tmp.djxh, tmp.zgswskfj_dm
 		]]>
+    </select>
+    <select id="getXhSwryList" resultMap="taxOfficerList">
+		<![CDATA[
+			SELECT t.yh_dm yhid,
+			       t.yh_mc xm,
+			       t.wxh,
+			       '' dzyjdz,
+			       DECODE(lxdh, null, sjdh, lxdh) sjhm,
+			       (SELECT b.bmdm FROM db_wx.t_wx_bmdm b WHERE b.swjg_dm = t.swjg_dm) bmid,
+			       t.zw
+			  FROM db_qx.t_qx_yh t
+			WHERE yxbz = 'Y'
+			    AND yh_dm like '13101040%'
+			    AND yh_mc not like '%ARM%'
+			    AND yh_dm <> '13101040000'
+        ]]>
     </select>
 </mapper>

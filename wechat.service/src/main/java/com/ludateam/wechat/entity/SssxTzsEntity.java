@@ -1,7 +1,6 @@
 package com.ludateam.wechat.entity;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 public class SssxTzsEntity implements Serializable {
 

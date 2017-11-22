@@ -146,16 +146,21 @@ public class TaxOfficerEntity {
 	public String getPosition() {
 		String positionEx = "";
 		if (position != null) {
-			if (position.contains("1")) {
-				positionEx = "法定代表人";
-			}
-			if (position.contains("2")) {
-				positionEx = "".equals(positionEx) ? "财务负责人" : positionEx
-						+ "|财务负责人";
-			}
-			if (position.contains("3")) {
-				positionEx = "".equals(positionEx) ? "办税员" : positionEx
-						+ "|办税员";
+			if (position.contains("1") || position.contains("2")
+					|| position.contains("3")) {
+				if (position.contains("1")) {
+					positionEx = "法定代表人";
+				}
+				if (position.contains("2")) {
+					positionEx = "".equals(positionEx) ? "财务负责人" : positionEx
+							+ "|财务负责人";
+				}
+				if (position.contains("3")) {
+					positionEx = "".equals(positionEx) ? "办税员" : positionEx
+							+ "|办税员";
+				}
+			} else {
+				positionEx = position;
 			}
 		}
 		return positionEx;

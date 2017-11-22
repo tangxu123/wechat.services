@@ -29,7 +29,12 @@ public interface CallService {
     @POST
     @Path("/callService")
     String callService(@QueryParam("subUrl") String subUrl, @QueryParam("target") String target, @Context HttpServletRequest request);
+    
+	@POST
+	@Path("/getBindingList")
+	String getBindingList(@QueryParam("userid") String userid);
+
+	@POST
+	@Path("/setDefault")
+	String setDefaultCompany(@QueryParam("userid") String userid, @QueryParam("djxh") String djxh);
 }
-
-
-

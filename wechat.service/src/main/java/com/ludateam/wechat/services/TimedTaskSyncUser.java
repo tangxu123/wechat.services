@@ -29,7 +29,7 @@ public class TimedTaskSyncUser {
 	 * 根据市局下放至徐汇分局的实名办税信息，采用增量更新的方式，定期同步企业微信通讯录，并把实名信息与企业绑定关系存入对照表中。
 	 * */
 	@Scheduled(cron = "0 30 23 * * ?")
-	public void executeSyncuser() {
+	public void executeSyncNsUser() {
 
 		List<TaxOfficerEntity> resultList = searchDao.getRealNameTaxOfficerList();
 		String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
@@ -88,4 +88,35 @@ public class TimedTaskSyncUser {
 		}
 	}
 	
+	/**
+	 * 同步税务人员
+	 * */
+	@Scheduled(cron = "00 00 23 * * ?")
+	public void executeSyncSwryUser() {
+
+		List<TaxOfficerEntity> resultList = searchDao.getXhSwryList();
+		String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
+		for (int i = 0; i < resultList.size(); i++) {
+			TaxOfficerEntity entity = resultList.get(i);
+			sendParam += entity.getName() + "," + entity.getUserid() + ","
+					+ entity.getWxid() + "," + entity.getMobile() + ","
+					+ entity.getEmail() + "," + entity.getDepartment() + ","
+					+ entity.getPosition() + "\n";
+		}
+		sendParam += "\"}";
+
+		logger.info("post sync user:" + sendParam);
+		HashMap<String, String> headers = new HashMap<String, String>();
+		headers.put("Content-type", "application/json");
+		String requestHost = PropertyUtil.getProperty("web.url");
+		String weburl = requestHost + "/wechat/syncuser";
+		String result = HttpKit.post(weburl, sendParam, headers);
+		logger.info("sync user result:" + result);
+
+		SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
+		if ("0".equals(jobDto.getErrcode())) {
+			jobDto.setZxsl(resultList.size());
+			searchDao.saveSyncUserJob(jobDto);
+		}
+	}
 }
