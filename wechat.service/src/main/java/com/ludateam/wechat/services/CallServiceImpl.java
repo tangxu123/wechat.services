@@ -15,6 +15,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.ResponseResult;
@@ -81,8 +82,17 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 
 	@Override
 	public String getBindingList(String wxzhid) {
+		
+		
 		ResponseResult result = new ResponseResult();
-
+		
+		//判断参数是否为空
+		if(StringUtils.isBlank(wxzhid)){
+			result.setErrcode("101");
+			result.setErrmsg("参数不能为空！");
+			return JSON.toJSONString(result);
+		}
+		
 		List<Map<String, String>> query1 = searchDao
 				.findWxqyDzbByWxzhid(wxzhid);
 
@@ -91,7 +101,7 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 		if (query1Size >= 1) {
 
 			// 给第一条数据打上使用标记
-			query1.get(0).put("isUse", "Y");
+			
 			result.setBindingList(query1);
 
 			String djxh1 = String.valueOf(query1.get(0).get("DJXH"));
@@ -107,6 +117,8 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 			}
 
 			if (query1Size == 1) {
+				//一条数据默认选中
+				query1.get(0).put("isUse", "Y");
 				// 源表查询的数据为1条
 				if (query2Size == 0) {
 					// 目标表对应的记录为空
@@ -157,7 +169,11 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 	@Override
 	public String setDefaultCompany(String userid, String djxh) {
 		ResponseResult result = new ResponseResult();
-		
+		if(StringUtils.isBlank(userid)||StringUtils.isBlank(djxh)){
+			result.setErrcode("101");
+			result.setErrmsg("参数不能为空！");
+			return JSON.toJSONString(result);
+		}
 		List<Map<String,String>> queryList = searchDao.findWxBdgxByWxzhid(userid);
 		int querySize = queryList.size();
 		if(querySize==0){
@@ -204,6 +220,7 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 	public boolean checkData(String djxh, List<Map<String, String>> list) {
 		for (int i = 0; i < list.size(); i++) {
 			if (djxh.equals(String.valueOf(list.get(i).get("DJXH")))) {
+				list.get(i).put("isUse","Y");
 				return true;
 			}
 		}
