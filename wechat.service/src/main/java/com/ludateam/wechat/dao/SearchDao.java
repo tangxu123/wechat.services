@@ -109,4 +109,12 @@ public interface SearchDao {
 	int insertSKDetails(Map paramMap);
 
 	int updateSQL(Map paramMap);
+
+	List findWxqyDzbByWxzhid(String wxzhid);
+
+	List findWxBdgxByWxzhid(String wxzhid);
+	
+	int insertWxBdgx(Map<String,String> params);
+	
+	int setWxDbgsUnableByGxid(String gxid);
 }
