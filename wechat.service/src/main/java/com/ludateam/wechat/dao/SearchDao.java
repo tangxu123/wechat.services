@@ -73,6 +73,16 @@ public interface SearchDao {
 	 * 更新通知书状态
 	 */
 	int updateTzsStatus(String wsh);
+	
+	/**
+	 * 清空催报催缴临时表
+	 */
+	int deleteCbcjTmpData();
+
+	/**
+	 * 保存催报催缴临时数据
+	 */
+	int saveCbcjTmpData(Integer tjnd);
 
 	/**
 	 * 取得未申报信息列表
@@ -110,11 +120,23 @@ public interface SearchDao {
 
 	int updateSQL(Map paramMap);
 
-	List findWxqyDzbByWxzhid(String wxzhid);
+	/**
+	 * 根据微信账号id查询微信企业对照关系列表
+	 */
+	List<Map<String, String>> findWxqyDzbByWxzhid(String wxzhid);
 
-	List findWxBdgxByWxzhid(String wxzhid);
-	
-	int insertWxBdgx(Map<String,String> params);
-	
-	int setWxDbgsUnableByGxid(String gxid);
+	/**
+	 * 根据微信账号id查询当前微信绑定关系
+	 */
+	List<Map<String, String>> findWxBdgxByWxzhid(String wxzhid);
+
+	/**
+	 * 新增微信绑定关系
+	 */
+	int insertWxBdgx(Map<String, String> params);
+
+	/**
+	 * 根据关系id禁用旧绑定关系
+	 */
+	int setWxDbgxUnableByGxid(String gxid);
 }

@@ -2,6 +2,7 @@ package com.ludateam.wechat.services;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -187,9 +188,64 @@ public class TimedSendingTask {
 	 * 催报催缴消息
 	 * 
 	 */
-	//@Scheduled(cron = "0 0/1 * * * ?")
+	@Scheduled(cron = "0 0 14 * * ?")
 	public void executeCbcj() {
+		
+		searchDao.deleteCbcjTmpData();
+		Calendar cal = Calendar.getInstance();
+		int year = cal.get(Calendar.YEAR);
+		int month = cal.get(Calendar.MONTH);
+		String strTjnd = String.valueOf(year) + String.valueOf(month);
+		int tjnd = Integer.parseInt(strTjnd);
+		searchDao.saveCbcjTmpData(tjnd);
+		List<SssxTzsEntity> wsbList = searchDao.getWsbList();
+		if (wsbList == null || wsbList.size() == 0) {
+			logger.info("暂无催报催缴信息");
+			return;
+		}
+		
+		for (int i = 0; i < wsbList.size(); i++) {
+			SssxTzsEntity tzsEntity = wsbList.get(i);
+			String wxzhid = tzsEntity.getWxzhid();
+			if (StrKit.isBlank(wxzhid)) {
+				continue;
+			} else {
+				String content = tzsEntity.getNsrmc() + ":（纳税人识别号："
+						+ tzsEntity.getShxydm() + "）\n你单位于" + strTjnd
+						+ "有如下税种需要申报：" + tzsEntity.getSssxMc()
+						+ "，请在规定的申报期内申报纳税。";
+				logger.info(content);
+				FsrwEntity fsrwEntity = new FsrwEntity();
+				fsrwEntity.setDxnr(content);
+				fsrwEntity.setFsdx("0");
+				fsrwEntity.setFsfs(SEND_METHOD_WECHAT);
+				fsrwEntity.setLk("【徐汇税务局】");
+				fsrwEntity.setNwbz("0");
+				fsrwEntity.setRydm(tzsEntity.getSlryDm());
+				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
+				fsrwEntity.setShsx("0");
+				fsrwEntity.setTmid(99);
+				fsrwEntity.setYxq(0);
+				searchDao.saveFsrw(fsrwEntity);
 
+				BigDecimal rwid = fsrwEntity.getRwid();
+				String djxh = tzsEntity.getDjxh();
+				List<String> wxzhidList = removeDuplicateWxzhid(wxzhid);
+				for (int j = 0; j < wxzhidList.size(); j++) {
+					FsmdEntity fsmdEntity = new FsmdEntity();
+					fsmdEntity.setRwid(rwid);
+					fsmdEntity.setDxnr(content);
+					fsmdEntity.setFsr(djxh);
+					fsmdEntity.setFssx("0");
+					fsmdEntity.setSjhm(wxzhidList.get(j));
+					fsmdEntity.setWxzhid(wxzhidList.get(j));
+					searchDao.saveFsmd(fsmdEntity);
+				}
+				//searchDao.updateTzsStatus(tzsEntity.getWsh());
+			}
+		}
+		
+		searchDao.deleteCbcjTmpData();
 	}
 	
 	/**

@@ -17,7 +17,9 @@ package com.ludateam.wechat.services;
  */
 
 
+import java.math.BigDecimal;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,7 +34,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alibaba.fastjson.JSON;
+import com.ludateam.wechat.api.CallService;
 import com.ludateam.wechat.dao.SearchDao;
+import com.ludateam.wechat.dto.ResponseResult;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.PropertyUtil;
 
@@ -46,6 +50,9 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
 
     @Autowired
     private SearchDao searchDao;
+    
+    @Autowired
+    private CallService callService;
     
     @Override
     @POST
@@ -68,9 +75,29 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
 	@Path("/receiveMessage")
 	public String receiveMessage(@QueryParam("msgJson") String msgJson) {
 		logger.info("post receive message：" + msgJson);
-		Map msgMap = (Map) JSON.parse(msgJson);
-		int count = searchDao.saveReseiceMsg(msgMap);
-		logger.info("save message count：" + count);
+		try {
+			Map msgMap = (Map) JSON.parse(msgJson);
+			String userid = (String) msgMap.get("fromUserName");
+			String resultJson = callService.getBindingList(userid);
+			ResponseResult bindResult = JSON.parseObject(resultJson, ResponseResult.class);
+			BigDecimal djxh = null;
+			if ("0".equals(bindResult.getErrcode())) {
+				List<Map<String, String>> bindingList = bindResult.getBindingList();
+				for (int i = 0; i < bindingList.size(); i++) {
+					Map<String, String> bindingMap = bindingList.get(i);
+					String strDjxh = bindingMap.get("djxh");
+					if ("Y".equals(bindingMap.get("isUse"))) {
+						djxh = new BigDecimal(strDjxh);
+					}
+				}
+			}
+			msgMap.put("djxh", djxh);
+			int count = searchDao.saveReseiceMsg(msgMap);
+			logger.info("save message count：" + count);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
 	}
 }
