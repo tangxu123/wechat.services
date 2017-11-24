@@ -57,7 +57,7 @@
     </insert>
 	<select id="getTaskList" resultMap="taskList" parameterType="com.ludateam.wechat.entity.TaskEntity">
 		<![CDATA[
-			SELECT distinct v.rwid, v.sjhm, v.dxnr, v.wxzhid FROM db_zgfz.v_dx_fs_md v
+			SELECT distinct v.rwid, v.sjhm, v.dxnr, v.wxzhid, v.qyhid, v.wxyyid FROM db_zgfz.v_dx_fs_md v
 			WHERE v.fsfs = #{fsfs}
 		]]>
 		<if test="tmid == 0">
@@ -205,7 +205,7 @@
 			]]>
 		</selectKey>
 		<![CDATA[
-				INSERT INTO db_zgfz.t_fsrw (rwid,cjsj,swjgbzdm,shsx,tmid,dxnr,lk,fsdx,fssj,yxq,nwbz,rydm,fsfs)
+				INSERT INTO db_zgfz.t_fsrw (rwid,cjsj,swjgbzdm,shsx,tmid,dxnr,lk,fsdx,fssj,yxq,nwbz,rydm,fsfs,qyhid,wxyyid)
 				VALUES(#{rwid},
 							sysdate,
 							#{sbdm, jdbcType=VARCHAR},
@@ -218,7 +218,9 @@
 							#{yxq, jdbcType=INTEGER},
 							#{nwbz, jdbcType=VARCHAR},
 							#{rydm, jdbcType=VARCHAR},
-							#{fsfs, jdbcType=VARCHAR}
+							#{fsfs, jdbcType=VARCHAR},
+							#{qyhid, jdbcType=INTEGER},
+							#{wxyyid, jdbcType=INTEGER}
 					)
 		]]>
 	</insert>

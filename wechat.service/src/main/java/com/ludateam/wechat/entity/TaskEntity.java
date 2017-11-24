@@ -16,6 +16,10 @@ public class TaskEntity {
 	private String fsfs = "";
 	/** 微信账号id */
 	private String wxzhid = "";
+	/** 企业号ID */
+	private int qyhid;
+	/** 微信应用ID */
+	private int wxyyid;
 
 	/**
 	 * 取得任务id的值
@@ -135,5 +139,45 @@ public class TaskEntity {
 	 */
 	public void setWxzhid(String wxzhid) {
 		this.wxzhid = wxzhid;
+	}
+
+	/**
+	 * 取得企业号ID的值
+	 * 
+	 * @return 企业号ID
+	 *
+	 */
+	public int getQyhid() {
+		return qyhid;
+	}
+
+	/**
+	 * 设定企业号ID的值
+	 * 
+	 * @param qyhid
+	 *            企业号ID
+	 */
+	public void setQyhid(int qyhid) {
+		this.qyhid = qyhid;
+	}
+
+	/**
+	 * 取得微信应用ID的值
+	 * 
+	 * @return 微信应用ID
+	 *
+	 */
+	public int getWxyyid() {
+		return wxyyid;
+	}
+
+	/**
+	 * 设定微信应用ID的值
+	 * 
+	 * @param wxyyid
+	 *            微信应用ID
+	 */
+	public void setWxyyid(int wxyyid) {
+		this.wxyyid = wxyyid;
 	}
 }

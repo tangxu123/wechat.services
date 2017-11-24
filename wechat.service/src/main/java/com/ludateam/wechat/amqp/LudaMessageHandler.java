@@ -104,8 +104,6 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		String mqjson = new String(message.getBody());
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
-		String weburl = PropertyUtil.getProperty("web.url") + "/wechat/qyapi/sendTextMessage";
-		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToWeChat";
 		
 		try {
 			MqJsonDto mqJsonDto = JSON.parseObject(mqjson, MqJsonDto.class);
@@ -113,13 +111,14 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 			String wxzh = mqJsonDto.getWxzh();
 			String content = mqJsonDto.getDxnr();
 			
-			SendMsgResultDto resultDto = sendTextMessage(weburl, wxzh, content, headers);
+			SendMsgResultDto resultDto = sendTextMessage(mqJsonDto, headers);
 			String uswxzh = resultDto.getInvaliduser();
 			if (uswxzh != null && !"".equals(uswxzh)) {
 				uswxzh = "'" + uswxzh.replace(",", "','") + "'";
 			}
 
 			wxzh = "'" + wxzh.replace(",", "','") + "'";
+			String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToWeChat";
 			String sendParam = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + wxzh + "\",\"uswxzh\":\"" + uswxzh + "\"}";
 			String result = HttpKit.post(nmhurl, sendParam, headers);
 			logger.info("wechat--message--send--result--callback--");
@@ -132,26 +131,28 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 	/**
 	 * 发送文本信息
 	 * 
-	 * @param weburl
-	 *            请求服务器
-	 * @param userid
-	 *            用户id
-	 * @param content
-	 *            信息内容
+	 * @param mqJsonDto
+	 *            队列消息
 	 * @param headers
 	 *            请求报文头部
 	 * 
 	 * @return 发送结果
 	 */
-	private SendMsgResultDto sendTextMessage(String weburl, String userid,
-			String content, HashMap<String, String> headers) {
+	private SendMsgResultDto sendTextMessage(MqJsonDto mqJsonDto,
+			HashMap<String, String> headers) {
 		
+		int qyhid = mqJsonDto.getQyhid();
+		String weburl = PropertyUtil.getProperty(String.valueOf(qyhid)) + "/wechat/qyapi/sendTextMessage";
+		String userid = mqJsonDto.getWxzh();
+		String content = mqJsonDto.getDxnr();
+		String agentid = String.valueOf(mqJsonDto.getWxyyid());
+
 		QiYeTextMsg textMsg = new QiYeTextMsg();
 		textMsg.setTouser(userid.replace(",", "|"));
 		textMsg.setToparty("");
 		textMsg.setTotag("");
 		textMsg.setMsgtype("text");
-		textMsg.setAgentid("4");
+		textMsg.setAgentid(agentid);
 		textMsg.setText(new Text(content));
 		textMsg.setSafe("0");
 

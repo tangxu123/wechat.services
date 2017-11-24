@@ -96,7 +96,9 @@ public class TimedSendingTask {
 		for (int i = 0; i < taskList.size(); i++) {
 			TaskEntity entityObj = taskList.get(i);
 			String mqJson = makeMqJson(entityObj.getRwid(),
-					entityObj.getSjhm(), entityObj.getDxnr(), SEND_METHOD_SMS);
+					entityObj.getSjhm(), entityObj.getDxnr(),
+					entityObj.getQyhid(), entityObj.getWxyyid(),
+					SEND_METHOD_SMS);
 			messageSender.sendSmsMessage(mqJson);
 		}
 	}
@@ -124,6 +126,7 @@ public class TimedSendingTask {
 			TaskEntity entityObj = taskList.get(i);
 			String mqJson = makeMqJson(entityObj.getRwid(),
 					entityObj.getSjhm(), entityObj.getDxnr(),
+					entityObj.getQyhid(), entityObj.getWxyyid(),
 					SEND_METHOD_WECHAT);
 			messageSender.sendWechatMessage(mqJson);
 		}
@@ -222,13 +225,13 @@ public class TimedSendingTask {
 				fsrwEntity.setDxnr(content);
 				fsrwEntity.setFsdx("0");
 				fsrwEntity.setFsfs(SEND_METHOD_WECHAT);
-				fsrwEntity.setLk("【徐汇税务局】");
+				fsrwEntity.setLk("");
 				fsrwEntity.setNwbz("0");
 				fsrwEntity.setRydm(tzsEntity.getSlryDm());
 				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
-				fsrwEntity.setShsx("0");
+				fsrwEntity.setShsx("1");
 				fsrwEntity.setTmid(99);
-				fsrwEntity.setYxq(0);
+				fsrwEntity.setYxq(1);
 				searchDao.saveFsrw(fsrwEntity);
 
 				BigDecimal rwid = fsrwEntity.getRwid();
@@ -299,20 +302,26 @@ public class TimedSendingTask {
 	 *            发送对象
 	 * @param dxnr
 	 *            短信内容
+	 * @param qyhid
+	 *            企业号ID
+	 * @param wxyyid
+	 *            微信应用ID
 	 * @param sendMethod
 	 *            发送方式
 	 * 
 	 * @return 消息队列json
 	 */
 	private String makeMqJson(BigDecimal rwid, String fsdx, String dxnr,
-			String sendMethod) {
+			int qyhid, int wxyyid, String sendMethod) {
 		String mqjson = "";
 		if (SEND_METHOD_SMS.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx
 					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"") + "\"}";
 		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + fsdx
-					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"") + "\"}";
+					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"")
+					+ "\",\"qyhid\":\"" + qyhid + "\",\"wxyyid\":\"" + wxyyid
+					+ "\"}";
 		}
 		return mqjson;
 	}
@@ -342,8 +351,12 @@ public class TimedSendingTask {
 			for (int m = 1; m <= count; m++) {
 				String fsdx = "";
 				String dxnr = "";
+				int qyhid = 0;
+				int wxyyid = 0;
 				for (int n = (m - 1) * 1000; n < subTaskList.size() && n < m * 1000; n++) {
 					dxnr = subTaskList.get(n).getDxnr();
+					qyhid = subTaskList.get(n).getQyhid();
+					wxyyid = subTaskList.get(n).getWxyyid();
 					if (SEND_METHOD_SMS.equals(sendMethod)) {
 						fsdx += subTaskList.get(n).getSjhm() + ",";
 					} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
@@ -351,7 +364,7 @@ public class TimedSendingTask {
 					}
 				}
 				fsdx = fsdx.substring(0, fsdx.length() - 1);
-				String mqJson = makeMqJson(rwid, fsdx, dxnr, sendMethod);
+				String mqJson = makeMqJson(rwid, fsdx, dxnr, qyhid, wxyyid, sendMethod);
 				logger.info("添加第" + m + "组1000条消息到队列开始");
 				putQueue(mqJson, sendMethod);
 				logger.info("添加第" + m + "组1000条消息到队列结束");
