@@ -165,21 +165,37 @@
     </select>
 	<select id="getTzsList" resultMap="tzsList">
 		<![CDATA[
-			 SELECT '20' || SUBSTR(t.wsh, 5, 2) || '年' || SUBSTR(t.wsh, 7, 2) || '月' || SUBSTR(t.wsh, 9, 2) || '日' sqsj,
-			        t.wsh,
-			        TO_CHAR(t.djxh) djxh,
-			        n.nsrmc,
-			        NVL2(n.shxydm, n.shxydm, n.nsrsbh) shxydm,
-			        n.zgswskfj_dm,
-              		t.slry_dm,
-			        t.sssx_mc,
-              		(SELECT TO_CHAR(WMSYS.WM_CONCAT(d.wxzhid))  
-              			FROM db_zgfz.t_wxqy_dzb d WHERE d.djxh = t.djxh AND d.yxbz = 'Y') wxzhid,
-              		(SELECT TO_CHAR(WMSYS.WM_CONCAT(d.sjhm))  
-              			FROM db_zgfz.t_wxqy_dzb d WHERE d.djxh = t.djxh  AND d.yxbz = 'Y') sjhm
-			   FROM hxwt.t_sx_zftzs t, hx_dj.dj_nsrxx n
-			 WHERE t.djxh = n.djxh
-			    AND t.status = '0'
+			SELECT
+				   tmp.sqsj,
+			       tmp.wsh,
+			       tmp.djxh,
+			       tmp.nsrmc,
+			       tmp.shxydm,
+			       tmp.zgswskfj_dm,
+			       tmp.slry_dm,
+			       tmp.sssx_mc,
+			       tmp.wxzhid,
+			       tmp.sjhm
+			  from (SELECT '20' || SUBSTR(t.wsh, 5, 2) || '年' || SUBSTR(t.wsh, 7, 2) || '月' || SUBSTR(t.wsh, 9, 2) || '日' sqsj,
+			               t.wsh,
+			               TO_CHAR(t.djxh) djxh,
+			               n.nsrmc,
+			               NVL2(n.shxydm, n.shxydm, n.nsrsbh) shxydm,
+			               n.zgswskfj_dm,
+			               t.slry_dm,
+			               t.sssx_mc,
+			               (SELECT TO_CHAR(WMSYS.WM_CONCAT(d.wxzhid))
+			                  FROM db_zgfz.t_wxqy_dzb d
+			                 WHERE d.djxh = t.djxh
+			                   AND d.yxbz = 'Y') wxzhid,
+			               (SELECT TO_CHAR(WMSYS.WM_CONCAT(d.sjhm))
+			                  FROM db_zgfz.t_wxqy_dzb d
+			                 WHERE d.djxh = t.djxh
+			                   AND d.yxbz = 'Y') sjhm
+			          FROM hxwt.t_sx_zftzs t, hx_dj.dj_nsrxx n
+			         WHERE t.djxh = n.djxh
+			           AND t.status = '0') tmp
+			WHERE tmp.wxzhid is not null
 		]]>
     </select>
 	<insert id="saveFsrw" parameterType="com.ludateam.wechat.entity.FsrwEntity">
