@@ -293,10 +293,13 @@
 			       (SELECT b.bmdm FROM db_wx.t_wx_bmdm b WHERE b.swjg_dm = t.swjg_dm) bmid,
 			       t.zw
 			  FROM db_qx.t_qx_yh t
-			WHERE yxbz = 'Y'
+			WHERE yh_lx = '1'
+				AND yxbz = 'Y'
 			    AND yh_dm like '13101040%'
 			    AND yh_mc not like '%ARM%'
 			    AND yh_dm <> '13101040000'
+			    AND swjg_dm IS NOT NULL
+          		AND swjg_dm <> '13101040000'
         ]]>
     </select>
 	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="Map">
