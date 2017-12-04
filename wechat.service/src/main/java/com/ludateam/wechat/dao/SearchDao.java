@@ -52,7 +52,7 @@ public interface SearchDao {
 	/**
 	 * 取得jobid列表
 	 */
-	List<String> getJobidList();
+	List<SyncUserJobDto> getJobidList();
 
 	/**
 	 * 取得发送任务列表

@@ -6,6 +6,8 @@ public class SyncUserJobDto extends ResultDto {
 	private String jobid;
 	/** 执行数量 */
 	private int zxsl;
+	/** 微信企业号ID */
+	private String wxqyhId;
 
 	/**
 	 * 取得异步任务id的值
@@ -47,5 +49,26 @@ public class SyncUserJobDto extends ResultDto {
 	 */
 	public void setZxsl(int zxsl) {
 		this.zxsl = zxsl;
+	}
+
+	/**
+	 * 取得微信企业号ID的值
+	 * 
+	 * @return 微信企业号ID
+	 *
+	 */
+	public String getWxqyhId() {
+		return wxqyhId;
+	}
+
+	/**
+	 * 设定微信企业号ID的值
+	 * 
+	 * @param wxqyhId
+	 *            微信企业号ID
+	 * 
+	 */
+	public void setWxqyhId(String wxqyhId) {
+		this.wxqyhId = wxqyhId;
 	}
 }

@@ -133,13 +133,18 @@
     </update>
 	<insert id="saveSyncUserJob" parameterType="com.ludateam.wechat.dto.SyncUserJobDto">
 		<![CDATA[
-			INSERT INTO db_wx.t_batch_async_job (JOBID, ERRCODE, ERRMSG, ZXSL, ZXSJ)
-			VALUES(#{jobid, jdbcType=VARCHAR},#{errcode, jdbcType=VARCHAR},#{errmsg, jdbcType=VARCHAR},#{zxsl}, sysdate)
+			INSERT INTO db_wx.t_batch_async_job (jobid, errcode, errmsg, zxsl, zxsj, wxqyh_id)
+			VALUES (  #{jobid, jdbcType = VARCHAR},
+						   #{errcode, jdbcType = VARCHAR},
+						   #{errmsg, jdbcType = VARCHAR},
+						   #{zxsl}, sysdate,
+						   #{wxqyhId}
+						)
         ]]>
     </insert>
 	<insert id="saveSyncUserJobResult" parameterType="com.ludateam.wechat.dto.SyncUserJobResultDto">
 		<![CDATA[
-			INSERT INTO db_wx.t_batch_async_job_result (JOBID, ERRCODE, ERRMSG, STATUS, TYPE, TOTAL, PERCENTAGE, EXECUTE_TIME)
+			INSERT INTO db_wx.t_batch_async_job_result (jobid, errcode, errmsg, status, type, total, percentage, execute_time)
 			VALUES(#{jobid, jdbcType=VARCHAR},
 						#{errcode, jdbcType=VARCHAR},
 						#{errmsg, jdbcType=VARCHAR},
@@ -150,17 +155,15 @@
 						sysdate )
         ]]>
     </insert>
-	<select id="getJobidList" resultType="String">
+	<select id="getJobidList" resultType="com.ludateam.wechat.dto.SyncUserJobDto">
 		<![CDATA[
-			SELECT jobid
+			SELECT jobid AS "jobid", wxqyh_id AS "wxqyhId"
 			  FROM db_wx.t_batch_async_job t1
-			 WHERE EXISTS (
-			 		SELECT 1
+			WHERE NOT EXISTS ( 
+					SELECT 1
 			          FROM db_wx.t_batch_async_job_result t2
 			        WHERE t1.jobid = t2.jobid
-			            AND t2.status = 3
-			       HAVING COUNT(1) = 0
-			  )
+			            AND t2.status = 3 )
         ]]>
     </select>
 	<select id="getTzsList" resultMap="tzsList">

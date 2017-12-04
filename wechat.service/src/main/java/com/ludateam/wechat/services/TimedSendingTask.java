@@ -47,7 +47,7 @@ public class TimedSendingTask {
 		List<TaskEntity> taskList = searchDao.getTaskList(entity);
 
 		if (taskList == null || taskList.size() == 0) {
-			logger.info("暂无数据-----发送方式=sms-----条目id=0");
+			logger.info("no data----sms----tmid=0");
 			return;
 		}
 		
@@ -58,7 +58,7 @@ public class TimedSendingTask {
 	 * 发送微信消息任务（多微信张合并成一条）
 	 * 
 	 */
-	@Scheduled(cron = "0 0/1 * * * ?")
+	@Scheduled(cron = "1 0/1 * * * ?")
 	public void executeWechatMultiple() {
 
 		TaskEntity entity = new TaskEntity();
@@ -67,7 +67,7 @@ public class TimedSendingTask {
 		List<TaskEntity> taskList = searchDao.getTaskList(entity);
 
 		if (taskList == null || taskList.size() == 0) {
-			logger.info("暂无数据-----发送方式=wechat-----条目id=0");
+			logger.info("no data----wechat----tmid=0");
 			return;
 		}
 
@@ -87,7 +87,7 @@ public class TimedSendingTask {
 		List<TaskEntity> taskList = searchDao.getTaskList(entity);
 
 		if (taskList == null || taskList.size() == 0) {
-			logger.info("暂无数据-----发送方式=sms-----条目id>0");
+			logger.info("no data----sms----tmid>0");
 			return;
 		}
 		
@@ -107,7 +107,7 @@ public class TimedSendingTask {
 	 * 发送微信消息任务（单条）
 	 * 
 	 */
-	@Scheduled(cron = "0 0/1 * * * ?")
+	@Scheduled(cron = "1 0/1 * * * ?")
 	public void executeWechatSingle() {
 
 		TaskEntity entity = new TaskEntity();
@@ -116,7 +116,7 @@ public class TimedSendingTask {
 		List<TaskEntity> taskList = searchDao.getTaskList(entity);
 
 		if (taskList == null || taskList.size() == 0) {
-			logger.info("暂无数据-----发送方式=wechat-----条目id>0");
+			logger.info("no data----wechat----tmid>0");
 			return;
 		}
 		

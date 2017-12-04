@@ -28,7 +28,7 @@ public class TimedTaskSyncUser {
 	/**
 	 * 根据市局下放至徐汇分局的实名办税信息，采用增量更新的方式，定期同步企业微信通讯录，并把实名信息与企业绑定关系存入对照表中。
 	 * */
-	@Scheduled(cron = "0 30 23 * * ?")
+	@Scheduled(cron = "0 30 9,11,13,15,17 * * ?")
 	public void executeSyncNsUser() {
 
 		List<TaxOfficerEntity> resultList = searchDao.getRealNameTaxOfficerList();
@@ -45,37 +45,44 @@ public class TimedTaskSyncUser {
 		logger.info("post sync user:" + sendParam);
 		HashMap<String, String> headers = new HashMap<String, String>();
 		headers.put("Content-type", "application/json");
-		String requestHost = PropertyUtil.getProperty("web.url");
+		String requestHost = PropertyUtil.getProperty("1");
 		String weburl = requestHost + "/wechat/syncuser";
-		String result = HttpKit.post(weburl, sendParam, headers);
-		logger.info("sync user result:" + result);
+		
+		try {
+			String result = HttpKit.post(weburl, sendParam, headers);
+			logger.info("sync user result:" + result);
 
-		SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
-		if ("0".equals(jobDto.getErrcode())) {
-			int count = searchDao.updateEnableRelation();
-			logger.info("updateEnableRelation count:" + count);
-			count = searchDao.updateDisableRelation();
-			logger.info("updateDisableRelation count:" + count);
+			SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
+			if ("0".equals(jobDto.getErrcode())) {
+				int count = searchDao.updateEnableRelation();
+				logger.info("updateEnableRelation count:" + count);
+				count = searchDao.updateDisableRelation();
+				logger.info("updateDisableRelation count:" + count);
+			}
+			jobDto.setZxsl(resultList.size());
+			jobDto.setWxqyhId("1");
+			searchDao.saveSyncUserJob(jobDto);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		jobDto.setZxsl(resultList.size());
-		searchDao.saveSyncUserJob(jobDto);
 	}
 	
 	/**
-	 * 取得异步任务的执行结果（23:30:00 开始--23:31:59 每隔5秒监听一次）
+	 * 取得异步任务的执行结果（9:30:00 开始--9:31:59 每隔5秒监听一次）
 	 * 
 	 * */
-	@Scheduled(cron = "0-59/5 30-31 23 * * ?")
+	@Scheduled(cron = "0-59/5 30-31 9,11,13,15,17 * * ?")
 	public void executeJobResult() {
 		
-		List<String> jobidList = searchDao.getJobidList();
+		List<SyncUserJobDto> jobidList = searchDao.getJobidList();
 		if (!CollectionUtils.isEmpty(jobidList)) {
 			HashMap<String, String> headers = new HashMap<String, String>();
 			headers.put("Content-type", "application/json");
-			String requestHost = PropertyUtil.getProperty("web.url");
-			String weburl = requestHost + "/wechat/batch/result";
 			for (int i = 0; i < jobidList.size(); i++) {
-				String jobid = jobidList.get(i);
+				SyncUserJobDto jobDto = jobidList.get(i);
+				String jobid = jobDto.getJobid();
+				String requestHost = PropertyUtil.getProperty(jobDto.getWxqyhId());
+				String weburl = requestHost + "/wechat/batch/result";
 				String sendParam = "{\"jobid\":\"" + jobid + "\"}";
 				String result = HttpKit.post(weburl, sendParam, headers);
 				logger.info("get batch result:" + result);
@@ -91,7 +98,7 @@ public class TimedTaskSyncUser {
 	/**
 	 * 同步税务人员
 	 * */
-	@Scheduled(cron = "00 00 23 * * ?")
+	@Scheduled(cron = "0 30 11,17 * * ?")
 	public void executeSyncSwryUser() {
 
 		List<TaxOfficerEntity> resultList = searchDao.getXhSwryList();
@@ -105,18 +112,22 @@ public class TimedTaskSyncUser {
 		}
 		sendParam += "\"}";
 
-		logger.info("post sync user:" + sendParam);
-		HashMap<String, String> headers = new HashMap<String, String>();
-		headers.put("Content-type", "application/json");
-		String requestHost = PropertyUtil.getProperty("web.url");
-		String weburl = requestHost + "/wechat/syncuser";
-		String result = HttpKit.post(weburl, sendParam, headers);
-		logger.info("sync user result:" + result);
+		try {
+			logger.info("post sync user:" + sendParam);
+			HashMap<String, String> headers = new HashMap<String, String>();
+			headers.put("Content-type", "application/json");
+			String requestHost = PropertyUtil.getProperty("2");
+			String weburl = requestHost + "/wechat/syncuser";
+			String result = HttpKit.post(weburl, sendParam, headers);
+			logger.info("sync user result:" + result);
 
-		SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
-		if ("0".equals(jobDto.getErrcode())) {
-			jobDto.setZxsl(resultList.size());
-			searchDao.saveSyncUserJob(jobDto);
+			SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
+			if ("0".equals(jobDto.getErrcode())) {
+				jobDto.setZxsl(resultList.size());
+				searchDao.saveSyncUserJob(jobDto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }
