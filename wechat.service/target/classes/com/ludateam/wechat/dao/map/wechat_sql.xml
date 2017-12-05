@@ -45,7 +45,7 @@
 				#{msgId}, 
 				#{toUserName}, 
 				#{fromUserName}, 
-				TO_DATE(#{createTime},'yyyy-MM-dd HH24:mi:ss'),
+			  	sysdate,
 				#{msgType},
 				#{content, jdbcType=VARCHAR},
 				#{picUrl, jdbcType=VARCHAR},

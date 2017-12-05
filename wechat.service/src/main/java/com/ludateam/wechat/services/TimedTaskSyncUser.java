@@ -35,10 +35,9 @@ public class TimedTaskSyncUser {
 		String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
 		for (int i = 0; i < resultList.size(); i++) {
 			TaxOfficerEntity entity = resultList.get(i);
-			sendParam += entity.getName() + "," + entity.getUserid() + ","
+			sendParam += entity.getMobile() + "," + entity.getUserid() + ","
 					+ entity.getWxid() + "," + entity.getMobile() + ","
-					+ entity.getEmail() + "," + entity.getDepartment() + ","
-					+ entity.getPosition() + "\n";
+					+ entity.getEmail() + "," + entity.getDepartment() + ",\n";
 		}
 		sendParam += "\"}";
 
@@ -124,6 +123,7 @@ public class TimedTaskSyncUser {
 			SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
 			if ("0".equals(jobDto.getErrcode())) {
 				jobDto.setZxsl(resultList.size());
+				jobDto.setWxqyhId("2");
 				searchDao.saveSyncUserJob(jobDto);
 			}
 		} catch (Exception e) {
