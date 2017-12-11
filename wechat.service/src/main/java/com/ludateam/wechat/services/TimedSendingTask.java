@@ -125,7 +125,7 @@ public class TimedSendingTask {
 		for (int i = 0; i < taskList.size(); i++) {
 			TaskEntity entityObj = taskList.get(i);
 			String mqJson = makeMqJson(entityObj.getRwid(),
-					entityObj.getSjhm(), entityObj.getDxnr(),
+					entityObj.getWxzhid(), entityObj.getDxnr(),
 					entityObj.getQyhid(), entityObj.getWxyyid(),
 					SEND_METHOD_WECHAT);
 			messageSender.sendWechatMessage(mqJson);
@@ -315,13 +315,12 @@ public class TimedSendingTask {
 			int qyhid, int wxyyid, String sendMethod) {
 		String mqjson = "";
 		if (SEND_METHOD_SMS.equals(sendMethod)) {
-			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx
-					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"") + "\"}";
+			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx + "\",\"dxnr\":\""
+					+ dxnr.replace("\"", "\\\"").replace("\\", "\\\\") + "\"}";
 		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + fsdx
-					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"")
-					+ "\",\"qyhid\":\"" + qyhid + "\",\"wxyyid\":\"" + wxyyid
-					+ "\"}";
+					+ "\",\"dxnr\":\"" + dxnr.replace("\"", "\\\"").replace("\\", "\\\\")
+					+ "\",\"qyhid\":\"" + qyhid + "\",\"wxyyid\":\"" + wxyyid + "\"}";
 		}
 		return mqjson;
 	}

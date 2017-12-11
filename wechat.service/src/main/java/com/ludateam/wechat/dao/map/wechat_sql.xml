@@ -295,11 +295,11 @@
 			  FROM db_qx.t_qx_yh t
 			WHERE yh_lx = '1'
 				AND yxbz = 'Y'
-			    AND yh_dm like '13101040%'
-			    AND yh_mc not like '%ARM%'
-			    AND yh_dm <> '13101040000'
-			    AND swjg_dm IS NOT NULL
-          		AND swjg_dm <> '13101040000'
+				AND yh_dm like '13101040%'
+				AND yh_mc not like '%ARM%'
+				AND yh_dm <> '13101040000'
+				AND swjg_dm IS NOT NULL
+				AND swjg_dm <> '13101040000'
         ]]>
     </select>
 	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="Map">
@@ -326,4 +326,20 @@
     		UPDATE db_wx.t_wx_bdgx SET yxbz = 'N', xgsj = sysdate WHERE gxid = #{gxid}
     	]]>
 	</update>
+	<update id="updateXhzgyFollowStatus" parameterType="List">
+   		<![CDATA[
+			UPDATE db_zgfz.t_wxqy_dzb SET sfgz = '1',xgsj = sysdate WHERE sfgz = '0' AND wxzhid IN 
+        ]]>
+		<foreach item="wxzhidList" index="index" collection="list" open="("   close=")" separator=",">
+			#{wxzhidList}
+		</foreach>
+    </update>
+	<update id="updateXhswFollowStatus" parameterType="List">
+   		<![CDATA[
+			UPDATE db_qx.t_qx_yh SET sfgz = '1' WHERE sfgz = '0' AND yh_dm IN 
+        ]]>
+		<foreach item="swryidList" index="index" collection="list" open="("   close=")" separator=",">
+			#{swryidList}
+		</foreach>
+    </update>
 </mapper>

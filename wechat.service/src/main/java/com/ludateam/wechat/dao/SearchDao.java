@@ -73,7 +73,7 @@ public interface SearchDao {
 	 * 更新通知书状态
 	 */
 	int updateTzsStatus(String wsh);
-	
+
 	/**
 	 * 清空催报催缴临时表
 	 */
@@ -139,4 +139,14 @@ public interface SearchDao {
 	 * 根据关系id禁用旧绑定关系
 	 */
 	int setWxDbgxUnableByGxid(String gxid);
+
+	/**
+	 * 根据微信账号id更新徐汇专管员号的关注状态
+	 */
+	int updateXhzgyFollowStatus(List<String> wxzhidList);
+
+	/**
+	 * 根据微信账号id更新徐汇税务号的关注状态
+	 */
+	int updateXhswFollowStatus(List<String> swryidList);
 }

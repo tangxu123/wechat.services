@@ -160,7 +160,8 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 		try {
 			String sendParam = JSON.toJSONString(textMsg);
 			String resultJson = HttpKit.post(weburl, sendParam, headers);
-			logger.info(resultJson);
+			logger.info("send param:" + sendParam);
+			logger.info("send result:" + resultJson);
 			resultDto = JSON.parseObject(resultJson, SendMsgResultDto.class);
 		} catch (Exception e) {
 			logger.info("send--text--message--exception--happened");
