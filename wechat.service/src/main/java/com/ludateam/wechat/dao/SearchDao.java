@@ -149,4 +149,15 @@ public interface SearchDao {
 	 * 根据微信账号id更新徐汇税务号的关注状态
 	 */
 	int updateXhswFollowStatus(List<String> swryidList);
+
+	/**
+	 * 更新徐汇专管员号的关注状态为取消关注
+	 */
+	int updateXhzgyCancelFollow();
+
+	/**
+	 * 更新徐汇税务号的关注状态为取消关注
+	 */
+	int updateXhswCancelFollow();
+
 }

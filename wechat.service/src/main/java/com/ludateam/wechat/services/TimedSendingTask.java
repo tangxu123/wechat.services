@@ -145,22 +145,6 @@ public class TimedSendingTask {
 			return;
 		}
 
-		FsrwEntity fsrwEntity = new FsrwEntity();
-		fsrwEntity.setDxnr(null);
-		fsrwEntity.setFsdx("0");
-		fsrwEntity.setFsfs(SEND_METHOD_WECHAT);
-		fsrwEntity.setLk("");
-		fsrwEntity.setNwbz("0");
-		fsrwEntity.setRydm("");
-		fsrwEntity.setSbdm("");
-		fsrwEntity.setShsx("1");
-		fsrwEntity.setTmid(99);
-		fsrwEntity.setYxq(0);
-		fsrwEntity.setQyhid(1);
-		fsrwEntity.setWxyyid(4);
-		
-		searchDao.saveFsrw(fsrwEntity);
-		
 		for (int i = 0; i < tzsList.size(); i++) {
 			SssxTzsEntity tzsEntity = tzsList.get(i);
 			String wxzhid = tzsEntity.getWxzhid();
@@ -171,14 +155,29 @@ public class TimedSendingTask {
 						+ tzsEntity.getShxydm() + "）\n你单位于"
 						+ tzsEntity.getSqsj() + "申请办理的" + tzsEntity.getSssxMc()
 						+ "事项（文书号：" + tzsEntity.getWsh() + "），结果通知书已经制发完成。";
-
+				logger.info(content);
+				FsrwEntity fsrwEntity = new FsrwEntity();
+				fsrwEntity.setDxnr(content);
+				fsrwEntity.setFsdx("0");
+				fsrwEntity.setFsfs(SEND_METHOD_WECHAT);
+				fsrwEntity.setLk("");
+				fsrwEntity.setNwbz("0");
+				fsrwEntity.setRydm(tzsEntity.getSlryDm());
+				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
+				fsrwEntity.setShsx("1");
+				fsrwEntity.setTmid(0);
+				fsrwEntity.setYxq(0);
+				fsrwEntity.setQyhid(1);
+				fsrwEntity.setWxyyid(14);
+				searchDao.saveFsrw(fsrwEntity);
+				
 				BigDecimal rwid = fsrwEntity.getRwid();
 				String djxh = tzsEntity.getDjxh();
 				List<String> wxzhidList = removeDuplicateWxzhid(wxzhid);
 				for (int j = 0; j < wxzhidList.size(); j++) {
 					FsmdEntity fsmdEntity = new FsmdEntity();
 					fsmdEntity.setRwid(rwid);
-					fsmdEntity.setDxnr(content);
+					fsmdEntity.setDxnr(null);
 					fsmdEntity.setFsr(djxh);
 					fsmdEntity.setFssx("0");
 					fsmdEntity.setSjhm(wxzhidList.get(j));

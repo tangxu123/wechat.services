@@ -73,6 +73,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 			sjhm = (String) resultMap.get("sjhm");
 		} catch (Exception e) {
 			logger.info("sms--message--send--yun--mars--error--happened--");
+			e.printStackTrace();
 		}
 
 		sjhm = "'" + sjhm.replace(",", "','") + "'";
@@ -92,6 +93,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 			result = HttpKit.post(nmhurl, postJson, headers);
 		} catch (Exception e) {
 			logger.info("sms--message--send--result--callback--error--happened--");
+			e.printStackTrace();
 		}
 		logger.info("sms--message--send--yun--mars--end--");
 	}
@@ -109,8 +111,6 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 			MqJsonDto mqJsonDto = JSON.parseObject(mqjson, MqJsonDto.class);
 			String rwid = mqJsonDto.getRwid();
 			String wxzh = mqJsonDto.getWxzh();
-			String content = mqJsonDto.getDxnr();
-			
 			SendMsgResultDto resultDto = sendTextMessage(mqJsonDto, headers);
 			String uswxzh = resultDto.getInvaliduser();
 			if (uswxzh != null && !"".equals(uswxzh)) {
@@ -124,6 +124,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 			logger.info("wechat--message--send--result--callback--");
 		} catch (Exception e) {
 			logger.info("send--text--message--exception--happened");
+			e.printStackTrace();
 		}
 		logger.info("send--weixin--message--end--");
 	}
@@ -165,6 +166,7 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
 			resultDto = JSON.parseObject(resultJson, SendMsgResultDto.class);
 		} catch (Exception e) {
 			logger.info("send--text--message--exception--happened");
+			e.printStackTrace();
 		}
 		return resultDto;
 	}

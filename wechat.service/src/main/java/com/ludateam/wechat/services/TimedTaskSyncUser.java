@@ -151,7 +151,9 @@ public class TimedTaskSyncUser {
 			UserListDto xhzgyUserDto = JSON.parseObject(xhzgyResult,UserListDto.class);
 			if ("0".equals(xhzgyUserDto.getErrcode())) {
 				List<UserEntity> userList = xhzgyUserDto.getUserlist();
-				int count = searchDao.updateXhzgyFollowStatus(getUseridList(userList));
+				int count = searchDao.updateXhzgyCancelFollow();
+				logger.info("XHZGY Follow Status Cancel--" + count);
+				count = searchDao.updateXhzgyFollowStatus(getUseridList(userList));
 				logger.info("XHZGY Follow Status Callback--" + count);
 			}
 			
@@ -161,8 +163,10 @@ public class TimedTaskSyncUser {
 			String xhswResuslt = HttpKit.post(xhswWeburl, xhswParam, headers);
 			UserListDto xhswUserDto = JSON.parseObject(xhswResuslt,UserListDto.class);
 			if ("0".equals(xhswUserDto.getErrcode())) {
-				List<UserEntity> userList = xhzgyUserDto.getUserlist();
-				int count = searchDao.updateXhswFollowStatus(getUseridList(userList));
+				List<UserEntity> userList = xhswUserDto.getUserlist();
+				int count = searchDao.updateXhswCancelFollow();
+				logger.info("XHSW Follow Status Cancel--" + count);
+				count = searchDao.updateXhswFollowStatus(getUseridList(userList));
 				logger.info("XHSW Follow Status Callback--" + count);
 			}
 		} catch (Exception e) {

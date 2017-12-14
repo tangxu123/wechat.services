@@ -190,14 +190,17 @@
 			               (SELECT TO_CHAR(WMSYS.WM_CONCAT(d.wxzhid))
 			                  FROM db_zgfz.t_wxqy_dzb d
 			                 WHERE d.djxh = t.djxh
-			                   AND d.yxbz = 'Y') wxzhid,
+			                   AND d.yxbz = 'Y'
+			                   AND d.sfgz = '1') wxzhid,
 			               (SELECT TO_CHAR(WMSYS.WM_CONCAT(d.sjhm))
 			                  FROM db_zgfz.t_wxqy_dzb d
 			                 WHERE d.djxh = t.djxh
-			                   AND d.yxbz = 'Y') sjhm
-			          FROM hxwt.t_sx_zftzs t, hx_dj.dj_nsrxx n
-			         WHERE t.djxh = n.djxh
-			           AND t.status = '0') tmp
+			                   AND d.yxbz = 'Y'
+			                   AND d.sfgz = '1') sjhm
+			          FROM hxwt.t_sx_zftzs t , db_wx.t_wx_tstzs s , hx_dj.dj_nsrxx n
+			         WHERE t.wsh = s.wsh
+						AND t.djxh = n.djxh
+						AND s.status = '0') tmp
 			WHERE tmp.wxzhid is not null
 		]]>
     </select>
@@ -241,7 +244,7 @@
 	</insert>
 	<update id="updateTzsStatus" parameterType="String">
 		<![CDATA[
-			UPDATE hxwt.t_sx_zftzs t SET t.status = '1' WHERE t.wsh = #{wsh}
+			UPDATE db_wx.t_wx_tstzs t SET t.status = '1',t.tssj = sysdate WHERE t.wsh = #{wsh}
         ]]>
     </update>
 	<delete id="deleteCbcjTmpData">
@@ -277,9 +280,10 @@
 			       		t.ssgly_dm,
 			       		t.zsxmmcs,
 			       		TO_CHAR(WMSYS.WM_CONCAT(d.wxzhid)) wxzhid
-			  FROM db_wx.t_wx_cbcj_tmp t, DB_ZGFZ.t_Wxqy_Dzb d
+			  FROM db_wx.t_wx_cbcj_tmp t, db_zgfz.t_wxqy_dzb d
 			WHERE t.djxh = d.djxh
-			    AND d.yxbz = 'Y'
+				AND d.yxbz = 'Y'
+				AND d.sfgz = '1'
 			GROUP BY t.djxh, t.nsrmc, t.shxydm, t.zgswskfj_dm, t.ssgly_dm, t.zsxmmcs
 		]]>
     </select>
@@ -324,6 +328,16 @@
 	<update id="setWxDbgxUnableByGxid" parameterType="String">
 		<![CDATA[
     		UPDATE db_wx.t_wx_bdgx SET yxbz = 'N', xgsj = sysdate WHERE gxid = #{gxid}
+    	]]>
+	</update>
+	<update id="updateXhzgyCancelFollow">
+		<![CDATA[
+    		UPDATE db_zgfz.t_wxqy_dzb SET sfgz = '0'
+    	]]>
+	</update>
+	<update id="updateXhswCancelFollow">
+		<![CDATA[
+    		UPDATE db_qx.t_qx_yh SET sfgz = '0'
     	]]>
 	</update>
 	<update id="updateXhzgyFollowStatus" parameterType="List">

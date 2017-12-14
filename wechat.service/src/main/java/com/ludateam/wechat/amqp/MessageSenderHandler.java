@@ -66,6 +66,7 @@ public class MessageSenderHandler {
 			logger.info("sms--message--add--queue--result----" + result);
 		} catch (Exception e) {
 			logger.info("sms--message--add--queue--error--happened--");
+			e.printStackTrace();
 		}
 	}
 
@@ -94,6 +95,7 @@ public class MessageSenderHandler {
 			logger.info("wechat--message--add--queue--result----" + result);
 		} catch (Exception e) {
 			logger.info("wechat--message--add--queue--error--happened--");
+			e.printStackTrace();
 		}
 	}
 }
