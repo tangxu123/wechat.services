@@ -72,63 +72,61 @@
     </select>
     <select id="getRealNameTaxOfficerList" resultMap="taxOfficerList">
 		<![CDATA[
-			SELECT t.xm, t.sjhm, t.wxh, t.sjhm yhid, t.dzyjdz, '7' AS bmid,TO_CHAR(t.bsylx) zw
-			  FROM (SELECT TRIM(sm.xm) xm,
-			               sm.sjhm,
-			               sm.wxh,
-			               sm.dzyjdz,
-			               WMSYS.WM_CONCAT(sq.bsylx) bsylx
-			          FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
-			         WHERE sq.smid = sm.smid
-			           AND sq.sfty = 'N'
-			           AND sm.sfzsfsm = 'Y'
-			           AND sm.sjhsfsm = 'Y'
-			         GROUP BY sm.xm, sm.sjhm, sm.wxh, sm.dzyjdz) t
+			SELECT t.xm,t.sjhm,t.wxh,t.sjhm yhid,t.dzyjdz,'7' AS bmid,TO_CHAR(t.bsylx) zw
+			FROM (	SELECT tmp.xm,tmp.sjhm,tmp.wxh,tmp.dzyjdz,WMSYS.WM_CONCAT(tmp.bsylx) bsylx
+						FROM (	SELECT TRIM(sm.xm) xm, sm.sjhm, sm.wxh, sm.dzyjdz, sq.bsylx
+									  FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+									WHERE sq.smid = sm.smid
+										AND sq.sfty = 'N'
+										AND sm.sfzsfsm = 'Y'
+										AND sm.sjhsfsm = 'Y'
+										AND sm.sjhm IS NOT NULL ) tmp
+						GROUP BY tmp.xm, tmp.sjhm, tmp.wxh, tmp.dzyjdz) t
         ]]>
     </select>
     <update id="updateEnableRelation">
    		<![CDATA[
-	        MERGE INTO db_zgfz.t_wxqy_dzb t
-	        USING (SELECT trim(sm.xm) xm, trim(sm.sfzjhm) sfzjhm, sm.sjhm, sq.djxh, sq.bsylx
-	                   FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
-		                WHERE sq.smid = sm.smid
-		                    AND sq.sfty = 'N'
-		                    AND sm.sfzsfsm = 'Y'
-		                    AND sm.sjhsfsm = 'Y') tmp
-		      ON (  t.sfzjhm = tmp.sfzjhm
-		        AND t.xm = tmp.xm
-		        AND t.sjhm = tmp.sjhm
-		        AND t.djxh = tmp.djxh
-		        AND t.bsylx = tmp.bsylx
-		        AND t.wxzhid = tmp.sjhm)
-		      WHEN NOT MATCHED THEN
-			  	INSERT (id, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj)
-		        VALUES (db_zgfz.sq_wxqy_dzb_id.nextval, tmp.sfzjhm, tmp.xm, tmp.sjhm, tmp.djxh, tmp.bsylx, tmp.sjhm, 'Y', sysdate, sysdate)
+			MERGE INTO db_zgfz.t_wxqy_dzb t
+			USING (SELECT sm.smid, trim(sm.xm) xm, trim(sm.sfzjhm) sfzjhm, sm.sjhm, sq.sqid, sq.djxh, sq.bsylx
+			           FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+			          WHERE sq.smid = sm.smid
+			              AND sq.sfty = 'N'
+			              AND sm.sfzsfsm = 'Y'
+			              AND sm.sjhsfsm = 'Y'
+			              AND sm.sjhm IS NOT NULL) tmp
+			ON (  t.smid = tmp.smid AND t.sqid = tmp.sqid 	)
+			WHEN NOT MATCHED THEN
+			INSERT (	id, sqid, smid, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj, sfgz)
+			VALUES (	db_zgfz.sq_wxqy_dzb_id.nextval,
+							tmp.sqid,
+							tmp.smid,
+							tmp.sfzjhm,
+							tmp.xm,
+							tmp.sjhm,
+							tmp.djxh,
+							tmp.bsylx,
+							tmp.sjhm,
+							'Y',
+							sysdate,
+							sysdate,
+							'0')
         ]]>
     </update>
 	<update id="updateDisableRelation">
    		<![CDATA[
 			UPDATE db_zgfz.t_wxqy_dzb t
-			   	  SET t.yxbz = 'N', t.xgsj = sysdate
-			 WHERE EXISTS (SELECT 1 FROM (
-			 		SELECT trim(sm.xm) xm,
-			                    trim(sm.sfzjhm) sfzjhm,
-			                    sm.sjhm,
-			                    sq.djxh,
-			                    sq.bsylx
-			          FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
-                 	WHERE sq.smid = sm.smid
-                        AND sq.sfty = 'Y'
-                   		AND sm.sfzsfsm = 'Y'
-                   		AND sm.sjhsfsm = 'Y' ) tmp
-			       WHERE t.sfzjhm = tmp.sfzjhm
-			           AND t.xm = tmp.xm
-			           AND t.sjhm = tmp.sjhm
-			           AND t.djxh = tmp.djxh
-			           AND t.bsylx = tmp.bsylx
-			           AND t.wxzhid = tmp.sjhm
-			           AND t.yxbz = 'Y'
-			        )
+				 SET t.yxbz = 'N', t.sfgz = '0', t.xgsj = sysdate
+			 WHERE EXISTS(	
+			 		SELECT 1
+			          FROM (SELECT sq.sqid, sm.smid
+			                  FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
+			                 WHERE sq.smid = sm.smid
+			                   AND sq.sfty = 'Y'
+			                   AND sm.sfzsfsm = 'Y'
+			                   AND sm.sjhsfsm = 'Y') tmp
+			        WHERE t.sqid = tmp.sqid
+			            AND t.smid = tmp.smid
+			            AND t.yxbz = 'Y' )
         ]]>
     </update>
 	<insert id="saveSyncUserJob" parameterType="com.ludateam.wechat.dto.SyncUserJobDto">
@@ -304,6 +302,7 @@
 				AND yh_dm <> '13101040000'
 				AND swjg_dm IS NOT NULL
 				AND swjg_dm <> '13101040000'
+				AND LENGTH(sjdh) = 11
         ]]>
     </select>
 	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="Map">

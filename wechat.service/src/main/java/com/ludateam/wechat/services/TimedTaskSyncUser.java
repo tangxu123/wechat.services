@@ -18,6 +18,7 @@ import com.ludateam.wechat.dto.UserListDto;
 import com.ludateam.wechat.entity.TaxOfficerEntity;
 import com.ludateam.wechat.entity.UserEntity;
 import com.ludateam.wechat.kit.HttpKit;
+import com.ludateam.wechat.kit.StrKit;
 import com.ludateam.wechat.utils.PropertyUtil;
 
 @Component
@@ -38,9 +39,13 @@ public class TimedTaskSyncUser {
 		String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
 		for (int i = 0; i < resultList.size(); i++) {
 			TaxOfficerEntity entity = resultList.get(i);
+			String wxh = entity.getWxid();
+			if (StrKit.notBlank(wxh) && !validateWeixinid(wxh.charAt(0))) {
+				wxh = "";
+			}
 			sendParam += entity.getMobile() + "," + entity.getUserid() + ","
-					+ entity.getWxid() + "," + entity.getMobile() + ","
-					+ entity.getEmail() + "," + entity.getDepartment() + ",\n";
+					+ wxh + "," + entity.getMobile() + "," + entity.getEmail()
+					+ "," + entity.getDepartment() + ",\n";
 		}
 		sendParam += "\"}";
 
@@ -205,5 +210,31 @@ public class TimedTaskSyncUser {
 			useridList.add(userEntity.getUserid());
 		}
 		return useridList;
+	}
+	
+	/**
+	 * 	验证微信号是否合法<br>
+	 * 微信号格式由字母、数字、”-“、”_“组成，长度为 3-20 字节，首字符必须是字母或”-“或”_“
+	 * 
+	 * @param firstChar
+	 *            首位字母
+	 * 
+	 * @return 验证结果
+	 * 
+	 */
+	private static boolean validateWeixinid(char firstChar) {
+		int ascii = (int) firstChar;
+		if (ascii == 45 || ascii == 95) {
+			return true;
+		}
+
+		if (ascii >= 65 && ascii <= 90) {
+			return true;
+		}
+
+		if (ascii >= 97 && ascii <= 122) {
+			return true;
+		}
+		return false;
 	}
 }
