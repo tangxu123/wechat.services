@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
+import com.ludateam.wechat.entity.BindingEntity;
 import com.ludateam.wechat.entity.FsmdEntity;
 import com.ludateam.wechat.entity.FsrwEntity;
 import com.ludateam.wechat.entity.SssxTzsEntity;
@@ -25,9 +26,9 @@ public interface SearchDao {
 	List<TaskEntity> getTaskList(TaskEntity entity);
 
 	/**
-	 * 取得实名办税员列表(同步企业微信通讯录)
+	 * 取得专管员号通讯录列表(同步企业微信通讯录)
 	 */
-	List<TaxOfficerEntity> getRealNameTaxOfficerList();
+	List<TaxOfficerEntity> getUserList();
 
 	/**
 	 * 同步未停用实名办税员与企业的对照关系
@@ -123,12 +124,12 @@ public interface SearchDao {
 	/**
 	 * 根据微信账号id查询微信企业对照关系列表
 	 */
-	List<Map<String, String>> findWxqyDzbByWxzhid(String wxzhid);
+	List<BindingEntity> findWxqyDzbByWxzhid(String wxzhid);
 
 	/**
 	 * 根据微信账号id查询当前微信绑定关系
 	 */
-	List<Map<String, String>> findWxBdgxByWxzhid(String wxzhid);
+	BindingEntity findWxBdgxByWxzhid(String wxzhid);
 
 	/**
 	 * 新增微信绑定关系
@@ -160,4 +161,13 @@ public interface SearchDao {
 	 */
 	int updateXhswCancelFollow();
 
+	/**
+	 * 更新徐汇税务号的关注状态为取消关注
+	 */
+	List<String> getVipSqid(String wxzhid, String djxh);
+
+	/**
+	 * 移除通讯录中重复的手机号码
+	 */
+	int removeDuplicatePhoneNumber();
 }

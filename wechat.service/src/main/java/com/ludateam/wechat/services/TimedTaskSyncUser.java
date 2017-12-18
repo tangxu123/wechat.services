@@ -35,7 +35,8 @@ public class TimedTaskSyncUser {
 	@Scheduled(cron = "0 0/30 * * * ?")
 	public void executeSyncNsUser() {
 
-		List<TaxOfficerEntity> resultList = searchDao.getRealNameTaxOfficerList();
+		searchDao.removeDuplicatePhoneNumber();
+		List<TaxOfficerEntity> resultList = searchDao.getUserList();
 		String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
 		for (int i = 0; i < resultList.size(); i++) {
 			TaxOfficerEntity entity = resultList.get(i);

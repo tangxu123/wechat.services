@@ -37,4 +37,8 @@ public interface CallService {
 	@POST
 	@Path("/setDefault")
 	String setDefaultCompany(@QueryParam("userid") String userid, @QueryParam("djxh") String djxh);
+	
+	@POST
+	@Path("/getVipSqid")
+	String getVipSqid(@QueryParam("userid") String userid);
 }

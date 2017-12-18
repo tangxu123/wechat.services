@@ -70,18 +70,20 @@
 			ORDER BY v.rwid
 		]]>
     </select>
-    <select id="getRealNameTaxOfficerList" resultMap="taxOfficerList">
+    <update id="removeDuplicatePhoneNumber">
 		<![CDATA[
-			SELECT t.xm,t.sjhm,t.wxh,t.sjhm yhid,t.dzyjdz,'7' AS bmid,TO_CHAR(t.bsylx) zw
-			FROM (	SELECT tmp.xm,tmp.sjhm,tmp.wxh,tmp.dzyjdz,WMSYS.WM_CONCAT(tmp.bsylx) bsylx
-						FROM (	SELECT TRIM(sm.xm) xm, sm.sjhm, sm.wxh, sm.dzyjdz, sq.bsylx
-									  FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
-									WHERE sq.smid = sm.smid
-										AND sq.sfty = 'N'
-										AND sm.sfzsfsm = 'Y'
-										AND sm.sjhsfsm = 'Y'
-										AND sm.sjhm IS NOT NULL ) tmp
-						GROUP BY tmp.xm, tmp.sjhm, tmp.wxh, tmp.dzyjdz) t
+		    MERGE INTO DB_WX.T_WX_SJHYCMD t
+			USING (SELECT v.sjhm FROM DB_ZGFZ.V_QYWX_TXL v GROUP BY v.sjhm HAVING COUNT(1) > 1) tmp
+			ON (t.sjhm = tmp.sjhm)
+			WHEN NOT MATCHED THEN
+		  	INSERT (sjhm) VALUES (tmp.sjhm)
+        ]]>
+    </update>
+    <select id="getUserList" resultMap="taxOfficerList">
+		<![CDATA[
+			SELECT v.xm, v.yhid, v.wxh, v.sjhm, v.dzyjdz, v.bmid, v.zw
+			  FROM DB_ZGFZ.V_QYWX_TXL v
+			WHERE NOT EXISTS (SELECT 1 FROM db_wx.t_wx_sjhycmd s WHERE s.sjhm = v.sjhm)
         ]]>
     </select>
     <update id="updateEnableRelation">
@@ -305,15 +307,17 @@
 				AND LENGTH(sjdh) = 11
         ]]>
     </select>
-	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="Map">
+	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="com.ludateam.wechat.entity.BindingEntity">
 		<![CDATA[
-			SELECT DISTINCT TO_CHAR(t.djxh) AS "djxh",(SELECT nsrmc FROM hx_dj.dj_nsrxx n WHERE n.djxh = t.djxh) AS "nsrmc"
+			SELECT 	DISTINCT TO_CHAR(t.djxh) AS "djxh",
+						(SELECT nsrmc FROM hx_dj.dj_nsrxx n WHERE n.djxh = t.djxh) AS "nsrmc",
+						'N' AS "isUse"
 			  FROM db_zgfz.t_wxqy_dzb t
 			WHERE t.wxzhid = #{wxzhid}
 			    AND t.yxbz = 'Y'
 		]]>
 	</select>
-	<select id="findWxBdgxByWxzhid" parameterType="String" resultType ="Map">
+	<select id="findWxBdgxByWxzhid" parameterType="String" resultType ="com.ludateam.wechat.entity.BindingEntity">
 		<![CDATA[
 			SELECT TO_CHAR(djxh) AS "djxh", gxid AS "gxid" FROM db_wx.t_wx_bdgx where wxzhid = #{wxzhid} and yxbz = 'Y'
 		]]>
@@ -355,4 +359,13 @@
 			#{swryidList}
 		</foreach>
     </update>
+	<select id="getVipSqid" parameterType="String" resultType ="String">
+		<![CDATA[
+			SELECT t.sqid || SUBSTR(t.sjhm, -3) AS vipid
+			  FROM db_zgfz.t_wxqy_dzb t
+			WHERE t.wxzhid = #{0}
+			   	AND t.djxh = #{1}
+			   	AND t.yxbz = 'Y'
+		]]>
+	</select>
 </mapper>

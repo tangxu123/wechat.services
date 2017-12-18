@@ -1,4 +1,5 @@
 package com.ludateam.wechat.services;
+
 /*
  * Copyright 2017 Luda Team.
  *
@@ -15,8 +16,6 @@ package com.ludateam.wechat.services;
  * limitations under the License.
  * Created by Him on 2017/8/17.
  */
-
-
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
@@ -36,7 +35,8 @@ import org.springframework.stereotype.Service;
 import com.alibaba.fastjson.JSON;
 import com.ludateam.wechat.api.CallService;
 import com.ludateam.wechat.dao.SearchDao;
-import com.ludateam.wechat.dto.ResponseResult;
+import com.ludateam.wechat.dto.BindingResult;
+import com.ludateam.wechat.entity.BindingEntity;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.PropertyUtil;
 
@@ -79,15 +79,16 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
 			Map msgMap = (Map) JSON.parse(msgJson);
 			String userid = (String) msgMap.get("fromUserName");
 			String resultJson = callService.getBindingList(userid);
-			ResponseResult bindResult = JSON.parseObject(resultJson, ResponseResult.class);
+			BindingResult bindResult = JSON.parseObject(resultJson, BindingResult.class);
 			BigDecimal djxh = null;
 			if ("0".equals(bindResult.getErrcode())) {
-				List<Map<String, String>> bindingList = bindResult.getBindingList();
+				List<BindingEntity> bindingList = bindResult.getBindingList();
 				for (int i = 0; i < bindingList.size(); i++) {
-					Map<String, String> bindingMap = bindingList.get(i);
-					String strDjxh = bindingMap.get("djxh");
-					if ("Y".equals(bindingMap.get("isUse"))) {
+					BindingEntity bindingEntity = bindingList.get(i);
+					String strDjxh = bindingEntity.getDjxh();
+					if ("Y".equals(bindingEntity.getIsUse())) {
 						djxh = new BigDecimal(strDjxh);
+						break;
 					}
 				}
 			}

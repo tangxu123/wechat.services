@@ -19,7 +19,10 @@ import org.springframework.util.CollectionUtils;
 import com.alibaba.dubbo.common.utils.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.ludateam.wechat.dao.SearchDao;
-import com.ludateam.wechat.dto.ResponseResult;
+import com.ludateam.wechat.dto.BindingResult;
+import com.ludateam.wechat.dto.ResultDto;
+import com.ludateam.wechat.dto.VipSqidDto;
+import com.ludateam.wechat.entity.BindingEntity;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.DesUtils;
 import com.ludateam.wechat.utils.PropertyUtil;
@@ -84,47 +87,43 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 	@Override
 	public String getBindingList(String wxzhid) {
 		
-		ResponseResult result = new ResponseResult();
+		BindingResult result = new BindingResult();
 		
 		//判断参数是否为空
 		if(StringUtils.isBlank(wxzhid)){
-			result.setErrcode("101");
-			result.setErrmsg("参数不能为空！");
+			result.setErrcode("99");
+			result.setErrmsg("用户ID不能为空！");
 			return JSON.toJSONString(result);
 		}
 		
 		// 微信企业对照关系列表
-		List<Map<String, String>> dzgxList = searchDao.findWxqyDzbByWxzhid(wxzhid);
-		if (CollectionUtils.isEmpty(dzgxList)) {
+		List<BindingEntity> bindingList = searchDao.findWxqyDzbByWxzhid(wxzhid);
+		if (CollectionUtils.isEmpty(bindingList)) {
 			// 源表对应的记录为空
 			result.setErrcode("99");
-			result.setErrmsg("源表对应的记录为空！");
+			result.setErrmsg("该用户暂未绑定企业！");
 			return JSON.toJSONString(result);
 		}
 		
-		// 当前微信绑定关系（这个微信目前代表哪家企业）
-		List<Map<String, String>> bdgxList = searchDao.findWxBdgxByWxzhid(wxzhid);
-		int bdgxSize = CollectionUtils.isEmpty(bdgxList) ? 0 : bdgxList.size();
-		int dzgxSize = dzgxList.size();
+		int dzgxSize = bindingList.size();
 		// 对照表登记序号
-		String dzbDjxh = dzgxList.get(0).get("djxh");
-		// 绑定关系id
-		String bdgxid = null;
-		// 绑定登记序号
-		String bddjxh = null;
-		if (bdgxSize > 0) {
-			bdgxid = bdgxList.get(0).get("gxid");
-			bddjxh = bdgxList.get(0).get("djxh");
-		}
-
+		String dzbDjxh = bindingList.get(0).getDjxh();
+		// 当前微信绑定关系（这个微信目前代表哪家企业）
+		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(wxzhid);
+		
 		// 微信企业对照关系为1条（这个微信号的主人只在一家企业任职）
 		if (dzgxSize == 1) {
 			// 第一条数据默认选中
-			dzgxList.get(0).put("isUse", "Y");
-			if (bdgxSize == 0) {
+			bindingList.get(0).setIsUse("Y");
+			if (bindingEntity == null) {
 				// 绑定关系记录为空、则新增一条绑定关系
 				insertWxBdgx(wxzhid, dzbDjxh);
-			} else if (bdgxSize == 1) {
+			} else {
+				// 绑定关系id
+				String bdgxid = bindingEntity.getGxid();
+				// 绑定登记序号
+				String bddjxh = bindingEntity.getDjxh();
+				
 				// 如果两条数据相等不做处理，否则 禁用旧绑定关系，并新增一条绑定关系
 				if (!dzbDjxh.equals(bddjxh)) {
 					// 目标表失效
@@ -132,69 +131,58 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 					// 源表数据插入目标表
 					insertWxBdgx(wxzhid, dzbDjxh);
 				}
-			} else {
-				// 目标表存在多条对应的数据
-				result.setErrcode("100");
-				result.setErrmsg("数据异常，一个微信账号只能设定一条最新绑定关系");
 			}
 		} else {
 			// 源表查询的数据为多条
-			if (bdgxSize == 0) {
+			if (bindingEntity == null) {
 				// 取源表第一条数据插入目标表 并打上标记
 				insertWxBdgx(wxzhid, dzbDjxh);
 				// 第一条数据默认选中
-				dzgxList.get(0).put("isUse", "Y");
-			} else if (bdgxSize == 1) {
-				// 目标表中存在一条数据
-				// 如果目标表中的数据存在于源表的多条数据中 则不需要做处理
-				// 否则 需要目标表中的数据失效 然后插入第一条数据
-				if (!checkData(bddjxh, dzgxList)) {
+				bindingList.get(0).setIsUse("Y");
+			} else {
+				// 绑定关系id
+				String bdgxid = bindingEntity.getGxid();
+				// 绑定登记序号
+				String bddjxh = bindingEntity.getDjxh();
+				
+				if (!checkData(bddjxh, bindingList)) {
 					// 目标表失效
 					searchDao.setWxDbgxUnableByGxid(bdgxid);
 					// 源表数据插入目标表
 					insertWxBdgx(wxzhid, dzbDjxh);
 					// 第一条数据默认选中
-					dzgxList.get(0).put("isUse", "Y");
+					bindingList.get(0).setIsUse("Y");
 				}
-			} else {
-				// 目标表存在多条对应的数据
-				result.setErrcode("100");
-				result.setErrmsg("数据异常，一个微信账号只能设定一条最新绑定关系");
 			}
 		}
 		
-		// 给第一条数据打上使用标记
-		result.setBindingList(dzgxList);
+		result.setBindingList(bindingList);
 		return JSON.toJSONString(result);
 	}
 
 	@Override
 	public String setDefaultCompany(String userid, String djxh) {
-		ResponseResult result = new ResponseResult();
+		ResultDto result = new ResultDto();
 		if (StringUtils.isBlank(userid) || StringUtils.isBlank(djxh)) {
-			result.setErrcode("101");
-			result.setErrmsg("参数不能为空！");
+			result.setErrcode("99");
+			result.setErrmsg("用户ID不能为空！");
 			return JSON.toJSONString(result);
 		}
-		List<Map<String, String>> queryList = searchDao.findWxBdgxByWxzhid(userid);
-		int querySize = queryList.size();
-		if (querySize == 0) {
-			// 目标表为空 做插入操作
+		
+		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(userid);
+		if (bindingEntity == null) {
 			insertWxBdgx(userid, djxh);
-		} else if (querySize == 1) {
-			// 目标表存在一条记录 进行比较 不相等则更新插入操作
-			String gxid = queryList.get(0).get("gxid");
-			String currentDjxh = queryList.get(0).get("djxh");
+		} else {
+			String gxid = bindingEntity.getGxid();
+			String currentDjxh = bindingEntity.getDjxh();
 			if (!currentDjxh.equals(djxh)) {
-				// 存在的数据失效
 				searchDao.setWxDbgxUnableByGxid(gxid);
-				// 源表数据插入目标表
 				insertWxBdgx(userid, djxh);
 			}
-		} else {
-			result.setErrcode("100");
-			result.setErrmsg("数据异常，一个微信账号只能设定一条最新绑定关系");
 		}
+		
+		result.setErrcode("0");
+		result.setErrmsg("success");
 		return JSON.toJSONString(result);
 	}
 
@@ -219,13 +207,43 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 	 * @param list 对照关系列表
 	 * @return
 	 */
-	public boolean checkData(String djxh, List<Map<String, String>> list) {
+	public boolean checkData(String djxh, List<BindingEntity> list) {
 		for (int i = 0; i < list.size(); i++) {
-			if (djxh.equals(list.get(i).get("djxh"))) {
-				list.get(i).put("isUse", "Y");
+			if (djxh.equals(list.get(i).getDjxh())) {
+				list.get(i).setIsUse("Y");
 				return true;
 			}
 		}
 		return false;
+	}
+
+	@Override
+	public String getVipSqid(String userid) {
+		
+		VipSqidDto result = new VipSqidDto();
+		if (StringUtils.isBlank(userid)) {
+			result.setErrcode("99");
+			result.setErrmsg("用户ID不能为空！");
+			return JSON.toJSONString(result);
+		}
+		
+		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(userid);
+		if (bindingEntity == null) {
+			result.setErrcode("99");
+			result.setErrmsg("请先绑定当前用户的身份！");
+			return JSON.toJSONString(result);
+		}
+		
+		List<String> sqidList = searchDao.getVipSqid(userid, bindingEntity.getDjxh());
+		if(CollectionUtils.isEmpty(sqidList)){
+			result.setErrcode("99");
+			result.setErrmsg("您绑定的企业身份已经失效，请重新进行绑定！");
+			return JSON.toJSONString(result);
+		}
+		
+		result.setErrcode("0");
+		result.setErrmsg("success");
+		result.setSqid(sqidList.get(0));
+		return JSON.toJSONString(result);
 	}
 }
