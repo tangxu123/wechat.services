@@ -1,17 +1,20 @@
 package com.ludateam.wechat.dto;
 
+import java.util.List;
+
 public class SyncUserJobResultDto extends SyncUserJobDto {
 
 	/** 任务状态 1表示任务开始，2表示任务进行中，3表示任务已完成 */
 	private int status;
-	/**
-	 * 操作类型 1. sync_user(增量更新成员) 2. replace_user(全量覆盖成员)3. replace_party(全量覆盖部门)
-	 */
+	/** 操作类型 1. sync_user(增量更新成员) 2. replace_user(全量覆盖成员)3. replace_party(全量覆盖部门) */
 	private String type;
 	/** 任务运行总条数 */
 	private int total;
 	/** 目前运行百分比，当任务完成时为100 */
 	private int percentage;
+	/** 详细的处理结果 */
+	private List<JobResultDto> result;
+	
 
 	/**
 	 * 取得任务状态的值
@@ -93,4 +96,23 @@ public class SyncUserJobResultDto extends SyncUserJobDto {
 		this.percentage = percentage;
 	}
 
+	/**
+	 * 取得详细的处理结果的值
+	 * 
+	 * @return 详细的处理结果
+	 *
+	 */
+	public List<JobResultDto> getResult() {
+		return result;
+	}
+
+	/**
+	 * 设定详细的处理结果的值
+	 * 
+	 * @param result
+	 *            详细的处理结果
+	 */
+	public void setResult(List<JobResultDto> result) {
+		this.result = result;
+	}
 }

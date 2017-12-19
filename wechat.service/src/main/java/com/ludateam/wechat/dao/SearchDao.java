@@ -162,7 +162,7 @@ public interface SearchDao {
 	int updateXhswCancelFollow();
 
 	/**
-	 * 更新徐汇税务号的关注状态为取消关注
+	 * 取得绿色通道用户的授权ID
 	 */
 	List<String> getVipSqid(String wxzhid, String djxh);
 
@@ -170,4 +170,14 @@ public interface SearchDao {
 	 * 移除通讯录中重复的手机号码
 	 */
 	int removeDuplicatePhoneNumber();
+
+	/**
+	 * 取得绿色通道用户的数量（判断是否是绿色通道用户）
+	 */
+	int getVipCount(String wxzhid);
+
+	/**
+	 * 取得用来推送监控消息的用户
+	 */
+	String getUserForSendMonitorMsg(String qyhid);
 }

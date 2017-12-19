@@ -15,7 +15,9 @@ import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
 import com.ludateam.wechat.dto.UserListDto;
+import com.ludateam.wechat.entity.QiYeTextMsg;
 import com.ludateam.wechat.entity.TaxOfficerEntity;
+import com.ludateam.wechat.entity.Text;
 import com.ludateam.wechat.entity.UserEntity;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.kit.StrKit;
@@ -97,6 +99,11 @@ public class TimedTaskSyncUser {
 				SyncUserJobResultDto jobResultDto = JSON.parseObject(result,SyncUserJobResultDto.class);
 				jobResultDto.setJobid(jobid);
 				searchDao.saveSyncUserJobResult(jobResultDto);
+				if (!"0".equals(jobResultDto.getErrcode())) {
+					sendTextMessage(jobDto.getWxqyhId(), "4", "通讯录同步异常，错误码："
+							+ jobResultDto.getErrcode() + "，错误内容："
+							+ jobResultDto.getErrmsg());
+				}
 			}
 		}else{
 			logger.info("no data ");
@@ -113,10 +120,10 @@ public class TimedTaskSyncUser {
 		String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
 		for (int i = 0; i < resultList.size(); i++) {
 			TaxOfficerEntity entity = resultList.get(i);
+			String wxh = "";
 			sendParam += entity.getName() + "," + entity.getUserid() + ","
-					+ entity.getWxid() + "," + entity.getMobile() + ","
-					+ entity.getEmail() + "," + entity.getDepartment() + ","
-					+ entity.getPosition() + "\n";
+					+ wxh + "," + entity.getMobile() + "," + entity.getEmail()
+					+ "," + entity.getDepartment() + "," + entity.getPosition() + "\n";
 		}
 		sendParam += "\"}";
 
@@ -237,5 +244,39 @@ public class TimedTaskSyncUser {
 			return true;
 		}
 		return false;
+	}
+	
+	/**
+	 * 发送文本信息
+	 * 
+	 * @param qyhid
+	 *            企业号ID
+	 * @param agentid
+	 *            应用ID
+	 * @param content
+	 *            发送内容
+	 * 
+	 * @return 无
+	 */
+	private void sendTextMessage(String qyhid, String agentid, String content) {
+
+		QiYeTextMsg textMsg = new QiYeTextMsg();
+		textMsg.setTouser(searchDao.getUserForSendMonitorMsg(qyhid));
+		textMsg.setToparty("");
+		textMsg.setTotag("");
+		textMsg.setMsgtype("text");
+		textMsg.setAgentid(agentid);
+		textMsg.setText(new Text(content));
+		textMsg.setSafe("0");
+
+		try {
+	        HashMap<String, String> headers = new HashMap<String, String>();
+	        headers.put("Content-type", "application/json");
+			String weburl = PropertyUtil.getProperty(String.valueOf(qyhid)) + "/wechat/qyapi/sendTextMessage";
+			String sendParam = JSON.toJSONString(textMsg);
+			HttpKit.post(weburl, sendParam, headers);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

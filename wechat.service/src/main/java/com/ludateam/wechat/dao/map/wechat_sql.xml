@@ -305,6 +305,11 @@
 				AND swjg_dm IS NOT NULL
 				AND swjg_dm <> '13101040000'
 				AND LENGTH(sjdh) = 11
+				AND NOT EXISTS (SELECT 1 FROM db_wx.t_wx_sjhycmd s WHERE s.sjhm = t.sjdh)
+			UNION ALL
+			SELECT yhid, xm, wxh, dzyjdz, sjhm, bmid, zw
+		  	  FROM db_wx.t_wx_zgytxl
+		 	WHERE qyhid = '2'
         ]]>
     </select>
 	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="com.ludateam.wechat.entity.BindingEntity">
@@ -359,13 +364,30 @@
 			#{swryidList}
 		</foreach>
     </update>
-	<select id="getVipSqid" parameterType="String" resultType ="String">
+	<select id="getVipSqid" parameterType="String" resultType="String">
 		<![CDATA[
 			SELECT t.sqid || SUBSTR(t.sjhm, -3) AS vipid
 			  FROM db_zgfz.t_wxqy_dzb t
 			WHERE t.wxzhid = #{0}
 			   	AND t.djxh = #{1}
 			   	AND t.yxbz = 'Y'
+		]]>
+	</select>
+	<select id="getVipCount" parameterType="String" resultType="int">
+		<![CDATA[
+			SELECT count(1)
+			  FROM db_zgfz.t_wxqy_dzb t, db_wx.t_wx_nsrmd n
+			WHERE t.djxh = n.djxh
+				AND t.wxzhid = #{0}
+				AND t.yxbz = 'Y'
+		]]>
+	</select>
+	<select id="getUserForSendMonitorMsg" parameterType="String" resultType="String">
+		<![CDATA[
+			SELECT REPLACE(TO_CHAR(WMSYS.WM_CONCAT(t.yhid)), ',', '|') AS touser
+			  FROM db_wx.t_wx_zgytxl t
+			WHERE t.qyhid = #{0}
+			    AND t.sftsyj = 'Y'
 		]]>
 	</select>
 </mapper>
