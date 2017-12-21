@@ -280,7 +280,7 @@ public class TimedTaskSyncUser {
                 "   \"tagname\": \"重点企业\"\n" +
                 "}";
 
-        String get_result = HttpKit.post(get_url, null, headers);
+        String get_result = HttpKit.post(get_url, "", headers);
         TagListEntity tagListEntity = JSON.parseObject(get_result, TagListEntity.class);
         String tagid = null;
         if ("0".equals(tagListEntity.getErrcode())) {
