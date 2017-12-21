@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ludateam.wechat.dao.SearchDao">
-	<resultMap id="taxOfficerList" type="com.ludateam.wechat.entity.TaxOfficerEntity">
-		<result column="XM" property="name"/>
+    <resultMap id="taxOfficerList" type="com.ludateam.wechat.entity.TaxOfficerEntity">
+        <result column="XM" property="name"/>
         <result column="YHID" property="userid"/>
         <result column="WXH" property="wxid"/>
         <result column="SJHM" property="mobile"/>
@@ -10,13 +10,13 @@
         <result column="BMID" property="department"/>
         <result column="ZW" property="position"/>
     </resultMap>
-	<resultMap id="taskList" type="com.ludateam.wechat.entity.TaskEntity">
+    <resultMap id="taskList" type="com.ludateam.wechat.entity.TaskEntity">
         <result column="RWID" property="rwid"/>
         <result column="SJHM" property="sjhm"/>
         <result column="DXNR" property="dxnr"/>
         <result column="WXZHID" property="wxzhid"/>
     </resultMap>
-	<resultMap id="tzsList" type="com.ludateam.wechat.entity.SssxTzsEntity">
+    <resultMap id="tzsList" type="com.ludateam.wechat.entity.SssxTzsEntity">
         <result column="SQSJ" property="sqsj"/>
         <result column="WSH" property="wsh"/>
         <result column="DJXH" property="djxh"/>
@@ -28,7 +28,7 @@
         <result column="WXZHID" property="wxzhid"/>
         <result column="SJHM" property="sjhm"/>
     </resultMap>
-	<resultMap id="wsbList" type="com.ludateam.wechat.entity.SssxTzsEntity">
+    <resultMap id="wsbList" type="com.ludateam.wechat.entity.SssxTzsEntity">
         <result column="DJXH" property="djxh"/>
         <result column="NSRMC" property="nsrmc"/>
         <result column="SHXYDM" property="shxydm"/>
@@ -39,6 +39,7 @@
     </resultMap>
     <insert id="saveReseiceMsg" parameterType="Map">
 		<![CDATA[
+
 			INSERT INTO db_wx.wechat_receive_message
 				(msg_id,to_user_name, from_user_name, create_time, msg_type, content, pic_url, media_id, agent_id, djxh)
 			VALUES (
@@ -53,41 +54,47 @@
 				#{agentId, jdbcType=VARCHAR},
 				#{djxh, jdbcType=DECIMAL}
 			)
+
         ]]>
     </insert>
-	<select id="getTaskList" resultMap="taskList" parameterType="com.ludateam.wechat.entity.TaskEntity">
-		<![CDATA[
+    <select id="getTaskList" resultMap="taskList" parameterType="com.ludateam.wechat.entity.TaskEntity">
+        <![CDATA[
 			SELECT distinct v.rwid, v.sjhm, v.dxnr, v.wxzhid, v.qyhid, v.wxyyid FROM db_zgfz.v_dx_fs_md v
 			WHERE v.fsfs = #{fsfs}
 		]]>
-		<if test="tmid == 0">
-			AND v.tmid = #{tmid}
-		</if>
-		<if test="tmid != 0">
-			AND v.tmid > 0
-		</if>
-		<![CDATA[
+        <if test="tmid == 0">
+            AND v.tmid = #{tmid}
+        </if>
+        <if test="tmid != 0">
+            AND v.tmid > 0
+        </if>
+        <![CDATA[
 			ORDER BY v.rwid
 		]]>
     </select>
     <update id="removeDuplicatePhoneNumber">
 		<![CDATA[
+
 		    MERGE INTO DB_WX.T_WX_SJHYCMD t
 			USING (SELECT v.sjhm FROM DB_ZGFZ.V_QYWX_TXL v GROUP BY v.sjhm HAVING COUNT(1) > 1) tmp
 			ON (t.sjhm = tmp.sjhm)
 			WHEN NOT MATCHED THEN
 		  	INSERT (sjhm) VALUES (tmp.sjhm)
+
         ]]>
     </update>
     <select id="getUserList" resultMap="taxOfficerList">
 		<![CDATA[
+
 			SELECT v.xm, v.yhid, v.wxh, v.sjhm, v.dzyjdz, v.bmid, v.zw
 			  FROM DB_ZGFZ.V_QYWX_TXL v
 			WHERE NOT EXISTS (SELECT 1 FROM db_wx.t_wx_sjhycmd s WHERE s.sjhm = v.sjhm)
+
         ]]>
     </select>
     <update id="updateEnableRelation">
    		<![CDATA[
+
 			MERGE INTO db_zgfz.t_wxqy_dzb t
 			USING (SELECT sm.smid, trim(sm.xm) xm, trim(sm.sfzjhm) sfzjhm, sm.sjhm, sq.sqid, sq.djxh, sq.bsylx
 			           FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
@@ -112,10 +119,12 @@
 							sysdate,
 							sysdate,
 							'0')
+
         ]]>
     </update>
-	<update id="updateDisableRelation">
+    <update id="updateDisableRelation">
    		<![CDATA[
+
 			UPDATE db_zgfz.t_wxqy_dzb t
 				 SET t.yxbz = 'N', t.sfgz = '0', t.xgsj = sysdate
 			 WHERE EXISTS(	
@@ -129,10 +138,12 @@
 			        WHERE t.sqid = tmp.sqid
 			            AND t.smid = tmp.smid
 			            AND t.yxbz = 'Y' )
+
         ]]>
     </update>
-	<insert id="saveSyncUserJob" parameterType="com.ludateam.wechat.dto.SyncUserJobDto">
+    <insert id="saveSyncUserJob" parameterType="com.ludateam.wechat.dto.SyncUserJobDto">
 		<![CDATA[
+
 			INSERT INTO db_wx.t_batch_async_job (jobid, errcode, errmsg, zxsl, zxsj, wxqyh_id)
 			VALUES (  #{jobid, jdbcType = VARCHAR},
 						   #{errcode, jdbcType = VARCHAR},
@@ -140,10 +151,12 @@
 						   #{zxsl}, sysdate,
 						   #{wxqyhId}
 						)
+
         ]]>
     </insert>
-	<insert id="saveSyncUserJobResult" parameterType="com.ludateam.wechat.dto.SyncUserJobResultDto">
+    <insert id="saveSyncUserJobResult" parameterType="com.ludateam.wechat.dto.SyncUserJobResultDto">
 		<![CDATA[
+
 			INSERT INTO db_wx.t_batch_async_job_result (jobid, errcode, errmsg, status, type, total, percentage, execute_time)
 			VALUES(#{jobid, jdbcType=VARCHAR},
 						#{errcode, jdbcType=VARCHAR},
@@ -153,10 +166,12 @@
 						#{total, jdbcType=VARCHAR},
 						#{percentage, jdbcType=VARCHAR},
 						sysdate )
+
         ]]>
     </insert>
-	<select id="getJobidList" resultType="com.ludateam.wechat.dto.SyncUserJobDto">
+    <select id="getJobidList" resultType="com.ludateam.wechat.dto.SyncUserJobDto">
 		<![CDATA[
+
 			SELECT jobid AS "jobid", wxqyh_id AS "wxqyhId"
 			  FROM db_wx.t_batch_async_job t1
 			WHERE NOT EXISTS ( 
@@ -164,10 +179,12 @@
 			          FROM db_wx.t_batch_async_job_result t2
 			        WHERE t1.jobid = t2.jobid
 			            AND t2.status = 3 )
+
         ]]>
     </select>
-	<select id="getTzsList" resultMap="tzsList">
+    <select id="getTzsList" resultMap="tzsList">
 		<![CDATA[
+
 			SELECT
 				   tmp.sqsj,
 			       tmp.wsh,
@@ -202,15 +219,16 @@
 						AND t.djxh = n.djxh
 						AND s.status = '0') tmp
 			WHERE tmp.wxzhid is not null
-		]]>
+
+        ]]>
     </select>
-	<insert id="saveFsrw" parameterType="com.ludateam.wechat.entity.FsrwEntity">
-		<selectKey resultType="java.math.BigDecimal" order="BEFORE" keyProperty="rwid">
-			<![CDATA[
+    <insert id="saveFsrw" parameterType="com.ludateam.wechat.entity.FsrwEntity">
+        <selectKey resultType="java.math.BigDecimal" order="BEFORE" keyProperty="rwid">
+            <![CDATA[
 				SELECT db_zgfz.sq_fsrw.nextval AS "rwid" FROM dual
 			]]>
-		</selectKey>
-		<![CDATA[
+        </selectKey>
+        <![CDATA[
 				INSERT INTO db_zgfz.t_fsrw (rwid,cjsj,swjgbzdm,shsx,tmid,dxnr,lk,fsdx,fssj,yxq,nwbz,rydm,fsfs,qyhid,wxyyid)
 				VALUES(#{rwid},
 							sysdate,
@@ -229,9 +247,10 @@
 							#{wxyyid, jdbcType=INTEGER}
 					)
 		]]>
-	</insert>
-	<insert id="saveFsmd" parameterType="com.ludateam.wechat.entity.FsmdEntity">
+    </insert>
+    <insert id="saveFsmd" parameterType="com.ludateam.wechat.entity.FsmdEntity">
 		<![CDATA[
+
 			INSERT INTO db_zgfz.t_fsmd (rwid,fsr,fssx,sjhm,dxnr,wxzhid)
 			VALUES(#{rwid, jdbcType=DECIMAL},
 						#{fsr, jdbcType=VARCHAR},
@@ -240,20 +259,26 @@
 						#{dxnr, jdbcType=VARCHAR},
 						#{wxzhid, jdbcType=VARCHAR}
 					)
-		]]>
+
+        ]]>
 	</insert>
-	<update id="updateTzsStatus" parameterType="String">
+    <update id="updateTzsStatus" parameterType="String">
 		<![CDATA[
+
 			UPDATE db_wx.t_wx_tstzs t SET t.status = '1',t.tssj = sysdate WHERE t.wsh = #{wsh}
+
         ]]>
     </update>
-	<delete id="deleteCbcjTmpData">
+    <delete id="deleteCbcjTmpData">
 		<![CDATA[
+
 			delete from db_wx.t_wx_cbcj_tmp
+
         ]]>
     </delete>
-	<insert id="saveCbcjTmpData" parameterType="Integer">
+    <insert id="saveCbcjTmpData" parameterType="Integer">
 		<![CDATA[
+
 			INSERT INTO db_wx.t_wx_cbcj_tmp (djxh, nsrmc, shxydm, zgswskfj_dm, ssgly_dm, zsxmmcs)
 			SELECT m.djxh,n.nsrmc,NVL2(n.shxydm, n.shxydm, n.nsrsbh) shxydm,m.zgswskfj_dm,n.ssgly_dm,m.zsxmmcs
 			  FROM (	SELECT  tmp.djxh,
@@ -269,10 +294,12 @@
 			                     ) tmp
 			           GROUP BY tmp.djxh, tmp.zgswskfj_dm
 			           ) m, hx_dj.dj_nsrxx n WHERE m.djxh = n.djxh
+
         ]]>
     </insert>
-	<select id="getWsbList" resultMap="wsbList">
+    <select id="getWsbList" resultMap="wsbList">
 		<![CDATA[
+
 			SELECT  t.djxh,
 			       		t.nsrmc,
 			       		t.shxydm,
@@ -285,10 +312,12 @@
 				AND d.yxbz = 'Y'
 				AND d.sfgz = '1'
 			GROUP BY t.djxh, t.nsrmc, t.shxydm, t.zgswskfj_dm, t.ssgly_dm, t.zsxmmcs
-		]]>
+
+        ]]>
     </select>
     <select id="getXhSwryList" resultMap="taxOfficerList">
 		<![CDATA[
+
 			SELECT t.yh_dm yhid,
 			       t.yh_mc xm,
 			       t.wxh,
@@ -310,84 +339,110 @@
 			SELECT yhid, xm, wxh, dzyjdz, sjhm, bmid, zw
 		  	  FROM db_wx.t_wx_zgytxl
 		 	WHERE qyhid = '2'
+
         ]]>
     </select>
-	<select id="findWxqyDzbByWxzhid" parameterType="String" resultType ="com.ludateam.wechat.entity.BindingEntity">
+    <select id="findWxqyDzbByWxzhid" parameterType="String" resultType="com.ludateam.wechat.entity.BindingEntity">
 		<![CDATA[
+
 			SELECT 	DISTINCT TO_CHAR(t.djxh) AS "djxh",
 						(SELECT nsrmc FROM hx_dj.dj_nsrxx n WHERE n.djxh = t.djxh) AS "nsrmc",
 						'N' AS "isUse"
 			  FROM db_zgfz.t_wxqy_dzb t
 			WHERE t.wxzhid = #{wxzhid}
 			    AND t.yxbz = 'Y'
-		]]>
+
+        ]]>
 	</select>
-	<select id="findWxBdgxByWxzhid" parameterType="String" resultType ="com.ludateam.wechat.entity.BindingEntity">
+    <select id="findWxBdgxByWxzhid" parameterType="String" resultType="com.ludateam.wechat.entity.BindingEntity">
 		<![CDATA[
+
 			SELECT TO_CHAR(djxh) AS "djxh", gxid AS "gxid" FROM db_wx.t_wx_bdgx where wxzhid = #{wxzhid} and yxbz = 'Y'
-		]]>
+
+        ]]>
 	</select>
-	<insert id="insertWxBdgx" parameterType="Map">
+    <insert id="insertWxBdgx" parameterType="Map">
 		<![CDATA[
+
     		INSERT INTO db_wx.t_wx_bdgx (gxid, wxzhid, djxh, yxbz, xgsj)
 			VALUES(db_zgfz.sq_wxqy_gxid.nextval,#{wxzhid},#{djxh},'Y',sysdate)
-		]]>
+
+        ]]>
 	</insert>
-	<update id="setWxDbgxUnableByGxid" parameterType="String">
+    <update id="setWxDbgxUnableByGxid" parameterType="String">
 		<![CDATA[
+
     		UPDATE db_wx.t_wx_bdgx SET yxbz = 'N', xgsj = sysdate WHERE gxid = #{gxid}
-    	]]>
+
+        ]]>
 	</update>
-	<update id="updateXhzgyCancelFollow">
+    <update id="updateXhzgyCancelFollow">
 		<![CDATA[
+
     		UPDATE db_zgfz.t_wxqy_dzb SET sfgz = '0'
-    	]]>
+
+        ]]>
 	</update>
-	<update id="updateXhswCancelFollow">
+    <update id="updateXhswCancelFollow">
 		<![CDATA[
+
     		UPDATE db_qx.t_qx_yh SET sfgz = '0'
-    	]]>
+
+        ]]>
 	</update>
-	<update id="updateXhzgyFollowStatus" parameterType="List">
-   		<![CDATA[
+    <update id="updateXhzgyFollowStatus" parameterType="List">
+        <![CDATA[
 			UPDATE db_zgfz.t_wxqy_dzb SET sfgz = '1',xgsj = sysdate WHERE sfgz = '0' AND wxzhid IN 
         ]]>
-		<foreach item="wxzhidList" index="index" collection="list" open="("   close=")" separator=",">
-			#{wxzhidList}
-		</foreach>
+        <foreach item="wxzhidList" index="index" collection="list" open="(" close=")" separator=",">
+            #{wxzhidList}
+        </foreach>
     </update>
-	<update id="updateXhswFollowStatus" parameterType="List">
-   		<![CDATA[
+    <update id="updateXhswFollowStatus" parameterType="List">
+        <![CDATA[
 			UPDATE db_qx.t_qx_yh SET sfgz = '1' WHERE sfgz = '0' AND yh_dm IN 
         ]]>
-		<foreach item="swryidList" index="index" collection="list" open="("   close=")" separator=",">
-			#{swryidList}
-		</foreach>
+        <foreach item="swryidList" index="index" collection="list" open="(" close=")" separator=",">
+            #{swryidList}
+        </foreach>
     </update>
-	<select id="getVipSqid" parameterType="String" resultType="String">
+    <select id="getVipSqid" parameterType="String" resultType="String">
 		<![CDATA[
+
 			SELECT t.sqid || SUBSTR(t.sjhm, -3) AS vipid
 			  FROM db_zgfz.t_wxqy_dzb t
 			WHERE t.wxzhid = #{0}
 			   	AND t.djxh = #{1}
 			   	AND t.yxbz = 'Y'
-		]]>
+
+        ]]>
 	</select>
-	<select id="getVipCount" parameterType="String" resultType="int">
+    <select id="getVipCount" parameterType="String" resultType="int">
 		<![CDATA[
+
 			SELECT count(1)
 			  FROM db_zgfz.t_wxqy_dzb t, db_wx.t_wx_nsrmd n
 			WHERE t.djxh = n.djxh
 				AND t.wxzhid = #{0}
 				AND t.yxbz = 'Y'
-		]]>
+
+        ]]>
 	</select>
-	<select id="getUserForSendMonitorMsg" parameterType="String" resultType="String">
+    <select id="getUserForSendMonitorMsg" parameterType="String" resultType="String">
 		<![CDATA[
+
 			SELECT REPLACE(TO_CHAR(WMSYS.WM_CONCAT(t.yhid)), ',', '|') AS touser
 			  FROM db_wx.t_wx_zgytxl t
 			WHERE t.qyhid = #{0}
 			    AND t.sftsyj = 'Y'
-		]]>
+
+        ]]>
+	</select>
+    <select id="getVIPUserList" resultType="com.ludateam.wechat.entity.VIPUserEntity">
+		<![CDATA[
+
+			SELECT  DISTINCT WXZHID FROM DB_ZGFZ.V_QYWX_TXL_VIP
+
+        ]]>
 	</select>
 </mapper>
