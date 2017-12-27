@@ -424,6 +424,7 @@
 			  FROM db_zgfz.t_wxqy_dzb t, db_wx.t_wx_nsrmd n
 			WHERE t.djxh = n.djxh
 				AND t.wxzhid = #{0}
+				AND t.djxh = #{1}
 				AND t.yxbz = 'Y'
 
         ]]>

@@ -166,16 +166,18 @@ public interface SearchDao {
      */
     int removeDuplicatePhoneNumber();
 
-    /**
-     * 取得绿色通道用户的数量（判断是否是绿色通道用户）
-     */
-    int getVipCount(String wxzhid);
+	/**
+	 * 取得绿色通道用户的数量（判断是否是绿色通道用户）
+	 */
+	int getVipCount(String wxzhid, String djxh);
 
     /**
      * 取得用来推送监控消息的用户
      */
     String getUserForSendMonitorMsg(String qyhid);
 
-
+    /**
+     * 取得重点企业的用户id
+     */
     List<VIPUserEntity> getVIPUserList();
 }

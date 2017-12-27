@@ -227,17 +227,17 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 			return JSON.toJSONString(result);
 		}
 
-		int count = searchDao.getVipCount(userid);
-		if (count == 0) {
-			result.setErrcode("99");
-			result.setErrmsg("当前企业身份暂不支持二维码取号");
-			return JSON.toJSONString(result);
-		}
-
 		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(userid);
 		if (bindingEntity == null) {
 			result.setErrcode("99");
 			result.setErrmsg("请先绑定当前用户的身份！");
+			return JSON.toJSONString(result);
+		}
+		
+		int count = searchDao.getVipCount(userid, bindingEntity.getDjxh());
+		if (count == 0) {
+			result.setErrcode("99");
+			result.setErrmsg("当前企业身份暂不支持二维码取号");
 			return JSON.toJSONString(result);
 		}
 		

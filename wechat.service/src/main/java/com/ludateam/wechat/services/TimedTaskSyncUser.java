@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import com.alibaba.fastjson.JSONObject;
-import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
-import com.ludateam.wechat.entity.*;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -18,6 +15,17 @@ import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
 import com.ludateam.wechat.dto.UserListDto;
+import com.ludateam.wechat.entity.QiYeTextMsg;
+import com.ludateam.wechat.entity.TagCreatResultEntity;
+import com.ludateam.wechat.entity.TagDelUserRequestEntity;
+import com.ludateam.wechat.entity.TagEntity;
+import com.ludateam.wechat.entity.TagListEntity;
+import com.ludateam.wechat.entity.TagUser;
+import com.ludateam.wechat.entity.TagUsersEntity;
+import com.ludateam.wechat.entity.TaxOfficerEntity;
+import com.ludateam.wechat.entity.Text;
+import com.ludateam.wechat.entity.UserEntity;
+import com.ludateam.wechat.entity.VIPUserEntity;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.kit.StrKit;
 import com.ludateam.wechat.utils.PropertyUtil;
@@ -40,14 +48,22 @@ public class TimedTaskSyncUser {
         List<TaxOfficerEntity> resultList = searchDao.getUserList();
         String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
         for (int i = 0; i < resultList.size(); i++) {
-            TaxOfficerEntity entity = resultList.get(i);
-            String wxh = entity.getWxid();
-            if (StrKit.notBlank(wxh) && !validateWeixinid(wxh.charAt(0))) {
-                wxh = "";
-            }
-            sendParam += entity.getMobile() + "," + entity.getUserid() + ","
-                    + wxh + "," + entity.getMobile() + "," + entity.getEmail()
-                    + "," + entity.getDepartment() + ",\n";
+			TaxOfficerEntity entity = resultList.get(i);
+			String wxh = entity.getWxid();
+			if (StrKit.notBlank(wxh) && !validateWeixinid(wxh.charAt(0))) {
+				wxh = "";
+			}
+			String mobile = entity.getMobile();
+			String name = "";
+			if ("7".equals(entity.getDepartment())) {
+				name = mobile;
+			} else {
+				name = entity.getName();
+			}
+
+			sendParam += name + "," + entity.getUserid() + "," + wxh + ","
+					+ mobile + "," + entity.getEmail() + ","
+					+ entity.getDepartment() + ",\n";
         }
         sendParam += "\"}";
 
