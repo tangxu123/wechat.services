@@ -67,7 +67,7 @@ public class TimedTaskSyncUser {
         }
         sendParam += "\"}";
 
-        logger.info("post sync user:" + sendParam);
+        //logger.info("post sync user:" + sendParam);
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
         String requestHost = PropertyUtil.getProperty("1");
@@ -164,7 +164,7 @@ public class TimedTaskSyncUser {
     /**
      * 回写徐汇专管员号、徐汇税务号通讯录成员的关注状态
      */
-    @Scheduled(cron = "0 0/5 * * * ?")
+    @Scheduled(cron = "0 0/5 8-18 * * ?")
     public void executeFollowStatus() {
 
         HashMap<String, String> headers = new HashMap<String, String>();

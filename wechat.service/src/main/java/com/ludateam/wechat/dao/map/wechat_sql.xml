@@ -96,17 +96,15 @@
    		<![CDATA[
 
 			MERGE INTO db_zgfz.t_wxqy_dzb t
-			USING (SELECT sm.smid, trim(sm.xm) xm, trim(sm.sfzjhm) sfzjhm, sm.sjhm, sq.sqid, sq.djxh, sq.bsylx
-			           FROM hxwt.t_wsbs_smbs_sqxx sq, hxwt.t_wsbs_smbs_smxx sm
-			          WHERE sq.smid = sm.smid
-			              AND sq.sfty = 'N'
-			              AND sm.sfzsfsm = 'Y'
-			              AND sm.sjhsfsm = 'Y'
-			              AND sm.sjhm IS NOT NULL) tmp
-			ON (  t.smid = tmp.smid AND t.sqid = tmp.sqid 	)
+			USING (SELECT v.sqid, v.smid, v.xm, v.sfzjhm, v.sjhm, v.djxh, v.bsylx, v.sjh_lx
+						FROM DB_ZGFZ.V_QYWX_TXL_ZJB v
+						WHERE sjhm IS NOT NULL) tmp
+			ON (t.smid = tmp.smid AND t.sqid = tmp.sqid)
+			WHEN MATCHED THEN
+				UPDATE SET T.SJHM = TMP.SJHM
 			WHEN NOT MATCHED THEN
-			INSERT (	id, sqid, smid, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj, sfgz)
-			VALUES (	db_zgfz.sq_wxqy_dzb_id.nextval,
+				INSERT (id, sqid, smid, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj, sfgz, sjhlx)
+				VALUES(db_zgfz.sq_wxqy_dzb_id.nextval,
 							tmp.sqid,
 							tmp.smid,
 							tmp.sfzjhm,
@@ -118,7 +116,8 @@
 							'Y',
 							sysdate,
 							sysdate,
-							'0')
+							'0',
+							tmp.sjh_lx)
 
         ]]>
     </update>
@@ -408,8 +407,8 @@
     </update>
     <select id="getVipSqid" parameterType="String" resultType="String">
 		<![CDATA[
-
-			SELECT t.sqid || SUBSTR(t.sjhm, -3) AS vipid
+      		SELECT t.sqid || SUBSTR(TO_CHAR(TO_NUMBER(SUBSTR(T.SJHM, -3)) +
+                            TO_NUMBER(SUBSTR(TO_CHAR(SYSDATE, 'HH24MI'),0,3))), -3) AS vipid
 			  FROM db_zgfz.t_wxqy_dzb t
 			WHERE t.wxzhid = #{0}
 			   	AND t.djxh = #{1}

@@ -151,10 +151,11 @@ public class TimedSendingTask {
 			if (StrKit.isBlank(wxzhid)) {
 				continue;
 			} else {
-				String content = tzsEntity.getNsrmc() + ":（纳税人识别号："
-						+ tzsEntity.getShxydm() + "）\n你单位于"
-						+ tzsEntity.getSqsj() + "申请办理的" + tzsEntity.getSssxMc()
-						+ "事项（文书号：" + tzsEntity.getWsh() + "），结果通知书已经制发完成。";
+				String content = tzsEntity.getNsrmc() + "（纳税人识别号:"
+						+ tzsEntity.getShxydm() + "）:\n于" + tzsEntity.getSqsj()
+						+ "申请办理的" + tzsEntity.getSssxMc() + "事项（文书号："
+						+ tzsEntity.getWsh() + "）结果通知书已经制发完成。";
+				
 				logger.info(content);
 				FsrwEntity fsrwEntity = new FsrwEntity();
 				fsrwEntity.setDxnr(content);
