@@ -20,7 +20,9 @@ import com.alibaba.fastjson.parser.Feature;
 import com.ludateam.wechat.entity.SmsRequestParam;
 import com.ludateam.wechat.entity.SmsStatus;
 import com.ludateam.wechat.kit.HttpKit;
+import com.ludateam.wechat.utils.PropertyUtil;
 import com.rabbitmq.client.Channel;
+
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.log4j.Logger;
 import org.springframework.amqp.core.Message;
@@ -73,7 +75,8 @@ public class SmsStatusMessageHandler implements ChannelAwareMessageListener {
             String requestJson = JSON.toJSONString(smsRequestParam);
 
             logger.info("======================= get requestJson  : " + requestJson);
-            HttpKit.post("http://172.16.200.253:8888/sendMsgToSms", requestJson);
+            String weburl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToSms";
+            HttpKit.post(weburl, requestJson);
         } catch (Exception ex) {
             logger.error("call sms status url error : ", ex);
         }

@@ -142,7 +142,7 @@ public class TimedTaskSyncUser {
         sendParam += "\"}";
 
         try {
-            logger.info("post sync user:" + sendParam);
+            //logger.info("post sync user:" + sendParam);
             HashMap<String, String> headers = new HashMap<String, String>();
             headers.put("Content-type", "application/json");
             String requestHost = PropertyUtil.getProperty("2");
