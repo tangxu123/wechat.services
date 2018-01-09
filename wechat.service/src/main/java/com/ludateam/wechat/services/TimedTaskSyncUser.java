@@ -134,7 +134,10 @@ public class TimedTaskSyncUser {
         String sendParam = "{\"content\" : \"姓名,帐号,微信号,手机号,邮箱,所在部门,职位\n";
         for (int i = 0; i < resultList.size(); i++) {
             TaxOfficerEntity entity = resultList.get(i);
-            String wxh = "";
+            String wxh = entity.getWxid();
+			if (StrKit.notBlank(wxh) && !validateWeixinid(wxh.charAt(0))) {
+				wxh = "";
+			}
             sendParam += entity.getName() + "," + entity.getUserid() + ","
                     + wxh + "," + entity.getMobile() + "," + entity.getEmail()
                     + "," + entity.getDepartment() + "," + entity.getPosition() + "\n";

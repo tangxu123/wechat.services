@@ -6,7 +6,13 @@ import java.util.Map;
 
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
-import com.ludateam.wechat.entity.*;
+import com.ludateam.wechat.entity.BindingEntity;
+import com.ludateam.wechat.entity.FsmdEntity;
+import com.ludateam.wechat.entity.FsrwEntity;
+import com.ludateam.wechat.entity.SssxTzsEntity;
+import com.ludateam.wechat.entity.TaskEntity;
+import com.ludateam.wechat.entity.TaxOfficerEntity;
+import com.ludateam.wechat.entity.VIPUserEntity;
 
 public interface SearchDao {
 
@@ -71,14 +77,14 @@ public interface SearchDao {
     int updateTzsStatus(String wsh);
 
     /**
-     * 清空催报催缴临时表
+     * 已申报数据统计
      */
-    int deleteCbcjTmpData();
+    void getHxzgYsbtj();
 
     /**
-     * 保存催报催缴临时数据
+     * 催报催缴临时数据生成
      */
-    int saveCbcjTmpData(Integer tjnd);
+    void getHxzgCbcj(int tjnd);
 
     /**
      * 取得未申报信息列表

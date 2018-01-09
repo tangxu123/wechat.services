@@ -1,8 +1,9 @@
 package com.ludateam.wechat.services;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -167,7 +168,7 @@ public class TimedSendingTask {
 				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
 				fsrwEntity.setShsx("1");
 				fsrwEntity.setTmid(0);
-				fsrwEntity.setYxq(0);
+				fsrwEntity.setYxq(1);
 				fsrwEntity.setQyhid(1);
 				fsrwEntity.setWxyyid(14);
 				searchDao.saveFsrw(fsrwEntity);
@@ -191,19 +192,32 @@ public class TimedSendingTask {
 	}
 
 	/**
+	 * 催报催缴数据提前作成
+	 * 
+	 */
+	@Scheduled(cron = "0 20 9 10 * ?")
+	public void executeCbcjBefore() {
+		logger.info("已申报数据统计开始");
+		searchDao.getHxzgYsbtj();
+		logger.info("已申报数据统计结束");
+	}
+	
+	/**
 	 * 催报催缴消息
 	 * 
 	 */
 	@Scheduled(cron = "0 30 9 10 * ?")
 	public void executeCbcj() {
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+		String today = format.format(new Date());
+		String year = today.substring(0, 4);
+		String month =today.substring(4, 6);
+		String day =today.substring(6);
+		String todayStr = year + "年" + month + "月" + day + "日";
+		int tjnd = Integer.parseInt(today.substring(0, 6));
+		searchDao.getHxzgCbcj(tjnd);
 		
-		searchDao.deleteCbcjTmpData();
-		Calendar cal = Calendar.getInstance();
-		int year = cal.get(Calendar.YEAR);
-		int month = cal.get(Calendar.MONTH);
-		String strTjnd = String.valueOf(year) + String.valueOf(month);
-		int tjnd = Integer.parseInt(strTjnd);
-		searchDao.saveCbcjTmpData(tjnd);
 		List<SssxTzsEntity> wsbList = searchDao.getWsbList();
 		if (wsbList == null || wsbList.size() == 0) {
 			logger.info("暂无催报催缴信息");
@@ -216,10 +230,10 @@ public class TimedSendingTask {
 			if (StrKit.isBlank(wxzhid)) {
 				continue;
 			} else {
-				String content = tzsEntity.getNsrmc() + ":（纳税人识别号："
-						+ tzsEntity.getShxydm() + "）\n你单位于" + strTjnd
-						+ "有如下税种需要申报：" + tzsEntity.getSssxMc()
-						+ "，请在规定的申报期内申报纳税。";
+				String content = tzsEntity.getNsrmc() + "（纳税人识别号:"
+						+ tzsEntity.getShxydm() + "）:\n截止" + todayStr
+						+ "，本征期有如下税种尚未申报：" + tzsEntity.getSssxMc()
+						+ "，请在规定的申报期内申报纳税，如已申报请忽略。";
 				logger.info(content);
 				FsrwEntity fsrwEntity = new FsrwEntity();
 				fsrwEntity.setDxnr(content);
@@ -230,8 +244,10 @@ public class TimedSendingTask {
 				fsrwEntity.setRydm(tzsEntity.getSlryDm());
 				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
 				fsrwEntity.setShsx("1");
-				fsrwEntity.setTmid(99);
+				fsrwEntity.setTmid(0);
 				fsrwEntity.setYxq(1);
+				fsrwEntity.setQyhid(1);
+				fsrwEntity.setWxyyid(15);
 				searchDao.saveFsrw(fsrwEntity);
 
 				BigDecimal rwid = fsrwEntity.getRwid();
@@ -240,18 +256,15 @@ public class TimedSendingTask {
 				for (int j = 0; j < wxzhidList.size(); j++) {
 					FsmdEntity fsmdEntity = new FsmdEntity();
 					fsmdEntity.setRwid(rwid);
-					fsmdEntity.setDxnr(content);
+					fsmdEntity.setDxnr(null);
 					fsmdEntity.setFsr(djxh);
 					fsmdEntity.setFssx("0");
 					fsmdEntity.setSjhm(wxzhidList.get(j));
 					fsmdEntity.setWxzhid(wxzhidList.get(j));
 					searchDao.saveFsmd(fsmdEntity);
 				}
-				//searchDao.updateTzsStatus(tzsEntity.getWsh());
 			}
 		}
-		
-		searchDao.deleteCbcjTmpData();
 	}
 	
 	/**

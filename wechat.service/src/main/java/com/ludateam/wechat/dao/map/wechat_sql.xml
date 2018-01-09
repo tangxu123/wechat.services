@@ -268,34 +268,16 @@
 
         ]]>
     </update>
-    <delete id="deleteCbcjTmpData">
+	<update id="getHxzgYsbtj" statementType="CALLABLE">
 		<![CDATA[
-
-			delete from db_wx.t_wx_cbcj_tmp
-
-        ]]>
-    </delete>
-    <insert id="saveCbcjTmpData" parameterType="Integer">
+			{ CALL db_zgfz.p_zg_ysbtj(sysdate) }
+		]]>
+	</update>
+	<update id="getHxzgCbcj" statementType="CALLABLE" parameterType="int">
 		<![CDATA[
-
-			INSERT INTO db_wx.t_wx_cbcj_tmp (djxh, nsrmc, shxydm, zgswskfj_dm, ssgly_dm, zsxmmcs)
-			SELECT m.djxh,n.nsrmc,NVL2(n.shxydm, n.shxydm, n.nsrsbh) shxydm,m.zgswskfj_dm,n.ssgly_dm,m.zsxmmcs
-			  FROM (	SELECT  tmp.djxh,
-			                 			tmp.zgswskfj_dm,
-			                 			TO_CHAR(WMSYS.WM_CONCAT(tmp.zsxmmc)) zsxmmcs
-			            	  FROM ( SELECT 
-						            	  t.djxh,
-						            	  t.zgswskfj_dm, 
-						            	  (select z.zsxmmc from hx_dm_qg.dm_gy_zsxm z where z.zsxm_dm = t.zsxm_dm) zsxmmc
-			                    FROM DB_ZGFZ.T_ZG_YSBTJ t
-			                   WHERE TJNY = #{tjnd}
-			                     AND WSBBZ = 'Y'
-			                     ) tmp
-			           GROUP BY tmp.djxh, tmp.zgswskfj_dm
-			           ) m, hx_dj.dj_nsrxx n WHERE m.djxh = n.djxh
-
-        ]]>
-    </insert>
+			{ CALL db_zgfz.p_zg_cbcj(#{0}) }
+		]]>
+	</update>
     <select id="getWsbList" resultMap="wsbList">
 		<![CDATA[
 
@@ -319,7 +301,7 @@
 
 			SELECT t.yh_dm yhid,
 			       t.yh_mc xm,
-			       t.wxh,
+			       (SELECT w.wxh FROM db_qx.t_qx_wx w WHERE w.yh_dm = t.yh_dm) wxh,
 			       '' dzyjdz,
 			       DECODE(lxdh, null, sjdh, lxdh) sjhm,
 			       (SELECT b.bmdm FROM db_wx.t_wx_bmdm b WHERE b.swjg_dm = t.swjg_dm) bmid,
