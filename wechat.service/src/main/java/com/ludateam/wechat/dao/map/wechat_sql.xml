@@ -301,7 +301,7 @@
 
 			SELECT t.yh_dm yhid,
 			       t.yh_mc xm,
-			       (SELECT w.wxh FROM db_qx.t_qx_wx w WHERE w.yh_dm = t.yh_dm) wxh,
+			       '' wxh,
 			       '' dzyjdz,
 			       DECODE(lxdh, null, sjdh, lxdh) sjhm,
 			       (SELECT b.bmdm FROM db_wx.t_wx_bmdm b WHERE b.swjg_dm = t.swjg_dm) bmid,
@@ -316,6 +316,12 @@
 				AND swjg_dm <> '13101040000'
 				AND LENGTH(sjdh) = 11
 				AND NOT EXISTS (SELECT 1 FROM db_wx.t_wx_sjhycmd s WHERE s.sjhm = t.sjdh)
+			UNION ALL
+			SELECT w.yh_dm yhid,y.yh_mc xm,w.wxh,'' dzyjdz, '' sjhm, b.bmdm bmid, y.zw
+			  FROM db_qx.t_qx_wx w, db_qx.t_qx_yh y,db_wx.t_wx_bmdm b
+			WHERE w.yh_dm = y.yh_dm
+				AND b.swjg_dm = y.swjg_dm
+			    AND w.yxbz = 'Y'
 			UNION ALL
 			SELECT yhid, xm, wxh, dzyjdz, sjhm, bmid, zw
 		  	  FROM db_wx.t_wx_zgytxl
@@ -427,4 +433,29 @@
 
         ]]>
 	</select>
+    <update id="updateSmsStatus" parameterType="com.ludateam.wechat.dto.SendStatusDto">
+    	<![CDATA[
+   			update db_zgfz.t_fsmd t set t.fssx = #{fssx} , t.fsz =#{msgGroup, jdbcType=VARCHAR}  
+   			where t.rwid = #{rwid} and t.sjhm IN
+   		]]>
+		<foreach item="sjhmList" index="index" collection="sjhmList" open="("   close=")" separator=",">
+		    #{sjhmList}
+		</foreach>
+ 	</update>
+    <update id="updateSmsSendStatus" parameterType="com.ludateam.wechat.dto.SendStatusDto">
+    	<![CDATA[
+   			update db_zgfz.t_fsmd t set t.fssx = #{fssx} where t.fsz =#{msgGroup, jdbcType=VARCHAR} and t.sjhm IN
+   		]]>
+		<foreach item="sjhmList" index="index" collection="sjhmList" open="("   close=")" separator=",">
+		    #{sjhmList}
+		</foreach>
+ 	</update>
+    <update id="updateWechatSendStatus" parameterType="com.ludateam.wechat.dto.SendStatusDto">
+    	<![CDATA[
+   			update db_zgfz.t_fsmd t set t.fssx = #{fssx} where t.rwid = #{rwid} and t.wxzhid IN
+   		]]>
+        <foreach item="wxzhidList" index="index" collection="wxzhidList" open="("   close=")" separator=",">
+            #{wxzhidList}
+        </foreach>
+ 	</update>
 </mapper>

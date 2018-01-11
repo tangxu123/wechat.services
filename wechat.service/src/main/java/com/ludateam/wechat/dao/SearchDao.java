@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.ludateam.wechat.dto.SendStatusDto;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
 import com.ludateam.wechat.entity.BindingEntity;
@@ -186,4 +187,20 @@ public interface SearchDao {
      * 取得重点企业的用户id
      */
     List<VIPUserEntity> getVIPUserList();
+
+	/**
+	 * 更新短信状态
+	 */
+	int updateSmsStatus(SendStatusDto dto);
+
+	/**
+	 * 更新短信发送状态
+	 */
+	int updateSmsSendStatus(SendStatusDto dto);
+
+	/**
+	 * 更新微信发送状态
+	 */
+	int updateWechatSendStatus(SendStatusDto dto);
+
 }

@@ -18,20 +18,21 @@ package com.ludateam.wechat.amqp;
  */
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.ChannelAwareMessageListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSON;
+import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.MqJsonDto;
 import com.ludateam.wechat.dto.SendMsgResultDto;
-import com.ludateam.wechat.entity.QiYeTextMsg;
-import com.ludateam.wechat.entity.SmsRequestParam;
-import com.ludateam.wechat.entity.Text;
+import com.ludateam.wechat.dto.SendStatusDto;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.PropertyUtil;
 import com.rabbitmq.client.Channel;
@@ -40,7 +41,12 @@ import com.rabbitmq.client.Channel;
  * @author Him
  */
 @Component
-public class LudaMessageHandler implements ChannelAwareMessageListener {
+public class LudaMessageHandler extends CommonServiceHandler implements
+		ChannelAwareMessageListener {
+	
+    @Autowired
+    protected SearchDao searchDao;
+    
     private static Logger logger = Logger.getLogger(LudaMessageHandler.class);
 
 
@@ -59,115 +65,68 @@ public class LudaMessageHandler implements ChannelAwareMessageListener {
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
         String weburl = PropertyUtil.getProperty("web.url") + "/wechat/sms/send";
-		String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToSms";
-		String result = "";
-		String status = "";
-		String msgGroup = "";
-		String rwid = "";
-		String sjhm = "";
+		
 		try {
-			result = HttpKit.post(weburl, sendParam, headers);
+			String result = HttpKit.post(weburl, sendParam, headers);
 			Map resultMap = JSON.parseObject(result, Map.class);
-			msgGroup = (String) resultMap.get("msgGroup");
-			rwid = (String) resultMap.get("rwId");
-			sjhm = (String) resultMap.get("sjhm");
+			String msgGroup = (String) resultMap.get("msgGroup");
+			String rwid = (String) resultMap.get("rwId");
+			String sjhm = (String) resultMap.get("sjhm");
+			List<String> sjhmList = splitSendList(sjhm);
+			SendStatusDto dto = new SendStatusDto();
+			dto.setRwid(rwid);
+			dto.setMsgGroup(msgGroup);
+			dto.setSjhmList(sjhmList);
+			if (msgGroup == null || "".equals(msgGroup)) {
+				dto.setFssx(DXFSZT_YMAS_FAILURE);
+			} else {
+				dto.setFssx(DXFSZT_YMAS_SUCCESS);
+			}
+			
+			int count = searchDao.updateSmsStatus(dto);
+			logger.info("sms--message--send--yun--mars--result----" + count);
+			logger.info("sms--message--send--yun--mars--end--");
 		} catch (Exception e) {
 			logger.info("sms--message--send--yun--mars--error--happened--");
 			e.printStackTrace();
 		}
-
-		sjhm = "'" + sjhm.replace(",", "','") + "'";
-		if (msgGroup == null || "".equals(msgGroup)) {
-			status = "5";
-		} else {
-			status = "4";
-		}
-		
-		SmsRequestParam requestParam = new SmsRequestParam();
-		requestParam.setRwid(rwid);
-		requestParam.setMsgId(msgGroup);
-		requestParam.setSjh(sjhm);
-		requestParam.setStatus(status);
-		try {
-			String postJson = JSON.toJSONString(requestParam);
-			result = HttpKit.post(nmhurl, postJson, headers);
-		} catch (Exception e) {
-			logger.info("sms--message--send--result--callback--error--happened--");
-			e.printStackTrace();
-		}
-		logger.info("sms--message--send--yun--mars--end--");
 	}
 
 	@RabbitListener(queues = "Q_WEIXIN")
 	public void onWeixinMessage(Message message, Channel channel) throws Exception {
 		
 		logger.info("send--weixin--message--start--");
-		
-		String mqjson = new String(message.getBody());
-        HashMap<String, String> headers = new HashMap<String, String>();
-        headers.put("Content-type", "application/json");
-		
 		try {
+			String mqjson = new String(message.getBody());
 			MqJsonDto mqJsonDto = JSON.parseObject(mqjson, MqJsonDto.class);
 			String rwid = mqJsonDto.getRwid();
 			String wxzh = mqJsonDto.getWxzh();
-			SendMsgResultDto resultDto = sendTextMessage(mqJsonDto, headers);
-			String uswxzh = resultDto.getInvaliduser();
-			if (uswxzh != null && !"".equals(uswxzh)) {
-				uswxzh = "'" + uswxzh.replace(",", "','") + "'";
+			SendMsgResultDto resultDto = sendTextMessage(mqJsonDto);
+			List<String> wxzhidList = splitSendList(wxzh);
+			SendStatusDto sendParam = new SendStatusDto();
+			sendParam.setRwid(rwid);
+			sendParam.setWxzhidList(wxzhidList);
+			if ("0".equals(resultDto.getErrcode())) {
+				sendParam.setFssx(DXFSZT_SUCCESS);
+				int count = searchDao.updateWechatSendStatus(sendParam);
+				logger.info("send--weixin--message--success--" + count);
+				String invaliduser = resultDto.getInvaliduser();
+				if (invaliduser != null && !"".equals(invaliduser)) {
+					List<String> invaliduserList = splitSendList(invaliduser);
+					sendParam.setWxzhidList(invaliduserList);
+					sendParam.setFssx(DXFSZT_FAILURE);
+					count = searchDao.updateWechatSendStatus(sendParam);
+					logger.info("send--weixin--message--failure--" + count);
+				}
+			} else {
+				sendParam.setFssx(DXFSZT_FAILURE);
+				int count = searchDao.updateWechatSendStatus(sendParam);
+				logger.info("send--weixin--message--failure--" + count);
 			}
-
-			wxzh = "'" + wxzh.replace(",", "','") + "'";
-			String nmhurl = PropertyUtil.getProperty("nmhsjpt.url") + "/sendMsgToWeChat";
-			String sendParam = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + wxzh + "\",\"uswxzh\":\"" + uswxzh + "\"}";
-			String result = HttpKit.post(nmhurl, sendParam, headers);
-			logger.info("wechat--message--send--result--callback--");
 		} catch (Exception e) {
 			logger.info("send--text--message--exception--happened");
 			e.printStackTrace();
 		}
 		logger.info("send--weixin--message--end--");
-	}
-	
-	/**
-	 * 发送文本信息
-	 * 
-	 * @param mqJsonDto
-	 *            队列消息
-	 * @param headers
-	 *            请求报文头部
-	 * 
-	 * @return 发送结果
-	 */
-	private SendMsgResultDto sendTextMessage(MqJsonDto mqJsonDto,
-			HashMap<String, String> headers) {
-		
-		int qyhid = mqJsonDto.getQyhid();
-		String weburl = PropertyUtil.getProperty(String.valueOf(qyhid)) + "/wechat/qyapi/sendTextMessage";
-		String userid = mqJsonDto.getWxzh();
-		String content = mqJsonDto.getDxnr();
-		String agentid = String.valueOf(mqJsonDto.getWxyyid());
-
-		QiYeTextMsg textMsg = new QiYeTextMsg();
-		textMsg.setTouser(userid.replace(",", "|"));
-		textMsg.setToparty("");
-		textMsg.setTotag("");
-		textMsg.setMsgtype("text");
-		textMsg.setAgentid(agentid);
-		textMsg.setText(new Text(content));
-		textMsg.setSafe("0");
-
-		SendMsgResultDto resultDto = null;
-		try {
-			String sendParam = JSON.toJSONString(textMsg);
-			String resultJson = HttpKit.post(weburl, sendParam, headers);
-			logger.info("send param:" + sendParam);
-			logger.info("send result:" + resultJson);
-			resultDto = JSON.parseObject(resultJson, SendMsgResultDto.class);
-		} catch (Exception e) {
-			logger.info("send--text--message--exception--happened");
-			e.printStackTrace();
-		}
-		return resultDto;
 	}
 }
