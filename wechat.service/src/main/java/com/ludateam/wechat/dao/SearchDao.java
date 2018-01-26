@@ -4,6 +4,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.ludateam.wechat.dto.HolidayPeriodDto;
 import com.ludateam.wechat.dto.SendStatusDto;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
@@ -86,6 +87,16 @@ public interface SearchDao {
      * 催报催缴临时数据生成
      */
     void getHxzgCbcj(int tjnd);
+    
+	/**
+	 * 取得每月纳税申报期限
+	 */
+	String getHxzgNssbqx(String dateStr);
+
+	/**
+	 * 取得每月节假日期间段
+	 */
+	List<HolidayPeriodDto> getHolidayPeriodList(String dateStr);
 
     /**
      * 取得未申报信息列表

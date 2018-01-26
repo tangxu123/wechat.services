@@ -37,6 +37,10 @@
         <result column="ZGSWSKFJ_DM" property="zgswskfjDm"/>
         <result column="WXZHID" property="wxzhid"/>
     </resultMap>
+    <resultMap id="holidayList" type="com.ludateam.wechat.dto.HolidayPeriodDto">
+        <result column="JJRQSRQ" property="startDate"/>
+        <result column="JJRZZRQ" property="endDate"/>
+    </resultMap>
     <insert id="saveReseiceMsg" parameterType="Map">
 		<![CDATA[
 
@@ -88,7 +92,6 @@
 
 			SELECT v.xm, v.yhid, v.wxh, v.sjhm, v.dzyjdz, v.bmid, v.zw
 			  FROM DB_ZGFZ.V_QYWX_TXL v
-			WHERE NOT EXISTS (SELECT 1 FROM db_wx.t_wx_sjhycmd s WHERE s.sjhm = v.sjhm)
 
         ]]>
     </select>
@@ -278,6 +281,24 @@
 			{ CALL db_zgfz.p_zg_cbcj(#{0}) }
 		]]>
 	</update>
+	<select id="getHxzgNssbqx" resultType="String" parameterType="String">
+		<![CDATA[
+			SELECT t.rq
+			  FROM hxwt.t_wshd_zq t
+			 WHERE t.zqbs = '1'
+			   AND t.fjdm = '13100010000'
+			   AND t.sxms like '申报纳税期限截至%'
+			   AND substr(t.rq, 1, 7) = #{0}
+		]]>
+	</select>
+	<select id="getHolidayPeriodList" resultMap="holidayList" parameterType="String">
+		<![CDATA[
+			SELECT t.jjrqsrq, t.jjrzzrq
+			  FROM hx_cs_zdy.cs_gy_jjr t
+			 WHERE t.swjg_dm = '13100000000'
+			   AND t.yyyf = #{0}
+		]]>
+	</select>
     <select id="getWsbList" resultMap="wsbList">
 		<![CDATA[
 

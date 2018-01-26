@@ -1,8 +1,10 @@
 package com.ludateam.wechat.services;
 
 import java.math.BigDecimal;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -10,9 +12,11 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import com.ludateam.wechat.amqp.MessageSenderHandler;
 import com.ludateam.wechat.dao.SearchDao;
+import com.ludateam.wechat.dto.HolidayPeriodDto;
 import com.ludateam.wechat.dto.TaskListDto;
 import com.ludateam.wechat.entity.FsmdEntity;
 import com.ludateam.wechat.entity.FsrwEntity;
@@ -195,7 +199,7 @@ public class TimedSendingTask {
 	 * 催报催缴数据提前作成
 	 * 
 	 */
-	@Scheduled(cron = "0 20 9 10 * ?")
+	@Scheduled(cron = "0 20 9 * * ?")
 	public void executeCbcjBefore() {
 		logger.info("已申报数据统计开始");
 		searchDao.getHxzgYsbtj();
@@ -206,18 +210,24 @@ public class TimedSendingTask {
 	 * 催报催缴消息
 	 * 
 	 */
-	@Scheduled(cron = "0 30 9 10 * ?")
+	@Scheduled(cron = "0 30 9 * * ?")
 	public void executeCbcj() {
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
 		String today = format.format(new Date());
 		String year = today.substring(0, 4);
-		String month =today.substring(4, 6);
-		String day =today.substring(6);
+		String month = today.substring(4, 6);
+		String day = today.substring(6);
 		String todayStr = year + "年" + month + "月" + day + "日";
-		int tjnd = Integer.parseInt(today.substring(0, 6));
-		searchDao.getHxzgCbcj(tjnd);
+		int tjnd = Integer.parseInt(year + month);
+		boolean sendFlag = checkDate(year, month, day);
+		if (!sendFlag) {
+			return;
+		}
 		
+		// 加工催报催缴数据到临时表中
+		searchDao.getHxzgCbcj(tjnd);
+		// 取得未申报的数据进行推送
 		List<SssxTzsEntity> wsbList = searchDao.getWsbList();
 		if (wsbList == null || wsbList.size() == 0) {
 			logger.info("暂无催报催缴信息");
@@ -422,4 +432,111 @@ public class TimedSendingTask {
 		return arrList;
 	}
 	
+	/**
+	 * 判断当天是否是申报纳税期限截至日的三个工作日之内(含截至日当天)<br>
+	 * 三个工作日之内给纳税人推送催报催缴信息，如果遇到周末或节假日则不计入统计
+	 * 
+	 * @param year
+	 *            年份
+	 * @param month
+	 *            月份
+	 * @param day
+	 *            日
+	 * 
+	 * @return 是否推送
+	 * 
+	 */
+	private boolean checkDate(String year, String month, String day) {
+		boolean result = false;
+		String thisMonth = year + "-" + month;
+		String currMonth = year + month;
+		String today = year + "-" + month + "-" + day;
+		// 取得每月纳税申报期限
+		String nssbqx = searchDao.getHxzgNssbqx(thisMonth);
+		// 取得截至日期(含截止日期)前的3个工作日
+		List<String> workdayList = getWorkdayList(nssbqx, currMonth, 3);
+		if (!CollectionUtils.isEmpty(workdayList) && workdayList.contains(today)) {
+			result = true;
+		}
+		return result;
+	}
+	
+	/**
+	 * 取得截至日期(含截止日期)前的若干个工作日
+	 * 
+	 * @param endDate
+	 *            截止日期(yyyy-MM-dd)
+	 * @param currMonth
+	 *            当月日期字符串
+	 * @param days
+	 *            天数
+	 * 
+	 * @return 工作日集合
+	 * 
+	 */
+	private List<String> getWorkdayList(String endDate, String currMonth,
+			int days) {
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		List<String> workdayList = new ArrayList<String>();
+		workdayList.add(endDate);
+
+		List<HolidayPeriodDto> periodList = searchDao.getHolidayPeriodList(currMonth);
+		List<String> holidayList = getAllHolidays(periodList);
+
+		try {
+			Calendar calendar = Calendar.getInstance();
+			calendar.setTime(format.parse(endDate));
+			for (int i = 0; i < 31; i++) {
+				calendar.add(Calendar.DATE, -1);
+				String varDate = format.format(calendar.getTime());
+				// 这一天是节假日
+				if (!holidayList.contains(varDate)) {
+					workdayList.add(varDate);
+					if (days == workdayList.size()) {
+						break;
+					}
+				}
+			}
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+
+		return workdayList;
+	}
+	
+	/**
+	 * 取得所有节假日
+	 * 
+	 * @param periodList
+	 *            节假日时间段列表
+	 * 
+	 * @return 所有节假日
+	 * 
+	 */
+	private List<String> getAllHolidays(List<HolidayPeriodDto> periodList) {
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		List<String> holidayList = new ArrayList<String>();
+		
+		try {
+			for (HolidayPeriodDto periodDto : periodList) {
+				Calendar calendar = Calendar.getInstance();
+				calendar.setTime(periodDto.getStartDate());
+				for (int i = 0; i < 31; i++) {
+					if (calendar.getTime().compareTo(periodDto.getEndDate()) < 0) {
+						holidayList.add(format.format(calendar.getTime()));
+						calendar.add(Calendar.DATE, 1);
+					} else if (calendar.getTime().compareTo(periodDto.getEndDate()) == 0) {
+						holidayList.add(format.format(calendar.getTime()));
+						break;
+					}
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return holidayList;
+	}
 }
