@@ -67,7 +67,6 @@ public class TimedTaskSyncUser {
         }
         sendParam += "\"}";
 
-        //logger.info("post sync user:" + sendParam);
         HashMap<String, String> headers = new HashMap<String, String>();
         headers.put("Content-type", "application/json");
         String requestHost = PropertyUtil.getProperty("1");
@@ -88,14 +87,15 @@ public class TimedTaskSyncUser {
             jobDto.setWxqyhId("1");
             searchDao.saveSyncUserJob(jobDto);
         } catch (Exception e) {
-            e.printStackTrace();
+			sendTextMessage("1", "10", "专管员通讯录同步异常");
+			e.printStackTrace();
         }
     }
 
     /**
-     * 取得异步任务的执行结果（9:30:00 开始--9:31:59 每隔5秒监听一次）
+     * 取得异步任务的执行结果（9:31:00 开始--9:32:59 每隔10秒监听一次）
      */
-    @Scheduled(cron = "0-59/5 0-1,30-31 * * * ?")
+    @Scheduled(cron = "0-59/10 1-2,31-32 * * * ?")
     public void executeJobResult() {
 
         List<SyncUserJobDto> jobidList = searchDao.getJobidList();
@@ -145,7 +145,6 @@ public class TimedTaskSyncUser {
         sendParam += "\"}";
 
         try {
-            //logger.info("post sync user:" + sendParam);
             HashMap<String, String> headers = new HashMap<String, String>();
             headers.put("Content-type", "application/json");
             String requestHost = PropertyUtil.getProperty("2");
@@ -153,13 +152,12 @@ public class TimedTaskSyncUser {
             String result = HttpKit.post(weburl, sendParam, headers);
             logger.info("sync user result:" + result);
 
-            SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
-            if ("0".equals(jobDto.getErrcode())) {
-                jobDto.setZxsl(resultList.size());
-                jobDto.setWxqyhId("2");
-                searchDao.saveSyncUserJob(jobDto);
-            }
+			SyncUserJobDto jobDto = JSON.parseObject(result, SyncUserJobDto.class);
+			jobDto.setZxsl(resultList.size());
+			jobDto.setWxqyhId("2");
+			searchDao.saveSyncUserJob(jobDto);
         } catch (Exception e) {
+        	sendTextMessage("2", "4", "徐汇税务通讯录同步异常");
             e.printStackTrace();
         }
     }
