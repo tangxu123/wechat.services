@@ -107,7 +107,7 @@
 				UPDATE SET T.SJHM = TMP.SJHM
 			WHEN NOT MATCHED THEN
 				INSERT (id, sqid, smid, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj, sfgz, sjhlx)
-				VALUES(db_zgfz.sq_wxqy_dzid.nextval,
+				VALUES(DB_ZGFZ.GET_DZID_NEXTVAL('DB_ZGFZ','SQ_WXQY_DZID'),
 							tmp.sqid,
 							tmp.smid,
 							tmp.sfzjhm,
