@@ -479,4 +479,10 @@
             #{wxzhidList}
         </foreach>
  	</update>
+ 	<insert id="saveWechatSendRecord" parameterType="com.ludateam.wechat.dto.RecordWechatDto">
+ 	    <![CDATA[
+      		insert into db_wx.t_wx_fsjl(id, wxzhid, djxh, fsnr, fssj, wxyyid)
+      		values(db_zgfz.sq_wxqy_fsjlid.nextval, #{wxzhid}, #{djxh}, #{fsnr}, sysdate, #{wxyyid} )
+   		]]>
+ 	</insert>
 </mapper>

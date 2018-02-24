@@ -41,4 +41,9 @@ public interface CallService {
 	@POST
 	@Path("/getVipSqid")
 	String getVipSqid(@QueryParam("userid") String userid);
+	
+	@POST
+	@Path("/getSmbsSqid")
+	String getSmbsSqid(@QueryParam("userid") String userid);
+	
 }

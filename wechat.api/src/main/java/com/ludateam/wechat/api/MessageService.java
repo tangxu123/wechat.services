@@ -43,7 +43,7 @@ public interface MessageService {
 	/**
 	 * 接受消息（文本消息、图片消息等）
 	 * 
-	 * @param request
+	 * @param msgJson
 	 *            请求内容
 	 * 
 	 * @return 存储结果
@@ -51,4 +51,16 @@ public interface MessageService {
 	@POST
 	@Path("/receiveMessage")
 	String receiveMessage(@QueryParam("msgJson") String msgJson);
+	
+	/**
+	 * 保存系统发送给应用的消息
+	 * 
+	 * @param msgJson
+	 *            请求内容
+	 * 
+	 * @return 存储结果
+	 */
+	@POST
+	@Path("/saveSystemMessage")
+	String saveSystemMessage(@QueryParam("msgJson") String msgJson);
 }

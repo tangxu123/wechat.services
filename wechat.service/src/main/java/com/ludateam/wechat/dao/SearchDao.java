@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.ludateam.wechat.dto.HolidayPeriodDto;
+import com.ludateam.wechat.dto.RecordWechatDto;
 import com.ludateam.wechat.dto.SendStatusDto;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
@@ -213,5 +214,10 @@ public interface SearchDao {
 	 * 更新微信发送状态
 	 */
 	int updateWechatSendStatus(SendStatusDto dto);
-
+	
+	/**
+	 * 保存微信发送记录
+	 */
+	int saveWechatSendRecord(RecordWechatDto dto);
+	
 }

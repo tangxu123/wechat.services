@@ -36,6 +36,7 @@ import com.alibaba.fastjson.JSON;
 import com.ludateam.wechat.api.CallService;
 import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.BindingResult;
+import com.ludateam.wechat.dto.RecordWechatDto;
 import com.ludateam.wechat.entity.BindingEntity;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.PropertyUtil;
@@ -99,6 +100,28 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
 			e.printStackTrace();
 		}
 		
+		return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
+	}
+
+	@Override
+	public String saveSystemMessage(String msgJson) {
+		
+		RecordWechatDto resultDto = JSON.parseObject(msgJson, RecordWechatDto.class);
+		String resultJson = callService.getBindingList(resultDto.getWxzhid());
+		BindingResult bindResult = JSON.parseObject(resultJson, BindingResult.class);
+		String strDjxh = "";
+		if ("0".equals(bindResult.getErrcode())) {
+			List<BindingEntity> bindingList = bindResult.getBindingList();
+			for (int i = 0; i < bindingList.size(); i++) {
+				BindingEntity bindingEntity = bindingList.get(i);
+				if ("Y".equals(bindingEntity.getIsUse())) {
+					strDjxh = bindingEntity.getDjxh();
+					break;
+				}
+			}
+		}
+		resultDto.setDjxh(strDjxh);
+		searchDao.saveWechatSendRecord(resultDto);
 		return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
 	}
 }

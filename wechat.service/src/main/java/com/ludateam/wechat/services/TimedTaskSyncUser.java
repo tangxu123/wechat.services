@@ -88,7 +88,11 @@ public class TimedTaskSyncUser {
             searchDao.saveSyncUserJob(jobDto);
         } catch (Exception e) {
 			sendTextMessage("1", "10", "专管员通讯录同步异常");
-			e.printStackTrace();
+			try {
+				throw new Exception(e);
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
         }
     }
 
@@ -173,7 +177,7 @@ public class TimedTaskSyncUser {
         try {
             String xhzgyHost = PropertyUtil.getProperty("1");
             String xhzgyWeburl = xhzgyHost + "/wechat/user/simplelist";
-            String xhzgyParam = makeRequestParam("7");
+            String xhzgyParam = makeRequestParam("1");
             String xhzgyResult = HttpKit.post(xhzgyWeburl, xhzgyParam, headers);
             UserListDto xhzgyUserDto = JSON.parseObject(xhzgyResult, UserListDto.class);
             if ("0".equals(xhzgyUserDto.getErrcode())) {
@@ -293,9 +297,7 @@ public class TimedTaskSyncUser {
 
         String create_url = host + "/wechat/tag/create";
         String get_url = host + "/wechat/tag/list";
-        String create_param = "{\n" +
-                "   \"tagname\": \"重点企业\"\n" +
-                "}";
+        String create_param = "{\"tagname\": \"重点企业\"}";
 
         String get_result = HttpKit.post(get_url, "", headers);
         TagListEntity tagListEntity = JSON.parseObject(get_result, TagListEntity.class);
@@ -306,7 +308,6 @@ public class TimedTaskSyncUser {
                 String create_result = HttpKit.post(create_url, create_param, headers);
                 logger.info("***** executeUserTag *****" + create_result);
                 TagCreatResultEntity tagCreatResultEntity = JSON.parseObject(create_result, TagCreatResultEntity.class);
-
                 if ("0".equals(tagCreatResultEntity.getErrcode())) {
                     tagid = tagCreatResultEntity.getTagid();
                 }
@@ -323,19 +324,15 @@ public class TimedTaskSyncUser {
             tagDelUserRequestEntity.setTagid(tagid);
 
             List<String> userids = new ArrayList<String>();
-            for (TagUser user : tagUsersEntity.getUserlist()
-                    ) {
+            for (TagUser user : tagUsersEntity.getUserlist()) {
                 userids.add(user.getUserid());
             }
             String[] userarray = new String[userids.size()];
             tagDelUserRequestEntity.setUserlist(userids.toArray(userarray));
 
-            String jstr = JSON.toJSONString(tagDelUserRequestEntity);
-
-            logger.info(jstr);
-
-            String delusers_url = host + "/wechat/tag/deltagusers";
-            HttpKit.post(delusers_url, jstr, headers);
+            //String jstr = JSON.toJSONString(tagDelUserRequestEntity);
+            //String delusers_url = host + "/wechat/tag/deltagusers";
+            //HttpKit.post(delusers_url, jstr, headers);
 
             //增加人员
             String addusers_url = host + "/wechat/tag/addusers";
@@ -346,14 +343,11 @@ public class TimedTaskSyncUser {
             addusersRequestEntity.setTagid(tagid);
 
             List<String> adduserids = new ArrayList<String>();
-            for (VIPUserEntity vue : vipUserEntityList
-                    ) {
+            for (VIPUserEntity vue : vipUserEntityList) {
                 adduserids.add(vue.getWxzhid());
             }
             String[] adduserarray = new String[adduserids.size()];
             addusersRequestEntity.setUserlist(adduserids.toArray(adduserarray));
-
-
             String addusers_result = HttpKit.post(addusers_url, JSON.toJSONString(addusersRequestEntity), headers);
 
             logger.info("***** executeUserTag addusers_result *****" + addusers_result);

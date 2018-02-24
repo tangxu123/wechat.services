@@ -253,4 +253,24 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 		result.setSqid(sqidList.get(0));
 		return JSON.toJSONString(result);
 	}
+
+	@Override
+	public String getSmbsSqid(String userid) {
+		VipSqidDto sqidResult = new VipSqidDto();
+		String bindingListStr = getBindingList(userid);
+		BindingResult bindingResult = JSON.parseObject(bindingListStr, BindingResult.class);
+		List<BindingEntity> bindingList = bindingResult.getBindingList();
+		String bingingDjxh = "";
+		for (BindingEntity bindingEntity : bindingList) {
+			if ("Y".equals(bindingEntity.getIsUse())) {
+				bingingDjxh = bindingEntity.getDjxh();
+				break;
+			}
+		}
+		List<String> sqidList = searchDao.getVipSqid(userid, bingingDjxh);
+		sqidResult.setErrcode("0");
+		sqidResult.setErrmsg("success");
+		sqidResult.setSqid(sqidList.get(0));
+		return JSON.toJSONString(sqidResult);
+	}
 }
