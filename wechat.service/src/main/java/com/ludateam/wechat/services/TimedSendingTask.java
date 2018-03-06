@@ -17,7 +17,10 @@ import org.springframework.util.CollectionUtils;
 import com.ludateam.wechat.amqp.MessageSenderHandler;
 import com.ludateam.wechat.dao.SearchDao;
 import com.ludateam.wechat.dto.HolidayPeriodDto;
+import com.ludateam.wechat.dto.ReceivdUserDto;
 import com.ludateam.wechat.dto.TaskListDto;
+import com.ludateam.wechat.dto.UndeclaredListDto;
+import com.ludateam.wechat.entity.CbcjWsbEntity;
 import com.ludateam.wechat.entity.FsmdEntity;
 import com.ludateam.wechat.entity.FsrwEntity;
 import com.ludateam.wechat.entity.SssxTzsEntity;
@@ -32,7 +35,14 @@ public class TimedSendingTask {
 	private static final String SEND_METHOD_SMS = "1";
 	/** 发送方式：微信 */
 	private static final String SEND_METHOD_WECHAT = "2";
-	
+	/** 催报催缴状态：不需要催报 */
+	private static final String CBCJ_STATUS_NO = "0";
+	/** 催报催缴状态：提前一天催报 */
+	private static final String CBCJ_STATUS_DAY1 = "1";
+	/** 催报催缴状态：提前二天催报 */
+	private static final String CBCJ_STATUS_DAY2 = "2";
+	/** 催报催缴状态：提前三天催报 */
+	private static final String CBCJ_STATUS_DAY3 = "3";
 	
 	private static Logger logger = Logger.getLogger(TimedSendingTask.class);
 
@@ -210,7 +220,7 @@ public class TimedSendingTask {
 	 * 催报催缴消息
 	 * 
 	 */
-	@Scheduled(cron = "0 30 9 * * ?")
+	@Scheduled(cron = "0 25 9 * * ?")
 	public void executeCbcj() {
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
@@ -220,61 +230,47 @@ public class TimedSendingTask {
 		String day = today.substring(6);
 		String todayStr = year + "年" + month + "月" + day + "日";
 		int tjnd = Integer.parseInt(year + month);
-		boolean sendFlag = checkDate(year, month, day);
-		if (!sendFlag) {
+		String dateType = checkDate(year, month, day);
+		if (CBCJ_STATUS_NO.equals(dateType)) {
 			return;
 		}
-		
+				
 		// 加工催报催缴数据到临时表中
 		searchDao.getHxzgCbcj(tjnd);
 		// 取得未申报的数据进行推送
-		List<SssxTzsEntity> wsbList = searchDao.getWsbList();
+		List<CbcjWsbEntity> wsbList = searchDao.getWsbList();
 		if (wsbList == null || wsbList.size() == 0) {
 			logger.info("暂无催报催缴信息");
 			return;
 		}
 		
-		for (int i = 0; i < wsbList.size(); i++) {
-			SssxTzsEntity tzsEntity = wsbList.get(i);
-			String wxzhid = tzsEntity.getWxzhid();
-			if (StrKit.isBlank(wxzhid)) {
-				continue;
-			} else {
-				String content = tzsEntity.getNsrmc() + "（纳税人识别号:"
-						+ tzsEntity.getShxydm() + "）:\n截止" + todayStr
-						+ "，本征期有如下税种尚未申报：" + tzsEntity.getSssxMc()
-						+ "，请在规定的申报期内申报纳税，如已申报请忽略。";
-				logger.info(content);
-				FsrwEntity fsrwEntity = new FsrwEntity();
-				fsrwEntity.setDxnr(content);
-				fsrwEntity.setFsdx("0");
-				fsrwEntity.setFsfs(SEND_METHOD_WECHAT);
-				fsrwEntity.setLk("");
-				fsrwEntity.setNwbz("0");
-				fsrwEntity.setRydm(tzsEntity.getSlryDm());
-				fsrwEntity.setSbdm(tzsEntity.getZgswskfjDm());
-				fsrwEntity.setShsx("1");
-				fsrwEntity.setTmid(0);
-				fsrwEntity.setYxq(1);
-				fsrwEntity.setQyhid(1);
-				fsrwEntity.setWxyyid(15);
-				searchDao.saveFsrw(fsrwEntity);
-
-				BigDecimal rwid = fsrwEntity.getRwid();
-				String djxh = tzsEntity.getDjxh();
-				List<String> wxzhidList = removeDuplicateWxzhid(wxzhid);
-				for (int j = 0; j < wxzhidList.size(); j++) {
-					FsmdEntity fsmdEntity = new FsmdEntity();
-					fsmdEntity.setRwid(rwid);
-					fsmdEntity.setDxnr(null);
-					fsmdEntity.setFsr(djxh);
-					fsmdEntity.setFssx("0");
-					fsmdEntity.setSjhm(wxzhidList.get(j));
-					fsmdEntity.setWxzhid(wxzhidList.get(j));
-					searchDao.saveFsmd(fsmdEntity);
+		List<UndeclaredListDto> sendList = splitTaskListByDjxh(wsbList);
+		
+		if (CBCJ_STATUS_DAY2.equals(dateType) || CBCJ_STATUS_DAY3.equals(dateType)) {
+			for (int i = 0; i < sendList.size(); i++) {
+				UndeclaredListDto dto = sendList.get(i);
+				String fsdx = dto.getFsdx();
+				if (!fsdx.contains("2") && !fsdx.contains("3")) {
+					continue;
 				}
+				
+				String fsdxs = fsdx.replace("1,", "");
+				String content = getContent(dto, todayStr);
+				saveFsrwFsmd(dto, fsdxs, content, SEND_METHOD_WECHAT, dateType);
 			}
 		}
+		
+		if (CBCJ_STATUS_DAY1.equals(dateType)) {
+			for (int i = 0; i < sendList.size(); i++) {
+				UndeclaredListDto dto = sendList.get(i);
+				String fsdx = dto.getFsdx();
+				String content = getContent(dto, todayStr);
+				saveFsrwFsmd(dto, fsdx, content, SEND_METHOD_WECHAT, dateType);
+				saveFsrwFsmd(dto, fsdx, content, SEND_METHOD_SMS, dateType);
+			}
+		}
+		
+		logger.info("催报催缴推送信息已经插入完成");
 	}
 	
 	/**
@@ -443,11 +439,11 @@ public class TimedSendingTask {
 	 * @param day
 	 *            日
 	 * 
-	 * @return 是否推送
+	 * @return 是否推送日期
 	 * 
 	 */
-	private boolean checkDate(String year, String month, String day) {
-		boolean result = false;
+	private String checkDate(String year, String month, String day) {
+		String result = "";
 		String thisMonth = year + "-" + month;
 		String currMonth = year + month;
 		String today = year + "-" + month + "-" + day;
@@ -455,8 +451,14 @@ public class TimedSendingTask {
 		String nssbqx = searchDao.getHxzgNssbqx(thisMonth);
 		// 取得截至日期(含截止日期)前的3个工作日
 		List<String> workdayList = getWorkdayList(nssbqx, currMonth, 3);
-		if (!CollectionUtils.isEmpty(workdayList) && workdayList.contains(today)) {
-			result = true;
+		if (CollectionUtils.isEmpty(workdayList) || !workdayList.contains(today)) {
+			return CBCJ_STATUS_NO;
+		} else {
+			for (int i = 0; i < workdayList.size(); i++) {
+				if (today.equals(workdayList.get(i))) {
+					result = String.valueOf(i + 1);
+				}
+			}
 		}
 		return result;
 	}
@@ -539,4 +541,136 @@ public class TimedSendingTask {
 
 		return holidayList;
 	}
+	
+	/**
+	 * 根据企业登记序号分割未申报列表
+	 * 
+	 * @param wsbList
+	 *            任务列表
+	 * 
+	 * @return 未申报列表
+	 */
+	private List<UndeclaredListDto> splitTaskListByDjxh(List<CbcjWsbEntity> wsbList) {
+
+		String varDjxh = "";
+		List<UndeclaredListDto> resultList = new ArrayList<UndeclaredListDto>();
+		for (int i = 0; i < wsbList.size(); i++) {
+			CbcjWsbEntity wsbEntity = wsbList.get(i);
+			if (varDjxh.equals(wsbEntity.getDjxh())) {
+				ReceivdUserDto userDto = new ReceivdUserDto();
+				userDto.setBsylx(wsbEntity.getBsylx());
+				userDto.setSjhm(wsbEntity.getSjhm());
+				userDto.setWxzhid(wsbEntity.getWxzhid());
+				resultList.get(resultList.size() - 1).getUserList().add(userDto);
+				String fsdx = resultList.get(resultList.size() - 1).getFsdx();
+				if (!fsdx.contains(wsbEntity.getBsylx())) {
+					fsdx = fsdx + "," + wsbEntity.getBsylx();
+					resultList.get(resultList.size() - 1).setFsdx(fsdx);
+				}
+			}else{
+				varDjxh = wsbEntity.getDjxh();
+				UndeclaredListDto dto = new UndeclaredListDto();
+				dto.setDjxh(wsbEntity.getDjxh());
+				dto.setNsrmc(wsbEntity.getNsrmc());
+				dto.setShxydm(wsbEntity.getShxydm());
+				dto.setSlryDm(wsbEntity.getSlryDm());
+				dto.setZsxmmcs(wsbEntity.getZsxmmcs());
+				dto.setZgswskfjDm(wsbEntity.getZgswskfjDm());
+				dto.setFsdx(wsbEntity.getBsylx());
+				List<ReceivdUserDto> userList = new ArrayList<ReceivdUserDto>();
+				ReceivdUserDto userDto = new ReceivdUserDto();
+				userDto.setBsylx(wsbEntity.getBsylx());
+				userDto.setSjhm(wsbEntity.getSjhm());
+				userDto.setWxzhid(wsbEntity.getWxzhid());
+				userList.add(userDto);
+				dto.setUserList(userList);
+				resultList.add(dto);
+			}
+		}
+		
+		return resultList;
+	}
+	
+	/**
+	 * 取得发送消息的内容
+	 * 
+	 * @param dto
+	 *            未申报企业信息
+	 * @param todayStr
+	 *            当天日期
+	 * 
+	 * @return 消息内容
+	 */
+	private String getContent(UndeclaredListDto dto, String todayStr) {
+		String content = dto.getNsrmc() + "（纳税人识别号:" + dto.getShxydm()
+				+ "）:\n截止" + todayStr + "，本征期有如下税种尚未申报：" + dto.getZsxmmcs()
+				+ "，请在规定的申报期内申报纳税，如已申报请忽略。";
+		logger.info(content);
+		return content;
+	}
+	
+	/**
+	 * 保存发送任务表、发送名单表
+	 * 
+	 * @param dto
+	 *            未申报企业信息
+	 * @param fsdx
+	 *            发送对象
+	 * @param content
+	 *            信息内容
+	 * @param fsfs
+	 *            发送方式
+	 * @param dateType
+	 *            日期类型
+	 * 
+	 * @return 无
+	 */
+	private void saveFsrwFsmd(UndeclaredListDto dto, String fsdx,
+			String content, String fsfs, String dateType) {
+
+		FsrwEntity fsrwEntity = new FsrwEntity();
+		fsrwEntity.setDxnr(content);
+		fsrwEntity.setFsdx(fsdx);
+		fsrwEntity.setFsfs(fsfs);
+		fsrwEntity.setLk("");
+		fsrwEntity.setNwbz("0");
+		fsrwEntity.setRydm(dto.getSlryDm());
+		fsrwEntity.setSbdm(dto.getZgswskfjDm());
+		fsrwEntity.setShsx("1");
+		fsrwEntity.setTmid(0);
+		fsrwEntity.setYxq(1);
+		fsrwEntity.setQyhid(SEND_METHOD_WECHAT.equals(fsfs) ? 1 : 9);
+		fsrwEntity.setWxyyid(SEND_METHOD_WECHAT.equals(fsfs) ? 15 : 100);
+		searchDao.saveFsrw(fsrwEntity);
+
+		BigDecimal rwid = fsrwEntity.getRwid();
+		String djxh = dto.getDjxh();
+		String varItems = "";
+		List<ReceivdUserDto> userList = dto.getUserList();
+		for (int i = 0; i < userList.size(); i++) {
+			String item = "";
+			String bsylx = userList.get(i).getBsylx();
+			if (SEND_METHOD_WECHAT.equals(fsfs)) {
+				item = userList.get(i).getWxzhid();
+				if (!CBCJ_STATUS_DAY1.equals(dateType) && "1".equals(bsylx)) {
+					continue;
+				}
+			} else {
+				item = userList.get(i).getSjhm();
+			}
+
+			if (!varItems.contains(item)) {
+				varItems += "_" + item;
+				FsmdEntity fsmdEntity = new FsmdEntity();
+				fsmdEntity.setRwid(rwid);
+				fsmdEntity.setDxnr(null);
+				fsmdEntity.setFsr(djxh);
+				fsmdEntity.setFssx("0");
+				fsmdEntity.setSjhm(item);
+				fsmdEntity.setWxzhid(item);
+				searchDao.saveFsmd(fsmdEntity);
+			}
+		}
+	}
+	
 }

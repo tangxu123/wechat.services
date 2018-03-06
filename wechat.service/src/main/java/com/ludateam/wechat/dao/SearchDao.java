@@ -10,6 +10,7 @@ import com.ludateam.wechat.dto.SendStatusDto;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
 import com.ludateam.wechat.entity.BindingEntity;
+import com.ludateam.wechat.entity.CbcjWsbEntity;
 import com.ludateam.wechat.entity.FsmdEntity;
 import com.ludateam.wechat.entity.FsrwEntity;
 import com.ludateam.wechat.entity.SssxTzsEntity;
@@ -102,7 +103,7 @@ public interface SearchDao {
     /**
      * 取得未申报信息列表
      */
-    List<SssxTzsEntity> getWsbList();
+    List<CbcjWsbEntity> getWsbList();
 
     /**
      * 取得徐汇税务人员列表

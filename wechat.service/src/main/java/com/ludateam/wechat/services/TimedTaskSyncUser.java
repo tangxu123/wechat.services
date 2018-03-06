@@ -97,9 +97,9 @@ public class TimedTaskSyncUser {
     }
 
     /**
-     * 取得异步任务的执行结果（9:31:00 开始--9:32:59 每隔10秒监听一次）
+     * 取得异步任务的执行结果（9:31:00 开始--9:35:59 每隔20秒监听一次）
      */
-    @Scheduled(cron = "0-59/10 1-2,31-32 * * * ?")
+    @Scheduled(cron = "0-59/20 1-5,31-35 * * * ?")
     public void executeJobResult() {
 
         List<SyncUserJobDto> jobidList = searchDao.getJobidList();
@@ -181,11 +181,11 @@ public class TimedTaskSyncUser {
             String xhzgyResult = HttpKit.post(xhzgyWeburl, xhzgyParam, headers);
             UserListDto xhzgyUserDto = JSON.parseObject(xhzgyResult, UserListDto.class);
             if ("0".equals(xhzgyUserDto.getErrcode())) {
-                List<UserEntity> userList = xhzgyUserDto.getUserlist();
-                int count = searchDao.updateXhzgyCancelFollow();
-                logger.info("XHZGY Follow Status Cancel--" + count);
-                count = searchDao.updateXhzgyFollowStatus(getUseridList(userList));
-                logger.info("XHZGY Follow Status Callback--" + count);
+				List<UserEntity> userList = xhzgyUserDto.getUserlist();
+				int count = searchDao.updateXhzgyCancelFollow();
+				logger.info("XHZGY Follow Status Cancel--" + count);
+				count = updateFollowStatus(userList, "1");
+				logger.info("XHZGY Follow Status Callback--" + count);
             }
 
             String xhswHost = PropertyUtil.getProperty("2");
@@ -194,11 +194,11 @@ public class TimedTaskSyncUser {
             String xhswResuslt = HttpKit.post(xhswWeburl, xhswParam, headers);
             UserListDto xhswUserDto = JSON.parseObject(xhswResuslt, UserListDto.class);
             if ("0".equals(xhswUserDto.getErrcode())) {
-                List<UserEntity> userList = xhswUserDto.getUserlist();
-                int count = searchDao.updateXhswCancelFollow();
-                logger.info("XHSW Follow Status Cancel--" + count);
-                count = searchDao.updateXhswFollowStatus(getUseridList(userList));
-                logger.info("XHSW Follow Status Callback--" + count);
+				List<UserEntity> userList = xhswUserDto.getUserlist();
+				int count = searchDao.updateXhswCancelFollow();
+				logger.info("XHSW Follow Status Cancel--" + count);
+				count = updateFollowStatus(userList, "2");
+				logger.info("XHSW Follow Status Callback--" + count);
             }
         } catch (Exception e) {
             logger.info("execute Follow Status Callback Exception---" + e);
@@ -218,20 +218,36 @@ public class TimedTaskSyncUser {
         return "{\"department_id\":\"" + departmentId + "\",\"fetch_child\":\"1\",\"status\":\"1\"}";
     }
 
-    /**
-     * 提取部门成员的成员id
-     *
-     * @param userList 成员列表
-     * @return 成员id列表
-     */
-    private List<String> getUseridList(List<UserEntity> userList) {
-        List<String> useridList = new ArrayList<String>();
-        for (UserEntity userEntity : userList) {
-            useridList.add(userEntity.getUserid());
-        }
-        return useridList;
-    }
-
+	/**
+	 * 分批次更新关注状态
+	 *
+	 * @param userList
+	 *            成员列表
+	 * @param type
+	 *            类型
+	 * 
+	 * @return 关注数量
+	 */
+	private int updateFollowStatus(List<UserEntity> userList, String type) {
+		int count = 0;
+		int total = userList.size();
+		int times = total % 1000 == 0 ? total / 1000 : total / 1000 + 1;
+		for (int m = 1; m <= times; m++) {
+			List<String> useridList = new ArrayList<String>();
+			for (int n = (m - 1) * 1000; n < total && n < m * 1000; n++) {
+				useridList.add(userList.get(n).getUserid());
+			}
+			if ("1".equals(type)) {
+				int nums = searchDao.updateXhzgyFollowStatus(useridList);
+				count += nums;
+			} else {
+				int nums = searchDao.updateXhswFollowStatus(useridList);
+				count += nums;
+			}
+		}
+		return count;
+	}
+    
     /**
      * 验证微信号是否合法<br>
      * 微信号格式由字母、数字、”-“、”_“组成，长度为 3-20 字节，首字符必须是字母或”-“或”_“

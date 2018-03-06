@@ -28,14 +28,16 @@
         <result column="WXZHID" property="wxzhid"/>
         <result column="SJHM" property="sjhm"/>
     </resultMap>
-    <resultMap id="wsbList" type="com.ludateam.wechat.entity.SssxTzsEntity">
+    <resultMap id="wsbList" type="com.ludateam.wechat.entity.CbcjWsbEntity">
         <result column="DJXH" property="djxh"/>
         <result column="NSRMC" property="nsrmc"/>
         <result column="SHXYDM" property="shxydm"/>
-        <result column="ZSXMMCS" property="sssxMc"/>
+        <result column="ZSXMMCS" property="zsxmmcs"/>
         <result column="SSGLY_DM" property="slryDm"/>
         <result column="ZGSWSKFJ_DM" property="zgswskfjDm"/>
         <result column="WXZHID" property="wxzhid"/>
+        <result column="SJHM" property="sjhm"/>
+        <result column="BSYLX" property="bsylx"/>
     </resultMap>
     <resultMap id="holidayList" type="com.ludateam.wechat.dto.HolidayPeriodDto">
         <result column="JJRQSRQ" property="startDate"/>
@@ -308,12 +310,14 @@
 			       		t.zgswskfj_dm,
 			       		t.ssgly_dm,
 			       		t.zsxmmcs,
-			       		TO_CHAR(WMSYS.WM_CONCAT(d.wxzhid)) wxzhid
+			       		d.bsylx,
+			       		d.wxzhid,
+			       		d.sjhm
 			  FROM db_wx.t_wx_cbcj_tmp t, db_zgfz.t_wxqy_dzb d
 			WHERE t.djxh = d.djxh
 				AND d.yxbz = 'Y'
 				AND d.sfgz = '1'
-			GROUP BY t.djxh, t.nsrmc, t.shxydm, t.zgswskfj_dm, t.ssgly_dm, t.zsxmmcs
+			ORDER BY t.djxh,d.bsylx
 
         ]]>
     </select>
