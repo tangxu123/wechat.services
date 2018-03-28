@@ -20,6 +20,10 @@ public class TaskEntity {
 	private int qyhid;
 	/** 微信应用ID */
 	private int wxyyid;
+	/** 标题 */
+	private String title = "";
+	/** 点击后跳转的链接。 */
+	private String url = "";
 
 	/**
 	 * 取得任务id的值
@@ -179,5 +183,45 @@ public class TaskEntity {
 	 */
 	public void setWxyyid(int wxyyid) {
 		this.wxyyid = wxyyid;
+	}
+
+	/**
+	 * 取得点击后跳转的链接。的值
+	 * 
+	 * @return 点击后跳转的链接。
+	 *
+	 */
+	public String getUrl() {
+		return url;
+	}
+
+	/**
+	 * 设定点击后跳转的链接。的值
+	 * 
+	 * @param url
+	 *            点击后跳转的链接。
+	 */
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	/**
+	 * 取得标题的值
+	 * 
+	 * @return 标题
+	 *
+	 */
+	public String getTitle() {
+		return title;
+	}
+
+	/**
+	 * 设定标题的值
+	 * 
+	 * @param title
+	 *            标题
+	 */
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }

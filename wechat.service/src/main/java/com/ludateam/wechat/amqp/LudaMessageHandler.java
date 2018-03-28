@@ -101,7 +101,13 @@ public class LudaMessageHandler extends CommonServiceHandler implements
 			MqJsonDto mqJsonDto = JSON.parseObject(mqjson, MqJsonDto.class);
 			String rwid = mqJsonDto.getRwid();
 			String wxzh = mqJsonDto.getWxzh();
-			SendMsgResultDto resultDto = sendTextMessage(mqJsonDto);
+			SendMsgResultDto resultDto = null;
+			if (2 == mqJsonDto.getQyhid() && 19 == mqJsonDto.getWxyyid()) {
+				resultDto = sendNewsMessage(mqJsonDto);
+			} else {
+				resultDto = sendTextMessage(mqJsonDto);
+			}
+			
 			List<String> wxzhidList = splitSendList(wxzh);
 			SendStatusDto sendParam = new SendStatusDto();
 			sendParam.setRwid(rwid);

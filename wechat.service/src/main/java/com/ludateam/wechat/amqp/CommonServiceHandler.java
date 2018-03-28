@@ -9,6 +9,9 @@ import org.apache.log4j.Logger;
 import com.alibaba.fastjson.JSON;
 import com.ludateam.wechat.dto.MqJsonDto;
 import com.ludateam.wechat.dto.SendMsgResultDto;
+import com.ludateam.wechat.entity.Article;
+import com.ludateam.wechat.entity.News;
+import com.ludateam.wechat.entity.QiYeNewsMsg;
 import com.ludateam.wechat.entity.QiYeTextMsg;
 import com.ludateam.wechat.entity.Text;
 import com.ludateam.wechat.kit.HttpKit;
@@ -77,6 +80,58 @@ public class CommonServiceHandler {
 		SendMsgResultDto resultDto = null;
 		try {
 			String sendParam = JSON.toJSONString(textMsg);
+			String resultJson = HttpKit.post(weburl, sendParam, headers);
+			logger.info("send param:" + sendParam);
+			logger.info("send result:" + resultJson);
+			resultDto = JSON.parseObject(resultJson, SendMsgResultDto.class);
+		} catch (Exception e) {
+			logger.info("send--text--message--exception--happened");
+			e.printStackTrace();
+		}
+		return resultDto;
+	}
+	
+	/**
+	 * 发送新闻信息
+	 * 
+	 * @param mqJsonDto
+	 *            队列消息
+	 * 
+	 * @return 发送结果
+	 */
+	public SendMsgResultDto sendNewsMessage(MqJsonDto mqJsonDto) {
+		
+        HashMap<String, String> headers = new HashMap<String, String>();
+        headers.put("Content-type", "application/json");
+
+		int qyhid = mqJsonDto.getQyhid();
+		String weburl = PropertyUtil.getProperty(String.valueOf(qyhid)) + "/wechat/qyapi/sendNewsMessage";
+		String userid = mqJsonDto.getWxzh();
+		String content = mqJsonDto.getDxnr();
+		String agentid = String.valueOf(mqJsonDto.getWxyyid());
+		String title = mqJsonDto.getTitle();
+		String url = mqJsonDto.getUrl();
+		String description = "";
+		String[] lines = content.split("\\|");
+		for (int i = 0; i < lines.length; i++) {
+			description += lines[i] + "\n";
+		}
+		
+		List<Article> articles = new ArrayList<Article>();
+		articles.add(new Article(title, description, url, ""));
+		News news = new News(articles);
+		QiYeNewsMsg newsMsg = new QiYeNewsMsg();
+		newsMsg.setTouser(userid.replace(",", "|"));
+		newsMsg.setToparty("");
+		newsMsg.setTotag("");
+		newsMsg.setMsgtype("news");
+		newsMsg.setAgentid(agentid);
+		newsMsg.setSafe("0");
+		newsMsg.setNews(news);
+		
+		SendMsgResultDto resultDto = null;
+		try {
+			String sendParam = JSON.toJSONString(newsMsg);
 			String resultJson = HttpKit.post(weburl, sendParam, headers);
 			logger.info("send param:" + sendParam);
 			logger.info("send result:" + resultJson);
