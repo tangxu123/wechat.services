@@ -109,21 +109,22 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 		// 对照表登记序号
 		String dzbDjxh = bindingList.get(0).getDjxh();
 		// 当前微信绑定关系（这个微信目前代表哪家企业）
-		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(wxzhid);
+		List<BindingEntity> bdgxList = searchDao.findWxBdgxByWxzhid(wxzhid);
 		
 		// 微信企业对照关系为1条（这个微信号的主人只在一家企业任职）
 		if (dzgxSize == 1) {
 			// 第一条数据默认选中
 			bindingList.get(0).setIsUse("Y");
-			if (bindingEntity == null) {
+			if (CollectionUtils.isEmpty(bdgxList)) {
 				// 绑定关系记录为空、则新增一条绑定关系
 				insertWxBdgx(wxzhid, dzbDjxh);
-			} else {
+			} else if (bdgxList.size() == 1) {
+				BindingEntity bindingEntity = bdgxList.get(0);
 				// 绑定关系id
 				String bdgxid = bindingEntity.getGxid();
 				// 绑定登记序号
 				String bddjxh = bindingEntity.getDjxh();
-				
+
 				// 如果两条数据相等不做处理，否则 禁用旧绑定关系，并新增一条绑定关系
 				if (!dzbDjxh.equals(bddjxh)) {
 					// 目标表失效
@@ -131,15 +132,18 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 					// 源表数据插入目标表
 					insertWxBdgx(wxzhid, dzbDjxh);
 				}
+			} else {
+				reSettingWxBdgx(bdgxList, wxzhid, dzbDjxh);
 			}
 		} else {
 			// 源表查询的数据为多条
-			if (bindingEntity == null) {
+			if (CollectionUtils.isEmpty(bdgxList)) {
 				// 取源表第一条数据插入目标表 并打上标记
 				insertWxBdgx(wxzhid, dzbDjxh);
 				// 第一条数据默认选中
 				bindingList.get(0).setIsUse("Y");
-			} else {
+			} else if (bdgxList.size() == 1) {
+				BindingEntity bindingEntity = bdgxList.get(0);
 				// 绑定关系id
 				String bdgxid = bindingEntity.getGxid();
 				// 绑定登记序号
@@ -153,6 +157,8 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 					// 第一条数据默认选中
 					bindingList.get(0).setIsUse("Y");
 				}
+			} else {
+				reSettingWxBdgx(bdgxList, wxzhid, dzbDjxh);
 			}
 		}
 		
@@ -169,16 +175,19 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 			return JSON.toJSONString(result);
 		}
 		
-		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(userid);
-		if (bindingEntity == null) {
+		List<BindingEntity> bdgxList = searchDao.findWxBdgxByWxzhid(userid);
+		if (CollectionUtils.isEmpty(bdgxList)) {
 			insertWxBdgx(userid, djxh);
-		} else {
+		} else if (bdgxList.size() == 1) {
+			BindingEntity bindingEntity = bdgxList.get(0);
 			String gxid = bindingEntity.getGxid();
 			String currentDjxh = bindingEntity.getDjxh();
 			if (!currentDjxh.equals(djxh)) {
 				searchDao.setWxDbgxUnableByGxid(gxid);
 				insertWxBdgx(userid, djxh);
 			}
+		} else {
+			reSettingWxBdgx(bdgxList, userid, djxh);
 		}
 		
 		result.setErrcode("0");
@@ -200,6 +209,24 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 		return searchDao.insertWxBdgx(insertParams);
 	}
 
+	/**
+	 * 重置微信绑定关系
+	 * 
+	 * @param bdgxList
+	 *            绑定关系列表
+	 * @param wxzhid
+	 *            微信账号id
+	 * @param djxh
+	 *            登记序号
+	 * @return 无
+	 */
+	public void reSettingWxBdgx(List<BindingEntity> bdgxList, String wxzhid, String djxh) {
+		for (BindingEntity bindingEntity : bdgxList) {
+			searchDao.setWxDbgxUnableByGxid(bindingEntity.getGxid());
+		}
+		insertWxBdgx(wxzhid, djxh);
+	}
+	
 	/**
 	 * 检查数据是否存在
 	 * 
@@ -227,13 +254,13 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 			return JSON.toJSONString(result);
 		}
 
-		BindingEntity bindingEntity = searchDao.findWxBdgxByWxzhid(userid);
-		if (bindingEntity == null) {
+		List<BindingEntity> bdgxList = searchDao.findWxBdgxByWxzhid(userid);
+		if (CollectionUtils.isEmpty(bdgxList)) {
 			result.setErrcode("99");
 			result.setErrmsg("请先绑定当前用户的身份！");
 			return JSON.toJSONString(result);
 		}
-		
+		BindingEntity bindingEntity = bdgxList.get(0);
 		int count = searchDao.getVipCount(userid, bindingEntity.getDjxh());
 		if (count == 0) {
 			result.setErrcode("99");
@@ -256,7 +283,14 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 
 	@Override
 	public String getSmbsSqid(String userid) {
+		
 		VipSqidDto sqidResult = new VipSqidDto();
+		if (StringUtils.isBlank(userid)) {
+			sqidResult.setErrcode("99");
+			sqidResult.setErrmsg("用户ID不能为空！");
+			return JSON.toJSONString(sqidResult);
+		}
+		
 		String bindingListStr = getBindingList(userid);
 		BindingResult bindingResult = JSON.parseObject(bindingListStr, BindingResult.class);
 		List<BindingEntity> bindingList = bindingResult.getBindingList();
@@ -267,7 +301,7 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 				break;
 			}
 		}
-		List<String> sqidList = searchDao.getVipSqid(userid, bingingDjxh);
+		List<String> sqidList = searchDao.getSmbsSqid(userid, bingingDjxh);
 		sqidResult.setErrcode("0");
 		sqidResult.setErrmsg("success");
 		sqidResult.setSqid(sqidList.get(0));

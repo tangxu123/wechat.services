@@ -424,9 +424,18 @@
     </update>
     <select id="getVipSqid" parameterType="String" resultType="String">
 		<![CDATA[
-          select (V.SQID || V.SJHM) AS VIPID FROM HXWT.V_WSBS_SMBS_LC V
-          WHERE V.wxzhid = #{0}
-			   	AND V.djxh = #{1}
+          	SELECT (V.SQID || V.SJHM) AS VIPID FROM HXWT.V_WSBS_SMBS_LC V
+          	WHERE V.wxzhid = #{0} AND V.djxh = #{1}
+        ]]>
+	</select>
+    <select id="getSmbsSqid" parameterType="String" resultType="String">
+		<![CDATA[
+            SELECT t.sqid || TRUNC(DBMS_RANDOM.VALUE(100, 999)) AS vipid
+              FROM db_zgfz.t_wxqy_dzb t
+            WHERE t.wxzhid = #{0}
+                AND t.djxh = #{1}
+                AND t.yxbz = 'Y'
+            ORDER BY t.bsylx
         ]]>
 	</select>
     <select id="getVipCount" parameterType="String" resultType="int">
