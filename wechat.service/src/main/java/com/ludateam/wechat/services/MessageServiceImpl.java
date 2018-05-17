@@ -110,9 +110,9 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
                 String filePath = sftpMap.get("localFilePath").toString();
                 String saveFilePath = HttpKit.send(type, filePath, target);
                 String weburl = "";
-                if (MediaMessage.MediaType.FILE.equals(type)) {
+                if (MediaMessage.MediaType.FILE.get().equals(type)) {
                     weburl = PropertyUtil.getProperty(target) + "/wechat/qyapi/sendFileMessage";
-                } else if (MediaMessage.MediaType.IMAGE.equals(type)) {
+                } else if (MediaMessage.MediaType.IMAGE.get().equals(type)) {
                     weburl = PropertyUtil.getProperty(target) + "/wechat/qyapi/sendImageMessage";
                 }
                 o.setPath(saveFilePath);
