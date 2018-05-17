@@ -27,40 +27,46 @@ import javax.ws.rs.core.Context;
 @Path("message")
 @Produces({"application/json; charset=UTF-8", "text/xml; charset=UTF-8"})
 public interface MessageService {
-	
-	/**
-	 * 发送文本消息
-	 * 
-	 * @param request
-	 *            请求消息
-	 * 
-	 * @return 发送结果
-	 */
-	@POST
-	@Path("/sendTextMessage")
-	String sendTextMessage(@Context HttpServletRequest request);
 
-	/**
-	 * 接受消息（文本消息、图片消息等）
-	 * 
-	 * @param msgJson
-	 *            请求内容
-	 * 
-	 * @return 存储结果
-	 */
-	@POST
-	@Path("/receiveMessage")
-	String receiveMessage(@QueryParam("msgJson") String msgJson);
-	
-	/**
-	 * 保存系统发送给应用的消息
-	 * 
-	 * @param msgJson
-	 *            请求内容
-	 * 
-	 * @return 存储结果
-	 */
-	@POST
-	@Path("/saveSystemMessage")
-	String saveSystemMessage(@QueryParam("msgJson") String msgJson);
+    /**
+     * 发送文本消息
+     *
+     * @param request 请求消息
+     * @return 发送结果
+     */
+    @POST
+    @Path("/sendTextMessage")
+    String sendTextMessage(@Context HttpServletRequest request);
+
+
+    /**
+     * 发送文件或图片消息
+     * @param request
+     * @param target 内网 or 外网
+     * @param type image or file
+     * @return
+     */
+    @POST
+    @Path("/sendMediaMessage")
+    String sendMediaMessage(@Context HttpServletRequest request, @QueryParam("target") String target, @QueryParam("type") String type);
+
+    /**
+     * 接受消息（文本消息、图片消息等）
+     *
+     * @param msgJson 请求内容
+     * @return 存储结果
+     */
+    @POST
+    @Path("/receiveMessage")
+    String receiveMessage(@QueryParam("msgJson") String msgJson);
+
+    /**
+     * 保存系统发送给应用的消息
+     *
+     * @param msgJson 请求内容
+     * @return 存储结果
+     */
+    @POST
+    @Path("/saveSystemMessage")
+    String saveSystemMessage(@QueryParam("msgJson") String msgJson);
 }
