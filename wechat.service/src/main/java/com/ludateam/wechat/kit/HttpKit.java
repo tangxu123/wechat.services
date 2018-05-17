@@ -16,14 +16,12 @@ package com.ludateam.wechat.kit;
  * Created by Him on 2017/8/17.
  */
 
+import com.ludateam.wechat.utils.PropertyUtil;
 import org.apache.log4j.Logger;
 
 import javax.net.ssl.SSLSession;
 import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
@@ -31,9 +29,7 @@ import java.security.NoSuchProviderException;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -59,6 +55,73 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class HttpKit {
     private static Logger logger = Logger.getLogger(HttpKit.class);
+
+    public static String send(String fileType, String filePath, String target) throws Exception {
+        String result = null;
+        File file = new File(filePath);
+        if (!file.exists() || !file.isFile()) {
+            throw new IOException("文件不存在");
+        }
+        String weburl = PropertyUtil.getProperty(target) + "/wechat/upload";
+        URL urlObj = new URL(weburl);
+
+        HttpURLConnection con = (HttpURLConnection) urlObj.openConnection();
+        con.setRequestMethod("POST");
+        con.setDoInput(true);
+        con.setDoOutput(true);
+        con.setUseCaches(false);
+        // 设置请求头信息
+        con.setRequestProperty("Connection", "Keep-Alive");
+        con.setRequestProperty("Charset", "UTF-8");
+        // 设置边界
+        String BOUNDARY = "----------" + System.currentTimeMillis();
+        con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+        StringBuilder sb = new StringBuilder();
+        sb.append("--");
+        sb.append(BOUNDARY);
+        sb.append("\r\n");
+        sb.append("Content-Disposition: form-data;name=\"media\";filename=\"" + file.getName() + "\"\r\n");
+        sb.append("Content-Type:application/octet-stream\r\n\r\n");
+        byte[] head = sb.toString().getBytes("utf-8");
+        // 获得输出流
+        OutputStream out = new DataOutputStream(con.getOutputStream());
+        // 输出表头
+        out.write(head);
+        DataInputStream in = new DataInputStream(new FileInputStream(file));
+        int bytes = 0;
+        byte[] bufferOut = new byte[1024];
+        while ((bytes = in.read(bufferOut)) != -1) {
+            out.write(bufferOut, 0, bytes);
+        }
+        in.close();
+        // 结尾部分
+        byte[] foot = ("\r\n--" + BOUNDARY + "--\r\n").getBytes("utf-8");
+        out.write(foot);
+        out.flush();
+        out.close();
+        StringBuffer buffer = new StringBuffer();
+        BufferedReader reader = null;
+        try {
+            // 定义BufferedReader输入流来读取URL的响应
+            reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                buffer.append(line);
+            }
+            if (result == null) {
+                result = buffer.toString();
+            }
+        } catch (IOException e) {
+            logger.error("发送POST请求出现异常！" + e);
+            e.printStackTrace();
+            throw new IOException("数据读取异常");
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+        }
+        return result;
+    }
 
     private HttpKit() {
     }
