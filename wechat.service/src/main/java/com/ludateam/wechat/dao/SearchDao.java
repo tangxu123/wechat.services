@@ -144,7 +144,7 @@ public interface SearchDao {
     /**
      * 根据微信账号id查询当前微信绑定关系
      */
-    BindingEntity findWxBdgxByWxzhid(String wxzhid);
+    List<BindingEntity> findWxBdgxByWxzhid(String wxzhid);
 
     /**
      * 新增微信绑定关系
@@ -180,6 +180,11 @@ public interface SearchDao {
      * 取得绿色通道用户的授权ID
      */
     List<String> getVipSqid(String wxzhid, String djxh);
+    
+    /**
+     * 取得实名办税用户的授权ID
+     */
+    List<String> getSmbsSqid(String wxzhid, String djxh);
 
     /**
      * 移除通讯录中重复的手机号码

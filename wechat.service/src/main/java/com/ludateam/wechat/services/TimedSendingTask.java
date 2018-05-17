@@ -340,10 +340,10 @@ public class TimedSendingTask {
 		String mqjson = "";
 		if (SEND_METHOD_SMS.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx + "\",\"dxnr\":\""
-					+ dxnr.replace("\\", "\\\\").replace("\"", "\\\"") + "\"}";
+					+ dxnr.replace("\\", "\\\\").replace("\"", "\\\"").replace("“", "\\\"").replace("”", "\\\"") + "\"}";
 		} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + fsdx
-					+ "\",\"dxnr\":\"" + dxnr.replace("\\", "\\\\").replace("\"", "\\\"")
+					+ "\",\"dxnr\":\"" + dxnr.replace("\\", "\\\\").replace("\"", "\\\"").replace("“", "\\\"").replace("”", "\\\"")
 					+ "\",\"qyhid\":\"" + qyhid + "\",\"wxyyid\":\"" + wxyyid
 					+ "\",\"title\":\"" + title + "\",\"url\":\"" + url + "\"}";
 		}
