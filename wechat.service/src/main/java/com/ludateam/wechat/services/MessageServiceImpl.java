@@ -28,6 +28,10 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 
+import com.alibaba.fastjson.JSONObject;
+import com.ludateam.wechat.entity.FileMessage;
+import com.ludateam.wechat.kit.MediaMessage;
+import com.ludateam.wechat.kit.SFtpUtils;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,7 +75,61 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
         return result;
     }
 
-	@Override
+    /**
+     * 发送文件或图片消息
+     *
+     * @param request
+     * @param target  内网 or 外网
+     * @param type    image or file
+     * @return
+     */
+    @Override
+    public String sendMediaMessage(HttpServletRequest request, String target, String type) {
+        String sendParam = HttpKit.readData(request);
+        HashMap<String, String> resultMap = new HashMap<String, String>(1);
+        String responseText = "";
+        FileMessage o = JSON.parseObject(sendParam, FileMessage.class);
+        String host = PropertyUtil.getProperty("sftp.host");
+        String port = PropertyUtil.getProperty("sftp.port");
+        String username = PropertyUtil.getProperty("sftp.username");
+        String password = PropertyUtil.getProperty("sftp.password");
+        String localpath = PropertyUtil.getProperty("sftp.localpath");
+
+        HashMap<String, String> headers = new HashMap<String, String>(1);
+        headers.put("Content-type", "application/json");
+        try {
+            String sftpJson = SFtpUtils.downloadSftpFile(host, username, password, Integer.valueOf(port), o.getFtppath(), localpath, o.getFilename());
+            logger.info("download file from sftp server , " + sftpJson);
+            JSONObject jsonObject = JSONObject.parseObject(sftpJson);
+
+            Map<String, Object> sftpMap = (Map<String, Object>) jsonObject;
+            //从sftp server 下载文件异常
+            if (!"0".equals(sftpMap.get("errcode"))) {
+                responseText = sftpJson;
+            } else {
+                String filePath = sftpMap.get("localFilePath").toString();
+                String saveFilePath = HttpKit.send(type, filePath, target);
+                String weburl = "";
+                if (MediaMessage.MediaType.FILE.equals(type)) {
+                    weburl = PropertyUtil.getProperty(target) + "/wechat/qyapi/sendFileMessage";
+                } else if (MediaMessage.MediaType.IMAGE.equals(type)) {
+                    weburl = PropertyUtil.getProperty(target) + "/wechat/qyapi/sendImageMessage";
+                }
+                o.setPath(saveFilePath);
+                logger.info("post " + JSON.toJSONString(o) + " to " + weburl);
+                responseText = HttpKit.post(weburl, JSON.toJSONString(o), headers);
+                logger.info("===========================================" + responseText);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            resultMap.put("errcode", "90002");
+            resultMap.put("errmsg", e.getMessage());
+            responseText = JSON.toJSONString(resultMap);
+        }
+        return responseText;
+    }
+
+    @Override
     @POST
 	@Path("/receiveMessage")
 	public String receiveMessage(@QueryParam("msgJson") String msgJson) {
