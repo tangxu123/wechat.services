@@ -110,7 +110,7 @@
 						WHERE sjhm IS NOT NULL) tmp
 			ON (t.smid = tmp.smid AND t.sqid = tmp.sqid)
 			WHEN MATCHED THEN
-				UPDATE SET T.SJHM = TMP.SJHM
+				UPDATE SET T.SJHM = TMP.SJHM , T.WXZHID = TMP.SJHM
 			WHEN NOT MATCHED THEN
 				INSERT (id, sqid, smid, sfzjhm, xm, sjhm, djxh, bsylx, wxzhid, yxbz, tbsj, xgsj, sfgz, sjhlx)
 				VALUES(DB_ZGFZ.GET_DZID_NEXTVAL('DB_ZGFZ','SQ_WXQY_DZID'),
