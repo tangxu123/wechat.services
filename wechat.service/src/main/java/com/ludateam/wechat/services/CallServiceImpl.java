@@ -1,5 +1,7 @@
 package com.ludateam.wechat.services;
 
+import java.net.URLDecoder;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +13,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 
+import com.ludateam.wechat.dao.calendar.MeetingDao;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,6 +29,7 @@ import com.ludateam.wechat.entity.BindingEntity;
 import com.ludateam.wechat.kit.HttpKit;
 import com.ludateam.wechat.utils.DesUtils;
 import com.ludateam.wechat.utils.PropertyUtil;
+import sun.misc.BASE64Decoder;
 
 /*
  * Copyright 2017 Luda Team.
@@ -49,9 +53,21 @@ import com.ludateam.wechat.utils.PropertyUtil;
 @Path("service")
 public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 	private static Logger logger = Logger.getLogger(CallServiceImpl.class);
-
+	//正局
+	final static String ZJ = "0";
+	//副局
+	final static String FJ = "1";
+	//正所
+	final static String ZS = "2";
+	//副所
+	final static String FS = "3";
+	//普通
+	final static String PT = "4";
 	@Autowired
 	private SearchDao searchDao;
+	@Autowired
+	private MeetingDao meetingDao;
+
 
 	@Override
 	@POST
@@ -86,16 +102,16 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 
 	@Override
 	public String getBindingList(String wxzhid) {
-		
+
 		BindingResult result = new BindingResult();
-		
+
 		//判断参数是否为空
 		if(StringUtils.isBlank(wxzhid)){
 			result.setErrcode("99");
 			result.setErrmsg("用户ID不能为空！");
 			return JSON.toJSONString(result);
 		}
-		
+
 		// 微信企业对照关系列表
 		List<BindingEntity> bindingList = searchDao.findWxqyDzbByWxzhid(wxzhid);
 		if (CollectionUtils.isEmpty(bindingList)) {
@@ -104,13 +120,13 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 			result.setErrmsg("该用户暂未绑定企业！");
 			return JSON.toJSONString(result);
 		}
-		
+
 		int dzgxSize = bindingList.size();
 		// 对照表登记序号
 		String dzbDjxh = bindingList.get(0).getDjxh();
 		// 当前微信绑定关系（这个微信目前代表哪家企业）
 		List<BindingEntity> bdgxList = searchDao.findWxBdgxByWxzhid(wxzhid);
-		
+
 		// 微信企业对照关系为1条（这个微信号的主人只在一家企业任职）
 		if (dzgxSize == 1) {
 			// 第一条数据默认选中
@@ -148,7 +164,7 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 				String bdgxid = bindingEntity.getGxid();
 				// 绑定登记序号
 				String bddjxh = bindingEntity.getDjxh();
-				
+
 				if (!checkData(bddjxh, bindingList)) {
 					// 目标表失效
 					searchDao.setWxDbgxUnableByGxid(bdgxid);
@@ -161,7 +177,7 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 				reSettingWxBdgx(bdgxList, wxzhid, dzbDjxh);
 			}
 		}
-		
+
 		result.setBindingList(bindingList);
 		return JSON.toJSONString(result);
 	}
@@ -306,5 +322,83 @@ public class CallServiceImpl implements com.ludateam.wechat.api.CallService {
 		sqidResult.setErrmsg("success");
 		sqidResult.setSqid(sqidList.get(0));
 		return JSON.toJSONString(sqidResult);
+	}
+
+	@Override
+	public String meetings(String userid,String rysx) {
+		List result = new ArrayList();
+		if(ZJ.equals(rysx) || FJ.equals(rysx) ){
+			result = meetingDao.getMeetingDataJu(userid);
+		}else if(ZS.equals(rysx) || FS.equals(rysx) ){
+			result = meetingDao.getMeetingDataSuo(userid);
+		}else if(PT.equals(rysx)){
+			result = meetingDao.getMeetingDataPt(userid);
+		}
+
+		if(null == result){
+			return "";
+		}else{
+			return JSON.toJSONString(result);
+
+		}
+	}
+
+	@Override
+	public String designatedPersons(String meetingNumber, String userid) {
+		System.out.println(meetingNumber);
+		System.out.println(userid);
+		Map m = new HashMap();
+		m.put("meetingNumber",meetingNumber);
+		m.put("userid",userid);
+		List result = meetingDao.getDesignatedPersons(m);
+		return JSON.toJSONString(result);
+	}
+
+	@Override
+	public String meetingPersons(String persons) {
+		try {
+			persons = URLDecoder.decode(persons,"UTF-8");
+			System.out.println("111111111111111111="+persons);
+			BASE64Decoder decoder = new BASE64Decoder();
+			String a = new String(decoder.decodeBuffer(persons),"UTF-8");
+//            String a = new String (Base64.getDecoder().decode(persons),"UTF-8");
+
+			System.out.println("22222222222222222222="+a);
+
+			String []strings = a.split("#");
+			System.out.println(strings.length);
+			for(String s : strings){
+				String []swryData = s.split(",");
+				String swrymc = swryData[0];
+				String swrydm = swryData[1];
+				String swjgdm = swryData[2];
+				String hybh = swryData[3];
+
+				Map m = new HashMap();
+				m.put("swrymc",swrymc);
+				m.put("swrydm",swrydm);
+				m.put("swjgdm",swjgdm);
+				m.put("hybh",hybh);
+
+				meetingDao.saveMeetingPersons(m);
+
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+			return "F";
+		}
+		return "S";
+	}
+
+	@Override
+	public String meetingDesc(String meetingNumber) {
+		List result = meetingDao.getMeetingDesc(meetingNumber);
+		return JSON.toJSONString(result);
+	}
+
+	@Override
+	public String rysx(String userid) {
+		List result = meetingDao.getRysx(userid);
+		return JSON.toJSONString(result);
 	}
 }

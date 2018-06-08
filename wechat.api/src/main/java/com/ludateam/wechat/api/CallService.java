@@ -45,5 +45,25 @@ public interface CallService {
 	@POST
 	@Path("/getSmbsSqid")
 	String getSmbsSqid(@QueryParam("userid") String userid);
+
+	@GET
+	@Path("/meeting/meetings")
+	String meetings(@QueryParam("userid") String userid,@QueryParam("rysx") String rysx);
+
+	@GET
+	@Path("/meeting/designatedPersons")
+	String designatedPersons(@QueryParam("meetingNumber") String meetingNumber, @QueryParam("userid") String userid);
+
+	@GET
+	@Path("/meeting/persons")
+	String meetingPersons(@QueryParam("persons") String persons);
+
+	@GET
+	@Path("/meeting/desc")
+	String meetingDesc(@QueryParam("meetingNumber") String meetingNumber);
+
+	@GET
+	@Path("/meeting/rysx")
+	String rysx(@QueryParam("userid") String userid);
 	
 }

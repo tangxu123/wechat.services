@@ -111,10 +111,10 @@ public class HttpKit {
             if (result == null) {
                 result = buffer.toString();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             logger.error("发送POST请求出现异常！" + e);
             e.printStackTrace();
-            throw new IOException("数据读取异常");
+            throw new Exception("数据读取异常");
         } finally {
             if (reader != null) {
                 reader.close();

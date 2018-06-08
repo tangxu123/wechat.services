@@ -113,7 +113,7 @@ public class TimedTaskSyncUser {
                 String weburl = requestHost + "/wechat/batch/result";
                 String sendParam = "{\"jobid\":\"" + jobid + "\"}";
                 String result = HttpKit.post(weburl, sendParam, headers);
-                logger.info("get batch result:" + result);
+//                logger.info("get batch result:" + result);
                 SyncUserJobResultDto jobResultDto = JSON.parseObject(result, SyncUserJobResultDto.class);
                 jobResultDto.setJobid(jobid);
                 searchDao.saveSyncUserJobResult(jobResultDto);

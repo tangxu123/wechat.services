@@ -24,6 +24,16 @@ public class TaskEntity {
 	private String title = "";
 	/** 点击后跳转的链接。 */
 	private String url = "";
+	/** 发送内容类型。 */
+	private String fsnrlx = "";
+
+	public String getFsnrlx() {
+		return fsnrlx;
+	}
+
+	public void setFsnrlx(String fsnrlx) {
+		this.fsnrlx = fsnrlx;
+	}
 
 	/**
 	 * 取得任务id的值

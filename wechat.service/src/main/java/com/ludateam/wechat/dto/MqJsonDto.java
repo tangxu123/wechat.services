@@ -19,6 +19,17 @@ public class MqJsonDto {
 	/** 点击后跳转的链接。 */
 	private String url = "";
 
+	public String getFsnrlx() {
+		return fsnrlx;
+	}
+
+	public void setFsnrlx(String fsnrlx) {
+		this.fsnrlx = fsnrlx;
+	}
+
+	/** 发送内容类型。 */
+	private String fsnrlx = "";
+
 	public String getRwid() {
 		return rwid;
 	}

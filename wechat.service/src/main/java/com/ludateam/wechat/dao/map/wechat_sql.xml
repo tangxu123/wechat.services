@@ -69,7 +69,7 @@
     </insert>
     <select id="getTaskList" resultMap="taskList" parameterType="com.ludateam.wechat.entity.TaskEntity">
         <![CDATA[
-			SELECT distinct v.rwid, v.sjhm, v.dxnr, v.wxzhid, v.qyhid, v.wxyyid, v.title, v.url FROM db_zgfz.v_dx_fs_md v
+			SELECT distinct v.rwid, v.sjhm, v.dxnr, v.wxzhid, v.qyhid, v.wxyyid, v.title, v.url,v.fsnrlx FROM db_zgfz.v_dx_fs_md v
 			WHERE v.fsfs = #{fsfs}
 		]]>
         <if test="tmid == 0">

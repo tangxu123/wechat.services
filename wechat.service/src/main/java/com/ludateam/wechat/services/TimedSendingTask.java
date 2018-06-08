@@ -113,7 +113,7 @@ public class TimedSendingTask {
 			String mqJson = makeMqJson(entityObj.getRwid(),
 					entityObj.getSjhm(), entityObj.getDxnr(),
 					entityObj.getQyhid(), entityObj.getWxyyid(),
-					SEND_METHOD_SMS, entityObj.getTitle(), entityObj.getUrl());
+					SEND_METHOD_SMS, entityObj.getTitle(), entityObj.getUrl(),entityObj.getFsnrlx());
 			messageSender.sendSmsMessage(mqJson);
 		}
 	}
@@ -143,7 +143,7 @@ public class TimedSendingTask {
 					entityObj.getWxzhid(), entityObj.getDxnr(),
 					entityObj.getQyhid(), entityObj.getWxyyid(),
 					SEND_METHOD_WECHAT, entityObj.getTitle(),
-					entityObj.getUrl());
+					entityObj.getUrl(),entityObj.getFsnrlx());
 			messageSender.sendWechatMessage(mqJson);
 		}
 	}
@@ -336,7 +336,7 @@ public class TimedSendingTask {
 	 * @return 消息队列json
 	 */
 	private String makeMqJson(BigDecimal rwid, String fsdx, String dxnr,
-			int qyhid, int wxyyid, String sendMethod, String title, String url) {
+			int qyhid, int wxyyid, String sendMethod, String title, String url,String fsnrlx) {
 		String mqjson = "";
 		if (SEND_METHOD_SMS.equals(sendMethod)) {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"sjhm\":\"" + fsdx + "\",\"dxnr\":\""
@@ -345,7 +345,7 @@ public class TimedSendingTask {
 			mqjson = "{\"rwid\":\"" + rwid + "\",\"wxzh\":\"" + fsdx
 					+ "\",\"dxnr\":\"" + dxnr.replace("\\", "\\\\").replace("\"", "\\\"").replace("“", "\\\"").replace("”", "\\\"")
 					+ "\",\"qyhid\":\"" + qyhid + "\",\"wxyyid\":\"" + wxyyid
-					+ "\",\"title\":\"" + title + "\",\"url\":\"" + url + "\"}";
+					+ "\",\"title\":\"" + title + "\",\"url\":\"" + url + "\",\"fsnrlx\":\"" + fsnrlx + "\"}";
 		}
 		System.out.println(mqjson);
 		return mqjson;
@@ -354,7 +354,7 @@ public class TimedSendingTask {
 	/**
 	 * 将任务添加到相应的队列中
 	 * 
-	 * @param rwid
+	 * @param taskList
 	 *            任务列表
 	 * @param sendMethod
 	 *            发送方式
@@ -380,12 +380,14 @@ public class TimedSendingTask {
 				int wxyyid = 0;
 				String title = "";
 				String url = "";
+				String fsnrlx = "";
 				for (int n = (m - 1) * 1000; n < subTaskList.size() && n < m * 1000; n++) {
 					dxnr = subTaskList.get(n).getDxnr();
 					qyhid = subTaskList.get(n).getQyhid();
 					wxyyid = subTaskList.get(n).getWxyyid();
 					title = subTaskList.get(n).getTitle();
 					url = subTaskList.get(n).getUrl();
+					fsnrlx = subTaskList.get(n).getFsnrlx();
 					if (SEND_METHOD_SMS.equals(sendMethod)) {
 						fsdx += subTaskList.get(n).getSjhm() + ",";
 					} else if (SEND_METHOD_WECHAT.equals(sendMethod)) {
@@ -393,7 +395,7 @@ public class TimedSendingTask {
 					}
 				}
 				fsdx = fsdx.substring(0, fsdx.length() - 1);
-				String mqJson = makeMqJson(rwid, fsdx, dxnr, qyhid, wxyyid, sendMethod, title, url);
+				String mqJson = makeMqJson(rwid, fsdx, dxnr, qyhid, wxyyid, sendMethod, title, url,fsnrlx);
 				logger.info("添加第" + m + "组1000条消息到队列开始");
 				putQueue(mqJson, sendMethod);
 				logger.info("添加第" + m + "组1000条消息到队列结束");

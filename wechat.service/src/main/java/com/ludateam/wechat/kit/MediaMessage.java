@@ -17,7 +17,7 @@ package com.ludateam.wechat.kit;/*
 
 public class MediaMessage {
     public static enum MediaType {
-        IMAGE, FILE;
+        IMAGE, FILE, LINK;
 
 
         public String get() {
