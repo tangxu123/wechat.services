@@ -9,14 +9,7 @@ import com.ludateam.wechat.dto.RecordWechatDto;
 import com.ludateam.wechat.dto.SendStatusDto;
 import com.ludateam.wechat.dto.SyncUserJobDto;
 import com.ludateam.wechat.dto.SyncUserJobResultDto;
-import com.ludateam.wechat.entity.BindingEntity;
-import com.ludateam.wechat.entity.CbcjWsbEntity;
-import com.ludateam.wechat.entity.FsmdEntity;
-import com.ludateam.wechat.entity.FsrwEntity;
-import com.ludateam.wechat.entity.SssxTzsEntity;
-import com.ludateam.wechat.entity.TaskEntity;
-import com.ludateam.wechat.entity.TaxOfficerEntity;
-import com.ludateam.wechat.entity.VIPUserEntity;
+import com.ludateam.wechat.entity.*;
 
 public interface SearchDao {
 
@@ -225,5 +218,7 @@ public interface SearchDao {
 	 * 保存微信发送记录
 	 */
 	int saveWechatSendRecord(RecordWechatDto dto);
-	
+
+
+    ZcrkXlb getZCRKXLB(String wyid);
 }
