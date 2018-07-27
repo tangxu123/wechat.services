@@ -69,4 +69,8 @@ public interface MessageService {
     @POST
     @Path("/saveSystemMessage")
     String saveSystemMessage(@QueryParam("msgJson") String msgJson);
+
+    @POST
+    @Path("/getZcrkXlb")
+    String getZcrkXlb(@QueryParam("wyid") String wyid);
 }
