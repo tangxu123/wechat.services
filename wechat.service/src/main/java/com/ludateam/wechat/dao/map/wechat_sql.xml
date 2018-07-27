@@ -498,4 +498,43 @@
       		values(db_zgfz.sq_wxqy_fsjlid.nextval, #{wxzhid}, #{djxh}, #{fsnr}, sysdate, #{wxyyid} )
    		]]>
  	</insert>
+    <resultMap id="ZCRKXLB" type="com.ludateam.wechat.entity.ZcrkXlb">
+        <result column="WYID"   property="wyid"   />
+        <result column="ZCBH" property="zcbh"/>
+        <result column="XXHFL" property="xxhfl"/>
+        <result column="BQLX" property="bqlx"/>
+        <result column="ZCBH_YS" property="zcbh_ys"/>
+        <result column="BMMC" property="bmmc"/>
+        <result column="SYR" property="syr"/>
+        <result column="ZCXL_DM" property="zcxl_dm"/>
+        <result column="ZCXLMC" property="zcxlmc"/>
+        <result column="ZCMC" property="zcmc"/>
+        <result column="PP" property="pp"/>
+        <result column="GGXH" property="ggxh"/>
+        <result column="JGZB" property="jgzb"/>
+        <result column="CFCK" property="cfck"/>
+        <result column="JQBH" property="jqbh"/>
+        <result column="RKSJ" property="rksj"/>
+        <result column="ZT" property="zt"/>
+        <result column="WL" property="wl"/>
+        <result column="IP" property="ip" />
+        <result column="WLBH" property="wlbh"/>
+        <result column="WZM" property="wzm"/>
+        <result column="SYYT" property="syyt"/>
+        <result column="SYQK" property="syqk"/>
+        <result column="DWMC" property="dwmc"/>
+        <result column="DWBH" property="dwbh"/>
+        <result column="RKDJ" property="rkdj"/>
+        <result column="BZ1" property="bz1"/>
+        <result column="BZ2" property="bz2"   />
+        <result column="WZ_BZ" property="wz_bz"/>
+        <result column="SYZT" property="syzt"/>
+    </resultMap>
+    <select id="getZCRKXLB" resultMap="ZCRKXLB" parameterType="String">
+        <![CDATA[
+			SELECT WYID, ZCBH, XXHFL, BQLX, ZCBH_YS, BMMC, SYR, ZCXL_DM, ZCXLMC, ZCMC, PP, GGXH, JGZB, CFCK, JQBH, RKSJ, ZT, WL, IP, WLBH, WZM, SYYT, SYQK, DWMC, DWBH, RKDJ, BZ1, BZ2, WZ_BZ, SYZT
+			FROM db_wx.T_SBGL_ZCRK_XLB
+			WHERE  WYID = #{wyid} or ZCBH= #{wyid}
+		]]>
+    </select>
 </mapper>
