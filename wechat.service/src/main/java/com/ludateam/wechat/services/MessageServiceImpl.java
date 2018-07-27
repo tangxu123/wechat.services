@@ -16,6 +16,7 @@ package com.ludateam.wechat.services;
  * limitations under the License.
  * Created by Him on 2017/8/17.
  */
+
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +30,9 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.ludateam.wechat.entity.FileMessage;
+import com.ludateam.wechat.entity.ZcrkXlb;
 import com.ludateam.wechat.kit.MediaMessage;
 import com.ludateam.wechat.kit.SFtpUtils;
 import org.apache.log4j.Logger;
@@ -49,16 +52,16 @@ import com.ludateam.wechat.utils.PropertyUtil;
 @Service("messageService")
 @Path("message")
 @Produces({"application/json; charset=UTF-8", "text/xml; charset=UTF-8"})
-public class MessageServiceImpl implements com.ludateam.wechat.api.MessageService   {
+public class MessageServiceImpl implements com.ludateam.wechat.api.MessageService {
 
     private static Logger logger = Logger.getLogger(MessageServiceImpl.class);
 
     @Autowired
     private SearchDao searchDao;
-    
+
     @Autowired
     private CallService callService;
-    
+
     @Override
     @POST
     @Path("/sendTextMessage")
@@ -131,55 +134,63 @@ public class MessageServiceImpl implements com.ludateam.wechat.api.MessageServic
 
     @Override
     @POST
-	@Path("/receiveMessage")
-	public String receiveMessage(@QueryParam("msgJson") String msgJson) {
-		logger.info("post receive message：" + msgJson);
-		try {
-			Map msgMap = (Map) JSON.parse(msgJson);
-			String userid = (String) msgMap.get("fromUserName");
-			String resultJson = callService.getBindingList(userid);
-			BindingResult bindResult = JSON.parseObject(resultJson, BindingResult.class);
-			BigDecimal djxh = null;
-			if ("0".equals(bindResult.getErrcode())) {
-				List<BindingEntity> bindingList = bindResult.getBindingList();
-				for (int i = 0; i < bindingList.size(); i++) {
-					BindingEntity bindingEntity = bindingList.get(i);
-					String strDjxh = bindingEntity.getDjxh();
-					if ("Y".equals(bindingEntity.getIsUse())) {
-						djxh = new BigDecimal(strDjxh);
-						break;
-					}
-				}
-			}
-			msgMap.put("djxh", djxh);
-			int count = searchDao.saveReseiceMsg(msgMap);
-			logger.info("save message count：" + count);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
-	}
+    @Path("/receiveMessage")
+    public String receiveMessage(@QueryParam("msgJson") String msgJson) {
+        logger.info("post receive message：" + msgJson);
+        try {
+            Map msgMap = (Map) JSON.parse(msgJson);
+            String userid = (String) msgMap.get("fromUserName");
+            String resultJson = callService.getBindingList(userid);
+            BindingResult bindResult = JSON.parseObject(resultJson, BindingResult.class);
+            BigDecimal djxh = null;
+            if ("0".equals(bindResult.getErrcode())) {
+                List<BindingEntity> bindingList = bindResult.getBindingList();
+                for (int i = 0; i < bindingList.size(); i++) {
+                    BindingEntity bindingEntity = bindingList.get(i);
+                    String strDjxh = bindingEntity.getDjxh();
+                    if ("Y".equals(bindingEntity.getIsUse())) {
+                        djxh = new BigDecimal(strDjxh);
+                        break;
+                    }
+                }
+            }
+            msgMap.put("djxh", djxh);
+            int count = searchDao.saveReseiceMsg(msgMap);
+            logger.info("save message count：" + count);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-	@Override
-	public String saveSystemMessage(String msgJson) {
-		
-		RecordWechatDto resultDto = JSON.parseObject(msgJson, RecordWechatDto.class);
-		String resultJson = callService.getBindingList(resultDto.getWxzhid());
-		BindingResult bindResult = JSON.parseObject(resultJson, BindingResult.class);
-		String strDjxh = "";
-		if ("0".equals(bindResult.getErrcode())) {
-			List<BindingEntity> bindingList = bindResult.getBindingList();
-			for (int i = 0; i < bindingList.size(); i++) {
-				BindingEntity bindingEntity = bindingList.get(i);
-				if ("Y".equals(bindingEntity.getIsUse())) {
-					strDjxh = bindingEntity.getDjxh();
-					break;
-				}
-			}
-		}
-		resultDto.setDjxh(strDjxh);
-		searchDao.saveWechatSendRecord(resultDto);
-		return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
-	}
+        return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
+    }
+
+    @Override
+    public String saveSystemMessage(String msgJson) {
+
+        RecordWechatDto resultDto = JSON.parseObject(msgJson, RecordWechatDto.class);
+        String resultJson = callService.getBindingList(resultDto.getWxzhid());
+        BindingResult bindResult = JSON.parseObject(resultJson, BindingResult.class);
+        String strDjxh = "";
+        if ("0".equals(bindResult.getErrcode())) {
+            List<BindingEntity> bindingList = bindResult.getBindingList();
+            for (int i = 0; i < bindingList.size(); i++) {
+                BindingEntity bindingEntity = bindingList.get(i);
+                if ("Y".equals(bindingEntity.getIsUse())) {
+                    strDjxh = bindingEntity.getDjxh();
+                    break;
+                }
+            }
+        }
+        resultDto.setDjxh(strDjxh);
+        searchDao.saveWechatSendRecord(resultDto);
+        return "{\"errcode\":\"0\",\"errmsg\":\"ok\"}";
+    }
+
+    @Override
+    @POST
+    @Path("/getZcrkXlb")
+    public String getZcrkXlb(String wyid) {
+        ZcrkXlb zcrkXlb = searchDao.getZCRKXLB(wyid);
+        return JSON.toJSONString(zcrkXlb, SerializerFeature.WriteNullStringAsEmpty);
+    }
 }
