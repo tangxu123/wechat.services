@@ -187,15 +187,36 @@ public class CommonServiceHandler {
 		return resultDto;
 	}
 	public static void main(String[] args) {
-		List l = new ArrayList();
-		Map m = new HashMap();
-		m.put("ftppath","/root/dwxpt/wx/upload/chat/20180529/44A30B1C633511E8A4B8005056902E0A.JPG");
-		m.put("filename","a.jpg");
-		l.add(m);
-		String s = JSON.toJSON(l).toString();
-		Map mm = (Map)JSON.parseObject(s,List.class).get(0);
-		System.out.println(mm.get("ftppath"));
-//		String s = "";
+//		List l = new ArrayList();
+//		Map m = new HashMap();
+//		m.put("ftppath","/root/dwxpt/wx/upload/chat/20180529/44A30B1C633511E8A4B8005056902E0A.JPG");
+//		m.put("filename","a.jpg");
+//		l.add(m);
+//		String s = JSON.toJSON(l).toString();
+//		Map mm = (Map)JSON.parseObject(s,List.class).get(0);
+//		System.out.println(mm.get("ftppath"));
+////		String s = "";
+		String userid = "18616864830";
+		String agentid = "0";
+
+		List<Article> articles = new ArrayList<Article>();
+		String title = "第二期税企汇大企业专属学堂邀请函";
+		String  description= "我局大企业专属学堂—税企汇再次开课啦！诚挚欢迎您的到来！";
+		String url = "https://qy.weixin.qq.com/cgi-bin/wap_getnewsmsg?action=get&__biz=MzI5MDcxOTU4Mw==&mixuin=MjI4OTI3ODA5MDI0MDIzMTgzMw==&mid=10011004&idx=1&sn=0d8eb6f89cab630207798f2dfcbaece2";
+		String picurl = "http://mmbiz.qpic.cn/mmocbiz/my4fjBcks1iaCVP6ka4WBuLibv8FibTCYdgCJ8RDlG2G9zk0wWKRoXGWg/";
+		articles.add(new Article(title, description, url, picurl));
+
+		News news = new News(articles);
+		QiYeNewsMsg newsMsg = new QiYeNewsMsg();
+		newsMsg.setTouser(userid.replace(",", "|"));
+		newsMsg.setToparty("");
+		newsMsg.setTotag("");
+		newsMsg.setMsgtype("news");
+		newsMsg.setAgentid(agentid);
+		newsMsg.setSafe("0");
+		newsMsg.setNews(news);
+		String aaa = JSON.toJSONString(newsMsg);
+		System.out.println(aaa);
 	}
 	/**
 	 * 发送新闻信息
@@ -250,6 +271,8 @@ public class CommonServiceHandler {
 		return resultDto;
 
 	}
+
+
 		/**
          * 发送新闻信息
          *

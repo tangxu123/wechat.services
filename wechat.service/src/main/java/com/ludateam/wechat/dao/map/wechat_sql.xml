@@ -537,4 +537,9 @@
 			WHERE  WYID = #{wyid} or ZCBH= #{wyid}
 		]]>
     </select>
+    <select id="getQsList"  resultType="Map">
+        <![CDATA[
+      select * from db_zgfz.v_qywx_qs
+    ]]>
+    </select>
 </mapper>

@@ -13,7 +13,7 @@ public interface MeetingDao {
     /**
      * 获取会议信息
      */
-    List getMeetingData(String userid);
+    List getMeetingData(Map m);
     /**
      * 获取会议信息 局
      */
@@ -46,5 +46,19 @@ public interface MeetingDao {
      * 获取人员属性
      */
     List getRysx(String userid);
+
+    /**
+    * 获取自己的日历信息
+    */
+    List getOwnerMeetings(String userid);
+
+    /**
+     * 更新查看标记
+     */
+    int updateCkbj(Map map);
+    /**
+     * 本部门参会人员
+     */
+    List getBbmcxry(Map map);
 
 }

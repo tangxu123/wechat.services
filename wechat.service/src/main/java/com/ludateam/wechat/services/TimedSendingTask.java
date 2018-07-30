@@ -3,10 +3,7 @@ package com.ludateam.wechat.services;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -147,7 +144,72 @@ public class TimedSendingTask {
 			messageSender.sendWechatMessage(mqJson);
 		}
 	}
-	
+
+
+	/**
+	 * 欠税提醒
+	 *
+	 */
+	@Scheduled(cron = "0 0 9 * * ?")
+	public void executeQstx() {
+		List qsList = searchDao.getQsList();
+		if (qsList == null || qsList.size() == 0) {
+			logger.info("暂无欠税企业信息");
+			return;
+		}
+
+
+		for(int i = 0; i < qsList.size(); i++) {
+			Map m = (Map) qsList.get(i);
+			String content = (String) m.get("content");
+			String wxzhid = (String) m.get("wxzhid");
+//			String wxzhid = "18616864830";
+			String djxh = (String) m.get("djxh");
+			if (StrKit.isBlank(wxzhid)) {
+				continue;
+			} else {
+				FsrwEntity fsrwEntity = new FsrwEntity();
+				fsrwEntity.setDxnr(content);
+				fsrwEntity.setFsdx((String) m.get("fsdx"));
+				fsrwEntity.setFsfs((String) m.get("fsfs"));
+				fsrwEntity.setLk((String) m.get("lk"));
+				fsrwEntity.setNwbz((String) m.get("nwbz"));
+				fsrwEntity.setRydm((String) m.get("rydm"));
+				fsrwEntity.setSbdm((String) m.get("sbdm"));
+				fsrwEntity.setShsx((String) m.get("shsx"));
+				fsrwEntity.setTmid(Integer.valueOf((String) m.get("tmid")).intValue());
+				fsrwEntity.setYxq(Integer.valueOf((String) m.get("yxq")).intValue());
+				fsrwEntity.setQyhid(Integer.valueOf((String) m.get("qyhid")).intValue());
+				fsrwEntity.setWxyyid(Integer.valueOf((String) m.get("wxyyid")).intValue());
+				searchDao.saveFsrw(fsrwEntity);
+
+				BigDecimal rwid = fsrwEntity.getRwid();
+				if (wxzhid.contains(",")) {
+					String []ss = wxzhid.split(",");
+					for(int j=0;j<ss.length;j++){
+						FsmdEntity fsmdEntity = new FsmdEntity();
+						fsmdEntity.setRwid(rwid);
+						fsmdEntity.setDxnr(null);
+						fsmdEntity.setFsr(djxh);
+						fsmdEntity.setFssx("0");
+						fsmdEntity.setSjhm(ss[j]);
+						fsmdEntity.setWxzhid(ss[j]);
+						searchDao.saveFsmd(fsmdEntity);
+					}
+				} else {
+					FsmdEntity fsmdEntity = new FsmdEntity();
+					fsmdEntity.setRwid(rwid);
+					fsmdEntity.setDxnr(null);
+					fsmdEntity.setFsr(djxh);
+					fsmdEntity.setFssx("0");
+					fsmdEntity.setSjhm(wxzhid);
+					fsmdEntity.setWxzhid(wxzhid);
+					searchDao.saveFsmd(fsmdEntity);
+				}
+			}
+		}
+	}
+
 	/**
 	 * 事项通知书制件完成
 	 * 

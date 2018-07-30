@@ -48,7 +48,7 @@ public interface CallService {
 
 	@GET
 	@Path("/meeting/meetings")
-	String meetings(@QueryParam("userid") String userid,@QueryParam("rysx") String rysx);
+	String meetings(@QueryParam("userid") String userid,@QueryParam("rysx") String rysx,@QueryParam("jgdm") String jgdm);
 
 	@GET
 	@Path("/meeting/designatedPersons")
@@ -56,14 +56,18 @@ public interface CallService {
 
 	@GET
 	@Path("/meeting/persons")
-	String meetingPersons(@QueryParam("persons") String persons);
+	String meetingPersons(@QueryParam("persons") String persons,@QueryParam("lrrydm") String lrrydm);
 
 	@GET
 	@Path("/meeting/desc")
-	String meetingDesc(@QueryParam("meetingNumber") String meetingNumber);
+	String meetingDesc(@QueryParam("meetingNumber") String meetingNumber, @QueryParam("userid") String userid);
 
 	@GET
 	@Path("/meeting/rysx")
 	String rysx(@QueryParam("userid") String userid);
+
+	@GET
+	@Path("/meeting/ownerMeetings")
+	String ownerMeetings(@QueryParam("userid") String userid,@QueryParam("rysx") String rysx);
 	
 }

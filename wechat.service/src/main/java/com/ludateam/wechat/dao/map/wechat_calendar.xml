@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ludateam.wechat.dao.calendar.MeetingDao">
-    <select id="getMeetingData" parameterType="String" resultType="Map">
+    <select id="getMeetingDataBak" parameterType="String" resultType="Map">
         <![CDATA[
 select t.HYBH as "hybh",
        t.HYDD as "hydd",
@@ -12,7 +12,7 @@ select t.HYBH as "hybh",
        to_char(t.JSRQ, 'yyyy-mm-dd') as "jsrq",
        t.JSSJ as "jssj"
   from db_wx.QY_CALENDAR_MEETING t
- where to_char(t.ksrq, 'yyyymm') = to_char(sysdate, 'yyyymm')
+ where 1=1
    and (exists (select 1
            from DB_QX.T_QX_YH yh, DB_WX.QY_MEETING_JG jg
           where yh.yh_dm = #{userid}
@@ -24,7 +24,71 @@ select t.HYBH as "hybh",
             and ry.rydm = #{userid} ))
 	]]>
     </select>
+    <select id="getMeetingData" parameterType="Map" resultType="Map">
+        <![CDATA[
+select t.HYBH as "hybh",
+       t.HYDD as "hydd",
+       t.HYMC as "hymc",
+       t.HYNR as "hynr",
+       to_char(t.KSRQ, 'yyyy-mm-dd') as "ksrq",
+       t.KSSJ as "kssj",
+       to_char(t.JSRQ, 'yyyy-mm-dd') as "jsrq",
+       t.JSSJ as "jssj",
+       'N' as "zpbj",
+       'N' as "ckbj"
+  from db_wx.QY_CALENDAR_MEETING t
+  where not exists(select 1 from db_wx.qy_meeting_jg a where a.hybh=t.hybh and a.jgdm=#{jgdm})
+  union
+  select t.HYBH as "hybh",
+       t.HYDD as "hydd",
+       t.HYMC as "hymc",
+       t.HYNR as "hynr",
+       to_char(t.KSRQ, 'yyyy-mm-dd') as "ksrq",
+       t.KSSJ as "kssj",
+       to_char(t.JSRQ, 'yyyy-mm-dd') as "jsrq",
+       t.JSSJ as "jssj",
+       'Y' as "zpbj",
+       decode(b.ckbj,'Y','readed','noread') as "ckbj"
+  from db_wx.QY_CALENDAR_MEETING t,db_wx.qy_meeting_ry b
+  where exists(select 1 from db_wx.qy_meeting_jg a where a.hybh=t.hybh and a.jgdm=#{jgdm})
+  and t.hybh=b.hybh and b.rydm=#{userid}
+	]]>
+    </select>
+
     <select id="getDesignatedPersons" parameterType="Map" resultType="Map">
+        <![CDATA[
+select t.swrydm as "swrydm",t.swjgdm as "swjgdm",t.swrymc as "swrymc",t.hybh as "hybh",t.ownerbj as "ownerbj" from (
+        select a.yh_dm as swrydm,
+       a.swjg_dm as swjgdm,
+       a.yh_mc as swrymc,
+       #{meetingNumber} as hybh,
+       '1' as ownerbj
+  from DB_QX.T_QX_YH a
+ where a.yxbz = 'Y'
+   and a.yh_dm like '13101040%'
+   and a.rysx is not null
+   and a.rysx > 3
+   and a.swjg_dm =
+       (select b.swjg_dm from DB_QX.T_QX_YH b where b.yh_dm = #{userid})
+   and not exists (select 1
+          from DB_WX.QY_MEETING_RY c
+         where c.hybh = #{meetingNumber}
+           and c.rydm = a.yh_dm)
+union
+select a.yh_dm as swrydm,
+       a.swjg_dm as swjgdm,
+       a.yh_mc as swrymc,
+       #{meetingNumber} as hybh,
+       '0' as ownerbj
+  from DB_QX.T_QX_YH a
+ where a.yh_dm = #{userid}
+   and not exists (select 1
+          from DB_WX.QY_MEETING_RY c
+         where c.hybh = #{meetingNumber}
+           and c.rydm = a.yh_dm)) t order by t.ownerbj
+	]]>
+    </select>
+    <select id="getDesignatedPersonsBak" parameterType="Map" resultType="Map">
         <![CDATA[
         select a.yh_dm as "swrydm", a.swjg_dm as "swjgdm", a.yh_mc as "swrymc", #{meetingNumber} as "hybh"
   from DB_QX.T_QX_YH a,
@@ -58,25 +122,75 @@ select t.HYBH as "hybh",
        to_char(t.KSRQ, 'yyyy-mm-dd') as "ksrq",
        t.KSSJ as "kssj",
        to_char(t.JSRQ, 'yyyy-mm-dd') as "jsrq",
-       t.JSSJ as "jssj"
+       t.JSSJ as "jssj",
+       to_char(t.LRSJ, 'yyyy-mm-dd') as "lrsj",
+       to_char(t.XGSJ, 'yyyy-mm-dd') as "xgsj",
+       t.lrrydm as "lrrydm",
+       t.xgrydm as "xgrydm",
+       t.jld as "jld",
+       t.cxdx as "cxdx"
   from db_wx.QY_CALENDAR_MEETING t
   where t.hybh = #{meetingNumber}
         ]]>
     </select>
     <insert id="saveMeetingPersons" parameterType="Map">
         <![CDATA[
-    		insert into DB_WX.QY_MEETING_RY (HYBH, RYDM) values (#{hybh}, #{swrydm})
+    		insert into DB_WX.QY_MEETING_RY (HYBH, RYDM,JGDM,CKBJ,LRRYDM,LRSJ) values (#{hybh}, #{swrydm},#{swjgdm},'N',#{lrrydm},sysdate)
         ]]>
     </insert>
     <select id="getRysx" parameterType="String" resultType="Map">
         <![CDATA[
-          select a.rysx as "rysx"
+          select a.rysx as "rysx",a.swjg_dm as "swjgdm"
   from db_qx.t_qx_yh a
  where a.yxbz = 'Y' and a.yh_dm like '13101040%' and a.rysx is not null and
   a.yh_dm = #{userid}
 	    ]]>
     </select>
+    <select id="getOwnerMeetings" parameterType="String" resultType="Map">
+        <![CDATA[
+        select t.HYBH as "hybh",
+       t.HYDD as "hydd",
+       t.HYMC as "hymc",
+       t.HYNR as "hynr",
+       to_char(t.KSRQ, 'yyyy-mm-dd') as "ksrq",
+       t.KSSJ as "kssj",
+       to_char(t.JSRQ, 'yyyy-mm-dd') as "jsrq",
+       t.JSSJ as "jssj"
+  from db_wx.QY_CALENDAR_MEETING t,DB_QX.T_QX_YH yh,db_wx.qy_meeting_jg jg,db_wx.qy_meeting_ry ry
+  where t.hybh=jg.hybh
+  and t.hybh=ry.hybh
+  and yh.yh_dm=ry.rydm
+  and yh.swjg_dm=jg.jgdm
+  and yh.yh_dm=#{userid}
+  and yh.yxbz = 'Y' and yh.yh_dm like '13101040%' and yh.rysx is not null
+	]]>
+    </select>
+    <update id="updateCkbj" parameterType="Map">
+        <![CDATA[
+		    update db_wx.qy_meeting_ry t set t.ckbj='Y',t.cksj=sysdate where t.hybh= #{meetingNumber} and t.rydm=#{userid}
+        ]]>
+    </update>
 
-
-
+    <select id="getBbmcxry" parameterType="Map" resultType="Map">
+        <![CDATA[
+select b.yh_mc || ' ('||c.yh_mc||'指派) ' as "zpzj", '0' as "sx"
+  from db_wx.qy_meeting_ry a, db_qx.t_qx_yh b, db_qx.t_qx_yh c
+ where a.hybh = #{meetingNumber}
+   and a.rydm = b.yh_dm
+   and a.lrrydm = c.yh_dm
+   and b.yxbz = 'Y'
+   and b.yh_dm like '13101040%'
+   and b.rysx is not null
+   and a.rydm = #{userid}
+union
+select b.yh_mc as "zpzj", '1' as "sx"
+  from db_wx.qy_meeting_ry a, db_qx.t_qx_yh b
+ where a.hybh = #{meetingNumber}
+   and a.rydm = b.yh_dm
+   and b.yxbz = 'Y'
+   and b.yh_dm like '13101040%'
+   and b.rysx is not null
+   and a.rydm <> #{userid}
+    ]]>
+</select>
 </mapper>

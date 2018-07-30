@@ -221,4 +221,9 @@ public interface SearchDao {
 
 
     ZcrkXlb getZCRKXLB(String wyid);
+
+    /**
+     * 欠税提醒
+     */
+    List getQsList();
 }
